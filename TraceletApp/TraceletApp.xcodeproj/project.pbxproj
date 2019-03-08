@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		88541052EE97915E570EFBDD /* libPods-TraceletApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FDE23D6C8413178EC8E0FBF4 /* libPods-TraceletApp.a */; };
+		DFC46E3722319EF6008F6A6A /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC46E3622319EF6008F6A6A /* StartViewController.swift */; };
+		DFC46E392231A016008F6A6A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC46E382231A016008F6A6A /* LoginViewController.swift */; };
+		DFC46E3B2231A036008F6A6A /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC46E3A2231A036008F6A6A /* SignupViewController.swift */; };
+		DFC46E3D2231AFE6008F6A6A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DFC46E3C2231AFE6008F6A6A /* GoogleService-Info.plist */; };
+		DFC46E472231B5D7008F6A6A /* Switcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC46E462231B5D7008F6A6A /* Switcher.swift */; };
+		DFC46E492231D5D3008F6A6A /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC46E482231D5D3008F6A6A /* TabBarController.swift */; };
 		DFE6DCB222273A6900F05680 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE6DCB122273A6900F05680 /* AppDelegate.swift */; };
 		DFE6DCB422273A6900F05680 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE6DCB322273A6900F05680 /* ViewController.swift */; };
 		DFE6DCB722273A6900F05680 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFE6DCB522273A6900F05680 /* Main.storyboard */; };
@@ -15,6 +22,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		49FE83955F0214B3B861B2F7 /* Pods-TraceletApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TraceletApp.debug.xcconfig"; path = "Target Support Files/Pods-TraceletApp/Pods-TraceletApp.debug.xcconfig"; sourceTree = "<group>"; };
+		DFC46E3622319EF6008F6A6A /* StartViewController.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		DFC46E382231A016008F6A6A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		DFC46E3A2231A036008F6A6A /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		DFC46E3C2231AFE6008F6A6A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DFC46E462231B5D7008F6A6A /* Switcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Switcher.swift; sourceTree = "<group>"; };
+		DFC46E482231D5D3008F6A6A /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		DFE6DCAE22273A6900F05680 /* TraceletApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TraceletApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFE6DCB122273A6900F05680 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DFE6DCB322273A6900F05680 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +36,8 @@
 		DFE6DCB822273A6B00F05680 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DFE6DCBB22273A6B00F05680 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DFE6DCBD22273A6B00F05680 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F349099F5F0F00144968114D /* Pods-TraceletApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TraceletApp.release.xcconfig"; path = "Target Support Files/Pods-TraceletApp/Pods-TraceletApp.release.xcconfig"; sourceTree = "<group>"; };
+		FDE23D6C8413178EC8E0FBF4 /* libPods-TraceletApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TraceletApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +45,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88541052EE97915E570EFBDD /* libPods-TraceletApp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8836C20CF59D8B8633685F27 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				49FE83955F0214B3B861B2F7 /* Pods-TraceletApp.debug.xcconfig */,
+				F349099F5F0F00144968114D /* Pods-TraceletApp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		BD0C679BF6BEBC601ED071A7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FDE23D6C8413178EC8E0FBF4 /* libPods-TraceletApp.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DFE6DCA522273A6900F05680 = {
 			isa = PBXGroup;
 			children = (
 				DFE6DCB022273A6900F05680 /* TraceletApp */,
 				DFE6DCAF22273A6900F05680 /* Products */,
+				8836C20CF59D8B8633685F27 /* Pods */,
+				BD0C679BF6BEBC601ED071A7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,9 +93,15 @@
 				DFE6DCB122273A6900F05680 /* AppDelegate.swift */,
 				DFE6DCB322273A6900F05680 /* ViewController.swift */,
 				DFE6DCB522273A6900F05680 /* Main.storyboard */,
+				DFC46E482231D5D3008F6A6A /* TabBarController.swift */,
+				DFC46E382231A016008F6A6A /* LoginViewController.swift */,
+				DFC46E3A2231A036008F6A6A /* SignupViewController.swift */,
+				DFC46E3622319EF6008F6A6A /* StartViewController.swift */,
 				DFE6DCB822273A6B00F05680 /* Assets.xcassets */,
 				DFE6DCBA22273A6B00F05680 /* LaunchScreen.storyboard */,
 				DFE6DCBD22273A6B00F05680 /* Info.plist */,
+				DFC46E462231B5D7008F6A6A /* Switcher.swift */,
+				DFC46E3C2231AFE6008F6A6A /* GoogleService-Info.plist */,
 			);
 			path = TraceletApp;
 			sourceTree = "<group>";
@@ -71,6 +113,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DFE6DCC022273A6B00F05680 /* Build configuration list for PBXNativeTarget "TraceletApp" */;
 			buildPhases = (
+				2D51044E41D271B1AD580343 /* [CP] Check Pods Manifest.lock */,
 				DFE6DCAA22273A6900F05680 /* Sources */,
 				DFE6DCAB22273A6900F05680 /* Frameworks */,
 				DFE6DCAC22273A6900F05680 /* Resources */,
@@ -123,6 +166,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DFE6DCBC22273A6B00F05680 /* LaunchScreen.storyboard in Resources */,
+				DFC46E3D2231AFE6008F6A6A /* GoogleService-Info.plist in Resources */,
 				DFE6DCB922273A6B00F05680 /* Assets.xcassets in Resources */,
 				DFE6DCB722273A6900F05680 /* Main.storyboard in Resources */,
 			);
@@ -130,13 +174,43 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2D51044E41D271B1AD580343 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TraceletApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		DFE6DCAA22273A6900F05680 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DFC46E392231A016008F6A6A /* LoginViewController.swift in Sources */,
 				DFE6DCB422273A6900F05680 /* ViewController.swift in Sources */,
+				DFC46E472231B5D7008F6A6A /* Switcher.swift in Sources */,
+				DFC46E3B2231A036008F6A6A /* SignupViewController.swift in Sources */,
+				DFC46E492231D5D3008F6A6A /* TabBarController.swift in Sources */,
 				DFE6DCB222273A6900F05680 /* AppDelegate.swift in Sources */,
+				DFC46E3722319EF6008F6A6A /* StartViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +354,7 @@
 		};
 		DFE6DCC122273A6B00F05680 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 49FE83955F0214B3B861B2F7 /* Pods-TraceletApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -291,6 +366,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.kawa2010.TraceletApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_REFLECTION_METADATA_LEVEL = none;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -298,6 +374,7 @@
 		};
 		DFE6DCC222273A6B00F05680 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F349099F5F0F00144968114D /* Pods-TraceletApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -309,6 +386,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.kawa2010.TraceletApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_REFLECTION_METADATA_LEVEL = none;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
