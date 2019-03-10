@@ -11,7 +11,6 @@
 		DFC46E3722319EF6008F6A6A /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC46E3622319EF6008F6A6A /* StartViewController.swift */; };
 		DFC46E392231A016008F6A6A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC46E382231A016008F6A6A /* LoginViewController.swift */; };
 		DFC46E3B2231A036008F6A6A /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC46E3A2231A036008F6A6A /* SignupViewController.swift */; };
-		DFC46E3D2231AFE6008F6A6A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DFC46E3C2231AFE6008F6A6A /* GoogleService-Info.plist */; };
 		DFC46E472231B5D7008F6A6A /* Switcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC46E462231B5D7008F6A6A /* Switcher.swift */; };
 		DFC46E492231D5D3008F6A6A /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC46E482231D5D3008F6A6A /* TabBarController.swift */; };
 		DFE6DCB222273A6900F05680 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE6DCB122273A6900F05680 /* AppDelegate.swift */; };
@@ -19,6 +18,7 @@
 		DFE6DCB722273A6900F05680 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFE6DCB522273A6900F05680 /* Main.storyboard */; };
 		DFE6DCB922273A6B00F05680 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFE6DCB822273A6B00F05680 /* Assets.xcassets */; };
 		DFE6DCBC22273A6B00F05680 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFE6DCBA22273A6B00F05680 /* LaunchScreen.storyboard */; };
+		DFEB842B2235B025007FC364 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DFEB842A2235B025007FC364 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,7 +26,6 @@
 		DFC46E3622319EF6008F6A6A /* StartViewController.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		DFC46E382231A016008F6A6A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		DFC46E3A2231A036008F6A6A /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
-		DFC46E3C2231AFE6008F6A6A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DFC46E462231B5D7008F6A6A /* Switcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Switcher.swift; sourceTree = "<group>"; };
 		DFC46E482231D5D3008F6A6A /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		DFE6DCAE22273A6900F05680 /* TraceletApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TraceletApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -36,6 +35,7 @@
 		DFE6DCB822273A6B00F05680 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DFE6DCBB22273A6B00F05680 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DFE6DCBD22273A6B00F05680 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DFEB842A2235B025007FC364 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F349099F5F0F00144968114D /* Pods-TraceletApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TraceletApp.release.xcconfig"; path = "Target Support Files/Pods-TraceletApp/Pods-TraceletApp.release.xcconfig"; sourceTree = "<group>"; };
 		FDE23D6C8413178EC8E0FBF4 /* libPods-TraceletApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TraceletApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -101,7 +101,7 @@
 				DFE6DCBA22273A6B00F05680 /* LaunchScreen.storyboard */,
 				DFE6DCBD22273A6B00F05680 /* Info.plist */,
 				DFC46E462231B5D7008F6A6A /* Switcher.swift */,
-				DFC46E3C2231AFE6008F6A6A /* GoogleService-Info.plist */,
+				DFEB842A2235B025007FC364 /* GoogleService-Info.plist */,
 			);
 			path = TraceletApp;
 			sourceTree = "<group>";
@@ -166,7 +166,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DFE6DCBC22273A6B00F05680 /* LaunchScreen.storyboard in Resources */,
-				DFC46E3D2231AFE6008F6A6A /* GoogleService-Info.plist in Resources */,
+				DFEB842B2235B025007FC364 /* GoogleService-Info.plist in Resources */,
 				DFE6DCB922273A6B00F05680 /* Assets.xcassets in Resources */,
 				DFE6DCB722273A6900F05680 /* Main.storyboard in Resources */,
 			);
