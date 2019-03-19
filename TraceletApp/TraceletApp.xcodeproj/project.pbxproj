@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		88541052EE97915E570EFBDD /* libPods-TraceletApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FDE23D6C8413178EC8E0FBF4 /* libPods-TraceletApp.a */; };
+		D5654ED1223C528B001A4CE4 /* EliminarUsuarioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5654ED0223C528B001A4CE4 /* EliminarUsuarioViewController.swift */; };
+		D5654ED3224090BF001A4CE4 /* VistaListaUsuariosActivosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5654ED2224090BF001A4CE4 /* VistaListaUsuariosActivosViewController.swift */; };
+		D5654ED5224090C9001A4CE4 /* SignosVitalesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5654ED4224090C9001A4CE4 /* SignosVitalesViewController.swift */; };
 		D5B528B722371476007F4238 /* EditarGeovallaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B528B622371476007F4238 /* EditarGeovallaViewController.swift */; };
 		DFC46E3722319EF6008F6A6A /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC46E3622319EF6008F6A6A /* StartViewController.swift */; };
 		DFC46E392231A016008F6A6A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC46E382231A016008F6A6A /* LoginViewController.swift */; };
@@ -24,6 +27,9 @@
 
 /* Begin PBXFileReference section */
 		49FE83955F0214B3B861B2F7 /* Pods-TraceletApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TraceletApp.debug.xcconfig"; path = "Target Support Files/Pods-TraceletApp/Pods-TraceletApp.debug.xcconfig"; sourceTree = "<group>"; };
+		D5654ED0223C528B001A4CE4 /* EliminarUsuarioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EliminarUsuarioViewController.swift; sourceTree = "<group>"; };
+		D5654ED2224090BF001A4CE4 /* VistaListaUsuariosActivosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VistaListaUsuariosActivosViewController.swift; sourceTree = "<group>"; };
+		D5654ED4224090C9001A4CE4 /* SignosVitalesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignosVitalesViewController.swift; sourceTree = "<group>"; };
 		D5B528B622371476007F4238 /* EditarGeovallaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditarGeovallaViewController.swift; sourceTree = "<group>"; };
 		DFC46E3622319EF6008F6A6A /* StartViewController.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		DFC46E382231A016008F6A6A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -95,6 +101,9 @@
 				DFE6DCB122273A6900F05680 /* AppDelegate.swift */,
 				DFE6DCB322273A6900F05680 /* ViewController.swift */,
 				DFE6DCB522273A6900F05680 /* Main.storyboard */,
+				D5654ED2224090BF001A4CE4 /* VistaListaUsuariosActivosViewController.swift */,
+				D5654ED4224090C9001A4CE4 /* SignosVitalesViewController.swift */,
+				D5654ED0223C528B001A4CE4 /* EliminarUsuarioViewController.swift */,
 				D5B528B622371476007F4238 /* EditarGeovallaViewController.swift */,
 				DFC46E482231D5D3008F6A6A /* TabBarController.swift */,
 				DFC46E382231A016008F6A6A /* LoginViewController.swift */,
@@ -211,10 +220,13 @@
 				DFC46E392231A016008F6A6A /* LoginViewController.swift in Sources */,
 				DFE6DCB422273A6900F05680 /* ViewController.swift in Sources */,
 				DFC46E472231B5D7008F6A6A /* Switcher.swift in Sources */,
+				D5654ED1223C528B001A4CE4 /* EliminarUsuarioViewController.swift in Sources */,
 				DFC46E3B2231A036008F6A6A /* SignupViewController.swift in Sources */,
 				DFC46E492231D5D3008F6A6A /* TabBarController.swift in Sources */,
 				DFE6DCB222273A6900F05680 /* AppDelegate.swift in Sources */,
 				DFC46E3722319EF6008F6A6A /* StartViewController.swift in Sources */,
+				D5654ED5224090C9001A4CE4 /* SignosVitalesViewController.swift in Sources */,
+				D5654ED3224090BF001A4CE4 /* VistaListaUsuariosActivosViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
