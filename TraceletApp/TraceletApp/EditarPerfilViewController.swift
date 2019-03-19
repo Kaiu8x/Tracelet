@@ -1,19 +1,16 @@
 //
-//  EditarGeovallaViewController.swift
+//  EditarPerfilViewController.swift
 //  TraceletApp
 //
-//  Created by kenyiro tsuru on 3/11/19.
+//  Created by kenyiro tsuru on 3/19/19.
 //  Copyright © 2019 Kai Kawasaki Ueda. All rights reserved.
 //
 
 import UIKit
 
-class EditarGeovallaViewController: UIViewController {
+class EditarPerfilViewController: UIViewController {
 
-    @IBAction func aceptarButton(_ sender: UIButton) {
-        dismiss(animated: true, completion: nil)
-    }
-    @IBAction func cancelarButton(_ sender: Any) {
+    @IBAction func guardarButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
     override func viewDidLoad() {
