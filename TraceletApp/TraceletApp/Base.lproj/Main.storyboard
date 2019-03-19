@@ -349,12 +349,12 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sas-vy-pH8">
-                                <rect key="frame" x="139" y="468" width="56" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d09-FT-d9d">
+                                <rect key="frame" x="148" y="501" width="56" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Guardar"/>
                                 <connections>
-                                    <action selector="guardarButton:" destination="Gve-GP-8QE" eventType="touchUpInside" id="vt8-3q-Xmi"/>
+                                    <action selector="guardar:" destination="Gve-GP-8QE" eventType="touchUpInside" id="vcv-8O-BGT"/>
                                 </connections>
                             </button>
                         </subviews>

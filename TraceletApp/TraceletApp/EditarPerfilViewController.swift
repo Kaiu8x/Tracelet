@@ -10,7 +10,7 @@ import UIKit
 
 class EditarPerfilViewController: UIViewController {
 
-    @IBAction func guardarButton(_ sender: Any) {
+    @IBAction func guardar(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
     override func viewDidLoad() {
