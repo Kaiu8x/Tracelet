@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7Q5-Jd-Qd7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="E2C-3L-Y1N">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -226,7 +226,7 @@
             </objects>
             <point key="canvasLocation" x="161" y="-2747"/>
         </scene>
-        <!--View Controller-->
+        <!--Configuración-->
         <scene sceneID="l8q-b5-7DW">
             <objects>
                 <viewController id="IE1-Gx-vbF" sceneMemberID="viewController">
@@ -282,7 +282,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Zkq-Xx-oAc"/>
                     </view>
-                    <navigationItem key="navigationItem" id="OM0-Vd-vCA"/>
+                    <navigationItem key="navigationItem" title="Configuración" id="h1A-Zi-ADr">
+                        <barButtonItem key="backBarButtonItem" title="Configuración" id="641-pg-pYW"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aDg-bg-XZ3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -313,7 +315,7 @@
             </objects>
             <point key="canvasLocation" x="-697" y="-655"/>
         </scene>
-        <!--Editar Perfil View Controller-->
+        <!--Editar perfil-->
         <scene sceneID="SAH-0E-vRY">
             <objects>
                 <viewController id="Gve-GP-8QE" customClass="EditarPerfilViewController" customModule="TraceletApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -361,12 +363,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="19d-u3-HjE"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Editar perfil" id="n5g-0G-LBq"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QhJ-YR-r7L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="896" y="23"/>
         </scene>
-        <!--View Controller-->
+        <!--Acerca de nosotros-->
         <scene sceneID="2g5-7n-aNx">
             <objects>
                 <viewController id="meM-mH-It6" sceneMemberID="viewController">
@@ -386,12 +389,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="sMq-5p-mun"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Acerca de nosotros" id="VWC-E1-8Aw"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lnS-8j-thg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="896" y="2030"/>
         </scene>
-        <!--View Controller-->
+        <!--Administrar Usuarios-->
         <scene sceneID="sDT-u9-EoR">
             <objects>
                 <viewController id="xdX-nw-v3O" sceneMemberID="viewController">
@@ -406,14 +410,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Yu-7X-x1k">
-                                <rect key="frame" x="215" y="146" width="99" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Nuevo"/>
-                                <connections>
-                                    <segue destination="ocB-04-xYV" kind="show" id="VSb-49-tvh"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="swO-fd-d1Q">
                                 <rect key="frame" x="63" y="394" width="217" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -426,6 +422,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Vlr-gx-yyX"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Administrar Usuarios" id="aZZ-Ii-PNn">
+                        <barButtonItem key="rightBarButtonItem" title="Nuevo" id="B6S-lM-cFM">
+                            <connections>
+                                <segue destination="ocB-04-xYV" kind="show" id="pmR-AE-O8A"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PnN-x0-RsT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -510,7 +513,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="46Z-Gq-Syt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3265" y="690"/>
+            <point key="canvasLocation" x="2754" y="760"/>
         </scene>
         <!--Eliminar Usuario View Controller-->
         <scene sceneID="5a1-Y9-PdP">
@@ -610,7 +613,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xme-36-6FL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4019" y="690"/>
+            <point key="canvasLocation" x="3771" y="759"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="e4S-5o-wog">
@@ -649,7 +652,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="io7-TN-Iam" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1728" y="690"/>
+            <point key="canvasLocation" x="1881" y="85"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="wyy-fN-3it">
@@ -678,9 +681,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Lg-4m-hzZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2493" y="690"/>
+            <point key="canvasLocation" x="2754" y="84"/>
         </scene>
-        <!--View Controller-->
+        <!--Tienda-->
         <scene sceneID="e4q-TL-bx4">
             <objects>
                 <viewController id="Cuq-ya-VKc" sceneMemberID="viewController">
@@ -712,6 +715,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="8fn-qk-6C4"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Tienda" id="wne-Rk-Ryg"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hvY-0F-ycl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1125,11 +1129,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="LogoWhite" width="945" height="708"/>
-        <image name="Splash" width="562" height="1218"/>
+        <image name="LogoWhite" width="1890" height="1417"/>
+        <image name="Splash" width="1125" height="2436"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="crS-Rl-vfG"/>
-        <segue reference="Ian-mJ-yo0"/>
+        <segue reference="mZV-If-Dem"/>
+        <segue reference="s3Z-ep-VqE"/>
     </inferredMetricsTieBreakers>
 </document>
