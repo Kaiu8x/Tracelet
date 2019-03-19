@@ -19,7 +19,7 @@
 		DFC46E472231B5D7008F6A6A /* Switcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC46E462231B5D7008F6A6A /* Switcher.swift */; };
 		DFC46E492231D5D3008F6A6A /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC46E482231D5D3008F6A6A /* TabBarController.swift */; };
 		DFE6DCB222273A6900F05680 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE6DCB122273A6900F05680 /* AppDelegate.swift */; };
-		DFE6DCB422273A6900F05680 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE6DCB322273A6900F05680 /* ViewController.swift */; };
+		DFE6DCB422273A6900F05680 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE6DCB322273A6900F05680 /* SplashViewController.swift */; };
 		DFE6DCB722273A6900F05680 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFE6DCB522273A6900F05680 /* Main.storyboard */; };
 		DFE6DCB922273A6B00F05680 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFE6DCB822273A6B00F05680 /* Assets.xcassets */; };
 		DFE6DCBC22273A6B00F05680 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFE6DCBA22273A6B00F05680 /* LaunchScreen.storyboard */; };
@@ -40,7 +40,7 @@
 		DFC46E482231D5D3008F6A6A /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		DFE6DCAE22273A6900F05680 /* TraceletApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TraceletApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFE6DCB122273A6900F05680 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DFE6DCB322273A6900F05680 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DFE6DCB322273A6900F05680 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		DFE6DCB622273A6900F05680 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DFE6DCB822273A6B00F05680 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DFE6DCBB22273A6B00F05680 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -101,7 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				DFE6DCB122273A6900F05680 /* AppDelegate.swift */,
-				DFE6DCB322273A6900F05680 /* ViewController.swift */,
+				DFE6DCB322273A6900F05680 /* SplashViewController.swift */,
 				DFE6DCB522273A6900F05680 /* Main.storyboard */,
 				D5403B5C2240C492005B42AC /* EditarPerfilViewController.swift */,
 				D5654ED2224090BF001A4CE4 /* VistaListaUsuariosActivosViewController.swift */,
@@ -221,7 +221,7 @@
 			files = (
 				D5B528B722371476007F4238 /* EditarGeovallaViewController.swift in Sources */,
 				DFC46E392231A016008F6A6A /* LoginViewController.swift in Sources */,
-				DFE6DCB422273A6900F05680 /* ViewController.swift in Sources */,
+				DFE6DCB422273A6900F05680 /* SplashViewController.swift in Sources */,
 				DFC46E472231B5D7008F6A6A /* Switcher.swift in Sources */,
 				D5654ED1223C528B001A4CE4 /* EliminarUsuarioViewController.swift in Sources */,
 				DFC46E3B2231A036008F6A6A /* SignupViewController.swift in Sources */,
