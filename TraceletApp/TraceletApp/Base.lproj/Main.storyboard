@@ -554,33 +554,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Aqui debe ir una tabla con la lista de usuarios" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k1t-bi-Jbh">
+                                <rect key="frame" x="15" y="220" width="344" height="83"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="swO-fd-d1Q">
-                                <rect key="frame" x="99" y="813" width="217" height="30"/>
+                                <rect key="frame" x="63" y="394" width="217" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="BOTON SIMULANDO USUARIO "/>
                                 <connections>
                                     <segue destination="5yH-Zn-cQG" kind="show" id="lFb-ji-oqf"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ybe-mx-uUb">
-                                <rect key="frame" x="0.0" y="103" width="414" height="670"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="UserCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserCell" id="hcZ-HJ-dj4">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hcZ-HJ-dj4" id="eHk-OS-Q5Z">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="xdX-nw-v3O" id="ZeR-h8-srh"/>
-                                    <outlet property="delegate" destination="xdX-nw-v3O" id="6zo-Ft-d7g"/>
-                                </connections>
-                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Vlr-gx-yyX"/>
@@ -592,18 +580,15 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="tableView" destination="Ybe-mx-uUb" id="Sh7-FD-VNi"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PnN-x0-RsT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="895.6521739130435" y="707.8125"/>
+            <point key="canvasLocation" x="896" y="690"/>
         </scene>
-        <!--User Details View Controller-->
+        <!--View Controller-->
         <scene sceneID="RXf-Py-J7G">
             <objects>
-                <viewController storyboardIdentifier="UserDetails" id="5yH-Zn-cQG" customClass="UserDetailsViewController" customModule="TraceletApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="5yH-Zn-cQG" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Y5v-bX-daJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -674,20 +659,10 @@
                                     </segue>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wqX-o1-yLr">
-                                <rect key="frame" x="216" y="645" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="keV-4N-7kC"/>
                     </view>
-                    <connections>
-                        <outlet property="theName" destination="wqX-o1-yLr" id="joJ-M5-XBF"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="46Z-Gq-Syt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1410,29 +1385,29 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Aboutus" width="20.803611755371094" height="20.803611755371094"/>
-        <image name="Brace1" width="500" height="500"/>
-        <image name="Brace2" width="500" height="500"/>
-        <image name="Check" width="1600" height="1000"/>
+        <image name="Aboutus" width="256" height="256"/>
+        <image name="Brace1" width="250" height="250"/>
+        <image name="Brace2" width="250" height="250"/>
+        <image name="Check" width="800" height="500"/>
         <image name="Configuración" width="16" height="16"/>
-        <image name="Connections" width="980" height="666"/>
-        <image name="Down" width="32" height="32"/>
-        <image name="Edit" width="794" height="630"/>
-        <image name="Geovalla" width="39.724136352539062" height="39.724136352539062"/>
-        <image name="Heart" width="1200" height="1200"/>
-        <image name="LogoWhite" width="1890" height="1417"/>
-        <image name="Mapa" width="39.724136352539062" height="39.724136352539062"/>
-        <image name="Profile" width="36.426876068115234" height="36.426876068115234"/>
-        <image name="Ruta" width="39.724136352539062" height="39.724136352539062"/>
-        <image name="Session" width="512" height="512"/>
-        <image name="Shoes" width="119.88516998291016" height="205"/>
-        <image name="Splash" width="1125" height="2436"/>
-        <image name="Tienda" width="715" height="630"/>
-        <image name="Vitales" width="200" height="200"/>
+        <image name="Connections" width="490" height="333"/>
+        <image name="Down" width="16" height="16"/>
+        <image name="Edit" width="397" height="315"/>
+        <image name="Geovalla" width="16" height="16"/>
+        <image name="Heart" width="600" height="600"/>
+        <image name="LogoWhite" width="945" height="708"/>
+        <image name="Mapa" width="16" height="16"/>
+        <image name="Profile" width="256" height="256"/>
+        <image name="Ruta" width="16" height="16"/>
+        <image name="Session" width="256" height="256"/>
+        <image name="Shoes" width="174" height="297"/>
+        <image name="Splash" width="562" height="1218"/>
+        <image name="Tienda" width="357" height="315"/>
+        <image name="Vitales" width="100" height="100"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="crS-Rl-vfG"/>
-        <segue reference="1Fx-Q0-BGG"/>
+        <segue reference="s3Z-ep-VqE"/>
         <segue reference="Vub-y7-W23"/>
     </inferredMetricsTieBreakers>
 </document>
