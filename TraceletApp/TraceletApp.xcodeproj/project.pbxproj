@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		88541052EE97915E570EFBDD /* libPods-TraceletApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FDE23D6C8413178EC8E0FBF4 /* libPods-TraceletApp.a */; };
+		8CE4706122428028000FA3B4 /* MapasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE4706022428028000FA3B4 /* MapasViewController.swift */; };
 		D5403B5D2240C492005B42AC /* EditarPerfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5403B5C2240C492005B42AC /* EditarPerfilViewController.swift */; };
 		D5654ED1223C528B001A4CE4 /* EliminarUsuarioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5654ED0223C528B001A4CE4 /* EliminarUsuarioViewController.swift */; };
 		D5654ED3224090BF001A4CE4 /* VistaListaUsuariosActivosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5654ED2224090BF001A4CE4 /* VistaListaUsuariosActivosViewController.swift */; };
@@ -31,6 +32,7 @@
 
 /* Begin PBXFileReference section */
 		49FE83955F0214B3B861B2F7 /* Pods-TraceletApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TraceletApp.debug.xcconfig"; path = "Target Support Files/Pods-TraceletApp/Pods-TraceletApp.debug.xcconfig"; sourceTree = "<group>"; };
+		8CE4706022428028000FA3B4 /* MapasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapasViewController.swift; sourceTree = "<group>"; };
 		D5403B5C2240C492005B42AC /* EditarPerfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditarPerfilViewController.swift; sourceTree = "<group>"; };
 		D5654ED0223C528B001A4CE4 /* EliminarUsuarioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EliminarUsuarioViewController.swift; sourceTree = "<group>"; };
 		D5654ED2224090BF001A4CE4 /* VistaListaUsuariosActivosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VistaListaUsuariosActivosViewController.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 				DFC46E462231B5D7008F6A6A /* Switcher.swift */,
 				DFEB842A2235B025007FC364 /* GoogleService-Info.plist */,
 				D5AB56022241AC3200B8FA08 /* AdministrarUsuariosViewController.swift */,
+				8CE4706022428028000FA3B4 /* MapasViewController.swift */,
 			);
 			path = TraceletApp;
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 				DFE6DCB422273A6900F05680 /* SplashViewController.swift in Sources */,
 				D5AB56042241AC3200B8FA08 /* AdministrarUsuariosViewController.swift in Sources */,
 				D5AB56082241C0CD00B8FA08 /* AgregarUsuarioViewController.swift in Sources */,
+				8CE4706122428028000FA3B4 /* MapasViewController.swift in Sources */,
 				DFC46E472231B5D7008F6A6A /* Switcher.swift in Sources */,
 				D5654ED1223C528B001A4CE4 /* EliminarUsuarioViewController.swift in Sources */,
 				DFC46E3B2231A036008F6A6A /* SignupViewController.swift in Sources */,
