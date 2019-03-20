@@ -12,6 +12,8 @@
 		D5654ED1223C528B001A4CE4 /* EliminarUsuarioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5654ED0223C528B001A4CE4 /* EliminarUsuarioViewController.swift */; };
 		D5654ED3224090BF001A4CE4 /* VistaListaUsuariosActivosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5654ED2224090BF001A4CE4 /* VistaListaUsuariosActivosViewController.swift */; };
 		D5654ED5224090C9001A4CE4 /* SignosVitalesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5654ED4224090C9001A4CE4 /* SignosVitalesViewController.swift */; };
+		D5AB56042241AC3200B8FA08 /* AdministrarUsuariosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AB56022241AC3200B8FA08 /* AdministrarUsuariosViewController.swift */; };
+		D5AB56062241ADB300B8FA08 /* ConexionNuevoUsuarioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AB56052241ADB300B8FA08 /* ConexionNuevoUsuarioViewController.swift */; };
 		D5B528B722371476007F4238 /* EditarGeovallaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B528B622371476007F4238 /* EditarGeovallaViewController.swift */; };
 		DFC46E3722319EF6008F6A6A /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC46E3622319EF6008F6A6A /* StartViewController.swift */; };
 		DFC46E392231A016008F6A6A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC46E382231A016008F6A6A /* LoginViewController.swift */; };
@@ -32,6 +34,8 @@
 		D5654ED0223C528B001A4CE4 /* EliminarUsuarioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EliminarUsuarioViewController.swift; sourceTree = "<group>"; };
 		D5654ED2224090BF001A4CE4 /* VistaListaUsuariosActivosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VistaListaUsuariosActivosViewController.swift; sourceTree = "<group>"; };
 		D5654ED4224090C9001A4CE4 /* SignosVitalesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignosVitalesViewController.swift; sourceTree = "<group>"; };
+		D5AB56032241AC3200B8FA08 /* Base */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Base; path = Base.lproj/AdministrarUsuariosViewController.swift; sourceTree = "<group>"; };
+		D5AB56052241ADB300B8FA08 /* ConexionNuevoUsuarioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConexionNuevoUsuarioViewController.swift; sourceTree = "<group>"; };
 		D5B528B622371476007F4238 /* EditarGeovallaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditarGeovallaViewController.swift; sourceTree = "<group>"; };
 		DFC46E3622319EF6008F6A6A /* StartViewController.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		DFC46E382231A016008F6A6A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +107,7 @@
 				DFE6DCB122273A6900F05680 /* AppDelegate.swift */,
 				DFE6DCB322273A6900F05680 /* SplashViewController.swift */,
 				DFE6DCB522273A6900F05680 /* Main.storyboard */,
+				D5AB56052241ADB300B8FA08 /* ConexionNuevoUsuarioViewController.swift */,
 				D5403B5C2240C492005B42AC /* EditarPerfilViewController.swift */,
 				D5654ED2224090BF001A4CE4 /* VistaListaUsuariosActivosViewController.swift */,
 				D5654ED4224090C9001A4CE4 /* SignosVitalesViewController.swift */,
@@ -117,6 +122,7 @@
 				DFE6DCBD22273A6B00F05680 /* Info.plist */,
 				DFC46E462231B5D7008F6A6A /* Switcher.swift */,
 				DFEB842A2235B025007FC364 /* GoogleService-Info.plist */,
+				D5AB56022241AC3200B8FA08 /* AdministrarUsuariosViewController.swift */,
 			);
 			path = TraceletApp;
 			sourceTree = "<group>";
@@ -222,10 +228,12 @@
 				D5B528B722371476007F4238 /* EditarGeovallaViewController.swift in Sources */,
 				DFC46E392231A016008F6A6A /* LoginViewController.swift in Sources */,
 				DFE6DCB422273A6900F05680 /* SplashViewController.swift in Sources */,
+				D5AB56042241AC3200B8FA08 /* AdministrarUsuariosViewController.swift in Sources */,
 				DFC46E472231B5D7008F6A6A /* Switcher.swift in Sources */,
 				D5654ED1223C528B001A4CE4 /* EliminarUsuarioViewController.swift in Sources */,
 				DFC46E3B2231A036008F6A6A /* SignupViewController.swift in Sources */,
 				D5403B5D2240C492005B42AC /* EditarPerfilViewController.swift in Sources */,
+				D5AB56062241ADB300B8FA08 /* ConexionNuevoUsuarioViewController.swift in Sources */,
 				DFC46E492231D5D3008F6A6A /* TabBarController.swift in Sources */,
 				DFE6DCB222273A6900F05680 /* AppDelegate.swift in Sources */,
 				DFC46E3722319EF6008F6A6A /* StartViewController.swift in Sources */,
@@ -237,6 +245,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		D5AB56022241AC3200B8FA08 /* AdministrarUsuariosViewController.swift */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D5AB56032241AC3200B8FA08 /* Base */,
+			);
+			name = AdministrarUsuariosViewController.swift;
+			sourceTree = "<group>";
+		};
 		DFE6DCB522273A6900F05680 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

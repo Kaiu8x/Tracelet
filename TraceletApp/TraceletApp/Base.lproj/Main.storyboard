@@ -398,7 +398,7 @@
         <!--Administrar Usuarios-->
         <scene sceneID="sDT-u9-EoR">
             <objects>
-                <viewController id="xdX-nw-v3O" sceneMemberID="viewController">
+                <viewController id="xdX-nw-v3O" customClass="AdministrarUsuariosViewController" customModule="TraceletApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pGv-9q-6Ap">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -425,7 +425,7 @@
                     <navigationItem key="navigationItem" title="Administrar Usuarios" id="aZZ-Ii-PNn">
                         <barButtonItem key="rightBarButtonItem" title="Nuevo" id="B6S-lM-cFM">
                             <connections>
-                                <segue destination="ocB-04-xYV" kind="show" id="pmR-AE-O8A"/>
+                                <segue destination="Rjg-Qw-WZF" kind="presentation" identifier="AñadirUsuario" id="pmR-AE-O8A"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -615,7 +615,7 @@
             </objects>
             <point key="canvasLocation" x="3771" y="759"/>
         </scene>
-        <!--View Controller-->
+        <!--Agregar Usuario-->
         <scene sceneID="e4S-5o-wog">
             <objects>
                 <viewController id="ocB-04-xYV" sceneMemberID="viewController">
@@ -623,41 +623,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Agregar la clave del dispositivo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MgC-YV-m8J">
-                                <rect key="frame" x="36" y="97" width="339" height="67"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Agregar la clave del dispositivo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MgC-YV-m8J">
+                                <rect key="frame" x="38" y="112" width="339" height="67"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="XXXXXXX" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UBs-4T-wYh">
-                                <rect key="frame" x="120" y="318" width="97" height="30"/>
+                                <rect key="frame" x="159" y="285" width="97" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="594-gO-fEi">
-                                <rect key="frame" x="141" y="444" width="54" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Aceptar"/>
-                                <connections>
-                                    <segue destination="Kdd-1y-uNK" kind="show" id="ezH-HW-sUD"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="p4i-ZP-7FJ"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Agregar Usuario" id="qKv-OL-yCM">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="hDn-Ra-Yh7"/>
+                        <barButtonItem key="rightBarButtonItem" title="Guardar" id="EBr-qj-XN8">
+                            <connections>
+                                <segue destination="Kdd-1y-uNK" kind="presentation" id="cJV-gf-L2r"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="io7-TN-Iam" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1881" y="85"/>
+            <point key="canvasLocation" x="2789.8550724637685" y="84.375"/>
         </scene>
-        <!--View Controller-->
+        <!--Conexion Nuevo Usuario View Controller-->
         <scene sceneID="wyy-fN-3it">
             <objects>
-                <viewController id="Kdd-1y-uNK" sceneMemberID="viewController">
+                <viewController id="Kdd-1y-uNK" customClass="ConexionNuevoUsuarioViewController" customModule="TraceletApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yxa-FT-WkP">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -674,14 +674,31 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Aceptar"/>
                             </button>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ff8-yM-sUD">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem id="p0L-CQ-dCF">
+                                        <barButtonItem key="rightBarButtonItem" title="Done" id="HWj-zE-25r">
+                                            <connections>
+                                                <segue destination="bwo-fb-Zy8" kind="unwind" unwindAction="unwindToAdminUsuariosWithSender:" id="A59-tW-jTi"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="bdi-bT-j3U"/>
                     </view>
+                    <connections>
+                        <outlet property="doneButton" destination="HWj-zE-25r" id="VOO-ce-5x1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Lg-4m-hzZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="bwo-fb-Zy8" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2754" y="84"/>
+            <point key="canvasLocation" x="3663.7681159420295" y="83.705357142857139"/>
         </scene>
         <!--Tienda-->
         <scene sceneID="e4q-TL-bx4">
@@ -1126,6 +1143,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cKU-fy-9ap" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-5677" y="-950"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Zf3-xa-2wL">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Rjg-Qw-WZF" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="yql-vm-tFv">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ocB-04-xYV" kind="relationship" relationship="rootViewController" id="2Ga-WZ-i0T"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kWF-0A-LaO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1879.7101449275365" y="84.375"/>
         </scene>
     </scenes>
     <resources>
