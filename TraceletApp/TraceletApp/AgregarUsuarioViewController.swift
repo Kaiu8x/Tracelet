@@ -1,20 +1,20 @@
 //
-//  EliminarUsuarioViewController.swift
+//  AgregarUsuarioViewController.swift
 //  TraceletApp
 //
-//  Created by kenyiro tsuru on 3/15/19.
+//  Created by kenyiro tsuru on 3/19/19.
 //  Copyright © 2019 Kai Kawasaki Ueda. All rights reserved.
 //
 
 import UIKit
 
-class EliminarUsuarioViewController: UIViewController {
+class AgregarUsuarioViewController: UIViewController {
 
-    @IBAction func noButton(_ sender: UIButton) {
-         dismiss(animated: true, completion: nil)
+    @IBAction func cancel(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
     }
-    @IBAction func siButton(_ sender: UIButton) {
-        //Codigo para eliminar al usuario
+    @IBAction func guardar(_ sender: UIBarButtonItem) {
+        //Codigo de asociar usuario posiblemente aqui
     }
     override func viewDidLoad() {
         super.viewDidLoad()
