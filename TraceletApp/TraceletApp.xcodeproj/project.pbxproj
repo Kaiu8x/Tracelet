@@ -8,7 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		88541052EE97915E570EFBDD /* libPods-TraceletApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FDE23D6C8413178EC8E0FBF4 /* libPods-TraceletApp.a */; };
+		8C14233F2242A81A00B3E6CB /* RutasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C14233E2242A81A00B3E6CB /* RutasViewController.swift */; };
 		8CE4706122428028000FA3B4 /* MapasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE4706022428028000FA3B4 /* MapasViewController.swift */; };
+		8CE4706322428B52000FA3B4 /* GeofenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE4706222428B52000FA3B4 /* GeofenceViewController.swift */; };
 		D5403B5D2240C492005B42AC /* EditarPerfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5403B5C2240C492005B42AC /* EditarPerfilViewController.swift */; };
 		D5654ED1223C528B001A4CE4 /* EliminarUsuarioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5654ED0223C528B001A4CE4 /* EliminarUsuarioViewController.swift */; };
 		D5654ED3224090BF001A4CE4 /* VistaListaUsuariosActivosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5654ED2224090BF001A4CE4 /* VistaListaUsuariosActivosViewController.swift */; };
@@ -32,7 +34,9 @@
 
 /* Begin PBXFileReference section */
 		49FE83955F0214B3B861B2F7 /* Pods-TraceletApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TraceletApp.debug.xcconfig"; path = "Target Support Files/Pods-TraceletApp/Pods-TraceletApp.debug.xcconfig"; sourceTree = "<group>"; };
+		8C14233E2242A81A00B3E6CB /* RutasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RutasViewController.swift; sourceTree = "<group>"; };
 		8CE4706022428028000FA3B4 /* MapasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapasViewController.swift; sourceTree = "<group>"; };
+		8CE4706222428B52000FA3B4 /* GeofenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeofenceViewController.swift; sourceTree = "<group>"; };
 		D5403B5C2240C492005B42AC /* EditarPerfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditarPerfilViewController.swift; sourceTree = "<group>"; };
 		D5654ED0223C528B001A4CE4 /* EliminarUsuarioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EliminarUsuarioViewController.swift; sourceTree = "<group>"; };
 		D5654ED2224090BF001A4CE4 /* VistaListaUsuariosActivosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VistaListaUsuariosActivosViewController.swift; sourceTree = "<group>"; };
@@ -108,27 +112,29 @@
 		DFE6DCB022273A6900F05680 /* TraceletApp */ = {
 			isa = PBXGroup;
 			children = (
-				DFE6DCB122273A6900F05680 /* AppDelegate.swift */,
-				DFE6DCB322273A6900F05680 /* SplashViewController.swift */,
-				DFE6DCB522273A6900F05680 /* Main.storyboard */,
-				D5AB56072241C0CD00B8FA08 /* AgregarUsuarioViewController.swift */,
-				D5AB56052241ADB300B8FA08 /* ConexionNuevoUsuarioViewController.swift */,
-				D5403B5C2240C492005B42AC /* EditarPerfilViewController.swift */,
-				D5654ED2224090BF001A4CE4 /* VistaListaUsuariosActivosViewController.swift */,
-				D5654ED4224090C9001A4CE4 /* SignosVitalesViewController.swift */,
-				D5654ED0223C528B001A4CE4 /* EliminarUsuarioViewController.swift */,
-				D5B528B622371476007F4238 /* EditarGeovallaViewController.swift */,
-				DFC46E482231D5D3008F6A6A /* TabBarController.swift */,
-				DFC46E382231A016008F6A6A /* LoginViewController.swift */,
-				DFC46E3A2231A036008F6A6A /* SignupViewController.swift */,
-				DFC46E3622319EF6008F6A6A /* StartViewController.swift */,
-				DFE6DCB822273A6B00F05680 /* Assets.xcassets */,
-				DFE6DCBA22273A6B00F05680 /* LaunchScreen.storyboard */,
-				DFE6DCBD22273A6B00F05680 /* Info.plist */,
-				DFC46E462231B5D7008F6A6A /* Switcher.swift */,
-				DFEB842A2235B025007FC364 /* GoogleService-Info.plist */,
 				D5AB56022241AC3200B8FA08 /* AdministrarUsuariosViewController.swift */,
+				D5AB56072241C0CD00B8FA08 /* AgregarUsuarioViewController.swift */,
+				DFE6DCB122273A6900F05680 /* AppDelegate.swift */,
+				DFE6DCB822273A6B00F05680 /* Assets.xcassets */,
+				D5AB56052241ADB300B8FA08 /* ConexionNuevoUsuarioViewController.swift */,
+				D5B528B622371476007F4238 /* EditarGeovallaViewController.swift */,
+				D5403B5C2240C492005B42AC /* EditarPerfilViewController.swift */,
+				D5654ED0223C528B001A4CE4 /* EliminarUsuarioViewController.swift */,
+				8CE4706222428B52000FA3B4 /* GeofenceViewController.swift */,
+				DFEB842A2235B025007FC364 /* GoogleService-Info.plist */,
+				DFE6DCBD22273A6B00F05680 /* Info.plist */,
+				DFE6DCBA22273A6B00F05680 /* LaunchScreen.storyboard */,
+				DFC46E382231A016008F6A6A /* LoginViewController.swift */,
+				DFE6DCB522273A6900F05680 /* Main.storyboard */,
 				8CE4706022428028000FA3B4 /* MapasViewController.swift */,
+				8C14233E2242A81A00B3E6CB /* RutasViewController.swift */,
+				D5654ED4224090C9001A4CE4 /* SignosVitalesViewController.swift */,
+				DFC46E3A2231A036008F6A6A /* SignupViewController.swift */,
+				DFE6DCB322273A6900F05680 /* SplashViewController.swift */,
+				DFC46E3622319EF6008F6A6A /* StartViewController.swift */,
+				DFC46E462231B5D7008F6A6A /* Switcher.swift */,
+				DFC46E482231D5D3008F6A6A /* TabBarController.swift */,
+				D5654ED2224090BF001A4CE4 /* VistaListaUsuariosActivosViewController.swift */,
 			);
 			path = TraceletApp;
 			sourceTree = "<group>";
@@ -245,6 +251,8 @@
 				DFC46E492231D5D3008F6A6A /* TabBarController.swift in Sources */,
 				DFE6DCB222273A6900F05680 /* AppDelegate.swift in Sources */,
 				DFC46E3722319EF6008F6A6A /* StartViewController.swift in Sources */,
+				8C14233F2242A81A00B3E6CB /* RutasViewController.swift in Sources */,
+				8CE4706322428B52000FA3B4 /* GeofenceViewController.swift in Sources */,
 				D5654ED5224090C9001A4CE4 /* SignosVitalesViewController.swift in Sources */,
 				D5654ED3224090BF001A4CE4 /* VistaListaUsuariosActivosViewController.swift in Sources */,
 			);
