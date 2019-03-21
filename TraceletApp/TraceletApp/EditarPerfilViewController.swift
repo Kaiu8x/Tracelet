@@ -12,6 +12,7 @@ class EditarPerfilViewController: UIViewController {
 
     @IBAction func guardar(_ sender: UIButton) {
         //Codigo para gaurdar cambios del perfil del usuario
+        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +21,7 @@ class EditarPerfilViewController: UIViewController {
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -28,6 +29,6 @@ class EditarPerfilViewController: UIViewController {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
-    */
+    
 
 }

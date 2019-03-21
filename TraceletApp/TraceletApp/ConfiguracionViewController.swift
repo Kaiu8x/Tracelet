@@ -1,21 +1,15 @@
 //
-//  EliminarUsuarioViewController.swift
+//  ConfiguracionViewController.swift
 //  TraceletApp
 //
-//  Created by kenyiro tsuru on 3/15/19.
+//  Created by kenyiro tsuru on 3/20/19.
 //  Copyright © 2019 Kai Kawasaki Ueda. All rights reserved.
 //
 
 import UIKit
 
-class EliminarUsuarioViewController: UIViewController {
+class ConfiguracionViewController: UIViewController {
 
-    @IBAction func noButton(_ sender: UIButton) {
-         dismiss(animated: true, completion: nil)
-    }
-    @IBAction func siButton(_ sender: UIButton) {
-        //Codigo para eliminar al usuario
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,7 +17,7 @@ class EliminarUsuarioViewController: UIViewController {
     }
     
 
-    
+    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -31,6 +25,9 @@ class EliminarUsuarioViewController: UIViewController {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
-    
+    */
+    @IBAction func unwindToConfiguracion(sender: UIStoryboardSegue) {
+        
+    }
 
 }
