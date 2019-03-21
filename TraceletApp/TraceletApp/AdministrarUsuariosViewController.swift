@@ -116,11 +116,12 @@ class AdministrarUsuariosViewController: UIViewController, UITableViewDelegate, 
             objectUser = newArray![index] as! [String: Any]
         }
         let s:String = objectUser["name"] as! String
+        let s2:String = String( objectUser["deviceID"] as! Int)
+        //let sEnt:[String] = objectUser["canView"] as! [String]
         
-        let sEnt:[String] = objectUser["canView"] as! [String]
-        print(sEnt)
         //nextView.newArray2 = sEnt
-        nextView.name = s
+        nextView.userName = s
+        nextView.traceletID = s2
         
         self.navigationController?.pushViewController(nextView, animated: true)
     }

@@ -11,14 +11,16 @@ import UIKit
 
 class UserDetailsViewController : UIViewController {
     
-    var name:String="XXX"
+    var userName:String = "XXX"
+    var traceletID:String = "XXX"
     
-    @IBOutlet weak var theName: UILabel!
+    @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var traceletIDLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        theName.text = name
+        traceletIDLabel.text = "Tracelet: "+traceletID
+        userNameLabel.text = userName
         // Do any additional setup after loading the view.
     }
 }
