@@ -46,6 +46,8 @@ class GeofenceViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
     
-
+    @IBAction func unwindToGeofenceView(sender: UIStoryboardSegue) {
+        
+    }
     
 }
