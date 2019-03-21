@@ -593,7 +593,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QhJ-YR-r7L" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="k7h-I3-fWZ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="895.6521739130435" y="22.767857142857142"/>
+            <point key="canvasLocation" x="895" y="22"/>
         </scene>
         <!--Acerca de nosotros-->
         <scene sceneID="2g5-7n-aNx">
@@ -924,6 +924,11 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="codigo" destination="dje-CN-5IK" id="p6D-rZ-MTF"/>
+                        <outlet property="guardarButton" destination="EBr-qj-XN8" id="RHf-6K-bdW"/>
+                        <outlet property="nombre" destination="Ury-No-PSO" id="MMy-6u-BXH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="io7-TN-Iam" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
