@@ -540,7 +540,7 @@
             <objects>
                 <viewController id="Gve-GP-8QE" customClass="EditarPerfilViewController" customModule="TraceletApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CPY-05-PTX">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d09-FT-d9d">
@@ -620,7 +620,7 @@
             <objects>
                 <viewController id="meM-mH-It6" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="26x-dW-puR">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="14" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VTF-AI-Sq5">
@@ -1009,7 +1009,7 @@
             <objects>
                 <viewController id="Cuq-ya-VKc" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="V6X-o8-HIK">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Elige una pulsera para visualizar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zNV-qD-Gqm">
@@ -1064,7 +1064,7 @@
             <objects>
                 <viewController id="uFA-Sw-wjf" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5cB-Gf-pS0">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="AQUI SE ABRE LA CAMARA Y SE HACE EL AR DE LAS PULSERAS" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lup-ro-swR">
@@ -1304,7 +1304,7 @@
                                 <state key="normal" title="Siguiente"/>
                                 <connections>
                                     <action selector="signupButton:" destination="oZF-cw-kbQ" eventType="touchUpInside" id="hAh-tl-94z"/>
-                                    <segue destination="0Bh-En-xJA" kind="show" identifier="successSignUp" id="adO-nk-gC6"/>
+                                    <segue destination="0Bh-En-xJA" kind="show" identifier="sucessSignupSegue" id="adO-nk-gC6"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Juan López" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2qT-G7-Vpx">
@@ -1711,7 +1711,7 @@
         <image name="Vitales" width="200" height="200"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="mZV-If-Dem"/>
-        <segue reference="1Fx-Q0-BGG"/>
+        <segue reference="crS-Rl-vfG"/>
+        <segue reference="Ian-mJ-yo0"/>
     </inferredMetricsTieBreakers>
 </document>
