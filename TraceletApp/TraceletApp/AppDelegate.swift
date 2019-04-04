@@ -21,6 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UserDefaults.standard.set(false, forKey: "status")
         FirebaseApp.configure()
         Switcher.updateRootViewController()
+        let db = Firestore.firestore()
+        
         return true
     }
 

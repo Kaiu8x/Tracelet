@@ -8,6 +8,7 @@ target 'TraceletApp' do
   pod 'Firebase'
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
+  pod 'Firebase/Firestore'
   # Pods for TraceletApp
 
 end
