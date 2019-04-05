@@ -135,7 +135,7 @@
             </objects>
             <point key="canvasLocation" x="160.80000000000001" y="-2043.1034482758621"/>
         </scene>
-        <!--Editar Geovalla View Controller-->
+        <!--Nueva Geovalla-->
         <scene sceneID="itn-ew-xkq">
             <objects>
                 <viewController id="Dag-z4-C1b" customClass="EditarGeovallaViewController" customModule="TraceletApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -167,8 +167,7 @@
                                 <color key="tintColor" red="0.93045660620000004" green="0.93045660620000004" blue="0.93045660620000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Aceptar"/>
                                 <connections>
-                                    <action selector="aceptarButton:" destination="Dag-z4-C1b" eventType="touchUpInside" id="22Y-lS-Fku"/>
-                                    <segue destination="W3X-bW-4rk" kind="unwind" unwindAction="unwindToGeofenceViewWithSender:" id="fRU-J0-M6a"/>
+                                    <action selector="onAdd:" destination="Dag-z4-C1b" eventType="touchUpInside" id="wzF-hc-ghQ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="psM-Iw-xSV">
@@ -179,21 +178,17 @@
                                 </constraints>
                                 <state key="normal" title="Cancelar"/>
                                 <connections>
-                                    <action selector="cancelarButton:" destination="Dag-z4-C1b" eventType="touchUpInside" id="4hi-kG-Srk"/>
-                                    <segue destination="W3X-bW-4rk" kind="unwind" unwindAction="unwindToGeofenceViewWithSender:" id="gJf-OY-Qoa"/>
+                                    <action selector="cancelarButton:" destination="Dag-z4-C1b" eventType="touchUpInside" id="1i6-Qd-tBF"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Juan Pérez" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8mM-Nc-PqI">
-                                <rect key="frame" x="198" y="465" width="97" height="30"/>
+                                <rect key="frame" x="200" y="416" width="97" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="En metros" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="guO-QK-J0M">
-                                <rect key="frame" x="198" y="507" width="97" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="textFieldEditing:" destination="Dag-z4-C1b" eventType="editingChanged" id="acL-Rc-uWD"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¿Notificar?" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U00-N0-teT">
                                 <rect key="frame" x="38" y="523" width="126" height="21"/>
@@ -222,15 +217,30 @@
                                     <constraint firstAttribute="width" constant="49" id="W85-ep-fDZ"/>
                                 </constraints>
                             </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nueva geovalla" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LJ1-s3-Zl6">
-                                <rect key="frame" x="47" y="150" width="281" height="37"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="31"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ghL-Du-mKz">
-                                <rect key="frame" x="0.0" y="213" width="375" height="172"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ghL-Du-mKz">
+                                <rect key="frame" x="0.0" y="171" width="375" height="172"/>
                             </mapView>
+                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="En metros" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="guO-QK-J0M">
+                                <rect key="frame" x="199" y="459" width="97" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="97" id="rGX-Rh-zhU"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="textFieldEditingChanged:" destination="Dag-z4-C1b" eventType="editingChanged" id="nqF-Rp-Mbc"/>
+                                </connections>
+                            </textField>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="gHl-b0-X1l">
+                                <rect key="frame" x="16" y="120" width="343" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                </segments>
+                                <color key="tintColor" red="0.8980392157" green="0.74901960779999999" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -248,13 +258,10 @@
                             <constraint firstItem="8mM-Nc-PqI" firstAttribute="leading" secondItem="kfI-Bc-Bkz" secondAttribute="trailing" constant="8" symbolic="YES" id="Shf-gz-aM8"/>
                             <constraint firstItem="0qY-fc-JES" firstAttribute="trailing" secondItem="psM-Iw-xSV" secondAttribute="trailing" constant="78" id="Ud1-dk-IaR"/>
                             <constraint firstItem="guO-QK-J0M" firstAttribute="leading" secondItem="ttm-Mz-iDz" secondAttribute="trailing" constant="8" symbolic="YES" id="VL7-I6-tit"/>
-                            <constraint firstItem="psM-Iw-xSV" firstAttribute="trailing" secondItem="LJ1-s3-Zl6" secondAttribute="trailing" constant="-31" id="Vat-0X-2af"/>
                             <constraint firstItem="U00-N0-teT" firstAttribute="leading" secondItem="0qY-fc-JES" secondAttribute="leading" constant="38" id="VpQ-IT-GuY"/>
-                            <constraint firstItem="ghL-Du-mKz" firstAttribute="top" secondItem="LJ1-s3-Zl6" secondAttribute="bottom" constant="26" id="cGC-nw-o5K"/>
                             <constraint firstItem="8mM-Nc-PqI" firstAttribute="trailing" secondItem="guO-QK-J0M" secondAttribute="trailing" id="cGP-VD-2ie"/>
                             <constraint firstItem="6AA-JF-1J8" firstAttribute="leading" secondItem="CJh-we-BlM" secondAttribute="trailing" constant="8" symbolic="YES" id="e2T-1H-yVb"/>
                             <constraint firstItem="kfI-Bc-Bkz" firstAttribute="top" secondItem="ghL-Du-mKz" secondAttribute="bottom" constant="36" id="etp-Qv-Fqf"/>
-                            <constraint firstItem="LJ1-s3-Zl6" firstAttribute="centerX" secondItem="ghL-Du-mKz" secondAttribute="centerX" id="fW6-2S-9Yt"/>
                             <constraint firstItem="t7H-2F-qrR" firstAttribute="leading" secondItem="0qY-fc-JES" secondAttribute="leading" constant="77" id="fhj-tD-Lzp"/>
                             <constraint firstItem="ttm-Mz-iDz" firstAttribute="centerY" secondItem="guO-QK-J0M" secondAttribute="centerY" id="gMQ-fy-acy"/>
                             <constraint firstItem="psM-Iw-xSV" firstAttribute="leading" secondItem="8mM-Nc-PqI" secondAttribute="leading" id="hjF-cz-zGh"/>
@@ -264,18 +271,23 @@
                             <constraint firstItem="6AA-JF-1J8" firstAttribute="top" secondItem="guO-QK-J0M" secondAttribute="bottom" constant="30" id="t0K-Ko-5hi"/>
                             <constraint firstItem="0qY-fc-JES" firstAttribute="bottom" secondItem="psM-Iw-xSV" secondAttribute="bottom" constant="109" id="u0V-al-SQI"/>
                             <constraint firstItem="psM-Iw-xSV" firstAttribute="leading" secondItem="t7H-2F-qrR" secondAttribute="trailing" constant="22" id="wYr-CW-qZ6"/>
-                            <constraint firstItem="LJ1-s3-Zl6" firstAttribute="top" secondItem="0qY-fc-JES" secondAttribute="top" constant="62" id="wag-u1-MXE"/>
                             <constraint firstItem="psM-Iw-xSV" firstAttribute="top" secondItem="6AA-JF-1J8" secondAttribute="bottom" constant="41" id="yKx-wS-vhy"/>
                             <constraint firstItem="guO-QK-J0M" firstAttribute="top" secondItem="8mM-Nc-PqI" secondAttribute="bottom" constant="12" id="yv8-qs-T69"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="0qY-fc-JES"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Nueva Geovalla" id="LeV-O9-3np">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="Nearme" id="lNU-ZK-RjW"/>
+                    </navigationItem>
                     <connections>
+                        <outlet property="addGeofence" destination="t7H-2F-qrR" id="qqb-Aw-THe"/>
                         <outlet property="mapaEG" destination="ghL-Du-mKz" id="Syh-4j-qOA"/>
+                        <outlet property="nearMe" destination="lNU-ZK-RjW" id="fkr-Ot-I0R"/>
+                        <outlet property="radius" destination="guO-QK-J0M" id="QNd-ug-nsL"/>
+                        <outlet property="userName" destination="8mM-Nc-PqI" id="Ucy-Ph-UF4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CbJ-vZ-lBN" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="W3X-bW-4rk" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1069.5999999999999" y="-1347.7832512315272"/>
         </scene>
@@ -291,7 +303,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hZx-UQ-QvN">
-                                <rect key="frame" x="83" y="55" width="192" height="50"/>
+                                <rect key="frame" x="83" y="55" width="192" height="34"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="28"/>
                                 <size key="titleShadowOffset" width="11" height="11"/>
                                 <state key="normal" title=" Kenyiro" image="Down">
@@ -540,7 +552,7 @@
             <objects>
                 <viewController id="Gve-GP-8QE" customClass="EditarPerfilViewController" customModule="TraceletApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CPY-05-PTX">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d09-FT-d9d">
@@ -620,7 +632,7 @@
             <objects>
                 <viewController id="meM-mH-It6" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="26x-dW-puR">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="14" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VTF-AI-Sq5">
@@ -1009,7 +1021,7 @@
             <objects>
                 <viewController id="Cuq-ya-VKc" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="V6X-o8-HIK">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Elige una pulsera para visualizar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zNV-qD-Gqm">
@@ -1064,7 +1076,7 @@
             <objects>
                 <viewController id="uFA-Sw-wjf" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5cB-Gf-pS0">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="AQUI SE ABRE LA CAMARA Y SE HACE EL AR DE LAS PULSERAS" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lup-ro-swR">
@@ -1690,28 +1702,29 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Aboutus" width="20.803611755371094" height="20.803611755371094"/>
-        <image name="Brace1" width="500" height="500"/>
-        <image name="Brace2" width="500" height="500"/>
-        <image name="Check" width="1600" height="1000"/>
+        <image name="Aboutus" width="170" height="170"/>
+        <image name="Brace1" width="166" height="166"/>
+        <image name="Brace2" width="166" height="166"/>
+        <image name="Check" width="533" height="333"/>
         <image name="Configuración" width="16" height="16"/>
-        <image name="Connections" width="980" height="666"/>
-        <image name="Down" width="50" height="50"/>
-        <image name="Edit" width="794" height="630"/>
-        <image name="Geovalla" width="40" height="40"/>
-        <image name="Heart" width="1200" height="1200"/>
-        <image name="LogoWhite" width="1890" height="1417"/>
-        <image name="Mapa" width="40" height="40"/>
-        <image name="Profile" width="36.426876068115234" height="36.426876068115234"/>
-        <image name="Ruta" width="50" height="50"/>
-        <image name="Session" width="512" height="512"/>
-        <image name="Shoes" width="119.88516998291016" height="205"/>
-        <image name="Splash" width="1125" height="2436"/>
-        <image name="Tienda" width="715" height="630"/>
-        <image name="Vitales" width="200" height="200"/>
+        <image name="Connections" width="326" height="222"/>
+        <image name="Down" width="16" height="16"/>
+        <image name="Edit" width="264" height="210"/>
+        <image name="Geovalla" width="16" height="16"/>
+        <image name="Heart" width="400" height="400"/>
+        <image name="LogoWhite" width="630" height="472"/>
+        <image name="Mapa" width="16" height="16"/>
+        <image name="Nearme" width="16" height="16"/>
+        <image name="Profile" width="170" height="170"/>
+        <image name="Ruta" width="16" height="16"/>
+        <image name="Session" width="170" height="170"/>
+        <image name="Shoes" width="116" height="198"/>
+        <image name="Splash" width="375" height="812"/>
+        <image name="Tienda" width="238" height="210"/>
+        <image name="Vitales" width="66" height="66"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="mZV-If-Dem"/>
-        <segue reference="1Fx-Q0-BGG"/>
+        <segue reference="s3Z-ep-VqE"/>
     </inferredMetricsTieBreakers>
 </document>

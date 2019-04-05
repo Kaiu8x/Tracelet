@@ -11,6 +11,8 @@
 		8C14233F2242A81A00B3E6CB /* RutasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C14233E2242A81A00B3E6CB /* RutasViewController.swift */; };
 		8CE4706122428028000FA3B4 /* MapasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE4706022428028000FA3B4 /* MapasViewController.swift */; };
 		8CE4706322428B52000FA3B4 /* GeofenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE4706222428B52000FA3B4 /* GeofenceViewController.swift */; };
+		8CE9169F2257A60C00D96265 /* Geotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE9169E2257A60C00D96265 /* Geotification.swift */; };
+		8CE916A12257A64E00D96265 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE916A02257A64E00D96265 /* Utilities.swift */; };
 		D5403B5D2240C492005B42AC /* EditarPerfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5403B5C2240C492005B42AC /* EditarPerfilViewController.swift */; };
 		D5654ED1223C528B001A4CE4 /* EliminarUsuarioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5654ED0223C528B001A4CE4 /* EliminarUsuarioViewController.swift */; };
 		D5654ED3224090BF001A4CE4 /* VistaListaUsuariosActivosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5654ED2224090BF001A4CE4 /* VistaListaUsuariosActivosViewController.swift */; };
@@ -41,6 +43,8 @@
 		8C14233E2242A81A00B3E6CB /* RutasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RutasViewController.swift; sourceTree = "<group>"; };
 		8CE4706022428028000FA3B4 /* MapasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapasViewController.swift; sourceTree = "<group>"; };
 		8CE4706222428B52000FA3B4 /* GeofenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeofenceViewController.swift; sourceTree = "<group>"; };
+		8CE9169E2257A60C00D96265 /* Geotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Geotification.swift; sourceTree = "<group>"; };
+		8CE916A02257A64E00D96265 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		D5403B5C2240C492005B42AC /* EditarPerfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditarPerfilViewController.swift; sourceTree = "<group>"; };
 		D5654ED0223C528B001A4CE4 /* EliminarUsuarioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EliminarUsuarioViewController.swift; sourceTree = "<group>"; };
 		D5654ED2224090BF001A4CE4 /* VistaListaUsuariosActivosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VistaListaUsuariosActivosViewController.swift; sourceTree = "<group>"; };
@@ -147,6 +151,8 @@
 				DFC46E462231B5D7008F6A6A /* Switcher.swift */,
 				DFC46E482231D5D3008F6A6A /* TabBarController.swift */,
 				D5654ED2224090BF001A4CE4 /* VistaListaUsuariosActivosViewController.swift */,
+				8CE9169E2257A60C00D96265 /* Geotification.swift */,
+				8CE916A02257A64E00D96265 /* Utilities.swift */,
 			);
 			path = TraceletApp;
 			sourceTree = "<group>";
@@ -255,6 +261,7 @@
 				D5AB56082241C0CD00B8FA08 /* AgregarUsuarioViewController.swift in Sources */,
 				8CE4706122428028000FA3B4 /* MapasViewController.swift in Sources */,
 				DFC46E472231B5D7008F6A6A /* Switcher.swift in Sources */,
+				8CE916A12257A64E00D96265 /* Utilities.swift in Sources */,
 				D5B114BB2243508F00C7AE2B /* ConfiguracionViewController.swift in Sources */,
 				D5654ED1223C528B001A4CE4 /* EliminarUsuarioViewController.swift in Sources */,
 				DFC46E3B2231A036008F6A6A /* SignupViewController.swift in Sources */,
@@ -262,6 +269,7 @@
 				DF1E8E2A22430C6F00DB8E0C /* UserDetailsEntrega2ViewController.swift in Sources */,
 				D5AB56062241ADB300B8FA08 /* ConexionNuevoUsuarioViewController.swift in Sources */,
 				DF76F4F32243428D0093E943 /* UserDetailsViewController.swift in Sources */,
+				8CE9169F2257A60C00D96265 /* Geotification.swift in Sources */,
 				DF1E8E242242DEE500DB8E0C /* AdministrarUsuariosViewController.swift in Sources */,
 				DFC46E492231D5D3008F6A6A /* TabBarController.swift in Sources */,
 				DFE6DCB222273A6900F05680 /* AppDelegate.swift in Sources */,
@@ -418,13 +426,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = MFCSJB93GL;
+				DEVELOPMENT_TEAM = A38445BDPB;
 				INFOPLIST_FILE = TraceletApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.kenyirotsuru.TraceletApp;
+				PRODUCT_BUNDLE_IDENTIFIER = mx.juradohja.TraceletApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_REFLECTION_METADATA_LEVEL = none;
 				SWIFT_VERSION = 4.2;
@@ -438,13 +446,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = MFCSJB93GL;
+				DEVELOPMENT_TEAM = A38445BDPB;
 				INFOPLIST_FILE = TraceletApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.kenyirotsuru.TraceletApp;
+				PRODUCT_BUNDLE_IDENTIFIER = mx.juradohja.TraceletApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_REFLECTION_METADATA_LEVEL = none;
 				SWIFT_VERSION = 4.2;
