@@ -10,6 +10,13 @@ import UIKit
 import MapKit
 import CoreLocation
 
+protocol AddGeotificationsViewControllerDelegate {
+    func addGeotificationViewController(_ controller: AddGeotificationViewController, didAddCoordinate coordinate: CLLocationCoordinate2D,
+                                        radius: Double, identifier: String, note: String, eventType: Geotification.EventType)
+}
+
+
+
 class AddGeotificationViewController: UIViewController, CLLocationManagerDelegate {
 
 
@@ -25,7 +32,7 @@ class AddGeotificationViewController: UIViewController, CLLocationManagerDelegat
     @IBOutlet var addGeofence: UIButton!
     @IBOutlet var nearMe: UIBarButtonItem!
     
-    
+    var delegate: AddGeotificationsViewControllerDelegate?
     
     private let locationManager = CLLocationManager()
     
@@ -86,8 +93,8 @@ class AddGeotificationViewController: UIViewController, CLLocationManagerDelegat
         let radius = Double(radiusTF.text!) ?? 0
         let identifier = NSUUID().uuidString
         let note = userName.text
-      //  let eventType: Geotification.EventType = (eventTypeSegmentedControl.selectedSegmentIndex == 0) ? .onEntry : .onExit
-        delegate?.addGeotificationViewController(self, didAddCoordinate: coordinate, radius: radius, identifier: identifier, note: note!, eventType: eventType)
+        delegate?.addGeotificationViewController(self, didAddCoordinate: coordinate, radius: radius, identifier: identifier, note: note!, eventType: Geotification.EventType(rawValue: "On Entry")!)
+        delegate?.addGeotificationViewController(self, didAddCoordinate: coordinate, radius: radius, identifier: identifier, note: note!, eventType: Geotification.EventType(rawValue: "On Exit")!)
     }
     
 }

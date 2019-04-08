@@ -49,7 +49,7 @@ class GeofenceViewController: UIViewController, CLLocationManagerDelegate {
         if segue.identifier == "addGeotification" {
             let navigationController = segue.destination as! UINavigationController
             let vc = navigationController.viewControllers.first as! AddGeotificationViewController
-            vc.delegate = self
+            vc.delegate = self as! AddGeotificationsViewControllerDelegate
         }
     }
     
@@ -73,7 +73,7 @@ class GeofenceViewController: UIViewController, CLLocationManagerDelegate {
     // MARK: Functions that update the model/associated views with geotification changes
     func add(_ geotification: Geotification) {
         geotifications.append(geotification)
-        mapView.addAnnotation(geotification)
+        mapaG.addAnnotation(geotification)
         addRadiusOverlay(forGeotification: geotification)
         updateGeotificationsCount()
     }
@@ -81,7 +81,7 @@ class GeofenceViewController: UIViewController, CLLocationManagerDelegate {
     func remove(_ geotification: Geotification) {
         guard let index = geotifications.index(of: geotification) else { return }
         geotifications.remove(at: index)
-        mapView.removeAnnotation(geotification)
+        mapaG.removeAnnotation(geotification)
         removeRadiusOverlay(forGeotification: geotification)
         updateGeotificationsCount()
     }
@@ -93,17 +93,17 @@ class GeofenceViewController: UIViewController, CLLocationManagerDelegate {
     
     // MARK: Map overlay functions
     func addRadiusOverlay(forGeotification geotification: Geotification) {
-        mapView?.add(MKCircle(center: geotification.coordinate, radius: geotification.radius))
+        mapaG?.addOverlay(MKCircle(center: geotification.coordinate, radius: geotification.radius))
     }
     
     func removeRadiusOverlay(forGeotification geotification: Geotification) {
         // Find exactly one overlay which has the same coordinates & radius to remove
-        guard let overlays = mapView?.overlays else { return }
+        guard let overlays = mapaG?.overlays else { return }
         for overlay in overlays {
             guard let circleOverlay = overlay as? MKCircle else { continue }
             let coord = circleOverlay.coordinate
             if coord.latitude == geotification.coordinate.latitude && coord.longitude == geotification.coordinate.longitude && circleOverlay.radius == geotification.radius {
-                mapView?.remove(circleOverlay)
+                mapaG?.removeOverlay(circleOverlay)
                 break
             }
         }
