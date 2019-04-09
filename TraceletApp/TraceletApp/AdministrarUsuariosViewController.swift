@@ -125,9 +125,6 @@ class AdministrarUsuariosViewController: UIViewController, UITableViewDelegate, 
         
         self.navigationController?.pushViewController(nextView, animated: true)
     }
-    
-    @IBAction func unwindToAdministrarUsuario(sender: UIStoryboardSegue) {
-        
-    }
+
     
 }
