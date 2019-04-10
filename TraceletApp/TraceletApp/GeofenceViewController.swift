@@ -14,7 +14,7 @@ struct PreferencesKeys {
     static let savedItems = "savedItems"
 }
 
-class GeofenceViewController: UIViewController, CLLocationManagerDelegate {
+class GeofenceViewController: UIViewController {
     
     @IBOutlet weak var mapaG: MKMapView!
     var geotifications: [Geotification] = []
@@ -46,10 +46,10 @@ class GeofenceViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "addGeotification" {
-            let navigationController = segue.destination as! UINavigationController
-            let vc = navigationController.viewControllers.first as! AddGeotificationViewController
-            vc.delegate = self as! AddGeotificationsViewControllerDelegate
+        if let destination = segue.destination as? AddGeotificationViewController {
+            //let navigationController = segue.destination as! UINavigationController
+            //let vc = navigationController.viewControllers.first as! AddGeotificationViewController
+            destination.delegate = self
         }
     }
     
@@ -108,7 +108,7 @@ class GeofenceViewController: UIViewController, CLLocationManagerDelegate {
             }
         }
     }
-    
+    /*
     func locationManager(_ manager: CLLocationManager,
                          didChangeAuthorization status: CLAuthorizationStatus) {
         if status == .authorizedWhenInUse{
@@ -119,9 +119,119 @@ class GeofenceViewController: UIViewController, CLLocationManagerDelegate {
             mapaG.showsUserLocation = false
         }
     }
-    
+    */
     @IBAction func unwindToGeofenceView(sender: UIStoryboardSegue) {
         
+    }
+    
+    func region(with geotification: Geotification) -> CLCircularRegion {
+        let region = CLCircularRegion(center: geotification.coordinate, radius: geotification.radius, identifier: geotification.identifier)
+        region.notifyOnEntry = true
+        region.notifyOnExit = true
+        return region
+    }
+    
+    func startMonitoring(geotification: Geotification) {
+        if !CLLocationManager.isMonitoringAvailable(for: CLCircularRegion.self) {
+            showAlert(withTitle:"Error", message: "Geofencing is not supported on this device!")
+            return
+        }
+        
+        if CLLocationManager.authorizationStatus() != .authorizedAlways {
+            let message = """
+      Your geotification is saved but will only be activated once you grant
+      Geotify permission to access the device location.
+      """
+            showAlert(withTitle:"Warning", message: message)
+        }
+        
+        let fenceRegion = region(with: geotification)
+        locationManager.startMonitoring(for: fenceRegion)
+    }
+    
+    func stopMonitoring(geotification: Geotification) {
+        for region in locationManager.monitoredRegions {
+            guard let circularRegion = region as? CLCircularRegion, circularRegion.identifier == geotification.identifier else { continue }
+            locationManager.stopMonitoring(for: circularRegion)
+        }
+    }
+}
+
+// MARK: AddGeotificationViewControllerDelegate
+extension GeofenceViewController: AddGeotificationViewControllerDelegate {
+    func addGeotificationViewController(_ controller: AddGeotificationViewController, didAddCoordinate coordinate: CLLocationCoordinate2D, radius: Double, identifier: String, note: String, eventType: Geotification.EventType) {
+        print("hola3")
+        controller.dismiss(animated: true, completion: nil)
+        let clampedRadius = min(radius, locationManager.maximumRegionMonitoringDistance)
+        let geotification = Geotification(coordinate: coordinate, radius: clampedRadius, identifier: identifier, note: note, eventType: eventType)
+        add(geotification)
+        startMonitoring(geotification: geotification)
+        saveAllGeotifications()
+    }
+    
+    /*
+    func addGeotificationViewController(_ controller: AddGeotificationViewController, didAddCoordinate coordinate: CLLocationCoordinate2D, radius: Double, identifier: String, note: String, eventType: Geotification.EventType) {
+     
+ */
+    
+}
+
+// MARK: - Location Manager Delegate
+extension GeofenceViewController: CLLocationManagerDelegate {
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        mapaG.showsUserLocation = status == .authorizedAlways
+    }
+    
+    func locationManager(_ manager: CLLocationManager, monitoringDidFailFor region: CLRegion?, withError error: Error) {
+        print("Monitoring failed for region with identifier: \(region!.identifier)")
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("Location Manager failed with the following error: \(error)")
+    }
+    
+}
+
+// MARK: - MapView Delegate
+extension GeofenceViewController: MKMapViewDelegate {
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        let identifier = "myGeotification"
+        if annotation is Geotification {
+            var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKPinAnnotationView
+            if annotationView == nil {
+                annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+                annotationView?.canShowCallout = true
+                let removeButton = UIButton(type: .custom)
+                removeButton.frame = CGRect(x: 0, y: 0, width: 23, height: 23)
+                removeButton.setImage(UIImage(named: "DeleteGeotification")!, for: .normal)
+                annotationView?.leftCalloutAccessoryView = removeButton
+            } else {
+                annotationView?.annotation = annotation
+            }
+            return annotationView
+        }
+        return nil
+    }
+    
+    
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        if overlay is MKCircle {
+            let circleRenderer = MKCircleRenderer(overlay: overlay)
+            circleRenderer.lineWidth = 1.0
+            circleRenderer.strokeColor = .purple
+            circleRenderer.fillColor = UIColor.purple.withAlphaComponent(0.4)
+            return circleRenderer
+        }
+        return MKOverlayRenderer(overlay: overlay)
+    }
+    
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        // Delete geotification
+        let geotification = view.annotation as! Geotification
+        remove(geotification)
+        saveAllGeotifications()
     }
     
 }

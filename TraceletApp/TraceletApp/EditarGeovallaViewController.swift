@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 import CoreLocation
 
-protocol AddGeotificationsViewControllerDelegate {
+protocol AddGeotificationViewControllerDelegate : class {
     func addGeotificationViewController(_ controller: AddGeotificationViewController, didAddCoordinate coordinate: CLLocationCoordinate2D,
                                         radius: Double, identifier: String, note: String, eventType: Geotification.EventType)
 }
@@ -19,37 +19,33 @@ protocol AddGeotificationsViewControllerDelegate {
 
 class AddGeotificationViewController: UIViewController, CLLocationManagerDelegate {
 
-
-    @IBAction func cancelarButton(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
-    }
-     
-    
-    @IBOutlet weak var userName: UITextField!
-    @IBOutlet weak var radiusTF: UITextField!
-    @IBOutlet weak var notify: UISwitch!
-    @IBOutlet weak var mapaEG: MKMapView!
     @IBOutlet var addGeofence: UIButton!
     @IBOutlet var nearMe: UIBarButtonItem!
+    @IBOutlet weak var userTF: UITextField!
+    @IBOutlet weak var radiusTF: UITextField!
+    @IBOutlet weak var mapaEG: MKMapView!
     
-    var delegate: AddGeotificationsViewControllerDelegate?
     
-    private let locationManager = CLLocationManager()
+    var delegate: AddGeotificationViewControllerDelegate?
+    
+   // private let locationManager = CLLocationManager()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Was changed
-        navigationItem.rightBarButtonItems = [addGeofence, nearMe] as! [UIBarButtonItem]
+        navigationItem.rightBarButtonItems = [nearMe]
         addGeofence.isEnabled = false
         
         
+        /*
         self.hideKeyboardWhenTappedAround() 
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         
         locationManager.requestWhenInUseAuthorization()
-        
+ */
+        /*
         mapaEG.mapType = MKMapType.standard
         let cl = CLLocationCoordinate2DMake(19.459415, -99.142667)
         mapaEG.region = MKCoordinateRegion(center: cl, latitudinalMeters: 2000, longitudinalMeters: 2000)
@@ -61,10 +57,12 @@ class AddGeotificationViewController: UIViewController, CLLocationManagerDelegat
         mapaEG.showsScale = true
         mapaEG.showsTraffic = true
         mapaEG.isZoomEnabled  = true
+ */
+ 
         // Do any additional setup after loading the view.
     }
     
-    
+    /*
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         if status == .authorizedWhenInUse {
             locationManager.startUpdatingLocation()
@@ -74,27 +72,47 @@ class AddGeotificationViewController: UIViewController, CLLocationManagerDelegat
             mapaEG.showsUserLocation = false
         }
     }
-    
-
-    @IBAction func textFieldEditingChanged(_ sender: Any) {
-         addGeofence.isEnabled = !radiusTF.text!.isEmpty && !userName.text!.isEmpty
-    }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
     */
+    @IBAction func textFieldEditingChanged(_ sender: Any) {
+        addGeofence.isEnabled = !radiusTF.text!.isEmpty && !userTF.text!.isEmpty
+    }
+    
+    @IBAction func onCancel(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     @IBAction func onAdd(_ sender: Any) {
         let coordinate = mapaEG.centerCoordinate
         let radius = Double(radiusTF.text!) ?? 0
         let identifier = NSUUID().uuidString
-        let note = userName.text
+        let note = userTF.text
+        delegate?.addGeotificationViewController(self, didAddCoordinate: coordinate, radius: radius,
+                                                 identifier: identifier, note: note!, eventType: Geotification.EventType.onEntry)
+        //delegate?.addGeotificationViewController(self, didAddCoordinate: coordinate, radius: radius,
+        //                                         identifier: identifier, note: note!, eventType: Geotification.EventType.onExit)
+        
+    }
+    
+    @IBAction func onZoom(_ sender: Any) {
+        mapaEG.zoomToUserLocation()
+    }
+    
+    
+    /*
+    @IBAction func textFieldEditingChanged(_ sender: Any) {
+        addGeofence.isEnabled = !radiusTF.text!.isEmpty && !userTF.text!.isEmpty
+    }
+    
+    @IBAction func onAdd(_ sender: Any) {
+        let coordinate = mapaEG.centerCoordinate
+        let radius = Double(radiusTF.text!) ?? 0
+        let identifier = NSUUID().uuidString
+        let note = userTF.text
         delegate?.addGeotificationViewController(self, didAddCoordinate: coordinate, radius: radius, identifier: identifier, note: note!, eventType: Geotification.EventType(rawValue: "On Entry")!)
         delegate?.addGeotificationViewController(self, didAddCoordinate: coordinate, radius: radius, identifier: identifier, note: note!, eventType: Geotification.EventType(rawValue: "On Exit")!)
     }
+ */
+
+    
     
 }

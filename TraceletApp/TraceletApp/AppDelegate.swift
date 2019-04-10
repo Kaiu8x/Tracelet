@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UserDefaults.standard.set(false, forKey: "status")
         FirebaseApp.configure()
         Switcher.updateRootViewController()
-        locationManager.delegate = self as CLLocationManagerDelegate
+        locationManager.delegate = self
         locationManager.requestAlwaysAuthorization()
         let options: UNAuthorizationOptions = [.badge, .sound, .alert]
         UNUserNotificationCenter.current()
