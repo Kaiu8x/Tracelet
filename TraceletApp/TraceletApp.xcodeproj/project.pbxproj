@@ -20,6 +20,7 @@
 		D5AB56082241C0CD00B8FA08 /* AgregarUsuarioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AB56072241C0CD00B8FA08 /* AgregarUsuarioViewController.swift */; };
 		D5B114BB2243508F00C7AE2B /* ConfiguracionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B114BA2243508F00C7AE2B /* ConfiguracionViewController.swift */; };
 		D5B528B722371476007F4238 /* EditarGeovallaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B528B622371476007F4238 /* EditarGeovallaViewController.swift */; };
+		D5F0A356225E4B7600B0E9D6 /* PulserasARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F0A355225E4B7600B0E9D6 /* PulserasARViewController.swift */; };
 		DF1E8E242242DEE500DB8E0C /* AdministrarUsuariosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1E8E232242DEE500DB8E0C /* AdministrarUsuariosViewController.swift */; };
 		DF1E8E282243087D00DB8E0C /* UserDetailsEntregaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1E8E272243087D00DB8E0C /* UserDetailsEntregaViewController.swift */; };
 		DF1E8E2A22430C6F00DB8E0C /* UserDetailsEntrega2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1E8E2922430C6F00DB8E0C /* UserDetailsEntrega2ViewController.swift */; };
@@ -55,6 +56,7 @@
 		D5AB56072241C0CD00B8FA08 /* AgregarUsuarioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgregarUsuarioViewController.swift; sourceTree = "<group>"; };
 		D5B114BA2243508F00C7AE2B /* ConfiguracionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfiguracionViewController.swift; sourceTree = "<group>"; };
 		D5B528B622371476007F4238 /* EditarGeovallaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditarGeovallaViewController.swift; sourceTree = "<group>"; };
+		D5F0A355225E4B7600B0E9D6 /* PulserasARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulserasARViewController.swift; sourceTree = "<group>"; };
 		DF1E8E232242DEE500DB8E0C /* AdministrarUsuariosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdministrarUsuariosViewController.swift; sourceTree = "<group>"; };
 		DF1E8E272243087D00DB8E0C /* UserDetailsEntregaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsEntregaViewController.swift; sourceTree = "<group>"; };
 		DF1E8E2922430C6F00DB8E0C /* UserDetailsEntrega2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsEntrega2ViewController.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 				DFE6DCBA22273A6B00F05680 /* LaunchScreen.storyboard */,
 				DFC46E382231A016008F6A6A /* LoginViewController.swift */,
 				DFE6DCB522273A6900F05680 /* Main.storyboard */,
+				D5F0A355225E4B7600B0E9D6 /* PulserasARViewController.swift */,
 				D51D8EB1225D718D006CE2DA /* VideoExplicativoARViewController.swift */,
 				DF43555B225D3B6300859FF9 /* ShopDetailsViewController.swift */,
 				DF435557225D387500859FF9 /* ShopViewController.swift */,
@@ -297,6 +300,7 @@
 				8CE4706122428028000FA3B4 /* MapasViewController.swift in Sources */,
 				DFC46E472231B5D7008F6A6A /* Switcher.swift in Sources */,
 				DF435558225D387500859FF9 /* ShopViewController.swift in Sources */,
+				D5F0A356225E4B7600B0E9D6 /* PulserasARViewController.swift in Sources */,
 				D5B114BB2243508F00C7AE2B /* ConfiguracionViewController.swift in Sources */,
 				D5654ED1223C528B001A4CE4 /* EliminarUsuarioViewController.swift in Sources */,
 				DFC46E3B2231A036008F6A6A /* SignupViewController.swift in Sources */,

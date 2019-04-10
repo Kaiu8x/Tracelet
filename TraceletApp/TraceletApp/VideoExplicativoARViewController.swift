@@ -22,7 +22,7 @@ class VideoExplicativoARViewController: UIViewController, ARSCNViewDelegate {
         sceneView.delegate = self
         
         // Show statistics such as fps and timing information
-        sceneView.showsStatistics = true
+        sceneView.showsStatistics = false
         
         // Create a new scene
         let scene = SCNScene()
@@ -54,8 +54,6 @@ class VideoExplicativoARViewController: UIViewController, ARSCNViewDelegate {
         
         // crear un nodo capaz de reporducir un video
         let videoNodo = SKVideoNode(url: url!)
-        //let videoNodo = SKVideoNode(fileNamed: "CheeziPuffs.mov")
-        //let videoNodo = SKVideoNode(avPlayer: player)
         videoNodo.play() //ejecutar play al momento de presentarse
         
         //crear una escena sprite kit, los parametros estan en pixeles
