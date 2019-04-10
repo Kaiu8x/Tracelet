@@ -30,7 +30,7 @@ class AdministrarUsuariosViewController: UIViewController, UITableViewDelegate, 
         self.tableView.reloadData()
     }
     
-    let dataUrl = "http://martinmolina.com.mx/201911/data/jsons/users.json"
+    let dataUrl = "http://martinmolina.com.mx/201911/data/jsonTracelet/users.json"
     //let dataUrl = "http://martinmolina.com.mx/201813/data/datos.json"
     var newArray:[Any]?
     

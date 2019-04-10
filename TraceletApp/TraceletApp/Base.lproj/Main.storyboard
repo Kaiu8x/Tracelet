@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7Q5-Jd-Qd7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="E2C-3L-Y1N">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -291,7 +291,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hZx-UQ-QvN">
-                                <rect key="frame" x="83" y="55" width="192" height="34"/>
+                                <rect key="frame" x="83" y="55" width="192" height="50"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="28"/>
                                 <size key="titleShadowOffset" width="11" height="11"/>
                                 <state key="normal" title=" Kenyiro" image="Down">
@@ -540,7 +540,7 @@
             <objects>
                 <viewController id="Gve-GP-8QE" customClass="EditarPerfilViewController" customModule="TraceletApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CPY-05-PTX">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d09-FT-d9d">
@@ -695,7 +695,6 @@
         <!--Shop Details View Controller-->
         <scene sceneID="CpK-X4-CfY">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="MV7-sQ-Pbd" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="ShopDetails" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Xzf-w7-XK4" customClass="ShopDetailsViewController" customModule="TraceletApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UnB-h9-Kn3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
@@ -719,6 +718,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ESTOY EN LA VISTA DE UIIIMAGEVIEW" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HwZ-kO-H6c">
+                                <rect key="frame" x="61" y="603" width="298" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="iyb-t9-h2r"/>
@@ -729,6 +735,7 @@
                         <outlet property="traceletNameLabel" destination="BaL-bo-e1b" id="R1I-za-seY"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MV7-sQ-Pbd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2612" y="1447.536945812808"/>
         </scene>
@@ -915,7 +922,7 @@
                                 <state key="normal" title="Si"/>
                                 <connections>
                                     <action selector="siButton:" destination="5mn-z1-A75" eventType="touchUpInside" id="9vR-nL-57A"/>
-                                    <segue destination="xuB-rM-HZi" kind="unwind" unwindAction="unwindToAdministrarUsuarioWithSender:" id="Ojn-MR-tds"/>
+                                    <segue destination="xuB-rM-HZi" kind="unwind" unwindAction="unwindToConfiguracionWithSender:" id="hLG-l0-vpy"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="¿Estás seguro?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jmX-27-2xX">
@@ -1014,7 +1021,7 @@
                                     <navigationItem id="p0L-CQ-dCF">
                                         <barButtonItem key="rightBarButtonItem" title="Done" id="HWj-zE-25r">
                                             <connections>
-                                                <segue destination="bwo-fb-Zy8" kind="unwind" unwindAction="unwindToAdministrarUsuarioWithSender:" id="2Is-aa-nOu"/>
+                                                <segue destination="bwo-fb-Zy8" kind="unwind" unwindAction="unwindToConfiguracionWithSender:" id="JXR-1S-QSV"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -1111,20 +1118,29 @@
             </objects>
             <point key="canvasLocation" x="895.20000000000005" y="1354.4334975369459"/>
         </scene>
-        <!--View Controller-->
+        <!--Video ExplicativoAR View Controller-->
         <scene sceneID="rXw-3u-5du">
             <objects>
-                <viewController id="oMr-iE-iGc" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Adw-hm-1cd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="oMr-iE-iGc" customClass="VideoExplicativoARViewController" customModule="TraceletApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RSd-Cd-CRq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RJN-dY-i3R">
+                                <rect key="frame" x="0.0" y="88" width="375" height="641"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </arscnView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="m3G-tA-mFx"/>
                     </view>
+                    <connections>
+                        <outlet property="vistaAR" destination="RJN-dY-i3R" id="RXm-Tm-dOg"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Adw-hm-1cd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1879" y="1827"/>
+            <point key="canvasLocation" x="1877.5999999999999" y="1826.600985221675"/>
         </scene>
         <!--Start View Controller-->
         <scene sceneID="yBr-z7-APo">
@@ -1667,26 +1683,26 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Aboutus" width="170.66667175292969" height="170.66667175292969"/>
-        <image name="Check" width="533.33331298828125" height="333.33334350585938"/>
+        <image name="Aboutus" width="20.803611755371094" height="20.803611755371094"/>
+        <image name="Check" width="1600" height="1000"/>
         <image name="Configuración" width="16" height="16"/>
-        <image name="Connections" width="326.66665649414062" height="222"/>
-        <image name="Down" width="16.666666030883789" height="16.666666030883789"/>
-        <image name="Edit" width="264.66665649414062" height="210"/>
-        <image name="Geovalla" width="16.666666030883789" height="16.666666030883789"/>
-        <image name="Heart" width="400" height="400"/>
-        <image name="LogoWhite" width="630" height="472.33334350585938"/>
-        <image name="Mapa" width="16.666666030883789" height="16.666666030883789"/>
-        <image name="Profile" width="170.66667175292969" height="170.66667175292969"/>
-        <image name="Ruta" width="16.666666030883789" height="16.666666030883789"/>
-        <image name="Session" width="170.66667175292969" height="170.66667175292969"/>
-        <image name="Shoes" width="116" height="198.33332824707031"/>
-        <image name="Splash" width="375" height="812"/>
-        <image name="Tienda" width="238.33332824707031" height="210"/>
-        <image name="Vitales" width="66.666664123535156" height="66.666664123535156"/>
+        <image name="Connections" width="980" height="666"/>
+        <image name="Down" width="50" height="50"/>
+        <image name="Edit" width="794" height="630"/>
+        <image name="Geovalla" width="40" height="40"/>
+        <image name="Heart" width="1200" height="1200"/>
+        <image name="LogoWhite" width="1890" height="1417"/>
+        <image name="Mapa" width="40" height="40"/>
+        <image name="Profile" width="36.426876068115234" height="36.426876068115234"/>
+        <image name="Ruta" width="50" height="50"/>
+        <image name="Session" width="512" height="512"/>
+        <image name="Shoes" width="119.88516998291016" height="205"/>
+        <image name="Splash" width="1125" height="2436"/>
+        <image name="Tienda" width="715" height="630"/>
+        <image name="Vitales" width="200" height="200"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="VOe-Tm-kVm"/>
+        <segue reference="mZV-If-Dem"/>
         <segue reference="1Fx-Q0-BGG"/>
     </inferredMetricsTieBreakers>
 </document>
