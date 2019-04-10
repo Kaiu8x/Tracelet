@@ -6,12 +6,6 @@
 //  Copyright © 2019 Kai Kawasaki Ueda. All rights reserved.
 //
 
-
-
-
-
-
-
 import UIKit
 import MapKit
 import CoreLocation
@@ -24,12 +18,12 @@ protocol AddGeotificationsViewControllerDelegate {
 
 
 class AddGeotificationViewController: UIViewController, CLLocationManagerDelegate {
-
-
+    
+    
     @IBAction func cancelarButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
-     
+    
     
     @IBOutlet weak var userName: UITextField!
     @IBOutlet weak var radiusTF: UITextField!
@@ -50,7 +44,7 @@ class AddGeotificationViewController: UIViewController, CLLocationManagerDelegat
         addGeofence.isEnabled = false
         
         
-        self.hideKeyboardWhenTappedAround() 
+        self.hideKeyboardWhenTappedAround()
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         
@@ -81,19 +75,19 @@ class AddGeotificationViewController: UIViewController, CLLocationManagerDelegat
         }
     }
     
-
+    
     @IBAction func textFieldEditingChanged(_ sender: Any) {
-         addGeofence.isEnabled = !radiusTF.text!.isEmpty && !userName.text!.isEmpty
+        addGeofence.isEnabled = !radiusTF.text!.isEmpty && !userName.text!.isEmpty
     }
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
     @IBAction func onAdd(_ sender: Any) {
         let coordinate = mapaEG.centerCoordinate
         let radius = Double(radiusTF.text!) ?? 0

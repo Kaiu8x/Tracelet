@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="E2C-3L-Y1N">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="E2C-3L-Y1N">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -46,7 +46,7 @@
                         <barButtonItem key="rightBarButtonItem" title="Agregar" id="pC3-yS-7xY">
                             <color key="tintColor" red="0.93045660620000004" green="0.93045660620000004" blue="0.93045660620000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
-                                <segue destination="Dag-z4-C1b" kind="show" id="8ii-Ad-za4"/>
+                                <segue destination="Dag-z4-C1b" kind="show" id="ldB-t9-Kof"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -138,7 +138,7 @@
         <!--Nueva Geovalla-->
         <scene sceneID="itn-ew-xkq">
             <objects>
-                <viewController id="Dag-z4-C1b" customClass="EditarGeovallaViewController" customModule="TraceletApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Dag-z4-C1b" customClass="AddGeotificationViewController" customModule="TraceletApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="u3t-h9-pGd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -175,6 +175,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="textFieldEditingChanged:" destination="Dag-z4-C1b" eventType="editingDidEnd" id="xY0-Yn-oxO"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t7H-2F-qrR">
                                 <rect key="frame" x="77" y="538" width="99" height="28"/>
@@ -184,6 +187,9 @@
                                 </constraints>
                                 <color key="tintColor" red="0.93045660620000004" green="0.93045660620000004" blue="0.93045660620000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Aceptar"/>
+                                <connections>
+                                    <action selector="onAdd:" destination="Dag-z4-C1b" eventType="touchUpInside" id="LZT-Tc-qJE"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="psM-Iw-xSV">
                                 <rect key="frame" x="198" y="536" width="99" height="30"/>
@@ -192,6 +198,9 @@
                                     <constraint firstAttribute="width" constant="99" id="DqS-0h-PFM"/>
                                 </constraints>
                                 <state key="normal" title="Cancelar"/>
+                                <connections>
+                                    <action selector="cancelarButton:" destination="Dag-z4-C1b" eventType="touchUpInside" id="Ptj-sr-Gel"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -222,6 +231,10 @@
                         <barButtonItem key="rightBarButtonItem" title="Item" image="Nearme" id="lNU-ZK-RjW"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="addGeofence" destination="t7H-2F-qrR" id="e5U-pK-MRL"/>
+                        <outlet property="mapaEG" destination="ghL-Du-mKz" id="Gjq-Ft-l1z"/>
+                        <outlet property="nearMe" destination="lNU-ZK-RjW" id="IoP-ca-KIB"/>
+                        <outlet property="radiusTF" destination="guO-QK-J0M" id="QIN-81-dBk"/>
                         <outlet property="userName" destination="8mM-Nc-PqI" id="wxD-ya-Sd6"/>
                     </connections>
                 </viewController>
@@ -1640,26 +1653,26 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Aboutus" width="170" height="170"/>
-        <image name="Brace1" width="166" height="166"/>
-        <image name="Brace2" width="166" height="166"/>
-        <image name="Check" width="533" height="333"/>
+        <image name="Aboutus" width="170.66667175292969" height="170.66667175292969"/>
+        <image name="Brace1" width="166.66667175292969" height="166.66667175292969"/>
+        <image name="Brace2" width="166.66667175292969" height="166.66667175292969"/>
+        <image name="Check" width="533.33331298828125" height="333.33334350585938"/>
         <image name="Configuración" width="16" height="16"/>
-        <image name="Connections" width="326" height="222"/>
-        <image name="Down" width="16" height="16"/>
-        <image name="Edit" width="264" height="210"/>
-        <image name="Geovalla" width="16" height="16"/>
+        <image name="Connections" width="326.66665649414062" height="222"/>
+        <image name="Down" width="16.666666030883789" height="16.666666030883789"/>
+        <image name="Edit" width="264.66665649414062" height="210"/>
+        <image name="Geovalla" width="16.666666030883789" height="16.666666030883789"/>
         <image name="Heart" width="400" height="400"/>
-        <image name="LogoWhite" width="630" height="472"/>
-        <image name="Mapa" width="16" height="16"/>
-        <image name="Nearme" width="16" height="16"/>
-        <image name="Profile" width="170" height="170"/>
-        <image name="Ruta" width="16" height="16"/>
-        <image name="Session" width="170" height="170"/>
-        <image name="Shoes" width="116" height="198"/>
+        <image name="LogoWhite" width="630" height="472.33334350585938"/>
+        <image name="Mapa" width="16.666666030883789" height="16.666666030883789"/>
+        <image name="Nearme" width="16.666666030883789" height="16.666666030883789"/>
+        <image name="Profile" width="170.66667175292969" height="170.66667175292969"/>
+        <image name="Ruta" width="16.666666030883789" height="16.666666030883789"/>
+        <image name="Session" width="170.66667175292969" height="170.66667175292969"/>
+        <image name="Shoes" width="116" height="198.33332824707031"/>
         <image name="Splash" width="375" height="812"/>
-        <image name="Tienda" width="238" height="210"/>
-        <image name="Vitales" width="66" height="66"/>
+        <image name="Tienda" width="238.33332824707031" height="210"/>
+        <image name="Vitales" width="66.666664123535156" height="66.666664123535156"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="mZV-If-Dem"/>
