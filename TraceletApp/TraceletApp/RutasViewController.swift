@@ -10,12 +10,13 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class RutasViewController: UIViewController, CLLocationManagerDelegate {
+class RutasViewController: UIViewController, CLLocationManagerDelegate, ActivityIndicatorPresenter {
 
     private let locationManager = CLLocationManager()
     @IBOutlet weak var mapaR: MKMapView!
     var spots: [Spots] = []
     var newArray:[Any]?
+    var activityIndicator = UIActivityIndicatorView()
     
     let dataUrl = "http://martinmolina.com.mx/201911/data/jsonTracelet/spots360.json"
     
@@ -49,6 +50,8 @@ class RutasViewController: UIViewController, CLLocationManagerDelegate {
         print(spots)
         //mapaR.addAnnotation(spot)
         mapaR.addAnnotations(spots)
+        
+    
         
         // Do any additional setup after loading the view.
     }
@@ -114,6 +117,8 @@ class RutasViewController: UIViewController, CLLocationManagerDelegate {
     }
     */
     
+    
+    
 }
 
 extension RutasViewController: MKMapViewDelegate {
@@ -140,6 +145,10 @@ extension RutasViewController: MKMapViewDelegate {
     }
     
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        
+        showActivityIndicator()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
         let location = view.annotation as! Spots
         print(location)
         
@@ -164,6 +173,7 @@ extension RutasViewController: MKMapViewDelegate {
             nextView.isVideo = isvideo
             print("1")
             //self.navigationController?.pushViewController(nextView, animated: true)
+            self.hideActivityIndicator()
             self.present(nextView, animated: true, completion: nil)
             print("2")
         } else {
@@ -174,9 +184,11 @@ extension RutasViewController: MKMapViewDelegate {
             //self.navigationController?.pushViewController(nextView, animated: true)
             self.present(nextView, animated: true, completion: nil)
             print("4")
+            self.hideActivityIndicator()
         }
         print(isvideo)
         
+        }
         
     }
     

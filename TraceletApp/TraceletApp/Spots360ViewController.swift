@@ -11,12 +11,16 @@ import SceneKit
 import ARKit
 import AVFoundation
 
-class Spots360ViewController: UIViewController, ARSCNViewDelegate {
+class Spots360ViewController: UIViewController, ARSCNViewDelegate, ActivityIndicatorPresenter {
+    
+    var activityIndicator = UIActivityIndicatorView()
     
     @IBOutlet var sceneView: ARSCNView!
     var contentUrl = "http://all360media.com/wp-content/uploads/pano/laphil/media/video-ios.mp4"
     var isVideo = false
     var once = true
+    
+    var videoNodo = SKVideoNode()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,7 +64,7 @@ class Spots360ViewController: UIViewController, ARSCNViewDelegate {
             print(player.isMuted)
             
             // crear un nodo capaz de reporducir un video
-            let videoNodo = SKVideoNode(url: url!)
+            videoNodo = SKVideoNode(url: url!)
             //let videoNodo = SKVideoNode(fileNamed: "CheeziPuffs.mov")
             //let videoNodo = SKVideoNode(avPlayer: player)
             videoNodo.play() //ejecutar play al momento de presentarse
@@ -99,6 +103,15 @@ class Spots360ViewController: UIViewController, ARSCNViewDelegate {
             once = false
         }
     }
+    
+    
+    @IBAction func swipeExit(_ sender: UISwipeGestureRecognizer) {
+        let nextView = self.storyboard?.instantiateViewController(withIdentifier: "tabBar") as! TabBarController
+        //self.navigationController?.pushViewController(nextView, animated: true)
+        videoNodo.pause()
+        self.present(nextView, animated: true, completion: nil)
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         

@@ -206,7 +206,7 @@ extension GeofenceViewController: MKMapViewDelegate {
             let circleRenderer = MKCircleRenderer(overlay: overlay)
             circleRenderer.lineWidth = 1.0
             circleRenderer.strokeColor = .green
-            circleRenderer.fillColor = UIColor.green.withAlphaComponent(0.4)
+            circleRenderer.fillColor = UIColor.green.withAlphaComponent(0.3)
             return circleRenderer
         }
         return MKOverlayRenderer(overlay: overlay)

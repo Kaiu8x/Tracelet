@@ -11,8 +11,9 @@ import SceneKit
 import ARKit
 
 
-class Spots360ImgViewController: UIViewController, ARSCNViewDelegate {
+class Spots360ImgViewController: UIViewController, ARSCNViewDelegate, ActivityIndicatorPresenter {
 
+    var activityIndicator = UIActivityIndicatorView()
     
     @IBOutlet weak var sceneView: ARSCNView!
     let tierra = SCNNode()
@@ -38,6 +39,8 @@ class Spots360ImgViewController: UIViewController, ARSCNViewDelegate {
     */
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //showActivityIndicator()
         
         // Set the view's delegate
         sceneView.delegate = self
@@ -72,6 +75,7 @@ class Spots360ImgViewController: UIViewController, ARSCNViewDelegate {
         
         // Set the scene to the view
         sceneView.scene = scene
+        //self.hideActivityIndicator()
     }
     @objc func escalado(recognizer:UIPinchGestureRecognizer)
     {
