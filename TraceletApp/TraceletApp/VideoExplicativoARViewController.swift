@@ -14,7 +14,7 @@ import AVFoundation
 class VideoExplicativoARViewController: UIViewController, ARSCNViewDelegate {
 
     @IBOutlet var sceneView: ARSCNView!
-    var once = true
+    var onces = true
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -40,7 +40,7 @@ class VideoExplicativoARViewController: UIViewController, ARSCNViewDelegate {
     
     @objc func tapEnPantalla(manejador:UIGestureRecognizer)
     {
-        if(once){
+        if(onces){
             //currentFrame es la imagen actual de la camara
             guard let currentFrame = self.sceneView.session.currentFrame else {return}
             
@@ -84,7 +84,7 @@ class VideoExplicativoARViewController: UIViewController, ARSCNViewDelegate {
             //Aqui realizas la rotación de pantalla
             pantallaPlanaNodo.eulerAngles = SCNVector3(Double.pi, 0, 0)
             self.sceneView.scene.rootNode.addChildNode(pantallaPlanaNodo)
-            once = false
+            onces = false
         }
         
         

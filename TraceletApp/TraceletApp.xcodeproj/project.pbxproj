@@ -11,9 +11,9 @@
 		8C14233F2242A81A00B3E6CB /* RutasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C14233E2242A81A00B3E6CB /* RutasViewController.swift */; };
 		8CE4706122428028000FA3B4 /* MapasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE4706022428028000FA3B4 /* MapasViewController.swift */; };
 		8CE4706322428B52000FA3B4 /* GeofenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE4706222428B52000FA3B4 /* GeofenceViewController.swift */; };
-		D51D8EB2225D718D006CE2DA /* VideoExplicativoARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51D8EB1225D718D006CE2DA /* VideoExplicativoARViewController.swift */; };
 		8CE9169F2257A60C00D96265 /* Geotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE9169E2257A60C00D96265 /* Geotification.swift */; };
 		8CE916A12257A64E00D96265 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE916A02257A64E00D96265 /* Utilities.swift */; };
+		D51D8EB2225D718D006CE2DA /* VideoExplicativoARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51D8EB1225D718D006CE2DA /* VideoExplicativoARViewController.swift */; };
 		D5403B5D2240C492005B42AC /* EditarPerfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5403B5C2240C492005B42AC /* EditarPerfilViewController.swift */; };
 		D5654ED1223C528B001A4CE4 /* EliminarUsuarioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5654ED0223C528B001A4CE4 /* EliminarUsuarioViewController.swift */; };
 		D5654ED3224090BF001A4CE4 /* VistaListaUsuariosActivosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5654ED2224090BF001A4CE4 /* VistaListaUsuariosActivosViewController.swift */; };
@@ -21,13 +21,13 @@
 		D5AB56062241ADB300B8FA08 /* ConexionNuevoUsuarioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AB56052241ADB300B8FA08 /* ConexionNuevoUsuarioViewController.swift */; };
 		D5AB56082241C0CD00B8FA08 /* AgregarUsuarioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AB56072241C0CD00B8FA08 /* AgregarUsuarioViewController.swift */; };
 		D5B114BB2243508F00C7AE2B /* ConfiguracionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B114BA2243508F00C7AE2B /* ConfiguracionViewController.swift */; };
-		D5F0A356225E4B7600B0E9D6 /* PulserasARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F0A355225E4B7600B0E9D6 /* PulserasARViewController.swift */; };
+		DF00C785225F1DF0009C98DE /* PulserasARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF00C784225F1DF0009C98DE /* PulserasARViewController.swift */; };
 		DF1E8E242242DEE500DB8E0C /* AdministrarUsuariosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1E8E232242DEE500DB8E0C /* AdministrarUsuariosViewController.swift */; };
 		DF1E8E282243087D00DB8E0C /* UserDetailsEntregaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1E8E272243087D00DB8E0C /* UserDetailsEntregaViewController.swift */; };
 		DF1E8E2A22430C6F00DB8E0C /* UserDetailsEntrega2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1E8E2922430C6F00DB8E0C /* UserDetailsEntrega2ViewController.swift */; };
-		DF43555E225D8A0700859FF9 /* AddGeotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF43555D225D8A0700859FF9 /* AddGeotificationViewController.swift */; };
 		DF435558225D387500859FF9 /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF435557225D387500859FF9 /* ShopViewController.swift */; };
 		DF43555C225D3B6300859FF9 /* ShopDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF43555B225D3B6300859FF9 /* ShopDetailsViewController.swift */; };
+		DF43555E225D8A0700859FF9 /* AddGeotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF43555D225D8A0700859FF9 /* AddGeotificationViewController.swift */; };
 		DF4B56A9225E9DDB0095B602 /* Spots360ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4B56A8225E9DDB0095B602 /* Spots360ViewController.swift */; };
 		DF4B56AB225EA4530095B602 /* Spots.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4B56AA225EA4530095B602 /* Spots.swift */; };
 		DF4B56AD225EEBA40095B602 /* Spots360ImgViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4B56AC225EEBA40095B602 /* Spots360ImgViewController.swift */; };
@@ -62,7 +62,7 @@
 		D5AB56052241ADB300B8FA08 /* ConexionNuevoUsuarioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConexionNuevoUsuarioViewController.swift; sourceTree = "<group>"; };
 		D5AB56072241C0CD00B8FA08 /* AgregarUsuarioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgregarUsuarioViewController.swift; sourceTree = "<group>"; };
 		D5B114BA2243508F00C7AE2B /* ConfiguracionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfiguracionViewController.swift; sourceTree = "<group>"; };
-		D5F0A355225E4B7600B0E9D6 /* PulserasARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulserasARViewController.swift; sourceTree = "<group>"; };
+		DF00C784225F1DF0009C98DE /* PulserasARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulserasARViewController.swift; sourceTree = "<group>"; };
 		DF1E8E232242DEE500DB8E0C /* AdministrarUsuariosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdministrarUsuariosViewController.swift; sourceTree = "<group>"; };
 		DF1E8E272243087D00DB8E0C /* UserDetailsEntregaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsEntregaViewController.swift; sourceTree = "<group>"; };
 		DF1E8E2922430C6F00DB8E0C /* UserDetailsEntrega2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsEntrega2ViewController.swift; sourceTree = "<group>"; };
@@ -121,6 +121,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		DF00C783225F1C8A009C98DE /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
 		DFE6DCA522273A6900F05680 = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +135,7 @@
 				DFE6DCAF22273A6900F05680 /* Products */,
 				8836C20CF59D8B8633685F27 /* Pods */,
 				BD0C679BF6BEBC601ED071A7 /* Frameworks */,
+				DF00C783225F1C8A009C98DE /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -142,13 +150,13 @@
 		DFE6DCB022273A6900F05680 /* TraceletApp */ = {
 			isa = PBXGroup;
 			children = (
+				DF00C784225F1DF0009C98DE /* PulserasARViewController.swift */,
 				DF43555D225D8A0700859FF9 /* AddGeotificationViewController.swift */,
 				DF1E8E232242DEE500DB8E0C /* AdministrarUsuariosViewController.swift */,
 				D5AB56072241C0CD00B8FA08 /* AgregarUsuarioViewController.swift */,
 				DFE6DCB122273A6900F05680 /* AppDelegate.swift */,
 				DFE6DCB822273A6B00F05680 /* Assets.xcassets */,
 				D5AB56052241ADB300B8FA08 /* ConexionNuevoUsuarioViewController.swift */,
-				D5B114BA2243508F00C7AE2B /* ConfiguracionViewController.swift */,
 				D5403B5C2240C492005B42AC /* EditarPerfilViewController.swift */,
 				D5654ED0223C528B001A4CE4 /* EliminarUsuarioViewController.swift */,
 				8CE4706222428B52000FA3B4 /* GeofenceViewController.swift */,
@@ -167,9 +175,6 @@
 				DFEF76CB22495B1100B3BE5C /* CodigoTraceletViewController.swift */,
 				DFEF76C922495AB700B3BE5C /* TienesTraceletViewController.swift */,
 				D5B114BA2243508F00C7AE2B /* ConfiguracionViewController.swift */,
-				DF76F4F22243428D0093E943 /* UserDetailsViewController.swift */,
-				DF1E8E2922430C6F00DB8E0C /* UserDetailsEntrega2ViewController.swift */,
-				DF1E8E272243087D00DB8E0C /* UserDetailsEntregaViewController.swift */,
 				8CE4706022428028000FA3B4 /* MapasViewController.swift */,
 				8C14233E2242A81A00B3E6CB /* RutasViewController.swift */,
 				D5654ED4224090C9001A4CE4 /* SignosVitalesViewController.swift */,
@@ -308,6 +313,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF00C785225F1DF0009C98DE /* PulserasARViewController.swift in Sources */,
 				D51D8EB2225D718D006CE2DA /* VideoExplicativoARViewController.swift in Sources */,
 				DFEF76CC22495B1100B3BE5C /* CodigoTraceletViewController.swift in Sources */,
 				DFC46E392231A016008F6A6A /* LoginViewController.swift in Sources */,
@@ -318,7 +324,6 @@
 				8CE4706122428028000FA3B4 /* MapasViewController.swift in Sources */,
 				DFC46E472231B5D7008F6A6A /* Switcher.swift in Sources */,
 				DF435558225D387500859FF9 /* ShopViewController.swift in Sources */,
-				D5F0A356225E4B7600B0E9D6 /* PulserasARViewController.swift in Sources */,
 				8CE916A12257A64E00D96265 /* Utilities.swift in Sources */,
 				D5B114BB2243508F00C7AE2B /* ConfiguracionViewController.swift in Sources */,
 				DF43555E225D8A0700859FF9 /* AddGeotificationViewController.swift in Sources */,
