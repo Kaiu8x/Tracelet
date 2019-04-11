@@ -4,7 +4,7 @@
 //
 //  Created by kenyiro tsuru on 4/10/19.
 //  Copyright © 2019 Kai Kawasaki Ueda. All rights reserved.
-//
+// http://www.martinmolina.com.mx/201911/data/jsonTracelet/images/tracelet1.scn
 
 import UIKit
 import SceneKit
@@ -12,22 +12,11 @@ import ARKit
 
 class ViewController: UIViewController, ARSCNViewDelegate {
     
+    
     @IBOutlet var sceneView: ARSCNView!
-    let pulsera = SCNNode()
     
-    @IBAction func rotacion(_ sender: UIRotationGestureRecognizer) {
-        pulsera.eulerAngles = SCNVector3(0,sender.rotation,0)
-    }
-    
-    @IBAction func ejecucionTap(_ sender: UITapGestureRecognizer) {
-        let escena = sender.view as! SCNView
-        let location = sender.location(in: escena)
-        let hitResults  = escena.hitTest(location, options: [:])
-        if !hitResults.isEmpty{
-            let nodoTocado = hitResults[0].node
-            nodoTocado.eulerAngles = SCNVector3(0,1,0)
-        }
-    }
+    var pulsera = SCNNode()
+    var visible = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,34 +25,51 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         sceneView.delegate = self
         
         // Show statistics such as fps and timing information
-        sceneView.showsStatistics = true
-        sceneView.autoenablesDefaultLighting = true
+        sceneView.showsStatistics = false
+        sceneView.autoenablesDefaultLighting = false
         //necesario para que se muestre la luz especular
         
         // Create a new scene
-        let scene = SCNScene()
+        do{
+            let myURL = NSURL(string: "http://www.martinmolina.com.mx/201911/data/jsonTracelet/images/tracelet1.scn")
+            let scene = try! SCNScene(url: myURL! as URL, options:nil)
+            self.sceneView.scene = scene
+            pulsera = scene.rootNode.childNode(withName: "Brazalete", recursively: true)!
+            pulsera.isHidden = true
         
-        let esfera = SCNSphere(radius: 0.2)
-        let materialpulsera = SCNMaterial()
-        //https://www.solarsystemscope.com/textures
-        //materialpulsera.diffuse.contents = UIImage(named:"earth-sumner.jpg")
-        materialpulsera.diffuse.contents = #imageLiteral(resourceName: "pulsera Diffuse")
-        materialpulsera.specular.contents = #imageLiteral(resourceName: "pulsera specular")
-        materialpulsera.emission.contents =  #imageLiteral(resourceName: "pulsera emmision")
-        materialpulsera.normal.contents = #imageLiteral(resourceName: "pulsera normal")
-        pulsera.geometry = esfera
-        pulsera.geometry?.materials = [materialpulsera]
-        pulsera.geometry?.firstMaterial?.specular.contents = UIColor.white
-        pulsera.position = SCNVector3(x:0, y:0, z:-0.5)
-        scene.rootNode.addChildNode(pulsera)
+            let pinchGestureRecognizer = UIPinchGestureRecognizer (target: self, action: #selector(escalado))
+            let rotationGestureRecognizer = UIRotationGestureRecognizer (target: self, action: #selector(rotacion))
+            let tapGestureRecognizer = UITapGestureRecognizer (target: self, action: #selector(ejecucionTap))
+            
+            sceneView.addGestureRecognizer(pinchGestureRecognizer)
+            sceneView.addGestureRecognizer(rotationGestureRecognizer)
+            sceneView.addGestureRecognizer(tapGestureRecognizer)
+            
+        } catch{
+            
+        }
         
-        let pinchGestureRecognizer = UIPinchGestureRecognizer (target: self, action: #selector(escalado))
-        
-        sceneView.addGestureRecognizer(pinchGestureRecognizer)
-        
-        // Set the scene to the view
-        sceneView.scene = scene
     }
+    
+    @IBAction func rotacion(_ sender: UIRotationGestureRecognizer) {
+        pulsera.eulerAngles = SCNVector3(0,sender.rotation,0)
+    }
+    
+    @IBAction func ejecucionTap(_ sender: UITapGestureRecognizer) {
+        /*let escena = sender.view as! SCNView
+        let location = sender.location(in: escena)
+        let hitResults  = escena.hitTest(location, options: [:])
+        if !hitResults.isEmpty{
+            let nodoTocado = hitResults[0].node
+            nodoTocado.eulerAngles = SCNVector3(0,1,0)
+        }*/
+        if (pulsera.isHidden){
+            pulsera.isHidden = false
+        }else{
+            pulsera.isHidden = true
+        }
+    }
+    
     @objc func escalado(recognizer:UIPinchGestureRecognizer)
     {
         pulsera.scale = SCNVector3(recognizer.scale, recognizer.scale, recognizer.scale)
