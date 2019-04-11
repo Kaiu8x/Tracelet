@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="E2C-3L-Y1N">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="E2C-3L-Y1N">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -31,15 +31,15 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="42s-hc-L4f" firstAttribute="leading" secondItem="cR0-cT-tyf" secondAttribute="leading" id="8A8-gZ-sgX"/>
-                            <constraint firstItem="BPn-5t-maX" firstAttribute="top" secondItem="pcc-3X-qcG" secondAttribute="top" id="GAK-7H-8me"/>
+                            <constraint firstItem="42s-hc-L4f" firstAttribute="leading" secondItem="6zM-Bo-GYi" secondAttribute="leading" id="8A8-gZ-sgX"/>
+                            <constraint firstItem="BPn-5t-maX" firstAttribute="top" secondItem="6zM-Bo-GYi" secondAttribute="top" id="GAK-7H-8me"/>
                             <constraint firstItem="42s-hc-L4f" firstAttribute="leading" secondItem="BPn-5t-maX" secondAttribute="leading" id="IeR-Dh-mqM"/>
                             <constraint firstItem="BPn-5t-maX" firstAttribute="top" secondItem="42s-hc-L4f" secondAttribute="bottom" id="ZkU-rE-t22"/>
-                            <constraint firstAttribute="trailing" secondItem="42s-hc-L4f" secondAttribute="trailing" id="e92-IL-vXN"/>
-                            <constraint firstItem="BPn-5t-maX" firstAttribute="bottom" secondItem="pcc-3X-qcG" secondAttribute="bottom" id="pyZ-c5-K8V"/>
+                            <constraint firstItem="6zM-Bo-GYi" firstAttribute="trailing" secondItem="42s-hc-L4f" secondAttribute="trailing" id="e92-IL-vXN"/>
+                            <constraint firstItem="BPn-5t-maX" firstAttribute="bottom" secondItem="6zM-Bo-GYi" secondAttribute="bottom" id="pyZ-c5-K8V"/>
                             <constraint firstItem="42s-hc-L4f" firstAttribute="trailing" secondItem="BPn-5t-maX" secondAttribute="trailing" id="xGR-rc-aHJ"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="pcc-3X-qcG"/>
+                        <viewLayoutGuide key="safeArea" id="6zM-Bo-GYi"/>
                     </view>
                     <navigationItem key="navigationItem" title="Kenyiro" id="nYB-Ju-ScB">
                         <barButtonItem key="backBarButtonItem" title="Geovalla" id="7Wq-jd-7dW"/>
@@ -120,7 +120,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
-                        <viewLayoutGuide key="safeArea" id="Zyv-sz-OYd"/>
+                        <viewLayoutGuide key="safeArea" id="vnu-cd-fuz"/>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="STc-1u-VS9" appends="YES" id="tK3-la-oDj"/>
                         </connections>
@@ -236,39 +236,39 @@
                         <constraints>
                             <constraint firstItem="cyi-cs-ZMY" firstAttribute="leading" secondItem="6AA-JF-1J8" secondAttribute="trailing" constant="6" id="58F-bk-CMK"/>
                             <constraint firstItem="ttm-Mz-iDz" firstAttribute="top" secondItem="kfI-Bc-Bkz" secondAttribute="bottom" constant="21" id="8BS-93-fU5"/>
-                            <constraint firstAttribute="trailing" secondItem="ghL-Du-mKz" secondAttribute="trailing" id="9bH-2X-WgQ"/>
-                            <constraint firstAttribute="trailing" secondItem="6AA-JF-1J8" secondAttribute="trailing" constant="108" id="Agn-x0-qhw"/>
+                            <constraint firstItem="F35-E1-LuJ" firstAttribute="trailing" secondItem="ghL-Du-mKz" secondAttribute="trailing" id="9bH-2X-WgQ"/>
+                            <constraint firstItem="F35-E1-LuJ" firstAttribute="trailing" secondItem="6AA-JF-1J8" secondAttribute="trailing" constant="108" id="Agn-x0-qhw"/>
                             <constraint firstItem="CJh-we-BlM" firstAttribute="leading" secondItem="U00-N0-teT" secondAttribute="trailing" constant="23" id="Cps-4q-e5r"/>
                             <constraint firstItem="psM-Iw-xSV" firstAttribute="leading" secondItem="guO-QK-J0M" secondAttribute="leading" id="EKq-iK-qk8"/>
                             <constraint firstItem="8mM-Nc-PqI" firstAttribute="top" secondItem="ghL-Du-mKz" secondAttribute="bottom" constant="31" id="FgB-fU-PyN"/>
                             <constraint firstItem="CJh-we-BlM" firstAttribute="baseline" secondItem="cyi-cs-ZMY" secondAttribute="baseline" id="HcT-76-x5x"/>
                             <constraint firstItem="U00-N0-teT" firstAttribute="centerY" secondItem="6AA-JF-1J8" secondAttribute="centerY" id="NQ4-nO-Kqt"/>
-                            <constraint firstItem="0qY-fc-JES" firstAttribute="trailing" secondItem="8mM-Nc-PqI" secondAttribute="trailing" constant="80" id="Qde-kM-p4u"/>
-                            <constraint firstItem="ghL-Du-mKz" firstAttribute="leading" secondItem="u3t-h9-pGd" secondAttribute="leading" id="SZZ-p3-GF2"/>
+                            <constraint firstItem="F35-E1-LuJ" firstAttribute="trailing" secondItem="8mM-Nc-PqI" secondAttribute="trailing" constant="80" id="Qde-kM-p4u"/>
+                            <constraint firstItem="ghL-Du-mKz" firstAttribute="leading" secondItem="F35-E1-LuJ" secondAttribute="leading" id="SZZ-p3-GF2"/>
                             <constraint firstItem="8mM-Nc-PqI" firstAttribute="leading" secondItem="kfI-Bc-Bkz" secondAttribute="trailing" constant="8" symbolic="YES" id="Shf-gz-aM8"/>
-                            <constraint firstItem="0qY-fc-JES" firstAttribute="trailing" secondItem="psM-Iw-xSV" secondAttribute="trailing" constant="78" id="Ud1-dk-IaR"/>
+                            <constraint firstItem="F35-E1-LuJ" firstAttribute="trailing" secondItem="psM-Iw-xSV" secondAttribute="trailing" constant="78" id="Ud1-dk-IaR"/>
                             <constraint firstItem="guO-QK-J0M" firstAttribute="leading" secondItem="ttm-Mz-iDz" secondAttribute="trailing" constant="8" symbolic="YES" id="VL7-I6-tit"/>
                             <constraint firstItem="psM-Iw-xSV" firstAttribute="trailing" secondItem="LJ1-s3-Zl6" secondAttribute="trailing" constant="-31" id="Vat-0X-2af"/>
-                            <constraint firstItem="U00-N0-teT" firstAttribute="leading" secondItem="0qY-fc-JES" secondAttribute="leading" constant="38" id="VpQ-IT-GuY"/>
+                            <constraint firstItem="U00-N0-teT" firstAttribute="leading" secondItem="F35-E1-LuJ" secondAttribute="leading" constant="38" id="VpQ-IT-GuY"/>
                             <constraint firstItem="ghL-Du-mKz" firstAttribute="top" secondItem="LJ1-s3-Zl6" secondAttribute="bottom" constant="26" id="cGC-nw-o5K"/>
                             <constraint firstItem="8mM-Nc-PqI" firstAttribute="trailing" secondItem="guO-QK-J0M" secondAttribute="trailing" id="cGP-VD-2ie"/>
                             <constraint firstItem="6AA-JF-1J8" firstAttribute="leading" secondItem="CJh-we-BlM" secondAttribute="trailing" constant="8" symbolic="YES" id="e2T-1H-yVb"/>
                             <constraint firstItem="kfI-Bc-Bkz" firstAttribute="top" secondItem="ghL-Du-mKz" secondAttribute="bottom" constant="36" id="etp-Qv-Fqf"/>
                             <constraint firstItem="LJ1-s3-Zl6" firstAttribute="centerX" secondItem="ghL-Du-mKz" secondAttribute="centerX" id="fW6-2S-9Yt"/>
-                            <constraint firstItem="t7H-2F-qrR" firstAttribute="leading" secondItem="0qY-fc-JES" secondAttribute="leading" constant="77" id="fhj-tD-Lzp"/>
+                            <constraint firstItem="t7H-2F-qrR" firstAttribute="leading" secondItem="F35-E1-LuJ" secondAttribute="leading" constant="77" id="fhj-tD-Lzp"/>
                             <constraint firstItem="ttm-Mz-iDz" firstAttribute="centerY" secondItem="guO-QK-J0M" secondAttribute="centerY" id="gMQ-fy-acy"/>
                             <constraint firstItem="psM-Iw-xSV" firstAttribute="leading" secondItem="8mM-Nc-PqI" secondAttribute="leading" id="hjF-cz-zGh"/>
                             <constraint firstItem="t7H-2F-qrR" firstAttribute="bottom" secondItem="psM-Iw-xSV" secondAttribute="bottom" id="jA3-XF-bKZ"/>
                             <constraint firstItem="kfI-Bc-Bkz" firstAttribute="centerY" secondItem="8mM-Nc-PqI" secondAttribute="centerY" id="oaM-qt-NY2"/>
                             <constraint firstItem="CJh-we-BlM" firstAttribute="top" secondItem="guO-QK-J0M" secondAttribute="bottom" constant="34" id="qE8-Ry-6Ue"/>
                             <constraint firstItem="6AA-JF-1J8" firstAttribute="top" secondItem="guO-QK-J0M" secondAttribute="bottom" constant="30" id="t0K-Ko-5hi"/>
-                            <constraint firstItem="0qY-fc-JES" firstAttribute="bottom" secondItem="psM-Iw-xSV" secondAttribute="bottom" constant="109" id="u0V-al-SQI"/>
+                            <constraint firstItem="F35-E1-LuJ" firstAttribute="bottom" secondItem="psM-Iw-xSV" secondAttribute="bottom" constant="109" id="u0V-al-SQI"/>
                             <constraint firstItem="psM-Iw-xSV" firstAttribute="leading" secondItem="t7H-2F-qrR" secondAttribute="trailing" constant="22" id="wYr-CW-qZ6"/>
-                            <constraint firstItem="LJ1-s3-Zl6" firstAttribute="top" secondItem="0qY-fc-JES" secondAttribute="top" constant="62" id="wag-u1-MXE"/>
+                            <constraint firstItem="LJ1-s3-Zl6" firstAttribute="top" secondItem="F35-E1-LuJ" secondAttribute="top" constant="62" id="wag-u1-MXE"/>
                             <constraint firstItem="psM-Iw-xSV" firstAttribute="top" secondItem="6AA-JF-1J8" secondAttribute="bottom" constant="41" id="yKx-wS-vhy"/>
                             <constraint firstItem="guO-QK-J0M" firstAttribute="top" secondItem="8mM-Nc-PqI" secondAttribute="bottom" constant="12" id="yv8-qs-T69"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="0qY-fc-JES"/>
+                        <viewLayoutGuide key="safeArea" id="F35-E1-LuJ"/>
                     </view>
                     <connections>
                         <outlet property="mapaEG" destination="ghL-Du-mKz" id="Syh-4j-qOA"/>
@@ -291,7 +291,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hZx-UQ-QvN">
-                                <rect key="frame" x="83" y="55" width="192" height="50"/>
+                                <rect key="frame" x="83" y="55" width="192" height="34"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="28"/>
                                 <size key="titleShadowOffset" width="11" height="11"/>
                                 <state key="normal" title=" Kenyiro" image="Down">
@@ -318,18 +318,18 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Y1T-Ks-H0w" firstAttribute="top" secondItem="7Qn-tg-xSK" secondAttribute="top" id="1lk-9N-ZjO"/>
-                            <constraint firstItem="hZx-UQ-QvN" firstAttribute="leading" secondItem="WRd-Wn-iLE" secondAttribute="leading" constant="83" id="6eU-TB-jW4"/>
-                            <constraint firstAttribute="trailing" secondItem="Y1T-Ks-H0w" secondAttribute="trailing" id="9mC-fa-dc5"/>
-                            <constraint firstItem="JE4-oi-Afc" firstAttribute="top" secondItem="WRd-Wn-iLE" secondAttribute="top" constant="11" id="GPJ-so-myD"/>
-                            <constraint firstItem="JE4-oi-Afc" firstAttribute="top" secondItem="WRd-Wn-iLE" secondAttribute="top" constant="11" id="VMY-gl-bgo"/>
-                            <constraint firstItem="Y1T-Ks-H0w" firstAttribute="leading" secondItem="7Qn-tg-xSK" secondAttribute="leading" id="X6O-4M-MlU"/>
-                            <constraint firstItem="Y1T-Ks-H0w" firstAttribute="bottom" secondItem="WRd-Wn-iLE" secondAttribute="bottom" id="Zxy-td-fcZ"/>
+                            <constraint firstItem="hZx-UQ-QvN" firstAttribute="leading" secondItem="fC4-e6-uiR" secondAttribute="leading" constant="83" id="6eU-TB-jW4"/>
+                            <constraint firstItem="fC4-e6-uiR" firstAttribute="trailing" secondItem="Y1T-Ks-H0w" secondAttribute="trailing" id="9mC-fa-dc5"/>
+                            <constraint firstItem="JE4-oi-Afc" firstAttribute="top" secondItem="fC4-e6-uiR" secondAttribute="top" constant="11" id="GPJ-so-myD"/>
+                            <constraint firstItem="JE4-oi-Afc" firstAttribute="top" secondItem="fC4-e6-uiR" secondAttribute="top" constant="11" id="VMY-gl-bgo"/>
+                            <constraint firstItem="Y1T-Ks-H0w" firstAttribute="leading" secondItem="fC4-e6-uiR" secondAttribute="leading" id="X6O-4M-MlU"/>
+                            <constraint firstItem="Y1T-Ks-H0w" firstAttribute="bottom" secondItem="fC4-e6-uiR" secondAttribute="bottom" id="Zxy-td-fcZ"/>
                             <constraint firstItem="hZx-UQ-QvN" firstAttribute="top" secondItem="JE4-oi-Afc" secondAttribute="top" id="bIz-pZ-oKT"/>
-                            <constraint firstItem="WRd-Wn-iLE" firstAttribute="trailing" secondItem="JE4-oi-Afc" secondAttribute="trailing" constant="300" id="f0U-r5-a16"/>
+                            <constraint firstItem="fC4-e6-uiR" firstAttribute="trailing" secondItem="JE4-oi-Afc" secondAttribute="trailing" constant="300" id="f0U-r5-a16"/>
                             <constraint firstItem="JE4-oi-Afc" firstAttribute="leading" secondItem="hZx-UQ-QvN" secondAttribute="trailing" constant="-250" id="lMB-4N-mTf"/>
-                            <constraint firstItem="hZx-UQ-QvN" firstAttribute="top" secondItem="WRd-Wn-iLE" secondAttribute="top" constant="11" id="yam-Zo-Kmo"/>
+                            <constraint firstItem="hZx-UQ-QvN" firstAttribute="top" secondItem="fC4-e6-uiR" secondAttribute="top" constant="11" id="yam-Zo-Kmo"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="WRd-Wn-iLE"/>
+                        <viewLayoutGuide key="safeArea" id="fC4-e6-uiR"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Mapa" image="Mapa" landscapeImage="Mapa" id="Nb7-EX-GDE"/>
                     <connections>
@@ -372,12 +372,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="SIR-6i-Xgd" firstAttribute="bottom" secondItem="pCc-xc-tUs" secondAttribute="bottom" id="71S-hb-xn6"/>
-                            <constraint firstItem="SIR-6i-Xgd" firstAttribute="leading" secondItem="KS4-wB-dwf" secondAttribute="leading" id="YMl-K9-4Zo"/>
-                            <constraint firstItem="SIR-6i-Xgd" firstAttribute="top" secondItem="pCc-xc-tUs" secondAttribute="top" constant="31" id="kFQ-zd-7Fg"/>
-                            <constraint firstItem="SIR-6i-Xgd" firstAttribute="trailing" secondItem="pCc-xc-tUs" secondAttribute="trailing" id="so6-Tb-mF3"/>
+                            <constraint firstItem="SIR-6i-Xgd" firstAttribute="bottom" secondItem="c4X-Kv-mEX" secondAttribute="bottom" id="71S-hb-xn6"/>
+                            <constraint firstItem="SIR-6i-Xgd" firstAttribute="leading" secondItem="c4X-Kv-mEX" secondAttribute="leading" id="YMl-K9-4Zo"/>
+                            <constraint firstItem="SIR-6i-Xgd" firstAttribute="top" secondItem="c4X-Kv-mEX" secondAttribute="top" constant="31" id="kFQ-zd-7Fg"/>
+                            <constraint firstItem="SIR-6i-Xgd" firstAttribute="trailing" secondItem="c4X-Kv-mEX" secondAttribute="trailing" id="so6-Tb-mF3"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="pCc-xc-tUs"/>
+                        <viewLayoutGuide key="safeArea" id="c4X-Kv-mEX"/>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="NYr-8X-gOH" appends="YES" id="r6s-rb-GI6"/>
                         </connections>
@@ -488,7 +488,7 @@
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="Zkq-Xx-oAc"/>
+                        <viewLayoutGuide key="safeArea" id="o9Y-XH-ola"/>
                     </view>
                     <navigationItem key="navigationItem" title="Configuración" id="h1A-Zi-ADr">
                         <barButtonItem key="backBarButtonItem" title="Configuración" id="641-pg-pYW"/>
@@ -501,7 +501,7 @@
         <!--Rutas-->
         <scene sceneID="GmM-DI-tYS">
             <objects>
-                <viewController id="Bzj-rU-Dwv" customClass="RutasViewController" customModule="TraceletApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RutasViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Bzj-rU-Dwv" customClass="RutasViewController" customModule="TraceletApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="E62-5N-tc9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -520,11 +520,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="x0Y-gT-9kM" firstAttribute="top" secondItem="E62-5N-tc9" secondAttribute="top" id="M6j-6Y-Uu7"/>
-                            <constraint firstItem="x0Y-gT-9kM" firstAttribute="leading" secondItem="JQs-le-XsC" secondAttribute="leading" id="QaK-Fd-nSW"/>
-                            <constraint firstItem="x0Y-gT-9kM" firstAttribute="trailing" secondItem="JQs-le-XsC" secondAttribute="trailing" id="Wt7-qa-kEE"/>
-                            <constraint firstItem="x0Y-gT-9kM" firstAttribute="bottom" secondItem="JQs-le-XsC" secondAttribute="bottom" id="p6Q-63-yg4"/>
+                            <constraint firstItem="x0Y-gT-9kM" firstAttribute="leading" secondItem="1EC-tY-zIh" secondAttribute="leading" id="QaK-Fd-nSW"/>
+                            <constraint firstItem="x0Y-gT-9kM" firstAttribute="trailing" secondItem="1EC-tY-zIh" secondAttribute="trailing" id="Wt7-qa-kEE"/>
+                            <constraint firstItem="x0Y-gT-9kM" firstAttribute="bottom" secondItem="1EC-tY-zIh" secondAttribute="bottom" id="p6Q-63-yg4"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="JQs-le-XsC"/>
+                        <viewLayoutGuide key="safeArea" id="1EC-tY-zIh"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Rutas" image="Ruta" landscapeImage="Ruta" id="0tI-FB-Kby"/>
                     <connections>
@@ -534,6 +534,69 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fb8-JN-ASo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-698.39999999999998" y="-656.1576354679803"/>
+        </scene>
+        <!--Spots360 View Controller-->
+        <scene sceneID="ApO-lg-sxE">
+            <objects>
+                <viewController storyboardIdentifier="Spots360" id="Sch-r4-o70" customClass="Spots360ViewController" customModule="TraceletApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xbk-c9-igx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fye-Ed-UxR">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </arscnView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="jzv-LN-SAX"/>
+                    </view>
+                    <connections>
+                        <outlet property="sceneView" destination="Fye-Ed-UxR" id="yXu-fT-8gX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oEm-nA-YW9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="221.59999999999999" y="-651.72413793103453"/>
+        </scene>
+        <!--Spots360 Img View Controller-->
+        <scene sceneID="KsZ-f3-Qyt">
+            <objects>
+                <viewController storyboardIdentifier="Spots360Img" id="qmC-dl-UMz" customClass="Spots360ImgViewController" customModule="TraceletApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gNU-ik-qI8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zFU-mN-Qog">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Ymu-SX-D6A" appends="YES" id="du7-dQ-FIx"/>
+                                    <outletCollection property="gestureRecognizers" destination="abW-o4-AL8" appends="YES" id="Sdi-uJ-gbr"/>
+                                </connections>
+                            </arscnView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="171-Db-f7D"/>
+                    </view>
+                    <connections>
+                        <outlet property="sceneView" destination="zFU-mN-Qog" id="BGT-CE-H3u"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="38R-gV-qYf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <rotationGestureRecognizer id="Ymu-SX-D6A">
+                    <connections>
+                        <action selector="rotacion:" destination="qmC-dl-UMz" id="uiw-gg-8J0"/>
+                    </connections>
+                </rotationGestureRecognizer>
+                <tapGestureRecognizer id="abW-o4-AL8">
+                    <connections>
+                        <action selector="ejecucionTap:" destination="qmC-dl-UMz" id="sEc-X7-bw3"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1069.5999999999999" y="-656.1576354679803"/>
         </scene>
         <!--Editar perfil-->
         <scene sceneID="SAH-0E-vRY">
@@ -606,7 +669,7 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="19d-u3-HjE"/>
+                        <viewLayoutGuide key="safeArea" id="neU-G3-v7P"/>
                     </view>
                     <navigationItem key="navigationItem" title="Editar perfil" id="n5g-0G-LBq"/>
                 </viewController>
@@ -633,7 +696,7 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="sMq-5p-mun"/>
+                        <viewLayoutGuide key="safeArea" id="Rrg-7H-YiA"/>
                     </view>
                     <navigationItem key="navigationItem" title="Acerca de nosotros" id="VWC-E1-8Aw"/>
                 </viewController>
@@ -670,12 +733,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Ybe-mx-uUb" firstAttribute="leading" secondItem="Vlr-gx-yyX" secondAttribute="leading" id="4fh-iA-eNz"/>
-                            <constraint firstItem="Ybe-mx-uUb" firstAttribute="trailing" secondItem="Vlr-gx-yyX" secondAttribute="trailing" id="C4K-bR-Zfn"/>
-                            <constraint firstItem="Ybe-mx-uUb" firstAttribute="top" secondItem="Vlr-gx-yyX" secondAttribute="top" id="ZFq-E3-r5D"/>
-                            <constraint firstItem="Ybe-mx-uUb" firstAttribute="bottom" secondItem="Vlr-gx-yyX" secondAttribute="bottom" id="vUc-sH-4KO"/>
+                            <constraint firstItem="Ybe-mx-uUb" firstAttribute="leading" secondItem="HKi-az-IJK" secondAttribute="leading" id="4fh-iA-eNz"/>
+                            <constraint firstItem="Ybe-mx-uUb" firstAttribute="trailing" secondItem="HKi-az-IJK" secondAttribute="trailing" id="C4K-bR-Zfn"/>
+                            <constraint firstItem="Ybe-mx-uUb" firstAttribute="top" secondItem="HKi-az-IJK" secondAttribute="top" id="ZFq-E3-r5D"/>
+                            <constraint firstItem="Ybe-mx-uUb" firstAttribute="bottom" secondItem="HKi-az-IJK" secondAttribute="bottom" id="vUc-sH-4KO"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Vlr-gx-yyX"/>
+                        <viewLayoutGuide key="safeArea" id="HKi-az-IJK"/>
                     </view>
                     <navigationItem key="navigationItem" title="Administrar Usuarios" id="aZZ-Ii-PNn">
                         <barButtonItem key="rightBarButtonItem" title="Nuevo" id="B6S-lM-cFM">
@@ -727,7 +790,7 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="iyb-t9-h2r"/>
+                        <viewLayoutGuide key="safeArea" id="IOT-Eg-Myh"/>
                     </view>
                     <connections>
                         <outlet property="traceletDescriptionLabel" destination="dUe-8O-Y08" id="MEv-c1-EzA"/>
@@ -824,7 +887,7 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="keV-4N-7kC"/>
+                        <viewLayoutGuide key="safeArea" id="vip-HL-mO1"/>
                     </view>
                     <connections>
                         <outlet property="traceletIDLabel" destination="aMh-lY-sKg" id="12P-90-71d"/>
@@ -934,7 +997,7 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="gG3-B2-hdd"/>
+                        <viewLayoutGuide key="safeArea" id="9Sj-N9-Sff"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xme-36-6FL" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -980,7 +1043,7 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="p4i-ZP-7FJ"/>
+                        <viewLayoutGuide key="safeArea" id="LxS-PR-3k2"/>
                     </view>
                     <navigationItem key="navigationItem" title="Agregar Usuario" id="qKv-OL-yCM">
                         <barButtonItem key="backBarButtonItem" title="Cancelar" id="DKi-6A-ObG"/>
@@ -1040,7 +1103,7 @@
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="bdi-bT-j3U"/>
+                        <viewLayoutGuide key="safeArea" id="gLn-eQ-91U"/>
                     </view>
                     <connections>
                         <outlet property="doneButton" destination="HWj-zE-25r" id="VOO-ce-5x1"/>
@@ -1107,7 +1170,7 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="8fn-qk-6C4"/>
+                        <viewLayoutGuide key="safeArea" id="8eO-vL-ErH"/>
                     </view>
                     <navigationItem key="navigationItem" title="Tienda" id="wne-Rk-Ryg"/>
                     <connections>
@@ -1121,7 +1184,6 @@
         <!--Video ExplicativoAR View Controller-->
         <scene sceneID="rXw-3u-5du">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Adw-hm-1cd" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="oMr-iE-iGc" customClass="VideoExplicativoARViewController" customModule="TraceletApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RSd-Cd-CRq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
@@ -1133,12 +1195,13 @@
                             </arscnView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="m3G-tA-mFx"/>
+                        <viewLayoutGuide key="safeArea" id="N97-c0-JYh"/>
                     </view>
                     <connections>
                         <outlet property="vistaAR" destination="RJN-dY-i3R" id="RXm-Tm-dOg"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Adw-hm-1cd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1877.5999999999999" y="1826.600985221675"/>
         </scene>
@@ -1184,17 +1247,17 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="UHk-Kg-eKb" firstAttribute="top" secondItem="PSH-MX-2Kx" secondAttribute="top" constant="72" id="5wq-uR-VLc"/>
+                            <constraint firstItem="UHk-Kg-eKb" firstAttribute="top" secondItem="uH9-z0-5fA" secondAttribute="top" constant="72" id="5wq-uR-VLc"/>
                             <constraint firstItem="LlT-gQ-R4j" firstAttribute="leading" secondItem="5nt-5K-1hk" secondAttribute="leading" id="69c-6x-Zt5"/>
                             <constraint firstItem="LlT-gQ-R4j" firstAttribute="trailing" secondItem="5nt-5K-1hk" secondAttribute="trailing" id="BFj-hx-mY7"/>
                             <constraint firstItem="UHk-Kg-eKb" firstAttribute="leading" secondItem="5xK-ou-EeX" secondAttribute="leadingMargin" constant="-18" id="J9l-ed-g12"/>
                             <constraint firstItem="UHk-Kg-eKb" firstAttribute="centerX" secondItem="LlT-gQ-R4j" secondAttribute="centerX" id="OAB-B5-ey5"/>
-                            <constraint firstItem="PSH-MX-2Kx" firstAttribute="bottom" secondItem="5nt-5K-1hk" secondAttribute="bottom" constant="116" id="Rkd-EA-pDA"/>
-                            <constraint firstItem="LlT-gQ-R4j" firstAttribute="leading" secondItem="PSH-MX-2Kx" secondAttribute="leading" constant="98" id="cgH-X7-c3K"/>
+                            <constraint firstItem="uH9-z0-5fA" firstAttribute="bottom" secondItem="5nt-5K-1hk" secondAttribute="bottom" constant="116" id="Rkd-EA-pDA"/>
+                            <constraint firstItem="LlT-gQ-R4j" firstAttribute="leading" secondItem="uH9-z0-5fA" secondAttribute="leading" constant="98" id="cgH-X7-c3K"/>
                             <constraint firstItem="5nt-5K-1hk" firstAttribute="top" secondItem="LlT-gQ-R4j" secondAttribute="bottom" constant="23" id="eWd-BE-Cak"/>
-                            <constraint firstItem="LlT-gQ-R4j" firstAttribute="centerX" secondItem="5xK-ou-EeX" secondAttribute="centerX" id="iF2-NM-1GM"/>
+                            <constraint firstItem="LlT-gQ-R4j" firstAttribute="centerX" secondItem="uH9-z0-5fA" secondAttribute="centerX" id="iF2-NM-1GM"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="PSH-MX-2Kx"/>
+                        <viewLayoutGuide key="safeArea" id="uH9-z0-5fA"/>
                     </view>
                     <navigationItem key="navigationItem" id="5YT-xJ-K1k"/>
                     <connections>
@@ -1336,18 +1399,18 @@
                             <constraint firstItem="fUk-NG-NKB" firstAttribute="leading" secondItem="ZQJ-xT-v5c" secondAttribute="leading" id="LcK-sx-olU"/>
                             <constraint firstItem="rAG-sV-Eaf" firstAttribute="leading" secondItem="soe-Ii-phs" secondAttribute="leading" id="NP2-s0-8Ug"/>
                             <constraint firstItem="Txw-YI-vc7" firstAttribute="trailing" secondItem="846-Ko-RNy" secondAttribute="trailing" id="NeZ-y4-Bfm"/>
-                            <constraint firstItem="pZd-ZI-Xd4" firstAttribute="leading" secondItem="zhY-BB-W6L" secondAttribute="leading" constant="48" id="PdR-09-QIw"/>
+                            <constraint firstItem="pZd-ZI-Xd4" firstAttribute="leading" secondItem="apK-fr-omJ" secondAttribute="leading" constant="48" id="PdR-09-QIw"/>
                             <constraint firstItem="ZQJ-xT-v5c" firstAttribute="trailing" secondItem="isT-sP-2rn" secondAttribute="trailing" id="QzD-c8-JgQ"/>
                             <constraint firstItem="isT-sP-2rn" firstAttribute="top" secondItem="ZQJ-xT-v5c" secondAttribute="bottom" constant="29" id="RpD-dg-ekp"/>
                             <constraint firstItem="846-Ko-RNy" firstAttribute="leading" secondItem="nrg-7R-VY6" secondAttribute="trailing" constant="17" id="SWX-TL-OB7"/>
                             <constraint firstItem="nrg-7R-VY6" firstAttribute="baseline" secondItem="846-Ko-RNy" secondAttribute="firstBaseline" id="UbI-Jv-O6A"/>
-                            <constraint firstItem="zhY-BB-W6L" firstAttribute="bottom" secondItem="nrg-7R-VY6" secondAttribute="bottom" constant="112" id="VXY-Sy-hJt"/>
-                            <constraint firstItem="gb1-21-iN4" firstAttribute="top" secondItem="zhY-BB-W6L" secondAttribute="top" constant="102" id="Vox-iT-opy"/>
+                            <constraint firstItem="apK-fr-omJ" firstAttribute="bottom" secondItem="nrg-7R-VY6" secondAttribute="bottom" constant="112" id="VXY-Sy-hJt"/>
+                            <constraint firstItem="gb1-21-iN4" firstAttribute="top" secondItem="apK-fr-omJ" secondAttribute="top" constant="102" id="Vox-iT-opy"/>
                             <constraint firstItem="ZQJ-xT-v5c" firstAttribute="top" secondItem="fUk-NG-NKB" secondAttribute="bottom" constant="8" symbolic="YES" id="Ytc-RJ-NCl"/>
-                            <constraint firstItem="gb1-21-iN4" firstAttribute="centerX" secondItem="8fS-C0-vjE" secondAttribute="centerX" id="bRf-aX-8yc"/>
+                            <constraint firstItem="gb1-21-iN4" firstAttribute="centerX" secondItem="apK-fr-omJ" secondAttribute="centerX" id="bRf-aX-8yc"/>
                             <constraint firstItem="nrg-7R-VY6" firstAttribute="top" secondItem="Txw-YI-vc7" secondAttribute="bottom" constant="56" id="dc8-Ru-Sx2"/>
                             <constraint firstItem="Txw-YI-vc7" firstAttribute="top" secondItem="soe-Ii-phs" secondAttribute="bottom" constant="8" symbolic="YES" id="eyk-Ju-Ue5"/>
-                            <constraint firstItem="gb1-21-iN4" firstAttribute="leading" secondItem="zhY-BB-W6L" secondAttribute="leading" constant="59" id="g1X-r2-r0f"/>
+                            <constraint firstItem="gb1-21-iN4" firstAttribute="leading" secondItem="apK-fr-omJ" secondAttribute="leading" constant="59" id="g1X-r2-r0f"/>
                             <constraint firstItem="soe-Ii-phs" firstAttribute="top" secondItem="rAG-sV-Eaf" secondAttribute="bottom" constant="28" id="guu-o7-52J"/>
                             <constraint firstItem="soe-Ii-phs" firstAttribute="leading" secondItem="Txw-YI-vc7" secondAttribute="leading" id="hHx-v7-gDY"/>
                             <constraint firstItem="pZd-ZI-Xd4" firstAttribute="leading" secondItem="2qT-G7-Vpx" secondAttribute="leading" id="hvU-fK-PKz"/>
@@ -1356,7 +1419,7 @@
                             <constraint firstItem="fUk-NG-NKB" firstAttribute="top" secondItem="2qT-G7-Vpx" secondAttribute="bottom" constant="31" id="k2P-sg-u6G"/>
                             <constraint firstItem="soe-Ii-phs" firstAttribute="trailing" secondItem="Txw-YI-vc7" secondAttribute="trailing" id="mak-fw-Mog"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="zhY-BB-W6L"/>
+                        <viewLayoutGuide key="safeArea" id="apK-fr-omJ"/>
                     </view>
                     <connections>
                         <outlet property="userEmailTextField" destination="ZQJ-xT-v5c" id="Yx2-sa-FRV"/>
@@ -1408,18 +1471,18 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="ZhK-yy-r57" firstAttribute="leading" secondItem="yli-0z-UmY" secondAttribute="leading" constant="43" id="5Or-Ix-RX4"/>
+                            <constraint firstItem="ZhK-yy-r57" firstAttribute="leading" secondItem="irs-We-amm" secondAttribute="leading" constant="43" id="5Or-Ix-RX4"/>
                             <constraint firstItem="lQb-cw-f00" firstAttribute="leading" secondItem="dzC-1g-YBw" secondAttribute="trailing" constant="44" id="Ct1-I6-y0x"/>
-                            <constraint firstItem="ZhK-yy-r57" firstAttribute="centerX" secondItem="gzZ-Pa-M0Z" secondAttribute="centerX" id="FbB-wL-owK"/>
+                            <constraint firstItem="ZhK-yy-r57" firstAttribute="centerX" secondItem="irs-We-amm" secondAttribute="centerX" id="FbB-wL-owK"/>
                             <constraint firstItem="dzC-1g-YBw" firstAttribute="top" secondItem="lQb-cw-f00" secondAttribute="top" id="J7S-dd-Q3p"/>
-                            <constraint firstItem="ZhK-yy-r57" firstAttribute="top" secondItem="yli-0z-UmY" secondAttribute="top" constant="277" id="M2P-8a-oNF"/>
-                            <constraint firstItem="yli-0z-UmY" firstAttribute="trailing" secondItem="lQb-cw-f00" secondAttribute="trailing" constant="80" id="PU5-a7-gsE"/>
+                            <constraint firstItem="ZhK-yy-r57" firstAttribute="top" secondItem="irs-We-amm" secondAttribute="top" constant="277" id="M2P-8a-oNF"/>
+                            <constraint firstItem="irs-We-amm" firstAttribute="trailing" secondItem="lQb-cw-f00" secondAttribute="trailing" constant="80" id="PU5-a7-gsE"/>
                             <constraint firstItem="dzC-1g-YBw" firstAttribute="baseline" secondItem="lQb-cw-f00" secondAttribute="firstBaseline" id="kRS-XC-FiF"/>
                             <constraint firstItem="dzC-1g-YBw" firstAttribute="top" secondItem="ZhK-yy-r57" secondAttribute="bottom" constant="34" id="kaD-7f-kq3"/>
-                            <constraint firstItem="dzC-1g-YBw" firstAttribute="leading" secondItem="yli-0z-UmY" secondAttribute="leading" constant="73" id="qx0-LE-18H"/>
-                            <constraint firstItem="yli-0z-UmY" firstAttribute="bottom" secondItem="dzC-1g-YBw" secondAttribute="bottom" constant="283" id="sa5-6N-IRm"/>
+                            <constraint firstItem="dzC-1g-YBw" firstAttribute="leading" secondItem="irs-We-amm" secondAttribute="leading" constant="73" id="qx0-LE-18H"/>
+                            <constraint firstItem="irs-We-amm" firstAttribute="bottom" secondItem="dzC-1g-YBw" secondAttribute="bottom" constant="283" id="sa5-6N-IRm"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="yli-0z-UmY"/>
+                        <viewLayoutGuide key="safeArea" id="irs-We-amm"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hnW-EL-0ru" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1461,7 +1524,7 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="1Zb-rY-16z"/>
+                        <viewLayoutGuide key="safeArea" id="XmQ-Hi-3W6"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IBl-sk-fjp" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1539,26 +1602,26 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="5c0-Pp-m0i" firstAttribute="leading" secondItem="sVY-bI-ji8" secondAttribute="trailing" constant="27" id="1Lg-D0-yEz"/>
-                            <constraint firstItem="kUs-BP-zKm" firstAttribute="top" secondItem="Jgg-3o-LFD" secondAttribute="top" constant="117" id="4bO-nC-dAw"/>
+                            <constraint firstItem="kUs-BP-zKm" firstAttribute="top" secondItem="x4q-6U-hoi" secondAttribute="top" constant="117" id="4bO-nC-dAw"/>
                             <constraint firstItem="qmv-6P-KFI" firstAttribute="trailing" secondItem="YSb-b2-V19" secondAttribute="trailing" id="7eC-eZ-lDr"/>
-                            <constraint firstItem="Jgg-3o-LFD" firstAttribute="bottom" secondItem="sVY-bI-ji8" secondAttribute="bottom" constant="142" id="I6h-m9-dUM"/>
+                            <constraint firstItem="x4q-6U-hoi" firstAttribute="bottom" secondItem="sVY-bI-ji8" secondAttribute="bottom" constant="142" id="I6h-m9-dUM"/>
                             <constraint firstItem="qmv-6P-KFI" firstAttribute="leading" secondItem="YSb-b2-V19" secondAttribute="leading" id="PM3-4S-dKN"/>
                             <constraint firstItem="kUs-BP-zKm" firstAttribute="centerX" secondItem="qmv-6P-KFI" secondAttribute="centerX" id="R8s-72-lfX"/>
-                            <constraint firstItem="kUs-BP-zKm" firstAttribute="leading" secondItem="Jgg-3o-LFD" secondAttribute="leading" constant="78" id="XHu-Ff-Yx3"/>
-                            <constraint firstItem="Jgg-3o-LFD" firstAttribute="trailing" secondItem="kUs-BP-zKm" secondAttribute="trailing" constant="81" id="XOe-2i-bbO"/>
+                            <constraint firstItem="kUs-BP-zKm" firstAttribute="leading" secondItem="x4q-6U-hoi" secondAttribute="leading" constant="78" id="XHu-Ff-Yx3"/>
+                            <constraint firstItem="x4q-6U-hoi" firstAttribute="trailing" secondItem="kUs-BP-zKm" secondAttribute="trailing" constant="81" id="XOe-2i-bbO"/>
                             <constraint firstItem="qmv-6P-KFI" firstAttribute="top" secondItem="EbD-L6-akt" secondAttribute="bottom" constant="8" symbolic="YES" id="Zqb-91-Q3M"/>
                             <constraint firstItem="YSb-b2-V19" firstAttribute="leading" secondItem="sVY-bI-ji8" secondAttribute="leading" id="aot-YP-V6l"/>
-                            <constraint firstItem="qkT-NF-uDt" firstAttribute="leading" secondItem="Jgg-3o-LFD" secondAttribute="leading" constant="51" id="b03-pA-xud"/>
-                            <constraint firstItem="Jgg-3o-LFD" firstAttribute="trailing" secondItem="5c0-Pp-m0i" secondAttribute="trailing" constant="48" id="i0k-pl-KHg"/>
+                            <constraint firstItem="qkT-NF-uDt" firstAttribute="leading" secondItem="x4q-6U-hoi" secondAttribute="leading" constant="51" id="b03-pA-xud"/>
+                            <constraint firstItem="x4q-6U-hoi" firstAttribute="trailing" secondItem="5c0-Pp-m0i" secondAttribute="trailing" constant="48" id="i0k-pl-KHg"/>
                             <constraint firstItem="sVY-bI-ji8" firstAttribute="top" secondItem="5c0-Pp-m0i" secondAttribute="top" id="iJO-TY-dag"/>
-                            <constraint firstItem="qmv-6P-KFI" firstAttribute="leading" secondItem="Jgg-3o-LFD" secondAttribute="leading" constant="47" id="jLv-Zu-6p0"/>
+                            <constraint firstItem="qmv-6P-KFI" firstAttribute="leading" secondItem="x4q-6U-hoi" secondAttribute="leading" constant="47" id="jLv-Zu-6p0"/>
                             <constraint firstItem="sVY-bI-ji8" firstAttribute="top" secondItem="YSb-b2-V19" secondAttribute="bottom" constant="58" id="kL2-VX-hYu"/>
-                            <constraint firstItem="Jgg-3o-LFD" firstAttribute="bottom" secondItem="5c0-Pp-m0i" secondAttribute="bottom" constant="140" id="mrE-2g-7SA"/>
-                            <constraint firstItem="EbD-L6-akt" firstAttribute="leading" secondItem="Jgg-3o-LFD" secondAttribute="leading" constant="50" id="sMr-TQ-cff"/>
+                            <constraint firstItem="x4q-6U-hoi" firstAttribute="bottom" secondItem="5c0-Pp-m0i" secondAttribute="bottom" constant="140" id="mrE-2g-7SA"/>
+                            <constraint firstItem="EbD-L6-akt" firstAttribute="leading" secondItem="x4q-6U-hoi" secondAttribute="leading" constant="50" id="sMr-TQ-cff"/>
                             <constraint firstItem="YSb-b2-V19" firstAttribute="top" secondItem="qkT-NF-uDt" secondAttribute="bottom" constant="8" symbolic="YES" id="uCV-2s-Ajs"/>
                             <constraint firstItem="qkT-NF-uDt" firstAttribute="top" secondItem="qmv-6P-KFI" secondAttribute="bottom" constant="47" id="xdp-Nb-IKv"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Jgg-3o-LFD"/>
+                        <viewLayoutGuide key="safeArea" id="x4q-6U-hoi"/>
                     </view>
                     <connections>
                         <outlet property="userNameTextField" destination="qmv-6P-KFI" id="ZYO-NU-Ws9"/>
@@ -1627,12 +1690,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Pii-W8-Kcc" firstAttribute="leading" secondItem="IVG-3A-PBl" secondAttribute="leading" id="AK5-CC-dDt"/>
+                            <constraint firstItem="Pii-W8-Kcc" firstAttribute="leading" secondItem="ab4-SB-nhS" secondAttribute="leading" id="AK5-CC-dDt"/>
                             <constraint firstAttribute="bottom" secondItem="Pii-W8-Kcc" secondAttribute="bottom" id="ANe-dI-ldz"/>
                             <constraint firstItem="Pii-W8-Kcc" firstAttribute="top" secondItem="IVG-3A-PBl" secondAttribute="top" id="Oh7-6a-I0I"/>
-                            <constraint firstAttribute="trailing" secondItem="Pii-W8-Kcc" secondAttribute="trailing" id="vJ1-h5-bP2"/>
+                            <constraint firstItem="ab4-SB-nhS" firstAttribute="trailing" secondItem="Pii-W8-Kcc" secondAttribute="trailing" id="vJ1-h5-bP2"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Psg-Hp-G5v"/>
+                        <viewLayoutGuide key="safeArea" id="ab4-SB-nhS"/>
                     </view>
                     <connections>
                         <segue destination="Klc-6k-TMx" kind="presentation" identifier="splashToLogin" id="s3Z-ep-VqE"/>
@@ -1640,7 +1703,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cKU-fy-9ap" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5677.6000000000004" y="-950.2463054187192"/>
+            <point key="canvasLocation" x="-5713" y="-950"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Zf3-xa-2wL">
@@ -1683,26 +1746,26 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Aboutus" width="20.803611755371094" height="20.803611755371094"/>
-        <image name="Check" width="1600" height="1000"/>
+        <image name="Aboutus" width="170.66667175292969" height="170.66667175292969"/>
+        <image name="Check" width="533.33331298828125" height="333.33334350585938"/>
         <image name="Configuración" width="16" height="16"/>
-        <image name="Connections" width="980" height="666"/>
-        <image name="Down" width="50" height="50"/>
-        <image name="Edit" width="794" height="630"/>
-        <image name="Geovalla" width="40" height="40"/>
-        <image name="Heart" width="1200" height="1200"/>
-        <image name="LogoWhite" width="1890" height="1417"/>
-        <image name="Mapa" width="40" height="40"/>
-        <image name="Profile" width="36.426876068115234" height="36.426876068115234"/>
-        <image name="Ruta" width="50" height="50"/>
-        <image name="Session" width="512" height="512"/>
-        <image name="Shoes" width="119.88516998291016" height="205"/>
-        <image name="Splash" width="1125" height="2436"/>
-        <image name="Tienda" width="715" height="630"/>
-        <image name="Vitales" width="200" height="200"/>
+        <image name="Connections" width="326.66665649414062" height="222"/>
+        <image name="Down" width="16.666666030883789" height="16.666666030883789"/>
+        <image name="Edit" width="264.66665649414062" height="210"/>
+        <image name="Geovalla" width="16.666666030883789" height="16.666666030883789"/>
+        <image name="Heart" width="400" height="400"/>
+        <image name="LogoWhite" width="630" height="472.33334350585938"/>
+        <image name="Mapa" width="16.666666030883789" height="16.666666030883789"/>
+        <image name="Profile" width="170.66667175292969" height="170.66667175292969"/>
+        <image name="Ruta" width="16.666666030883789" height="16.666666030883789"/>
+        <image name="Session" width="170.66667175292969" height="170.66667175292969"/>
+        <image name="Shoes" width="116" height="198.33332824707031"/>
+        <image name="Splash" width="375" height="812"/>
+        <image name="Tienda" width="238.33332824707031" height="210"/>
+        <image name="Vitales" width="66.666664123535156" height="66.666664123535156"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="mZV-If-Dem"/>
-        <segue reference="1Fx-Q0-BGG"/>
+        <segue reference="s3Z-ep-VqE"/>
     </inferredMetricsTieBreakers>
 </document>

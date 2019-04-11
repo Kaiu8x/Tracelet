@@ -25,6 +25,9 @@
 		DF1E8E2A22430C6F00DB8E0C /* UserDetailsEntrega2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1E8E2922430C6F00DB8E0C /* UserDetailsEntrega2ViewController.swift */; };
 		DF435558225D387500859FF9 /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF435557225D387500859FF9 /* ShopViewController.swift */; };
 		DF43555C225D3B6300859FF9 /* ShopDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF43555B225D3B6300859FF9 /* ShopDetailsViewController.swift */; };
+		DF4B56A9225E9DDB0095B602 /* Spots360ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4B56A8225E9DDB0095B602 /* Spots360ViewController.swift */; };
+		DF4B56AB225EA4530095B602 /* Spots.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4B56AA225EA4530095B602 /* Spots.swift */; };
+		DF4B56AD225EEBA40095B602 /* Spots360ImgViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4B56AC225EEBA40095B602 /* Spots360ImgViewController.swift */; };
 		DF76F4F32243428D0093E943 /* UserDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF76F4F22243428D0093E943 /* UserDetailsViewController.swift */; };
 		DFC46E3722319EF6008F6A6A /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC46E3622319EF6008F6A6A /* StartViewController.swift */; };
 		DFC46E392231A016008F6A6A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC46E382231A016008F6A6A /* LoginViewController.swift */; };
@@ -60,6 +63,9 @@
 		DF1E8E2922430C6F00DB8E0C /* UserDetailsEntrega2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsEntrega2ViewController.swift; sourceTree = "<group>"; };
 		DF435557225D387500859FF9 /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
 		DF43555B225D3B6300859FF9 /* ShopDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopDetailsViewController.swift; sourceTree = "<group>"; };
+		DF4B56A8225E9DDB0095B602 /* Spots360ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spots360ViewController.swift; sourceTree = "<group>"; };
+		DF4B56AA225EA4530095B602 /* Spots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spots.swift; sourceTree = "<group>"; };
+		DF4B56AC225EEBA40095B602 /* Spots360ImgViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spots360ImgViewController.swift; sourceTree = "<group>"; };
 		DF76F4F22243428D0093E943 /* UserDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsViewController.swift; sourceTree = "<group>"; };
 		DFC46E3622319EF6008F6A6A /* StartViewController.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		DFC46E382231A016008F6A6A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -144,6 +150,9 @@
 				DFE6DCBA22273A6B00F05680 /* LaunchScreen.storyboard */,
 				DFC46E382231A016008F6A6A /* LoginViewController.swift */,
 				DFE6DCB522273A6900F05680 /* Main.storyboard */,
+				DF4B56AC225EEBA40095B602 /* Spots360ImgViewController.swift */,
+				DF4B56AA225EA4530095B602 /* Spots.swift */,
+				DF4B56A8225E9DDB0095B602 /* Spots360ViewController.swift */,
 				D51D8EB1225D718D006CE2DA /* VideoExplicativoARViewController.swift */,
 				DF43555B225D3B6300859FF9 /* ShopDetailsViewController.swift */,
 				DF435557225D387500859FF9 /* ShopViewController.swift */,
@@ -291,6 +300,7 @@
 				D5B528B722371476007F4238 /* EditarGeovallaViewController.swift in Sources */,
 				DFEF76CC22495B1100B3BE5C /* CodigoTraceletViewController.swift in Sources */,
 				DFC46E392231A016008F6A6A /* LoginViewController.swift in Sources */,
+				DF4B56A9225E9DDB0095B602 /* Spots360ViewController.swift in Sources */,
 				DF43555C225D3B6300859FF9 /* ShopDetailsViewController.swift in Sources */,
 				DFE6DCB422273A6900F05680 /* SplashViewController.swift in Sources */,
 				D5AB56082241C0CD00B8FA08 /* AgregarUsuarioViewController.swift in Sources */,
@@ -301,6 +311,7 @@
 				D5654ED1223C528B001A4CE4 /* EliminarUsuarioViewController.swift in Sources */,
 				DFC46E3B2231A036008F6A6A /* SignupViewController.swift in Sources */,
 				D5403B5D2240C492005B42AC /* EditarPerfilViewController.swift in Sources */,
+				DF4B56AB225EA4530095B602 /* Spots.swift in Sources */,
 				DF1E8E2A22430C6F00DB8E0C /* UserDetailsEntrega2ViewController.swift in Sources */,
 				D5AB56062241ADB300B8FA08 /* ConexionNuevoUsuarioViewController.swift in Sources */,
 				DF76F4F32243428D0093E943 /* UserDetailsViewController.swift in Sources */,
@@ -311,6 +322,7 @@
 				DFEF76CA22495AB700B3BE5C /* TienesTraceletViewController.swift in Sources */,
 				DF1E8E282243087D00DB8E0C /* UserDetailsEntregaViewController.swift in Sources */,
 				8C14233F2242A81A00B3E6CB /* RutasViewController.swift in Sources */,
+				DF4B56AD225EEBA40095B602 /* Spots360ImgViewController.swift in Sources */,
 				8CE4706322428B52000FA3B4 /* GeofenceViewController.swift in Sources */,
 				D5654ED5224090C9001A4CE4 /* SignosVitalesViewController.swift in Sources */,
 				D5654ED3224090BF001A4CE4 /* VistaListaUsuariosActivosViewController.swift in Sources */,
@@ -461,13 +473,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = MFCSJB93GL;
+				DEVELOPMENT_TEAM = 66QS9X9F77;
 				INFOPLIST_FILE = TraceletApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.kenyirotsuru.TraceletApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kawa2010.TraceletApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_REFLECTION_METADATA_LEVEL = none;
 				SWIFT_VERSION = 4.2;
@@ -481,13 +493,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = MFCSJB93GL;
+				DEVELOPMENT_TEAM = 66QS9X9F77;
 				INFOPLIST_FILE = TraceletApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.kenyirotsuru.TraceletApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kawa2010.TraceletApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_REFLECTION_METADATA_LEVEL = none;
 				SWIFT_VERSION = 4.2;
