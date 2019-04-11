@@ -788,21 +788,31 @@
         <!--PulserasAR View Controller-->
         <scene sceneID="49n-RS-kbr">
             <objects>
-                <viewController id="u94-6P-bv5" customClass="PulserasARViewController" customModule="TraceletApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PulserasAR" id="u94-6P-bv5" customClass="PulserasARViewController" customModule="TraceletApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DT2-Yo-wHU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DQS-kI-fcD">
-                                <rect key="frame" x="0.0" y="123" width="375" height="526"/>
+                                <rect key="frame" x="0.0" y="102" width="375" height="633"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="fD9-GX-1Xo" appends="YES" id="MCr-hm-FcC"/>
+                                    <outletCollection property="gestureRecognizers" destination="tF9-Xy-80Q" appends="YES" id="sTV-K7-aOU"/>
+                                </connections>
                             </arscnView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="cEv-dO-0wi"/>
                     </view>
+                    <connections>
+                        <outlet property="sceneView" destination="DQS-kI-fcD" id="Lsj-Al-whO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NUC-77-5hT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="fD9-GX-1Xo"/>
+                <rotationGestureRecognizer id="tF9-Xy-80Q"/>
             </objects>
             <point key="canvasLocation" x="3621.5999999999999" y="1447.536945812808"/>
         </scene>
