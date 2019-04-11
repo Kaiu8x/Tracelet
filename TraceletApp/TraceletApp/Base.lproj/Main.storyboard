@@ -1149,7 +1149,7 @@
                         <viewLayoutGuide key="safeArea" id="m3G-tA-mFx"/>
                     </view>
                     <connections>
-                        <outlet property="vistaAR" destination="RJN-dY-i3R" id="RXm-Tm-dOg"/>
+                        <outlet property="sceneView" destination="RJN-dY-i3R" id="4iJ-ay-4dm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Adw-hm-1cd" userLabel="First Responder" sceneMemberID="firstResponder"/>

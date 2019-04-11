@@ -77,9 +77,10 @@ class VideoExplicativoARViewController: UIViewController, ARSCNViewDelegate {
         //identificar en donde se ha tocado el currentFrame
         var traduccion = matrix_identity_float4x4
         //definir un metro alejado del dispositivo
-        traduccion.columns.3.z = -1.0
+        traduccion.columns.3.z = -2.0
         pantallaPlanaNodo.simdTransform = matrix_multiply(currentFrame.camera.transform, traduccion)
         
+        //Aqui realizas la rotación de pantalla
         pantallaPlanaNodo.eulerAngles = SCNVector3(Double.pi, 0, 0)
         self.sceneView.scene.rootNode.addChildNode(pantallaPlanaNodo)
         
