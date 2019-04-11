@@ -2,6 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSCameraUsageDescription</key>
+	<string>Allow the camera to be used</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Tracelet requiere acceso constante a la ubicación de tu dispositivo para notificar la entrada o salida de las geovallas.</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Tracelet requiere acceso constante a la ubicación de tu dispositivo para notificar la entrada o salida de las geovallas.</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
