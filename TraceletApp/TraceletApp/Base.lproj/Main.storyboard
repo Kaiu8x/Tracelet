@@ -743,7 +743,7 @@
         <!--PulserasAR View Controller-->
         <scene sceneID="49n-RS-kbr">
             <objects>
-                <viewController id="u94-6P-bv5" customClass="PulserasARViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PulserasAR" id="u94-6P-bv5" customClass="PulserasARViewController" customModule="TraceletApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DT2-Yo-wHU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -762,7 +762,7 @@
                         <viewLayoutGuide key="safeArea" id="cEv-dO-0wi"/>
                     </view>
                     <connections>
-                        <outlet property="sceneView" destination="DQS-kI-fcD" id="n86-ob-Ath"/>
+                        <outlet property="sceneView" destination="DQS-kI-fcD" id="Lsj-Al-whO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NUC-77-5hT" userLabel="First Responder" sceneMemberID="firstResponder"/>
