@@ -30,24 +30,21 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         //necesario para que se muestre la luz especular
         
         // Create a new scene
-        do{
-            let myURL = NSURL(string: "http://www.martinmolina.com.mx/201911/data/jsonTracelet/images/tracelet1.scn")
-            let scene = try! SCNScene(url: myURL! as URL, options:nil)
-            self.sceneView.scene = scene
-            pulsera = scene.rootNode.childNode(withName: "Brazalete", recursively: true)!
-            pulsera.isHidden = true
+    
+        let myURL = NSURL(string: "http://www.martinmolina.com.mx/201911/data/jsonTracelet/images/tracelet1.scn")
+        let scene = try! SCNScene(url: myURL! as URL, options:nil)
+        self.sceneView.scene = scene
+        pulsera = scene.rootNode.childNode(withName: "Brazalete", recursively: true)!
+        pulsera.isHidden = true
+    
+        let pinchGestureRecognizer = UIPinchGestureRecognizer (target: self, action: #selector(escalado))
+        let rotationGestureRecognizer = UIRotationGestureRecognizer (target: self, action: #selector(rotacion))
+        let tapGestureRecognizer = UITapGestureRecognizer (target: self, action: #selector(ejecucionTap))
         
-            let pinchGestureRecognizer = UIPinchGestureRecognizer (target: self, action: #selector(escalado))
-            let rotationGestureRecognizer = UIRotationGestureRecognizer (target: self, action: #selector(rotacion))
-            let tapGestureRecognizer = UITapGestureRecognizer (target: self, action: #selector(ejecucionTap))
+        sceneView.addGestureRecognizer(pinchGestureRecognizer)
+        sceneView.addGestureRecognizer(rotationGestureRecognizer)
+        sceneView.addGestureRecognizer(tapGestureRecognizer)
             
-            sceneView.addGestureRecognizer(pinchGestureRecognizer)
-            sceneView.addGestureRecognizer(rotationGestureRecognizer)
-            sceneView.addGestureRecognizer(tapGestureRecognizer)
-            
-        } catch{
-            
-        }
         
     }
     
