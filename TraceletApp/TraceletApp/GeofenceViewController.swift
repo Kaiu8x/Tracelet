@@ -25,7 +25,7 @@ class GeofenceViewController: UIViewController {
         locationManager.delegate = self
         locationManager.requestAlwaysAuthorization()
         loadAllGeotifications()
-        /*
+        
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         
         mapaG.mapType=MKMapType.standard
@@ -39,7 +39,7 @@ class GeofenceViewController: UIViewController {
         mapaG.showsScale = true
         mapaG.showsTraffic = true
         mapaG.isZoomEnabled = true
-        */
+        
         
         
         // Do any additional setup after loading the iew, typically from a nib.

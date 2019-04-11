@@ -196,7 +196,7 @@
                                 </constraints>
                                 <state key="normal" title="Cancelar"/>
                                 <connections>
-                                    <action selector="onCancel:" destination="Dag-z4-C1b" eventType="touchUpInside" id="hBL-SN-uQd"/>
+                                    <action selector="cancelarButton:" destination="Dag-z4-C1b" eventType="touchUpInside" id="38t-GS-54b"/>
                                 </connections>
                             </button>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="dKt-dJ-oKP">
@@ -227,18 +227,14 @@
                         <viewLayoutGuide key="safeArea" id="0qY-fc-JES"/>
                     </view>
                     <navigationItem key="navigationItem" title="Nueva Geovalla" id="LeV-O9-3np">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="Nearme" id="lNU-ZK-RjW">
-                            <connections>
-                                <action selector="onZoom:" destination="Dag-z4-C1b" id="Nx7-F3-AH2"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="Nearme" id="lNU-ZK-RjW"/>
                     </navigationItem>
                     <connections>
                         <outlet property="addGeofence" destination="t7H-2F-qrR" id="6at-3t-mNd"/>
                         <outlet property="mapaEG" destination="dKt-dJ-oKP" id="WbA-sJ-Mbq"/>
                         <outlet property="nearMe" destination="lNU-ZK-RjW" id="WpA-Wy-0Cz"/>
                         <outlet property="radiusTF" destination="guO-QK-J0M" id="Ixv-TK-s1a"/>
-                        <outlet property="userTF" destination="8mM-Nc-PqI" id="ugK-HV-kTe"/>
+                        <outlet property="userTF" destination="8mM-Nc-PqI" id="bjX-5e-HwD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CbJ-vZ-lBN" userLabel="First Responder" sceneMemberID="firstResponder"/>
