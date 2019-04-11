@@ -55,8 +55,8 @@ class Geotification: NSObject, Codable, MKAnnotation {
     }
     
     var subtitle: String? {
-        let eventTypeString = eventType.rawValue
-        return "Radius: \(radius)m - \(eventTypeString)"
+        //let eventTypeString = eventType.rawValue
+        return "Radio: \(radius) m"
     }
     
     init(coordinate: CLLocationCoordinate2D, radius: CLLocationDistance, identifier: String, note: String, eventType: EventType) {

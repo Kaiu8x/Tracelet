@@ -27,7 +27,6 @@ class GeofenceViewController: UIViewController {
         loadAllGeotifications()
         
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        
         mapaG.mapType=MKMapType.standard
         let cl=CLLocationCoordinate2DMake(19.459415, -99.142667)
         mapaG.region = MKCoordinateRegion(center: cl, latitudinalMeters: 2000, longitudinalMeters: 2000)
@@ -47,8 +46,6 @@ class GeofenceViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? AddGeotificationViewController {
-            //let navigationController = segue.destination as! UINavigationController
-            //let vc = navigationController.viewControllers.first as! AddGeotificationViewController
             destination.delegate = self
         }
     }
@@ -87,7 +84,7 @@ class GeofenceViewController: UIViewController {
     }
     
     func updateGeotificationsCount() {
-        title = "Geotifications: \(geotifications.count)"
+        //title = "Geovallas: \(geotifications.count)"
         navigationItem.rightBarButtonItem?.isEnabled = (geotifications.count < 20)
     }
     
@@ -108,18 +105,7 @@ class GeofenceViewController: UIViewController {
             }
         }
     }
-    /*
-    func locationManager(_ manager: CLLocationManager,
-                         didChangeAuthorization status: CLAuthorizationStatus) {
-        if status == .authorizedWhenInUse{
-            locationManager.startUpdatingLocation()
-            mapaG.showsUserLocation = true
-        } else {
-            locationManager.stopUpdatingLocation()
-            mapaG.showsUserLocation = false
-        }
-    }
-    */
+    
     @IBAction func unwindToGeofenceView(sender: UIStoryboardSegue) {
         
     }
@@ -160,7 +146,6 @@ class GeofenceViewController: UIViewController {
 // MARK: AddGeotificationViewControllerDelegate
 extension GeofenceViewController: AddGeotificationViewControllerDelegate {
     func addGeotificationViewController(_ controller: AddGeotificationViewController, didAddCoordinate coordinate: CLLocationCoordinate2D, radius: Double, identifier: String, note: String, eventType: Geotification.EventType) {
-        print("hola3")
         controller.dismiss(animated: true, completion: nil)
         let clampedRadius = min(radius, locationManager.maximumRegionMonitoringDistance)
         let geotification = Geotification(coordinate: coordinate, radius: clampedRadius, identifier: identifier, note: note, eventType: eventType)
@@ -197,7 +182,7 @@ extension GeofenceViewController: CLLocationManagerDelegate {
 extension GeofenceViewController: MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        let identifier = "myGeotification"
+        let identifier = "myGeofence"
         if annotation is Geotification {
             var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKPinAnnotationView
             if annotationView == nil {
@@ -205,7 +190,7 @@ extension GeofenceViewController: MKMapViewDelegate {
                 annotationView?.canShowCallout = true
                 let removeButton = UIButton(type: .custom)
                 removeButton.frame = CGRect(x: 0, y: 0, width: 23, height: 23)
-                removeButton.setImage(UIImage(named: "DeleteGeotification")!, for: .normal)
+                removeButton.setImage(UIImage(named: "DeleteGeofence")!, for: .normal)
                 annotationView?.leftCalloutAccessoryView = removeButton
             } else {
                 annotationView?.annotation = annotation
@@ -220,8 +205,8 @@ extension GeofenceViewController: MKMapViewDelegate {
         if overlay is MKCircle {
             let circleRenderer = MKCircleRenderer(overlay: overlay)
             circleRenderer.lineWidth = 1.0
-            circleRenderer.strokeColor = .purple
-            circleRenderer.fillColor = UIColor.purple.withAlphaComponent(0.4)
+            circleRenderer.strokeColor = .green
+            circleRenderer.fillColor = UIColor.green.withAlphaComponent(0.4)
             return circleRenderer
         }
         return MKOverlayRenderer(overlay: overlay)

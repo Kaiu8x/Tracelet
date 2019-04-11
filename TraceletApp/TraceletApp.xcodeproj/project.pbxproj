@@ -124,24 +124,22 @@
 		DFE6DCB022273A6900F05680 /* TraceletApp */ = {
 			isa = PBXGroup;
 			children = (
-				D5AB56072241C0CD00B8FA08 /* AgregarUsuarioViewController.swift */,
+				DF43555D225D8A0700859FF9 /* AddGeotificationViewController.swift */,
 				DF1E8E232242DEE500DB8E0C /* AdministrarUsuariosViewController.swift */,
+				D5AB56072241C0CD00B8FA08 /* AgregarUsuarioViewController.swift */,
 				DFE6DCB122273A6900F05680 /* AppDelegate.swift */,
 				DFE6DCB822273A6B00F05680 /* Assets.xcassets */,
 				D5AB56052241ADB300B8FA08 /* ConexionNuevoUsuarioViewController.swift */,
+				D5B114BA2243508F00C7AE2B /* ConfiguracionViewController.swift */,
 				D5403B5C2240C492005B42AC /* EditarPerfilViewController.swift */,
 				D5654ED0223C528B001A4CE4 /* EliminarUsuarioViewController.swift */,
 				8CE4706222428B52000FA3B4 /* GeofenceViewController.swift */,
+				8CE9169E2257A60C00D96265 /* Geotification.swift */,
 				DFEB842A2235B025007FC364 /* GoogleService-Info.plist */,
 				DFE6DCBD22273A6B00F05680 /* Info.plist */,
 				DFE6DCBA22273A6B00F05680 /* LaunchScreen.storyboard */,
 				DFC46E382231A016008F6A6A /* LoginViewController.swift */,
 				DFE6DCB522273A6900F05680 /* Main.storyboard */,
-				DF43555D225D8A0700859FF9 /* AddGeotificationViewController.swift */,
-				D5B114BA2243508F00C7AE2B /* ConfiguracionViewController.swift */,
-				DF76F4F22243428D0093E943 /* UserDetailsViewController.swift */,
-				DF1E8E2922430C6F00DB8E0C /* UserDetailsEntrega2ViewController.swift */,
-				DF1E8E272243087D00DB8E0C /* UserDetailsEntregaViewController.swift */,
 				8CE4706022428028000FA3B4 /* MapasViewController.swift */,
 				8C14233E2242A81A00B3E6CB /* RutasViewController.swift */,
 				D5654ED4224090C9001A4CE4 /* SignosVitalesViewController.swift */,
@@ -150,9 +148,11 @@
 				DFC46E3622319EF6008F6A6A /* StartViewController.swift */,
 				DFC46E462231B5D7008F6A6A /* Switcher.swift */,
 				DFC46E482231D5D3008F6A6A /* TabBarController.swift */,
-				D5654ED2224090BF001A4CE4 /* VistaListaUsuariosActivosViewController.swift */,
-				8CE9169E2257A60C00D96265 /* Geotification.swift */,
+				DF1E8E2922430C6F00DB8E0C /* UserDetailsEntrega2ViewController.swift */,
+				DF1E8E272243087D00DB8E0C /* UserDetailsEntregaViewController.swift */,
+				DF76F4F22243428D0093E943 /* UserDetailsViewController.swift */,
 				8CE916A02257A64E00D96265 /* Utilities.swift */,
+				D5654ED2224090BF001A4CE4 /* VistaListaUsuariosActivosViewController.swift */,
 			);
 			path = TraceletApp;
 			sourceTree = "<group>";

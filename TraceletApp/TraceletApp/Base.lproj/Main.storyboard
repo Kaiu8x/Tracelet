@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="p8J-YZ-oP0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="E2C-3L-Y1N">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -20,6 +20,9 @@
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="BPn-5t-maX">
                                 <rect key="frame" x="0.0" y="88" width="375" height="641"/>
+                                <connections>
+                                    <outlet property="delegate" destination="puz-UZ-eMS" id="Krc-XV-lTq"/>
+                                </connections>
                             </mapView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="42s-hc-L4f">
                                 <rect key="frame" x="0.0" y="44" width="375" height="44"/>
@@ -176,11 +179,21 @@
                                     <action selector="textFieldEditingChanged:" destination="Dag-z4-C1b" eventType="editingChanged" id="0PZ-lK-41y"/>
                                 </connections>
                             </textField>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="dKt-dJ-oKP">
+                                <rect key="frame" x="0.0" y="88" width="375" height="241"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </mapView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="AddPin" translatesAutoresizingMaskIntoConstraints="NO" id="qeV-Ft-bXQ">
+                                <rect key="frame" x="152" y="173" width="70" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t7H-2F-qrR">
-                                <rect key="frame" x="77" y="538" width="99" height="28"/>
+                                <rect key="frame" x="77" y="550" width="99" height="28"/>
                                 <color key="backgroundColor" red="0.21566441655158997" green="0.47779196500778198" blue="0.96475595235824585" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="28" id="C9G-CD-4Iq"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="28" id="HKj-ya-qHk"/>
+                                    <constraint firstAttribute="width" constant="99" id="wim-ka-Ucl"/>
                                 </constraints>
                                 <color key="tintColor" red="0.93045660620000004" green="0.93045660620000004" blue="0.93045660620000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Aceptar"/>
@@ -189,26 +202,25 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="psM-Iw-xSV">
-                                <rect key="frame" x="198" y="536" width="99" height="30"/>
+                                <rect key="frame" x="198" y="550" width="99" height="28"/>
                                 <color key="backgroundColor" red="0.93045660620000004" green="0.93045660620000004" blue="0.93045660620000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="99" id="DqS-0h-PFM"/>
+                                    <constraint firstAttribute="height" constant="84" id="X9t-gk-3fL"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="99" id="ron-AY-8di"/>
                                 </constraints>
                                 <state key="normal" title="Cancelar"/>
                                 <connections>
                                     <action selector="cancelarButton:" destination="Dag-z4-C1b" eventType="touchUpInside" id="38t-GS-54b"/>
                                 </connections>
                             </button>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="dKt-dJ-oKP">
-                                <rect key="frame" x="0.0" y="88" width="375" height="241"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="ttm-Mz-iDz" firstAttribute="top" secondItem="kfI-Bc-Bkz" secondAttribute="bottom" constant="21" id="8BS-93-fU5"/>
                             <constraint firstItem="0qY-fc-JES" firstAttribute="trailing" secondItem="guO-QK-J0M" secondAttribute="trailing" constant="79" id="BTG-FA-iGE"/>
                             <constraint firstItem="guO-QK-J0M" firstAttribute="top" secondItem="8mM-Nc-PqI" secondAttribute="bottom" constant="13" id="Bki-fe-ZxO"/>
+                            <constraint firstItem="psM-Iw-xSV" firstAttribute="leading" secondItem="t7H-2F-qrR" secondAttribute="trailing" constant="22" id="Ee4-zd-AUX"/>
                             <constraint firstItem="0qY-fc-JES" firstAttribute="trailing" secondItem="8mM-Nc-PqI" secondAttribute="trailing" constant="80" id="Qde-kM-p4u"/>
                             <constraint firstItem="8mM-Nc-PqI" firstAttribute="leading" secondItem="kfI-Bc-Bkz" secondAttribute="trailing" constant="8" symbolic="YES" id="Shf-gz-aM8"/>
                             <constraint firstItem="psM-Iw-xSV" firstAttribute="top" secondItem="guO-QK-J0M" secondAttribute="bottom" constant="47" id="TUk-Xh-Ftg"/>
@@ -218,6 +230,7 @@
                             <constraint firstItem="psM-Iw-xSV" firstAttribute="leading" secondItem="8mM-Nc-PqI" secondAttribute="leading" id="hjF-cz-zGh"/>
                             <constraint firstItem="guO-QK-J0M" firstAttribute="leading" secondItem="ttm-Mz-iDz" secondAttribute="trailing" constant="9" id="hxx-Ox-6Gi"/>
                             <constraint firstItem="t7H-2F-qrR" firstAttribute="bottom" secondItem="psM-Iw-xSV" secondAttribute="bottom" id="jA3-XF-bKZ"/>
+                            <constraint firstItem="psM-Iw-xSV" firstAttribute="leading" secondItem="t7H-2F-qrR" secondAttribute="trailing" constant="22" id="oLr-FV-oKH"/>
                             <constraint firstItem="kfI-Bc-Bkz" firstAttribute="centerY" secondItem="8mM-Nc-PqI" secondAttribute="centerY" id="oaM-qt-NY2"/>
                             <constraint firstItem="guO-QK-J0M" firstAttribute="centerX" secondItem="psM-Iw-xSV" secondAttribute="centerX" id="sSt-sh-aIU"/>
                             <constraint firstItem="0qY-fc-JES" firstAttribute="bottom" secondItem="psM-Iw-xSV" secondAttribute="bottom" constant="109" id="u0V-al-SQI"/>
@@ -235,9 +248,11 @@
                         <outlet property="nearMe" destination="lNU-ZK-RjW" id="WpA-Wy-0Cz"/>
                         <outlet property="radiusTF" destination="guO-QK-J0M" id="Ixv-TK-s1a"/>
                         <outlet property="userTF" destination="8mM-Nc-PqI" id="bjX-5e-HwD"/>
+                        <segue destination="kPK-xg-Jzy" kind="unwind" identifier="unwindToGeofence" unwindAction="unwindToGeofenceViewWithSender:" id="ll5-4s-ZPl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CbJ-vZ-lBN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="kPK-xg-Jzy" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1069.5999999999999" y="-1347.7832512315272"/>
         </scene>
@@ -1653,6 +1668,7 @@
     </scenes>
     <resources>
         <image name="Aboutus" width="170" height="170"/>
+        <image name="AddPin" width="75" height="75"/>
         <image name="Brace1" width="166" height="166"/>
         <image name="Brace2" width="166" height="166"/>
         <image name="Check" width="533" height="333"/>

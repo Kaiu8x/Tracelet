@@ -21,7 +21,7 @@ class AddGeotificationViewController: UIViewController, CLLocationManagerDelegat
     
     
     @IBAction func cancelarButton(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        performSegue(withIdentifier: "unwindToGeofence", sender: self)
     }
     
     
@@ -93,7 +93,7 @@ class AddGeotificationViewController: UIViewController, CLLocationManagerDelegat
         let identifier = NSUUID().uuidString
         let note = userTF.text
         delegate?.addGeotificationViewController(self, didAddCoordinate: coordinate, radius: radius, identifier: identifier, note: note!, eventType: Geotification.EventType.onEntry)
-        
+        performSegue(withIdentifier: "unwindToGeofence", sender: self)
     }
     
 }
