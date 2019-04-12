@@ -19,6 +19,7 @@ class SignupViewController: UIViewController {
     }
     
   
+    @IBOutlet weak var userNameTextField: UITextField!
     
     @IBOutlet weak var userEmailTextField: UITextField!
     
@@ -41,6 +42,7 @@ class SignupViewController: UIViewController {
                 if (error == nil) {
                     UserDefaults.standard.set(true, forKey: "status")
                     Switcher.updateRootViewController()
+                    
                     self.performSegue(withIdentifier: "sucessSignupSegue", sender: self)
                 } else {
                     let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
@@ -60,8 +62,13 @@ class SignupViewController: UIViewController {
         self.performSegue(withIdentifier: "cancelSignupSegue", sender: nil)
     }
     
-    
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? TienesTraceletViewController {
+            vc.name = userNameTextField.text!
+            vc.email = userEmailTextField.text!
+            vc.deviceId = ""
+        }
+    }
 }
 
 extension UIViewController {

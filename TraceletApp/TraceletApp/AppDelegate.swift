@@ -22,8 +22,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         UserDefaults.standard.set(false, forKey: "status")
         FirebaseApp.configure()
-        Switcher.updateRootViewController()
         let db = Firestore.firestore()
+        
+        Switcher.updateRootViewController()
         
         locationManager.delegate = self
         locationManager.requestAlwaysAuthorization()

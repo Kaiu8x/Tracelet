@@ -1450,6 +1450,7 @@
                     </view>
                     <connections>
                         <outlet property="userEmailTextField" destination="ZQJ-xT-v5c" id="Yx2-sa-FRV"/>
+                        <outlet property="userNameTextField" destination="2qT-G7-Vpx" id="j3j-Zj-uxg"/>
                         <outlet property="userPasswordConfirmTextField" destination="Txw-YI-vc7" id="qd4-6V-hLq"/>
                         <outlet property="userPasswordTextField" destination="rAG-sV-Eaf" id="4sJ-eM-ghX"/>
                     </connections>
@@ -1483,7 +1484,8 @@
                                 <color key="tintColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Sí"/>
                                 <connections>
-                                    <segue destination="PXo-Se-zzb" kind="show" id="vIN-dw-bv6"/>
+                                    <action selector="hasTraceletButton:" destination="0Bh-En-xJA" eventType="touchUpInside" id="YCG-9A-t27"/>
+                                    <segue destination="PXo-Se-zzb" kind="show" identifier="hasTraceletSegue" id="vIN-dw-bv6"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lQb-cw-f00">
@@ -1492,7 +1494,8 @@
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                 <state key="normal" title="No"/>
                                 <connections>
-                                    <segue destination="E2C-3L-Y1N" kind="show" id="VOe-Tm-kVm"/>
+                                    <action selector="noTraceletButton:" destination="0Bh-En-xJA" eventType="touchUpInside" id="ZMV-xM-OfF"/>
+                                    <segue destination="E2C-3L-Y1N" kind="show" identifier="noTraceletSegue" id="VOe-Tm-kVm"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1519,7 +1522,7 @@
         <!--Codigo Tracelet View Controller-->
         <scene sceneID="bCu-AG-5pu">
             <objects>
-                <viewController id="PXo-Se-zzb" customClass="CodigoTraceletViewController" customModule="TraceletApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CodigoTracelet" id="PXo-Se-zzb" customClass="CodigoTraceletViewController" customModule="TraceletApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kLe-GD-ZSG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1532,6 +1535,7 @@
                                 <color key="tintColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Conectar"/>
                                 <connections>
+                                    <action selector="conectTraceletButton:" destination="PXo-Se-zzb" eventType="touchUpInside" id="yqj-za-Cjl"/>
                                     <segue destination="E2C-3L-Y1N" kind="show" id="crS-Rl-vfG"/>
                                 </connections>
                             </button>
@@ -1553,6 +1557,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="XmQ-Hi-3W6"/>
                     </view>
+                    <connections>
+                        <outlet property="traceletIdTextField" destination="XKL-0P-lLI" id="2v0-w0-OU7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IBl-sk-fjp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1794,7 +1801,7 @@
         <image name="Vitales" width="66.666664123535156" height="66.666664123535156"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="mZV-If-Dem"/>
-        <segue reference="s3Z-ep-VqE"/>
+        <segue reference="crS-Rl-vfG"/>
+        <segue reference="Ian-mJ-yo0"/>
     </inferredMetricsTieBreakers>
 </document>
