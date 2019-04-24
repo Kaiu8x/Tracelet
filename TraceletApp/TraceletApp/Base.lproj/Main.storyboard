@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="E2C-3L-Y1N">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Klc-6k-TMx">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -256,9 +256,6 @@
                                 <state key="normal" title=" Kenyiro" image="Down">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
-                                <connections>
-                                    <segue destination="ivq-kB-IyE" kind="show" id="9PH-uj-KYQ"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="JE4-oi-Afc">
                                 <rect key="frame" x="25" y="55" width="50" height="50"/>
@@ -452,6 +449,10 @@
                     <navigationItem key="navigationItem" title="Configuración" id="h1A-Zi-ADr">
                         <barButtonItem key="backBarButtonItem" title="Configuración" id="641-pg-pYW"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="userMailLabel" destination="UvO-gj-ERe" id="IWB-Kg-aWZ"/>
+                        <outlet property="userNameLabel" destination="OW2-Wb-6Vb" id="ccZ-i3-ZTK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aDg-bg-XZ3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1708,7 +1709,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wof-I0-nyA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-697" y="23"/>
+            <point key="canvasLocation" x="-698" y="22"/>
         </scene>
         <!--SplashViewController-->
         <scene sceneID="5Nf-0e-t3h">
@@ -1801,7 +1802,7 @@
         <image name="Vitales" width="66.666664123535156" height="66.666664123535156"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="crS-Rl-vfG"/>
-        <segue reference="Ian-mJ-yo0"/>
+        <segue reference="fFo-g3-caa"/>
+        <segue reference="sVl-VN-pLV"/>
     </inferredMetricsTieBreakers>
 </document>

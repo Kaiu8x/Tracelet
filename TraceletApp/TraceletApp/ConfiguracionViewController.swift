@@ -10,6 +10,10 @@ import UIKit
 
 class ConfiguracionViewController: UIViewController {
 
+    
+    @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var userMailLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

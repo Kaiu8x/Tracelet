@@ -40,8 +40,6 @@ class SignupViewController: UIViewController {
             Auth.auth().createUser(withEmail: userEmailTextField.text!, password: userPasswordTextField.text!) {
                 (user, error) in
                 if (error == nil) {
-                    UserDefaults.standard.set(true, forKey: "status")
-                    Switcher.updateRootViewController()
                     
                     self.performSegue(withIdentifier: "sucessSignupSegue", sender: self)
                 } else {

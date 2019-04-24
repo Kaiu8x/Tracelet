@@ -19,7 +19,7 @@ class Switcher {
         print("status: ", status)
         
         if(status == true) {
-            rootViewController = storyboard.instantiateViewController(withIdentifier: "tabBarViewController")
+            rootViewController = storyboard.instantiateViewController(withIdentifier: "tabBar")
         } else {
             //rootViewController = storyboard.instantiateViewController(withIdentifier: "startViewController")
             rootViewController = storyboard.instantiateInitialViewController()

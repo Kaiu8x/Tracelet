@@ -24,6 +24,7 @@
 		DF00C785225F1DF0009C98DE /* PulserasARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF00C784225F1DF0009C98DE /* PulserasARViewController.swift */; };
 		DF00C78A225FA691009C98DE /* ActivityIndicatorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF00C789225FA691009C98DE /* ActivityIndicatorPresenter.swift */; };
 		DF00C78C225FAE5D009C98DE /* SpinnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF00C78B225FAE5D009C98DE /* SpinnerViewController.swift */; };
+		DF00C78E22611866009C98DE /* CurrentUserDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF00C78D22611866009C98DE /* CurrentUserDB.swift */; };
 		DF1E8E242242DEE500DB8E0C /* AdministrarUsuariosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1E8E232242DEE500DB8E0C /* AdministrarUsuariosViewController.swift */; };
 		DF1E8E282243087D00DB8E0C /* UserDetailsEntregaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1E8E272243087D00DB8E0C /* UserDetailsEntregaViewController.swift */; };
 		DF1E8E2A22430C6F00DB8E0C /* UserDetailsEntrega2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1E8E2922430C6F00DB8E0C /* UserDetailsEntrega2ViewController.swift */; };
@@ -67,6 +68,7 @@
 		DF00C784225F1DF0009C98DE /* PulserasARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulserasARViewController.swift; sourceTree = "<group>"; };
 		DF00C789225FA691009C98DE /* ActivityIndicatorPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorPresenter.swift; path = /Users/kaiu8x/Dropbox/Github/Tracelet/TraceletApp/TraceletApp/ActivityIndicatorPresenter.swift; sourceTree = "<absolute>"; };
 		DF00C78B225FAE5D009C98DE /* SpinnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerViewController.swift; sourceTree = "<group>"; };
+		DF00C78D22611866009C98DE /* CurrentUserDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUserDB.swift; sourceTree = "<group>"; };
 		DF1E8E232242DEE500DB8E0C /* AdministrarUsuariosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdministrarUsuariosViewController.swift; sourceTree = "<group>"; };
 		DF1E8E272243087D00DB8E0C /* UserDetailsEntregaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsEntregaViewController.swift; sourceTree = "<group>"; };
 		DF1E8E2922430C6F00DB8E0C /* UserDetailsEntrega2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsEntrega2ViewController.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 				DFE6DCBA22273A6B00F05680 /* LaunchScreen.storyboard */,
 				DFC46E382231A016008F6A6A /* LoginViewController.swift */,
 				DFE6DCB522273A6900F05680 /* Main.storyboard */,
+				DF00C78D22611866009C98DE /* CurrentUserDB.swift */,
 				DF00C78B225FAE5D009C98DE /* SpinnerViewController.swift */,
 				DF4B56AC225EEBA40095B602 /* Spots360ImgViewController.swift */,
 				DF4B56AA225EA4530095B602 /* Spots.swift */,
@@ -345,6 +348,7 @@
 				8CE9169F2257A60C00D96265 /* Geotification.swift in Sources */,
 				DF1E8E242242DEE500DB8E0C /* AdministrarUsuariosViewController.swift in Sources */,
 				DFC46E492231D5D3008F6A6A /* TabBarController.swift in Sources */,
+				DF00C78E22611866009C98DE /* CurrentUserDB.swift in Sources */,
 				DFE6DCB222273A6900F05680 /* AppDelegate.swift in Sources */,
 				DFC46E3722319EF6008F6A6A /* StartViewController.swift in Sources */,
 				DFEF76CA22495AB700B3BE5C /* TienesTraceletViewController.swift in Sources */,

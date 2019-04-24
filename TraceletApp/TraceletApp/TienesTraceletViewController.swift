@@ -12,9 +12,9 @@ import Firebase
 
 class TienesTraceletViewController : UIViewController {
     
-    var name:String = ""
-    var email:String = ""
-    var deviceId:String = ""
+    var name:String = " "
+    var email:String = " "
+    var deviceId:String = " "
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,18 +33,33 @@ class TienesTraceletViewController : UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.destination is TabBarController {
-            let db = Firestore.firestore()
-            var docRef: DocumentReference? = nil
-            docRef = db.collection("users").addDocument(data: [
-                "name": name,
-                "email": email,
-                "deviceId": deviceId
-            ]) { err in
-                if let err = err {
-                    print("Error adding document: \(err)")
-                } else {
-                    print("Document added with ID: \(docRef!.documentID)")
+            if Auth.auth().currentUser != nil {
+                let userAuth = Auth.auth().currentUser
+                let userUid = userAuth?.uid
+                let db = Firestore.firestore()
+                
+                db.collection("users").document(userUid!).setData([
+                    "name": name,
+                    "email": email,
+                    "deviceId": "no_device",
+                    "canView": [],
+                    "canModify": []
+                ]) { err in
+                    if let err = err {
+                        print("Error writing document: \(err)")
+                    } else {
+                        print("Document successfully written!")
+                    }
                 }
+                //UserDefaults.standard.set(true, forKey: "status")
+                //Switcher.updateRootViewController()
+            } else {
+                let alertController = UIAlertController(title: "Error with Auth", message: "Please refresh the application.", preferredStyle: .alert)
+                
+                let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                
+                alertController.addAction(defaultAction)
+                self.present(alertController, animated: true, completion: nil)
             }
         }
         
