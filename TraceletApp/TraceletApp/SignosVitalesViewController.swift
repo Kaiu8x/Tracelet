@@ -7,15 +7,53 @@
 //
 
 import UIKit
+import HealthKit
 
 class SignosVitalesViewController: UIViewController {
-
+    
+    private let authorizeHealthKitSection = 2
+    
+    @IBAction func authorizeHealthKit(_ sender: Any) {
+        HealthKitManager.authorizeHealthKit()
+        /*
+        HealthKitSetupAssistant.authorizeHealthKit { (authorized, error) in
+            
+            guard authorized else {
+                
+                let baseMessage = "HealthKit Authorization Failed"
+                
+                if let error = error {
+                    print("\(baseMessage). Reason: \(error.localizedDescription)")
+                } else {
+                    print(baseMessage)
+                }
+                
+                return
+            }
+            
+            print("HealthKit Successfully Authorized.")
+        }
+ */
+    }
+    
     @IBAction func desaparecerVista(_ sender: UITapGestureRecognizer) {
         dismiss(animated: true, completion: nil)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        if(HKHealthStore.isHealthDataAvailable()) {
+            let healthStore = HKHealthStore()
+            let allTypes = Set([HKObjectType.workoutType(),
+                                HKObjectType.quantityType(forIdentifier: .heartRate)!,
+                                HKObjectType.quantityType(forIdentifier: .distanceWalkingRunning)!])
+            healthStore.requestAuthorization(toShare: allTypes, read: allTypes) { (success, error) in
+                if !success {
+                        // Error
+                }
+                
+            }
+            
+        }
         // Do any additional setup after loading the view.
     }
     

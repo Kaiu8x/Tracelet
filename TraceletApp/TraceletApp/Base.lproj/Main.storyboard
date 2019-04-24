@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="E2C-3L-Y1N">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="E2C-3L-Y1N">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -120,9 +120,22 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i08-7F-V51">
+                                <rect key="frame" x="47" y="711" width="280" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Autorizar Salud"/>
+                                <connections>
+                                    <action selector="authorizeHealthKit:" destination="4jU-hI-oas" eventType="touchUpInside" id="SRX-Py-rpj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="i08-7F-V51" firstAttribute="leading" secondItem="vnu-cd-fuz" secondAttribute="leading" constant="47" id="X1S-tW-B9E"/>
+                            <constraint firstItem="vnu-cd-fuz" firstAttribute="bottom" secondItem="i08-7F-V51" secondAttribute="bottom" constant="33" id="Zsx-lF-xz9"/>
+                            <constraint firstItem="vnu-cd-fuz" firstAttribute="trailing" secondItem="i08-7F-V51" secondAttribute="trailing" constant="48" id="aOS-jX-8IN"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="vnu-cd-fuz"/>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="STc-1u-VS9" appends="YES" id="tK3-la-oDj"/>
@@ -1773,25 +1786,25 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Aboutus" width="170.66667175292969" height="170.66667175292969"/>
+        <image name="Aboutus" width="170" height="170"/>
         <image name="AddPin" width="75" height="75"/>
-        <image name="Check" width="533.33331298828125" height="333.33334350585938"/>
+        <image name="Check" width="533" height="333"/>
         <image name="Configuración" width="16" height="16"/>
-        <image name="Connections" width="326.66665649414062" height="222"/>
-        <image name="Down" width="16.666666030883789" height="16.666666030883789"/>
-        <image name="Edit" width="264.66665649414062" height="210"/>
-        <image name="Geovalla" width="16.666666030883789" height="16.666666030883789"/>
+        <image name="Connections" width="326" height="222"/>
+        <image name="Down" width="16" height="16"/>
+        <image name="Edit" width="264" height="210"/>
+        <image name="Geovalla" width="16" height="16"/>
         <image name="Heart" width="400" height="400"/>
-        <image name="LogoWhite" width="630" height="472.33334350585938"/>
-        <image name="Mapa" width="16.666666030883789" height="16.666666030883789"/>
-        <image name="Nearme" width="16.666666030883789" height="16.666666030883789"/>
-        <image name="Profile" width="170.66667175292969" height="170.66667175292969"/>
-        <image name="Ruta" width="16.666666030883789" height="16.666666030883789"/>
-        <image name="Session" width="170.66667175292969" height="170.66667175292969"/>
-        <image name="Shoes" width="116" height="198.33332824707031"/>
+        <image name="LogoWhite" width="630" height="472"/>
+        <image name="Mapa" width="16" height="16"/>
+        <image name="Nearme" width="16" height="16"/>
+        <image name="Profile" width="170" height="170"/>
+        <image name="Ruta" width="16" height="16"/>
+        <image name="Session" width="170" height="170"/>
+        <image name="Shoes" width="116" height="198"/>
         <image name="Splash" width="375" height="812"/>
-        <image name="Tienda" width="238.33332824707031" height="210"/>
-        <image name="Vitales" width="66.666664123535156" height="66.666664123535156"/>
+        <image name="Tienda" width="238" height="210"/>
+        <image name="Vitales" width="66" height="66"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="mZV-If-Dem"/>

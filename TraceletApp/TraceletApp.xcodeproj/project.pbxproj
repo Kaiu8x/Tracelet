@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		88541052EE97915E570EFBDD /* libPods-TraceletApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FDE23D6C8413178EC8E0FBF4 /* libPods-TraceletApp.a */; };
 		8C14233F2242A81A00B3E6CB /* RutasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C14233E2242A81A00B3E6CB /* RutasViewController.swift */; };
+		8CCF7E042270B2A9005B41AB /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CCF7E032270B2A9005B41AB /* HealthKit.framework */; };
+		8CCF7E062270B45A005B41AB /* ActivityIndicatorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCF7E052270B45A005B41AB /* ActivityIndicatorPresenter.swift */; };
+		8CCF7E082270CC25005B41AB /* HealthKitSetupAssistant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCF7E072270CC25005B41AB /* HealthKitSetupAssistant.swift */; };
+		8CCF7E0A2270D0E8005B41AB /* ProfileDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCF7E092270D0E8005B41AB /* ProfileDataStore.swift */; };
+		8CCF7E0C2270D515005B41AB /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCF7E0B2270D515005B41AB /* HealthKitManager.swift */; };
 		8CE4706122428028000FA3B4 /* MapasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE4706022428028000FA3B4 /* MapasViewController.swift */; };
 		8CE4706322428B52000FA3B4 /* GeofenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE4706222428B52000FA3B4 /* GeofenceViewController.swift */; };
 		8CE9169F2257A60C00D96265 /* Geotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE9169E2257A60C00D96265 /* Geotification.swift */; };
@@ -22,7 +27,6 @@
 		D5AB56082241C0CD00B8FA08 /* AgregarUsuarioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AB56072241C0CD00B8FA08 /* AgregarUsuarioViewController.swift */; };
 		D5B114BB2243508F00C7AE2B /* ConfiguracionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B114BA2243508F00C7AE2B /* ConfiguracionViewController.swift */; };
 		DF00C785225F1DF0009C98DE /* PulserasARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF00C784225F1DF0009C98DE /* PulserasARViewController.swift */; };
-		DF00C78A225FA691009C98DE /* ActivityIndicatorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF00C789225FA691009C98DE /* ActivityIndicatorPresenter.swift */; };
 		DF00C78C225FAE5D009C98DE /* SpinnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF00C78B225FAE5D009C98DE /* SpinnerViewController.swift */; };
 		DF1E8E242242DEE500DB8E0C /* AdministrarUsuariosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1E8E232242DEE500DB8E0C /* AdministrarUsuariosViewController.swift */; };
 		DF1E8E282243087D00DB8E0C /* UserDetailsEntregaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1E8E272243087D00DB8E0C /* UserDetailsEntregaViewController.swift */; };
@@ -52,6 +56,12 @@
 /* Begin PBXFileReference section */
 		49FE83955F0214B3B861B2F7 /* Pods-TraceletApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TraceletApp.debug.xcconfig"; path = "Target Support Files/Pods-TraceletApp/Pods-TraceletApp.debug.xcconfig"; sourceTree = "<group>"; };
 		8C14233E2242A81A00B3E6CB /* RutasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RutasViewController.swift; sourceTree = "<group>"; };
+		8CCF7E022270B2A9005B41AB /* TraceletApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TraceletApp.entitlements; sourceTree = "<group>"; };
+		8CCF7E032270B2A9005B41AB /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		8CCF7E052270B45A005B41AB /* ActivityIndicatorPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorPresenter.swift; path = TraceletApp/ActivityIndicatorPresenter.swift; sourceTree = "<group>"; };
+		8CCF7E072270CC25005B41AB /* HealthKitSetupAssistant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitSetupAssistant.swift; sourceTree = "<group>"; };
+		8CCF7E092270D0E8005B41AB /* ProfileDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDataStore.swift; sourceTree = "<group>"; };
+		8CCF7E0B2270D515005B41AB /* HealthKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitManager.swift; sourceTree = "<group>"; };
 		8CE4706022428028000FA3B4 /* MapasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapasViewController.swift; sourceTree = "<group>"; };
 		8CE4706222428B52000FA3B4 /* GeofenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeofenceViewController.swift; sourceTree = "<group>"; };
 		8CE9169E2257A60C00D96265 /* Geotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Geotification.swift; sourceTree = "<group>"; };
@@ -65,7 +75,7 @@
 		D5AB56072241C0CD00B8FA08 /* AgregarUsuarioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgregarUsuarioViewController.swift; sourceTree = "<group>"; };
 		D5B114BA2243508F00C7AE2B /* ConfiguracionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfiguracionViewController.swift; sourceTree = "<group>"; };
 		DF00C784225F1DF0009C98DE /* PulserasARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulserasARViewController.swift; sourceTree = "<group>"; };
-		DF00C789225FA691009C98DE /* ActivityIndicatorPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorPresenter.swift; path = /Users/kaiu8x/Dropbox/Github/Tracelet/TraceletApp/TraceletApp/ActivityIndicatorPresenter.swift; sourceTree = "<absolute>"; };
+		DF00C789225FA691009C98DE /* ActivityIndicatorPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorPresenter.swift; path = ../../../../../../kaiu8x/Dropbox/Github/Tracelet/TraceletApp/TraceletApp/ActivityIndicatorPresenter.swift; sourceTree = "<group>"; };
 		DF00C78B225FAE5D009C98DE /* SpinnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerViewController.swift; sourceTree = "<group>"; };
 		DF1E8E232242DEE500DB8E0C /* AdministrarUsuariosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdministrarUsuariosViewController.swift; sourceTree = "<group>"; };
 		DF1E8E272243087D00DB8E0C /* UserDetailsEntregaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsEntregaViewController.swift; sourceTree = "<group>"; };
@@ -102,6 +112,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				88541052EE97915E570EFBDD /* libPods-TraceletApp.a in Frameworks */,
+				8CCF7E042270B2A9005B41AB /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,6 +131,7 @@
 		BD0C679BF6BEBC601ED071A7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8CCF7E032270B2A9005B41AB /* HealthKit.framework */,
 				FDE23D6C8413178EC8E0FBF4 /* libPods-TraceletApp.a */,
 			);
 			name = Frameworks;
@@ -135,6 +147,7 @@
 		DFE6DCA522273A6900F05680 = {
 			isa = PBXGroup;
 			children = (
+				8CCF7E052270B45A005B41AB /* ActivityIndicatorPresenter.swift */,
 				DFE6DCB022273A6900F05680 /* TraceletApp */,
 				DFE6DCAF22273A6900F05680 /* Products */,
 				8836C20CF59D8B8633685F27 /* Pods */,
@@ -154,6 +167,7 @@
 		DFE6DCB022273A6900F05680 /* TraceletApp */ = {
 			isa = PBXGroup;
 			children = (
+				8CCF7E022270B2A9005B41AB /* TraceletApp.entitlements */,
 				DF00C789225FA691009C98DE /* ActivityIndicatorPresenter.swift */,
 				DF00C784225F1DF0009C98DE /* PulserasARViewController.swift */,
 				DF43555D225D8A0700859FF9 /* AddGeotificationViewController.swift */,
@@ -194,6 +208,9 @@
 				DF76F4F22243428D0093E943 /* UserDetailsViewController.swift */,
 				8CE916A02257A64E00D96265 /* Utilities.swift */,
 				D5654ED2224090BF001A4CE4 /* VistaListaUsuariosActivosViewController.swift */,
+				8CCF7E072270CC25005B41AB /* HealthKitSetupAssistant.swift */,
+				8CCF7E092270D0E8005B41AB /* ProfileDataStore.swift */,
+				8CCF7E0B2270D515005B41AB /* HealthKitManager.swift */,
 			);
 			path = TraceletApp;
 			sourceTree = "<group>";
@@ -232,6 +249,11 @@
 				TargetAttributes = {
 					DFE6DCAD22273A6900F05680 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.HealthKit = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -319,6 +341,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CCF7E062270B45A005B41AB /* ActivityIndicatorPresenter.swift in Sources */,
 				DF00C785225F1DF0009C98DE /* PulserasARViewController.swift in Sources */,
 				D51D8EB2225D718D006CE2DA /* VideoExplicativoARViewController.swift in Sources */,
 				DFEF76CC22495B1100B3BE5C /* CodigoTraceletViewController.swift in Sources */,
@@ -327,11 +350,11 @@
 				DF43555C225D3B6300859FF9 /* ShopDetailsViewController.swift in Sources */,
 				DFE6DCB422273A6900F05680 /* SplashViewController.swift in Sources */,
 				D5AB56082241C0CD00B8FA08 /* AgregarUsuarioViewController.swift in Sources */,
+				8CCF7E082270CC25005B41AB /* HealthKitSetupAssistant.swift in Sources */,
 				8CE4706122428028000FA3B4 /* MapasViewController.swift in Sources */,
 				DFC46E472231B5D7008F6A6A /* Switcher.swift in Sources */,
 				DF435558225D387500859FF9 /* ShopViewController.swift in Sources */,
 				8CE916A12257A64E00D96265 /* Utilities.swift in Sources */,
-				DF00C78A225FA691009C98DE /* ActivityIndicatorPresenter.swift in Sources */,
 				D5B114BB2243508F00C7AE2B /* ConfiguracionViewController.swift in Sources */,
 				DF43555E225D8A0700859FF9 /* AddGeotificationViewController.swift in Sources */,
 				D5654ED1223C528B001A4CE4 /* EliminarUsuarioViewController.swift in Sources */,
@@ -340,6 +363,7 @@
 				DF4B56AB225EA4530095B602 /* Spots.swift in Sources */,
 				DF00C78C225FAE5D009C98DE /* SpinnerViewController.swift in Sources */,
 				DF1E8E2A22430C6F00DB8E0C /* UserDetailsEntrega2ViewController.swift in Sources */,
+				8CCF7E0C2270D515005B41AB /* HealthKitManager.swift in Sources */,
 				D5AB56062241ADB300B8FA08 /* ConexionNuevoUsuarioViewController.swift in Sources */,
 				DF76F4F32243428D0093E943 /* UserDetailsViewController.swift in Sources */,
 				8CE9169F2257A60C00D96265 /* Geotification.swift in Sources */,
@@ -350,6 +374,7 @@
 				DFEF76CA22495AB700B3BE5C /* TienesTraceletViewController.swift in Sources */,
 				DF1E8E282243087D00DB8E0C /* UserDetailsEntregaViewController.swift in Sources */,
 				8C14233F2242A81A00B3E6CB /* RutasViewController.swift in Sources */,
+				8CCF7E0A2270D0E8005B41AB /* ProfileDataStore.swift in Sources */,
 				DF4B56AD225EEBA40095B602 /* Spots360ImgViewController.swift in Sources */,
 				8CE4706322428B52000FA3B4 /* GeofenceViewController.swift in Sources */,
 				D5654ED5224090C9001A4CE4 /* SignosVitalesViewController.swift in Sources */,
@@ -500,8 +525,9 @@
 			baseConfigurationReference = 49FE83955F0214B3B861B2F7 /* Pods-TraceletApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = TraceletApp/TraceletApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 66QS9X9F77;
+				DEVELOPMENT_TEAM = A38445BDPB;
 				INFOPLIST_FILE = TraceletApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -520,8 +546,9 @@
 			baseConfigurationReference = F349099F5F0F00144968114D /* Pods-TraceletApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = TraceletApp/TraceletApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 66QS9X9F77;
+				DEVELOPMENT_TEAM = A38445BDPB;
 				INFOPLIST_FILE = TraceletApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
