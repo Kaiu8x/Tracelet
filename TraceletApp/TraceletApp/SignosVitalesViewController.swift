@@ -12,10 +12,10 @@ import HealthKit
 class SignosVitalesViewController: UIViewController {
     
     private let authorizeHealthKitSection = 2
+    private let userHealthProfile = UserHealthProfile()
     
     @IBAction func authorizeHealthKit(_ sender: Any) {
-        HealthKitManager.authorizeHealthKit()
-        /*
+        
         HealthKitSetupAssistant.authorizeHealthKit { (authorized, error) in
             
             guard authorized else {
@@ -33,8 +33,12 @@ class SignosVitalesViewController: UIViewController {
             
             print("HealthKit Successfully Authorized.")
         }
- */
+ 
     }
+    
+    @IBOutlet weak var heartRateLabel: UILabel!
+    @IBOutlet weak var distanceLabel: UILabel!
+    
     
     @IBAction func desaparecerVista(_ sender: UITapGestureRecognizer) {
         dismiss(animated: true, completion: nil)
@@ -57,6 +61,85 @@ class SignosVitalesViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    private func loadAndDisplayMostRecentHeartRate() {
+        
+        //1. Use HealthKit to create the Height Sample Type
+        guard let heartRateSampleType = HKSampleType.quantityType(forIdentifier: .heartRate) else {
+            print("Heart Rate Sample Type is no longer available in HealthKit")
+            return
+        }
+        
+        ProfileDataStore.getMostRecentSample(for: heartRateSampleType) { (sample, error) in
+            
+            guard let sample = sample else {
+                
+                if let error = error {
+                    self.displayAlert(for: error)
+                }
+                
+                return
+            }
+            
+            //2. Convert the height sample to meters, save to the profile model,
+            //   and update the user interface.
+            let heartRateInBPM = Int(sample.quantity.doubleValue(for: HKUnit.count()) / sample.quantity.doubleValue(for: HKUnit.minute()))
+            self.userHealthProfile.heartRate = heartRateInBPM
+            self.updateLabels()
+        }
+    }
+    
+    private func loadAndDisplayMostRecentDistance() {
+        
+        //1. Use HealthKit to create the Height Sample Type
+        guard let distanceSampleType = HKSampleType.quantityType(forIdentifier: .distanceWalkingRunning) else {
+            print("Distance Walking Running Sample Type is no longer available in HealthKit")
+            return
+        }
+        
+        ProfileDataStore.getMostRecentSample(for: distanceSampleType) { (sample, error) in
+            
+            guard let sample = sample else {
+                
+                if let error = error {
+                    self.displayAlert(for: error)
+                }
+                
+                return
+            }
+            
+            //2. Convert the height sample to meters, save to the profile model,
+            //   and update the user interface.
+            let distanceInMeters = sample.quantity.doubleValue(for: HKUnit.meter())
+            self.userHealthProfile.distance = distanceInMeters
+            self.updateLabels()
+        }
+    }
+    
+    private func updateLabels() {
+        
+        if let heartRate = userHealthProfile.heartRate {
+            heartRateLabel.text = "\(heartRate)"
+        }
+        
+        if let distance = userHealthProfile.distance {
+            let lengthFormatter = LengthFormatter()
+            lengthFormatter.isForPersonHeightUse = false
+            distanceLabel.text = lengthFormatter.string(fromMeters: distance)
+        }
+    }
+    
+    private func displayAlert(for error: Error) {
+        
+        let alert = UIAlertController(title: nil,
+                                      message: error.localizedDescription,
+                                      preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "O.K.",
+                                      style: .default,
+                                      handler: nil))
+        
+        present(alert, animated: true, completion: nil)
+    }
 
     /*
     // MARK: - Navigation

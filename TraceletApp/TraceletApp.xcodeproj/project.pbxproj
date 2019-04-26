@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		88541052EE97915E570EFBDD /* libPods-TraceletApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FDE23D6C8413178EC8E0FBF4 /* libPods-TraceletApp.a */; };
 		8C14233F2242A81A00B3E6CB /* RutasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C14233E2242A81A00B3E6CB /* RutasViewController.swift */; };
+		8C2E31B62273764400DB2C57 /* UserHealthProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2E31B52273764400DB2C57 /* UserHealthProfile.swift */; };
 		8CCF7E042270B2A9005B41AB /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CCF7E032270B2A9005B41AB /* HealthKit.framework */; };
 		8CCF7E062270B45A005B41AB /* ActivityIndicatorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCF7E052270B45A005B41AB /* ActivityIndicatorPresenter.swift */; };
 		8CCF7E082270CC25005B41AB /* HealthKitSetupAssistant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCF7E072270CC25005B41AB /* HealthKitSetupAssistant.swift */; };
@@ -56,6 +57,7 @@
 /* Begin PBXFileReference section */
 		49FE83955F0214B3B861B2F7 /* Pods-TraceletApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TraceletApp.debug.xcconfig"; path = "Target Support Files/Pods-TraceletApp/Pods-TraceletApp.debug.xcconfig"; sourceTree = "<group>"; };
 		8C14233E2242A81A00B3E6CB /* RutasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RutasViewController.swift; sourceTree = "<group>"; };
+		8C2E31B52273764400DB2C57 /* UserHealthProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHealthProfile.swift; sourceTree = "<group>"; };
 		8CCF7E022270B2A9005B41AB /* TraceletApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TraceletApp.entitlements; sourceTree = "<group>"; };
 		8CCF7E032270B2A9005B41AB /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		8CCF7E052270B45A005B41AB /* ActivityIndicatorPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorPresenter.swift; path = TraceletApp/ActivityIndicatorPresenter.swift; sourceTree = "<group>"; };
@@ -211,6 +213,7 @@
 				8CCF7E072270CC25005B41AB /* HealthKitSetupAssistant.swift */,
 				8CCF7E092270D0E8005B41AB /* ProfileDataStore.swift */,
 				8CCF7E0B2270D515005B41AB /* HealthKitManager.swift */,
+				8C2E31B52273764400DB2C57 /* UserHealthProfile.swift */,
 			);
 			path = TraceletApp;
 			sourceTree = "<group>";
@@ -346,6 +349,7 @@
 				D51D8EB2225D718D006CE2DA /* VideoExplicativoARViewController.swift in Sources */,
 				DFEF76CC22495B1100B3BE5C /* CodigoTraceletViewController.swift in Sources */,
 				DFC46E392231A016008F6A6A /* LoginViewController.swift in Sources */,
+				8C2E31B62273764400DB2C57 /* UserHealthProfile.swift in Sources */,
 				DF4B56A9225E9DDB0095B602 /* Spots360ViewController.swift in Sources */,
 				DF43555C225D3B6300859FF9 /* ShopDetailsViewController.swift in Sources */,
 				DFE6DCB422273A6900F05680 /* SplashViewController.swift in Sources */,
