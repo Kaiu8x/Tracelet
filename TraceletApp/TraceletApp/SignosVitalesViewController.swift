@@ -92,7 +92,7 @@ class SignosVitalesViewController: UIViewController {
             
             //2. Convert the height sample to meters, save to the profile model,
             //   and update the user interface.
-            let heartRateInBPM = Int(sample.quantity.doubleValue(for: HKUnit.count()) / sample.quantity.doubleValue(for: HKUnit.minute()))
+            let heartRateInBPM = Int(sample.quantity.doubleValue(for: HKUnit(from: "count/min")))
             self.userHealthProfile.heartRate = heartRateInBPM
             self.updateLabels()
         }
