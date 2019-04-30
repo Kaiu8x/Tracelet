@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>NSHealthShareUsageDescription</key>
-	<string>Tracelet ?</string>
+	<string>Tracelet lorem ipsum</string>
 	<key>NSHealthClinicalHealthRecordsShareUsageDescription</key>
 	<string>Tracelet requiere acceso a tu información de salud para desplegarla en la aplicación.</string>
 	<key>NSHealthUpdateUsageDescription</key>

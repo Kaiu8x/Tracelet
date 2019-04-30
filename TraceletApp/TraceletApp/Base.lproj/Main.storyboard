@@ -116,9 +116,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i08-7F-V51">
                                 <rect key="frame" x="47" y="711" width="280" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="Autorizar Salud"/>
+                                <state key="normal" title="Regresar"/>
                                 <connections>
-                                    <action selector="authorizeHealthKit:" destination="4jU-hI-oas" eventType="touchUpInside" id="SRX-Py-rpj"/>
+                                    <action selector="desaparecer:" destination="4jU-hI-oas" eventType="touchUpInside" id="cSV-9p-MRW"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Desconocida" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Trq-DN-qPR">
@@ -137,9 +137,6 @@
                             <constraint firstItem="vnu-cd-fuz" firstAttribute="trailing" secondItem="i08-7F-V51" secondAttribute="trailing" constant="48" id="aOS-jX-8IN"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vnu-cd-fuz"/>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="STc-1u-VS9" appends="YES" id="tK3-la-oDj"/>
-                        </connections>
                     </view>
                     <connections>
                         <outlet property="distanceLabel" destination="4f6-77-MbG" id="4aK-jU-f6z"/>

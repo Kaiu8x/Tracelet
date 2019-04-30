@@ -55,11 +55,9 @@ class HealthKitSetupAssistant : NSObject {
         }
         
         //3. Prepare a list of types you want HealthKit to read and write
-        let healthKitTypesToWrite: Set<HKSampleType> = [heartRate, distance,
-                                                        HKObjectType.workoutType()]
+        let healthKitTypesToWrite: Set<HKSampleType> = [heartRate, distance]
         
-        let healthKitTypesToRead: Set<HKObjectType> = [heartRate, distance,
-                                                       HKObjectType.workoutType()]
+        let healthKitTypesToRead: Set<HKObjectType> = [heartRate, distance]
         
         //4. Request Authorization
         HKHealthStore().requestAuthorization(toShare: healthKitTypesToWrite,

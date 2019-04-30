@@ -14,7 +14,7 @@ class SignosVitalesViewController: UIViewController {
     private let authorizeHealthKitSection = 2
     private let userHealthProfile = UserHealthProfile()
     
-    @IBAction func authorizeHealthKit(_ sender: Any) {
+    private func authorizeHealthKit(_ sender: Any) {
         
         HealthKitSetupAssistant.authorizeHealthKit { (authorized, error) in
             
@@ -32,6 +32,9 @@ class SignosVitalesViewController: UIViewController {
             }
             
             print("HealthKit Successfully Authorized.")
+            
+            self.loadAndDisplayMostRecentDistance()
+            self.loadAndDisplayMostRecentHeartRate()
         }
  
     }
@@ -39,16 +42,21 @@ class SignosVitalesViewController: UIViewController {
     @IBOutlet weak var heartRateLabel: UILabel!
     @IBOutlet weak var distanceLabel: UILabel!
     
-    
+    /*
     @IBAction func desaparecerVista(_ sender: UITapGestureRecognizer) {
         dismiss(animated: true, completion: nil)
     }
+ */
+    @IBAction func desaparecer(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        authorizeHealthKit((Any).self)
         if(HKHealthStore.isHealthDataAvailable()) {
             let healthStore = HKHealthStore()
-            let allTypes = Set([HKObjectType.workoutType(),
-                                HKObjectType.quantityType(forIdentifier: .heartRate)!,
+            let allTypes = Set([HKObjectType.quantityType(forIdentifier: .heartRate)!,
                                 HKObjectType.quantityType(forIdentifier: .distanceWalkingRunning)!])
             healthStore.requestAuthorization(toShare: allTypes, read: allTypes) { (success, error) in
                 if !success {
@@ -56,6 +64,8 @@ class SignosVitalesViewController: UIViewController {
                 }
                 
             }
+            loadAndDisplayMostRecentDistance()
+            loadAndDisplayMostRecentHeartRate()
             
         }
         // Do any additional setup after loading the view.
@@ -74,7 +84,7 @@ class SignosVitalesViewController: UIViewController {
             guard let sample = sample else {
                 
                 if let error = error {
-                    self.displayAlert(for: error)
+                    // self.displayAlert(for: error)
                 }
                 
                 return
@@ -101,7 +111,7 @@ class SignosVitalesViewController: UIViewController {
             guard let sample = sample else {
                 
                 if let error = error {
-                    self.displayAlert(for: error)
+                   // self.displayAlert(for: error)
                 }
                 
                 return
