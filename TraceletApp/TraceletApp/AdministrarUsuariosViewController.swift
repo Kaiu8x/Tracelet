@@ -15,48 +15,15 @@ class AdministrarUsuariosViewController: UIViewController, UITableViewDelegate, 
     let searchController = UISearchController(searchResultsController: nil)
     @IBOutlet weak var tableView: UITableView!
     
-    func updateSearchResults(for searchController: UISearchController) {
-        if searchController.searchBar.text! == "" {
-            dataFiltered = newArray!
-        } else {
-            dataFiltered = newArray!.filter{
-                let objectUser=$0 as! [String:Any]
-                let s:String = objectUser["name"] as! String;
-                return(s.lowercased().contains(searchController.searchBar.text!.lowercased()))
-                
-            }
-        }
-        
-        self.tableView.reloadData()
-    }
-    
-    let dataUrl = "http://martinmolina.com.mx/201911/data/jsonTracelet/users.json"
-    //let dataUrl = "http://martinmolina.com.mx/201813/data/datos.json"
     var newArray:[Any]?
     
-    func JSONParseArray(_ string: String) -> [AnyObject]{
-        if let data = string.data(using: String.Encoding.utf8) {
-            do {
-                if let array = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableContainers)  as? [AnyObject] {
-                    return array
-                }
-            } catch {
-                print("error")
-                //handle errors here
-            }
-        }
-        return [AnyObject]()
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let url = URL(string: dataUrl)
-        let data = try? Data(contentsOf: url!)
+        newArray = CurrentUserDB.currentUser.canModifyList
+        print("new array: \(String(describing: newArray))")
         
-        
-        newArray = try! JSONSerialization.jsonObject(with: data!) as? [Any]
-        print(newArray)
         dataFiltered = newArray!
         
         searchController.searchResultsUpdater = self
@@ -88,10 +55,9 @@ class AdministrarUsuariosViewController: UIViewController, UITableViewDelegate, 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "UserCell", for: indexPath)
+        print("data filtred: \(dataFiltered)")
         
-        let objectUser = dataFiltered[indexPath.row] as! [String: Any]
-        let s:String = objectUser["name"] as! String
-        
+        let s:String = dataFiltered[indexPath.row] as! String
         cell.textLabel?.text=s
         
         return cell
@@ -99,32 +65,43 @@ class AdministrarUsuariosViewController: UIViewController, UITableViewDelegate, 
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         var index = 0
-        var objectUser = [String:Any]()
+        var objectUser = String()
         let nextView = self.storyboard?.instantiateViewController(withIdentifier: "UserDetails") as! UserDetailsViewController
         //let nextView = self.storyboard?.instantiateViewController(withIdentifier: "UserDetailsEntrega") as! UserDetailsEntregaViewController
         //Verificar si la vista actual es la de búsqueda
-        if (self.searchController.isActive)
-        {
+        if (self.searchController.isActive) {
             index = indexPath.row
-            objectUser = dataFiltered[index] as! [String: Any]
-            
-        }
-            //sino utilizar la vista sin filtro
-        else
-        {
+            objectUser = dataFiltered[index] as!  String
+        } else {
             index = indexPath.row
-            objectUser = newArray![index] as! [String: Any]
+            objectUser = newArray![index] as! String
         }
-        let s:String = objectUser["name"] as! String
-        let s2:String = String( objectUser["deviceID"] as! Int)
+        //let s:String = objectUser["name"] as! [String]
+        //let s2:String = String( objectUser["deviceID"] as! Int)
         //let sEnt:[String] = objectUser["canView"] as! [String]
         
         //nextView.newArray2 = sEnt
-        nextView.userName = s
-        nextView.traceletID = s2
+        nextView.userName = "xxx"
+        nextView.traceletID = objectUser
         
         self.navigationController?.pushViewController(nextView, animated: true)
     }
 
+    func updateSearchResults(for searchController: UISearchController) {
+        
+        if searchController.searchBar.text! == "" {
+            dataFiltered = newArray!
+        } else {
+            dataFiltered = newArray!.filter{
+                print("$0: \($0)")
+                //let objectUser=$0 as! [String:Any]
+                let s:String = $0 as! String;
+                return(s.lowercased().contains(searchController.searchBar.text!.lowercased()))
+                
+            }
+        }
+        
+        self.tableView.reloadData()
+    }
     
 }

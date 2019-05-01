@@ -22,7 +22,7 @@ class ConfiguracionViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        //updateLabel()
+        updateLabel()
     }
     func updateLabel () {
         

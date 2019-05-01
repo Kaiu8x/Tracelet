@@ -11,9 +11,9 @@ import Firebase
 
 //let currentUser = CurrentUserDB()
 
-class CurrentUserDB {
+class CurrentUserGeofence {
     
-    static let currentUser = CurrentUserDB()
+    static let currentUserGeofence = CurrentUserGeofence()
     
     
     var name: String!

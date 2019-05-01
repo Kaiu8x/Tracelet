@@ -17,9 +17,38 @@ class AgregarUsuarioViewController: UIViewController,UITextFieldDelegate {
     @IBAction func cancel(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
     }
+    
+    
     @IBAction func guardar(_ sender: UIBarButtonItem) {
         //Codigo de asociar usuario posiblemente aqui
+        
+        if userExists(codigo.text!) {
+            CurrentUserDB.currentUser.canModifyList?.append(codigo.text!)
+            CurrentUserDB.currentUser.canViewList?.append(codigo.text!)
+            print("nuevo codigo agregado a canModifyList: \(String(describing: CurrentUserDB.currentUser.canModifyList))")
+            //let nextView = self.storyboard?.instantiateViewController(withIdentifier: "ConexionNuevoUsuario") as! ConexionNuevoUsuarioViewController
+            
+            //self.navigationController?.pushViewController(nextView, animated: true)
+            
+            self.performSegue(withIdentifier: "addUserSuccessSegue", sender: nil)
+            
+        } else {
+            let alertController = UIAlertController(title: "Error", message: "User not found", preferredStyle: .alert)
+            
+            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            
+            alertController.addAction(defaultAction)
+            self.present(alertController, animated: true, completion: nil)
+        }
+        
     }
+    
+    func userExists(_ userId: String) -> Bool {
+        
+        
+        return true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround() 

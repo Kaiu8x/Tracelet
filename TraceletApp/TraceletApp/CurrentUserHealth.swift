@@ -11,9 +11,9 @@ import Firebase
 
 //let currentUser = CurrentUserDB()
 
-class CurrentUserDB {
+class CurrentUserHealth {
     
-    static let currentUser = CurrentUserDB()
+    static let currentUserHealth = CurrentUserHealth()
     
     
     var name: String!

@@ -11,9 +11,9 @@ import Firebase
 
 //let currentUser = CurrentUserDB()
 
-class CurrentUserDB {
+class CurrentUserLocation {
     
-    static let currentUser = CurrentUserDB()
+    static let currentUserLocation = CurrentUserLocation()
     
     
     var name: String!
@@ -65,5 +65,4 @@ class CurrentUserDB {
         } else {
             print("Error")
         }
-    }
 }
