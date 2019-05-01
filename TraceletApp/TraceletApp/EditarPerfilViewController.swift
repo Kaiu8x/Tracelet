@@ -10,13 +10,19 @@ import UIKit
 
 class EditarPerfilViewController: UIViewController {
 
+    @IBOutlet weak var userNameTextFielf: UITextField!
+    @IBOutlet weak var userMailTextField: UITextField!
+    @IBOutlet weak var userPwTextField: UITextField!
+    
+    
+    
     @IBAction func guardar(_ sender: UIButton) {
         //Codigo para gaurdar cambios del perfil del usuario
         
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
     

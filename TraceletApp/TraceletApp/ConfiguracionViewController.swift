@@ -9,18 +9,30 @@
 import UIKit
 
 class ConfiguracionViewController: UIViewController {
-
     
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var userMailLabel: UILabel!
+    let cu = CurrentUserDB.self
     
     override func viewDidLoad() {
+        
+        updateLabel()
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
     
-
+    override func viewWillAppear(_ animated: Bool) {
+        //updateLabel()
+    }
+    func updateLabel () {
+        
+        print("Current user data 1")
+        print(CurrentUserDB.currentUser.name)
+        print(CurrentUserDB.currentUser.email)
+        userNameLabel.text = CurrentUserDB.currentUser.name
+        userMailLabel.text = CurrentUserDB.currentUser.email
+        
+    }
     /*
     // MARK: - Navigation
 

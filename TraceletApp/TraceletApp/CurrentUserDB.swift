@@ -9,43 +9,103 @@
 import Foundation
 import Firebase
 
-class CurrentUserDB: NSObject {
+//let currentUser = CurrentUserDB()
+
+class CurrentUserDB {
+    
+    static let currentUser = CurrentUserDB()
+    
+    
+    var name: String!
+    var email: String!
+    var deviceId: String!
+    //var canViewList: [String]?
+    //var canModifyList: [String]?
+    
+    
+    private init() {
+        if Auth.auth().currentUser != nil {
+            let userAuth = Auth.auth().currentUser
+            let userUid = userAuth?.uid
+            let db = Firestore.firestore()
+            
+            let docRef = db.collection("users").document(userUid!)
+            
+            // Force the SDK to fetch the document from the cache. Could also specify
+            // FirestoreSource.server or FirestoreSource.default.
+            docRef.getDocument(source: .cache) { (document, error) in
+                if let document = document {
+                    let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
+                    print(self.name)
+                    self.name = (document["name"] as? String)!
+                    self.email = (document["email"] as? String)!
+                    self.deviceId = (document["deviceId"] as? String)!
+                    print("Current user name and email")
+                    print(self.name)
+                    print(self.email)
+                    //self.canViewList = (document["canViewList"] as? [String])!
+                    //self.canModifyList = (document["canModifyList"] as? [String])!
+                    print("Cached document data: \(dataDescription)")
+                } else {
+                    print("Document does not exist in cache")
+                }
+            }
+            
+        } else {
+            print("Error")
+        }
+    }
+    
+    /*
     var name: String?
     var email: String?
-    var userId: String?
+    var deviceId: String?
     var canViewList: [CurrentUserDB]?
     var canModifyList: [CurrentUserDB]?
     
-    init(email: String) {
-        let db = Firestore.firestore()
-        //var docRef: DocumentReference? = nil
-        db.collection("users").getDocuments() { (querySnapshot, err) in
-            if let err = err {
-                print("Error getting documents: \(err)")
-            } else {
-                for document in querySnapshot!.documents {
-                    print("\(document.documentID) => \(document.data())")
-                }
-                //get data from email string user.
-            }
-        }
-        
+    override init() {
+        print("object creation called")
+        super.init()
+        self.getUserData()
+    }
+    
+    init(document: DocumentSnapshot) {
+        print("Self created")
+        self.name = document["name"] as? String
+        self.email = document["email"] as? String
+        self.deviceId = document["deviceId"] as? String
+        self.canViewList = document["canViewList"] as? [CurrentUserDB]
+        self.canModifyList = document["canModifyList"] as? [CurrentUserDB]
         super.init()
     }
     
-    override init() {
-        var handle = Auth.auth().addStateDidChangeListener { (auth, user) in
-            if Auth.auth().currentUser != nil {
-                let user = Auth.auth().currentUser
-                if let user = user {
-                    let useremail = user.email!
-                    
+    func getUserData() {
+        print("get user data method called")
+        if Auth.auth().currentUser != nil {
+            let userAuth = Auth.auth().currentUser
+            let userUid = userAuth?.uid
+            let db = Firestore.firestore()
+            
+            let docRef = db.collection("users").document(userUid!)
+            
+            // Force the SDK to fetch the document from the cache. Could also specify
+            // FirestoreSource.server or FirestoreSource.default.
+            docRef.getDocument(source: .cache) { (document, error) in
+                if let document = document {
+                    let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
+                    CurrentUserDB(document: document)
+                    print("Cached document data: \(dataDescription)")
+                } else {
+                    print("Document does not exist in cache")
                 }
-            } else {
-                print("Error geting user Auth")
             }
+            
+        } else {
+            print("Error")
         }
     }
+    */
+    
 }
 
 /*
