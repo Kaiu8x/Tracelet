@@ -21,7 +21,7 @@ class Spots360ViewController: UIViewController, ARSCNViewDelegate, ActivityIndic
     var once = true
     
     var videoNodo = SKVideoNode()
-    
+    var node = SCNNode()
     override func viewDidLoad() {
         super.viewDidLoad()
         print(contentUrl)
@@ -34,7 +34,13 @@ class Spots360ViewController: UIViewController, ARSCNViewDelegate, ActivityIndic
         sceneView.showsStatistics = true
         
         // Create a new scene
-        let scene = SCNScene()
+        let scene =  SCNScene()
+        let texto = SCNText(string: "Toca en cualquier parte para mostrar el video", extrusionDepth: 0.2)
+        texto.firstMaterial?.diffuse.contents = UIColor.red
+        node.geometry = texto
+        node.position = SCNVector3(x:0,y:-1.0,z:-2.0)
+        node.scale = SCNVector3(0.02, 0.02, 0.02)
+        scene.rootNode.addChildNode(node)
         
         // Set the scene to the view
         sceneView.scene = scene
@@ -53,11 +59,8 @@ class Spots360ViewController: UIViewController, ARSCNViewDelegate, ActivityIndic
             //currentFrame es la imagen actual de la camara
             guard let currentFrame = self.sceneView.session.currentFrame else {return}
             
-            //let path = Bundle.main.path(forResource: "CheeziPuffs", ofType: "mov")
-            //let url = URL(fileURLWithPath: path!)
-            
-            //let moviePath = "http://ebookfrenzy.com/ios_book/movie/movie.mov"
-            
+            self.node.removeFromParentNode()
+
             let url = URL(string: contentUrl)
             let player = AVPlayer(url: url!)
             player.volume = 0.5
@@ -158,5 +161,9 @@ class Spots360ViewController: UIViewController, ARSCNViewDelegate, ActivityIndic
     func sessionInterruptionEnded(_ session: ARSession) {
         // Reset tracking and/or remove existing anchors if consistent tracking is required
         
+    }
+    
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        videoNodo.pause()
     }
 }
