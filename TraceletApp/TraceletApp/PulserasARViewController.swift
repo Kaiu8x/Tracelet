@@ -75,11 +75,33 @@ class PulserasARViewController: UIViewController, ARSCNViewDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        // Create a session configuration
-        let configuration = ARWorldTrackingConfiguration()
+        //Cambio 1 cambiar a trackin a través de imagen
+        let configuration = ARImageTrackingConfiguration()
         
+        //Cambio 2, asignar la imagen marcadora
+        guard let imagenesMarcador = ARReferenceImage.referenceImages(inGroupNamed: "AR Resources", bundle: nil) else {
+            fatalError("No se encontró la imagen marcadora")
+        }
+        configuration.trackingImages = imagenesMarcador
         // Run the view's session
         sceneView.session.run(configuration)
+    }
+    //cambio 3, definir el método que será invocado al identificar una imágen marcador
+    func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
+        if let anchor = anchor as? ARImageAnchor{
+            let imagenReferencia = anchor.referenceImage
+            agregarModelo(to: node, refImage: imagenReferencia)
+        }
+    }
+    
+    private func agregarModelo(to node:SCNNode, refImage:ARReferenceImage ){
+        DispatchQueue.global().async {
+            let myURL = NSURL(string: "http://www.martinmolina.com.mx/201911/data/jsonTracelet/images/tracelet1.scn")
+            let escenaModelo = try! SCNScene(url: myURL! as URL, options:nil)
+            //encontrar el nodo principal
+            let nodoPrincipal = escenaModelo.rootNode.childNode(withName: "Brazalete", recursively: true)!
+            node.addChildNode(nodoPrincipal)
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
