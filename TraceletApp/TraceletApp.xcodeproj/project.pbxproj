@@ -11,7 +11,6 @@
 		8C14233F2242A81A00B3E6CB /* RutasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C14233E2242A81A00B3E6CB /* RutasViewController.swift */; };
 		8C2E31B62273764400DB2C57 /* UserHealthProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2E31B52273764400DB2C57 /* UserHealthProfile.swift */; };
 		8CCF7E042270B2A9005B41AB /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CCF7E032270B2A9005B41AB /* HealthKit.framework */; };
-		8CCF7E062270B45A005B41AB /* ActivityIndicatorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCF7E052270B45A005B41AB /* ActivityIndicatorPresenter.swift */; };
 		8CCF7E082270CC25005B41AB /* HealthKitSetupAssistant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCF7E072270CC25005B41AB /* HealthKitSetupAssistant.swift */; };
 		8CCF7E0A2270D0E8005B41AB /* ProfileDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCF7E092270D0E8005B41AB /* ProfileDataStore.swift */; };
 		8CCF7E0C2270D515005B41AB /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCF7E0B2270D515005B41AB /* HealthKitManager.swift */; };
@@ -43,6 +42,7 @@
 		DF8E5C9F227A1E5C00805372 /* CurrentUserGeofence.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8E5C9E227A1E5C00805372 /* CurrentUserGeofence.swift */; };
 		DF8E5CA1227A1E6900805372 /* CurrentUserLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8E5CA0227A1E6900805372 /* CurrentUserLocation.swift */; };
 		DF8E5CA3227A1E7800805372 /* CurrentUserHealth.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8E5CA2227A1E7800805372 /* CurrentUserHealth.swift */; };
+		DF8E5CA7227B576700805372 /* ActivityIndicatorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8E5CA6227B576700805372 /* ActivityIndicatorPresenter.swift */; };
 		DFC46E3722319EF6008F6A6A /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC46E3622319EF6008F6A6A /* StartViewController.swift */; };
 		DFC46E392231A016008F6A6A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC46E382231A016008F6A6A /* LoginViewController.swift */; };
 		DFC46E3B2231A036008F6A6A /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC46E3A2231A036008F6A6A /* SignupViewController.swift */; };
@@ -64,7 +64,6 @@
 		8C2E31B52273764400DB2C57 /* UserHealthProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHealthProfile.swift; sourceTree = "<group>"; };
 		8CCF7E022270B2A9005B41AB /* TraceletApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TraceletApp.entitlements; sourceTree = "<group>"; };
 		8CCF7E032270B2A9005B41AB /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
-		8CCF7E052270B45A005B41AB /* ActivityIndicatorPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorPresenter.swift; path = TraceletApp/ActivityIndicatorPresenter.swift; sourceTree = "<group>"; };
 		8CCF7E072270CC25005B41AB /* HealthKitSetupAssistant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitSetupAssistant.swift; sourceTree = "<group>"; };
 		8CCF7E092270D0E8005B41AB /* ProfileDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDataStore.swift; sourceTree = "<group>"; };
 		8CCF7E0B2270D515005B41AB /* HealthKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitManager.swift; sourceTree = "<group>"; };
@@ -81,7 +80,6 @@
 		D5AB56072241C0CD00B8FA08 /* AgregarUsuarioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgregarUsuarioViewController.swift; sourceTree = "<group>"; };
 		D5B114BA2243508F00C7AE2B /* ConfiguracionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfiguracionViewController.swift; sourceTree = "<group>"; };
 		DF00C784225F1DF0009C98DE /* PulserasARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulserasARViewController.swift; sourceTree = "<group>"; };
-		DF00C789225FA691009C98DE /* ActivityIndicatorPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorPresenter.swift; path = ../../../../../../kaiu8x/Dropbox/Github/Tracelet/TraceletApp/TraceletApp/ActivityIndicatorPresenter.swift; sourceTree = "<group>"; };
 		DF00C78B225FAE5D009C98DE /* SpinnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerViewController.swift; sourceTree = "<group>"; };
 		DF00C78D22611866009C98DE /* CurrentUserDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUserDB.swift; sourceTree = "<group>"; };
 		DF1E8E232242DEE500DB8E0C /* AdministrarUsuariosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdministrarUsuariosViewController.swift; sourceTree = "<group>"; };
@@ -97,6 +95,7 @@
 		DF8E5C9E227A1E5C00805372 /* CurrentUserGeofence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUserGeofence.swift; sourceTree = "<group>"; };
 		DF8E5CA0227A1E6900805372 /* CurrentUserLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUserLocation.swift; sourceTree = "<group>"; };
 		DF8E5CA2227A1E7800805372 /* CurrentUserHealth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUserHealth.swift; sourceTree = "<group>"; };
+		DF8E5CA6227B576700805372 /* ActivityIndicatorPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorPresenter.swift; sourceTree = "<group>"; };
 		DFC46E3622319EF6008F6A6A /* StartViewController.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		DFC46E382231A016008F6A6A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		DFC46E3A2231A036008F6A6A /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
@@ -157,7 +156,6 @@
 		DFE6DCA522273A6900F05680 = {
 			isa = PBXGroup;
 			children = (
-				8CCF7E052270B45A005B41AB /* ActivityIndicatorPresenter.swift */,
 				DFE6DCB022273A6900F05680 /* TraceletApp */,
 				DFE6DCAF22273A6900F05680 /* Products */,
 				8836C20CF59D8B8633685F27 /* Pods */,
@@ -178,7 +176,6 @@
 			isa = PBXGroup;
 			children = (
 				8CCF7E022270B2A9005B41AB /* TraceletApp.entitlements */,
-				DF00C789225FA691009C98DE /* ActivityIndicatorPresenter.swift */,
 				DF00C784225F1DF0009C98DE /* PulserasARViewController.swift */,
 				DF43555D225D8A0700859FF9 /* AddGeotificationViewController.swift */,
 				DF1E8E232242DEE500DB8E0C /* AdministrarUsuariosViewController.swift */,
@@ -226,6 +223,7 @@
 				8CCF7E092270D0E8005B41AB /* ProfileDataStore.swift */,
 				8CCF7E0B2270D515005B41AB /* HealthKitManager.swift */,
 				8C2E31B52273764400DB2C57 /* UserHealthProfile.swift */,
+				DF8E5CA6227B576700805372 /* ActivityIndicatorPresenter.swift */,
 			);
 			path = TraceletApp;
 			sourceTree = "<group>";
@@ -370,7 +368,6 @@
 				DFC46E472231B5D7008F6A6A /* Switcher.swift in Sources */,
 				DF435558225D387500859FF9 /* ShopViewController.swift in Sources */,
 				8CE916A12257A64E00D96265 /* Utilities.swift in Sources */,
-				DF00C78A225FA691009C98DE /* ActivityIndicatorPresenter.swift in Sources */,
 				DF8E5C9F227A1E5C00805372 /* CurrentUserGeofence.swift in Sources */,
 				D5B114BB2243508F00C7AE2B /* ConfiguracionViewController.swift in Sources */,
 				DF43555E225D8A0700859FF9 /* AddGeotificationViewController.swift in Sources */,
@@ -394,6 +391,7 @@
 				DFEF76CA22495AB700B3BE5C /* TienesTraceletViewController.swift in Sources */,
 				DF1E8E282243087D00DB8E0C /* UserDetailsEntregaViewController.swift in Sources */,
 				8C14233F2242A81A00B3E6CB /* RutasViewController.swift in Sources */,
+				DF8E5CA7227B576700805372 /* ActivityIndicatorPresenter.swift in Sources */,
 				8CCF7E0A2270D0E8005B41AB /* ProfileDataStore.swift in Sources */,
 				DF4B56AD225EEBA40095B602 /* Spots360ImgViewController.swift in Sources */,
 				8CE4706322428B52000FA3B4 /* GeofenceViewController.swift in Sources */,

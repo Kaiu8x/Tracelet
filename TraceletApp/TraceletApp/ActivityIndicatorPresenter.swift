@@ -1,6 +1,6 @@
 //
 //  ActivityIndicatorPresenter.swift
-//  
+//
 //
 //  Created by Kai Kawasaki Ueda on 4/11/19.
 //
