@@ -24,46 +24,49 @@ class CurrentUserDB {
     
     
     private init() {
-        if Auth.auth().currentUser != nil {
-            let userAuth = Auth.auth().currentUser
-            let userUid = userAuth?.uid
-            let db = Firestore.firestore()
-            
-            let docRef = db.collection("users").document(userUid!)
-            
-            // Force the SDK to fetch the document from the cache. Could also specify
-            // FirestoreSource.server or FirestoreSource.default.
-            docRef.getDocument { (document, error) in
-                if let document = document {
-                    let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
-                    print(self.name)
-                    self.name = (document["name"] as? String)!
-                    self.email = (document["email"] as? String)!
-                    self.deviceId = (document["deviceId"] as? String)!
-                    print("Current user name and email")
-                    print(self.name)
-                    print(self.email)
-                    
-                    if(document["canViewList"] != nil) {
-                        self.canViewList = (document["canViewList"] as? [String])!
+        Auth.auth().addStateDidChangeListener { (auth, user) in
+            if Auth.auth().currentUser != nil {
+                let userAuth = Auth.auth().currentUser
+                let userUid = userAuth?.uid
+                let db = Firestore.firestore()
+                
+                let docRef = db.collection("users").document(userUid!)
+                
+                // Force the SDK to fetch the document from the cache. Could also specify
+                // FirestoreSource.server or FirestoreSource.default.
+                //docRef.getDocument (source: .default)
+                docRef.getDocument (source: .server) { (document, error) in
+                    if let document = document {
+                        let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
+                        print(self.name)
+                        self.name = (document["name"] as? String)!
+                        self.email = (document["email"] as? String)!
+                        self.deviceId = (document["deviceId"] as? String)!
+                        print("Current user name and email")
+                        print(self.name)
+                        print(self.email)
+                        
+                        if(document["canViewList"] != nil) {
+                            self.canViewList = (document["canViewList"] as? [String])!
+                        } else {
+                            self.canViewList = []
+                        }
+                        
+                        if(document["canModifyList"] != nil) {
+                            self.canModifyList = (document["canModifyList"] as? [String])!
+                        } else {
+                            self.canModifyList = []
+                        }
+                        
+                        print("Cached document data: \(dataDescription)")
                     } else {
-                        self.canViewList = []
+                        print("Document does not exist in cache")
                     }
-                    
-                    if(document["canModifyList"] != nil) {
-                        self.canModifyList = (document["canModifyList"] as? [String])!
-                    } else {
-                        self.canModifyList = []
-                    }
-                    
-                    print("Cached document data: \(dataDescription)")
-                } else {
-                    print("Document does not exist in cache")
                 }
+                
+            } else {
+                print("Error")
             }
-            
-        } else {
-            print("Error")
         }
     }
     
@@ -111,7 +114,6 @@ class CurrentUserDB {
         
         do {
             try Auth.auth().signOut()
-            
         } catch (let error) {
             print("Auth sign out failed: \(error)")
         }
@@ -125,7 +127,7 @@ class CurrentUserDB {
         for name in arr {
             let db = Firestore.firestore()
             let docRef = db.collection("users").document(name)
-            docRef.getDocument(source: .cache) { (document, error) in
+            docRef.getDocument { (document, error) in
                 if let document = document {
                     arrName.append(document["name"] as! String)
                 }

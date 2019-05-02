@@ -21,8 +21,8 @@ class Switcher {
         if(status == true) {
             rootViewController = storyboard.instantiateViewController(withIdentifier: "tabBar")
         } else {
-            //rootViewController = storyboard.instantiateViewController(withIdentifier: "startViewController")
-            rootViewController = storyboard.instantiateInitialViewController()
+            rootViewController = storyboard.instantiateViewController(withIdentifier: "startViewController")
+            //rootViewController = storyboard.instantiateInitialViewController()
         }
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate

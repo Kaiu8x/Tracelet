@@ -11,16 +11,16 @@ import Firebase
 import UIKit
 
 class TabBarController: UITabBarController{
-    let cu = CurrentUserDB.currentUser
+    //let cu = CurrentUserDB.currentUser
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        print(cu.name)
-        print(cu.email)
-        print(CurrentUserDB.currentUser.name)
-        print(CurrentUserDB.currentUser.email)
+        //print(cu.name)
+        //print(cu.email)
+        //print(CurrentUserDB.currentUser.name)
+        //print(CurrentUserDB.currentUser.email)
+        let newCurrentUser = CurrentUserDB.currentUser
+        CurrentUserDB.currentUser
     }
-    
-    
 }

@@ -34,8 +34,8 @@ class CodigoTraceletViewController : UIViewController {
                 "name": name,
                 "email": email,
                 "deviceId": deviceId,
-                "canView": [],
-                "canModify": []
+                "canViewList": [],
+                "canModifyList": []
             ]) { err in
                 if let err = err {
                     print("Error writing document: \(err)")

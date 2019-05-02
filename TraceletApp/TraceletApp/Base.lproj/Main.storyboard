@@ -452,7 +452,6 @@
                     <connections>
                         <outlet property="userMailLabel" destination="UvO-gj-ERe" id="IWB-Kg-aWZ"/>
                         <outlet property="userNameLabel" destination="OW2-Wb-6Vb" id="ccZ-i3-ZTK"/>
-                        <segue destination="Klc-6k-TMx" kind="show" identifier="logOutSegue" id="x6M-32-BtZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aDg-bg-XZ3" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -625,7 +624,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d09-FT-d9d">
-                                        <rect key="frame" x="127" y="377" width="120" height="36"/>
+                                        <rect key="frame" x="127.66666666666669" y="377" width="120" height="36"/>
                                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="120" id="KqK-hd-lh7"/>
@@ -1649,7 +1648,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sVY-bI-ji8">
-                                        <rect key="frame" x="46" y="320" width="104" height="39"/>
+                                        <rect key="frame" x="46" y="319.66666666666669" width="104" height="39"/>
                                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="104" id="HeJ-aa-Ecv"/>
@@ -1663,7 +1662,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5c0-Pp-m0i">
-                                        <rect key="frame" x="232" y="320" width="63" height="39"/>
+                                        <rect key="frame" x="232" y="319.66666666666669" width="63" height="39"/>
                                         <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                         <state key="normal" title="Cancelar"/>
@@ -1848,7 +1847,7 @@
         <image name="Vitales" width="66.666664123535156" height="66.666664123535156"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="fFo-g3-caa"/>
+        <segue reference="crS-Rl-vfG"/>
         <segue reference="sVl-VN-pLV"/>
     </inferredMetricsTieBreakers>
 </document>

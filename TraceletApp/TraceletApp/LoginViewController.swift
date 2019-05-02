@@ -30,7 +30,7 @@ class LoginViewController: UIViewController {
             (user, error) in
             if (error == nil) {
                 UserDefaults.standard.set(true, forKey: "status")
-                Switcher.updateRootViewController()
+                //Switcher.updateRootViewController()
                 self.performSegue(withIdentifier: "sucessLoginSegue", sender: self)
             } else {
                 let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)

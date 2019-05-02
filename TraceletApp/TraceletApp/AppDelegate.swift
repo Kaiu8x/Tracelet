@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         let db = Firestore.firestore()
         
-        Switcher.updateRootViewController()
+        //Switcher.updateRootViewController()
         
         locationManager.delegate = self
         locationManager.requestAlwaysAuthorization()

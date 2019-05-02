@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class ConfiguracionViewController: UIViewController {
     
@@ -40,8 +41,33 @@ class ConfiguracionViewController: UIViewController {
         CurrentUserDB.currentUser.update()
         CurrentUserDB.currentUser.logOut()
         
-        //self.performSegue(withIdentifier: "logOutSegue", sender: nil)
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.window?.rootViewController = storyboard!.instantiateViewController(withIdentifier: "startViewController")
         self.navigationController?.popToRootViewController(animated: true)
+        
+        
+        /*do {
+            try Auth.auth().signOut()
+            CurrentUserDB.currentUser.name = "nil"
+            CurrentUserDB.currentUser.email = "nil"
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            appDelegate.window?.rootViewController = storyboard!.instantiateViewController(withIdentifier: "startViewController")
+            self.navigationController?.popToRootViewController(animated: true)
+            
+        } catch (let error) {
+            print("Auth sign out failed: \(error)")
+        }
+        */
+        //self.performSegue(withIdentifier: "logOutSegue", sender: nil)
+        //self.navigationController?.popToRootViewController(animated: true)
+        //let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        //appDelegate.window?.rootViewController = storyboard!.instantiateViewController(withIdentifier: "startViewController")
+        
+        //self.navigationController?.popToRootViewController(animated: true)
+        //self.dismiss(animated: true, completion: nil)
+        //let nextView = self.storyboard?.instantiateViewController(withIdentifier: "startViewController") as! StartViewController
+        //self.navigationController?.popToViewController(nextView, animated: true)
+       // self.navigationController?.pushViewController(nextView, animated: true)
     }
     /*
     // MARK: - Navigation
