@@ -40,7 +40,8 @@ class ConfiguracionViewController: UIViewController {
         CurrentUserDB.currentUser.update()
         CurrentUserDB.currentUser.logOut()
         
-        self.performSegue(withIdentifier: "logOutSegue", sender: nil)
+        //self.performSegue(withIdentifier: "logOutSegue", sender: nil)
+        self.navigationController?.popToRootViewController(animated: true)
     }
     /*
     // MARK: - Navigation

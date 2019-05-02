@@ -22,6 +22,7 @@ class AdministrarUsuariosViewController: UIViewController, UITableViewDelegate, 
         super.viewDidLoad()
         
         newArray = CurrentUserDB.currentUser.canModifyList
+        //newArray = CurrentUserDB.currentUser.toName(arr: CurrentUserDB.currentUser.canModifyList!)
         print("new array: \(String(describing: newArray))")
         
         dataFiltered = newArray!
@@ -76,12 +77,11 @@ class AdministrarUsuariosViewController: UIViewController, UITableViewDelegate, 
             index = indexPath.row
             objectUser = newArray![index] as! String
         }
-        //let s:String = objectUser["name"] as! [String]
-        //let s2:String = String( objectUser["deviceID"] as! Int)
-        //let sEnt:[String] = objectUser["canView"] as! [String]
         
-        //nextView.newArray2 = sEnt
-        nextView.userName = "xxx"
+        print("this ID selected: \(objectUser)")
+        print("pushed to cel")
+
+        nextView.userName = "XXXX"
         nextView.traceletID = objectUser
         
         self.navigationController?.pushViewController(nextView, animated: true)

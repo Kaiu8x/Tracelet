@@ -33,7 +33,7 @@ class CurrentUserDB {
             
             // Force the SDK to fetch the document from the cache. Could also specify
             // FirestoreSource.server or FirestoreSource.default.
-            docRef.getDocument(source: .cache) { (document, error) in
+            docRef.getDocument { (document, error) in
                 if let document = document {
                     let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
                     print(self.name)
@@ -118,4 +118,20 @@ class CurrentUserDB {
         
     }
     
+    func toName(arr: [String]) -> [String] {
+        var arrName : [String]
+        arrName = []
+        
+        for name in arr {
+            let db = Firestore.firestore()
+            let docRef = db.collection("users").document(name)
+            docRef.getDocument(source: .cache) { (document, error) in
+                if let document = document {
+                    arrName.append(document["name"] as! String)
+                }
+            }
+        }
+        print("arrName \(arrName)")
+        return arrName
+    }
 }
