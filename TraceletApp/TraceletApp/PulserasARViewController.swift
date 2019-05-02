@@ -14,8 +14,9 @@ class PulserasARViewController: UIViewController, ARSCNViewDelegate {
     
     @IBOutlet var textoExplicativo: UILabel!
     
+    @IBOutlet var botonAgregarQuitar: UIButton!
     @IBOutlet var sceneView: ARSCNView!
-    
+    var isShowing = false
     var pulsera = SCNNode()
     var visible = true
     
@@ -29,23 +30,26 @@ class PulserasARViewController: UIViewController, ARSCNViewDelegate {
         sceneView.showsStatistics = false
         sceneView.autoenablesDefaultLighting = false
         //necesario para que se muestre la luz especular
+        
         textoExplicativo.text = "Da click aqui para agregar la pulsera"
+        botonAgregarQuitar.setTitle("Agregar", for: .normal)
         
         // Create a new scene
     
-        let myURL = NSURL(string: "http://www.martinmolina.com.mx/201911/data/jsonTracelet/images/tracelet1.scn")
+        /*let myURL = NSURL(string: "http://www.martinmolina.com.mx/201911/data/jsonTracelet/images/tracelet1.scn")
         let scene = try! SCNScene(url: myURL! as URL, options:nil)
-        self.sceneView.scene = scene
         pulsera = scene.rootNode.childNode(withName: "Brazalete", recursively: true)!
-        pulsera.isHidden = true
-    
+        //pulsera.isHidden = true
+ 
+        self.sceneView.scene = scene
+         */
         let pinchGestureRecognizer = UIPinchGestureRecognizer (target: self, action: #selector(escalado))
         let rotationGestureRecognizer = UIRotationGestureRecognizer (target: self, action: #selector(rotacion))
         let tapGestureRecognizer = UITapGestureRecognizer (target: self, action: #selector(ejecucionTap))
         
         sceneView.addGestureRecognizer(pinchGestureRecognizer)
         sceneView.addGestureRecognizer(rotationGestureRecognizer)
-        sceneView.addGestureRecognizer(tapGestureRecognizer)
+        //sceneView.addGestureRecognizer(tapGestureRecognizer)
             
         
     }
@@ -109,10 +113,28 @@ class PulserasARViewController: UIViewController, ARSCNViewDelegate {
     // FIN DEL CODIGO DE MODELOS 3D POR TRACKEO DE IMAGENES
     
     //Funcion para agregar quitar pulseras
-    @IBAction func agregarQuitar(_ sender: Any) {
-        //IMPLEMENTAR MAÑANA EN LA MAÑANA, DEBE SER COMO EL TAP PARA CREAR Y CON UNA FLAG VER SI LO CREA O SOLO BORRA. DEBE CAMBIAR EL TEXTO DEL LABEL Y DEL BOTON TAMBIEN
-        textoExplicativo.text = "toca aqui para quitar la pulsera"
-        //button.setTitle("Quitar", forState: .normal) ASI SE DEBE HACER EL CAMBIO DE TEXTO
+    @IBAction func agregarQuitar(_ sender: UIButton) {
+        if(isShowing == false){
+            //Cambio a texto, boton y flag
+            isShowing = true
+            textoExplicativo.text = "Da click aqui para quitar la pulsera"
+            botonAgregarQuitar.setTitle("Quitar", for: .normal)
+            //Crear pulsera
+            let myURL = NSURL(string: "http://www.martinmolina.com.mx/201911/data/jsonTracelet/images/tracelet1.scn")
+            let scene = try! SCNScene(url: myURL! as URL, options:nil)
+            pulsera = scene.rootNode.childNode(withName: "Brazalete", recursively: true)!
+            pulsera.name = "pulsera"
+            
+        } else{
+            //Cambio a texto, boton y flag
+            isShowing = false
+            textoExplicativo.text = "Da click aqui para agregar la pulsera"
+            botonAgregarQuitar.setTitle("Agregar", for: .normal)
+            //Borrar pulsera
+           pulsera.removeFromParentNode()
+        }
+        isShowing = !isShowing
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
