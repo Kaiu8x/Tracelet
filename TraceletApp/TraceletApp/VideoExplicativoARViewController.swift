@@ -17,6 +17,14 @@ class VideoExplicativoARViewController: UIViewController, ARSCNViewDelegate, Act
     
     @IBOutlet var sceneView: ARSCNView!
     var onces = true
+    
+    @IBOutlet weak var playButton: UIButton!
+    
+    let moviePath = "http://martinmolina.com.mx/201911/data/jsonTracelet/images/Tracelet.mp4"
+    var url = URL(string: "")
+    var videoNodo = SKVideoNode()
+    var isPlaying = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,6 +40,11 @@ class VideoExplicativoARViewController: UIViewController, ARSCNViewDelegate, Act
         // Set the scene to the view
         sceneView.scene = scene
         registerGestureRecognizer()
+        
+        url = URL(string: self.moviePath)
+        videoNodo = SKVideoNode(url: self.url!)
+        playButton.isHidden = true
+        
     }
     
     private func registerGestureRecognizer()
@@ -64,23 +77,21 @@ class VideoExplicativoARViewController: UIViewController, ARSCNViewDelegate, Act
                     //let url = URL(fileURLWithPath: path!)
                     
                     //let moviePath = "https://vimeo.com/328093358"
-                    let moviePath = "http://martinmolina.com.mx/201911/data/jsonTracelet/images/Tracelet.mp4"
-                    let url = URL(string: moviePath)
-                    let player = AVPlayer(url: url!)
+                    let player = AVPlayer(url: self.url!)
                     player.volume = 0.5
                     print(player.isMuted)
                     
                     // crear un nodo capaz de reporducir un video
-                    let videoNodo = SKVideoNode(url: url!)
-                    videoNodo.play() //ejecutar play al momento de presentarse
+                    
+                    self.videoNodo.play() //ejecutar play al momento de presentarse
                     
                     //crear una escena sprite kit, los parametros estan en pixeles
                     let spriteKitEscene =  SKScene(size: CGSize(width: 640, height: 480))
-                    spriteKitEscene.addChild(videoNodo)
+                    spriteKitEscene.addChild(self.videoNodo)
                     
                     //colocar el videoNodo en el centro de la escena tipo SpriteKit
-                    videoNodo.position = CGPoint(x: spriteKitEscene.size.width/2, y: spriteKitEscene.size.height/2)
-                    videoNodo.size = spriteKitEscene.size
+                    self.videoNodo.position = CGPoint(x: spriteKitEscene.size.width/2, y: spriteKitEscene.size.height/2)
+                    self.videoNodo.size = spriteKitEscene.size
                     
                     //crear una pantalla 4/3, los parametros son metros
                     let pantalla = SCNPlane(width: 1.0, height: 0.75)
@@ -102,10 +113,13 @@ class VideoExplicativoARViewController: UIViewController, ARSCNViewDelegate, Act
                     pantallaPlanaNodo.eulerAngles = SCNVector3(Double.pi, 0, 0)
                     self.sceneView.scene.rootNode.addChildNode(pantallaPlanaNodo)
                     self.hideActivityIndicator()
+                    self.playButton.isHidden = false
                     
                     //child.willMove(toParent: nil)
                     //child.view.removeFromSuperview()
                     //child.removeFromParent()
+                    self.isPlaying = true
+                    self.playButton.titleLabel?.text = "Pause"
                 }
             
             onces = false
@@ -117,6 +131,23 @@ class VideoExplicativoARViewController: UIViewController, ARSCNViewDelegate, Act
         
         
     }
+    
+    @IBAction func tapPlay(_ sender: Any) {
+        if(!onces) {
+            if(isPlaying) {
+                self.playButton.titleLabel?.text = "Play"
+                self.videoNodo.pause()
+                isPlaying = !isPlaying
+            } else {
+                self.playButton.titleLabel?.text = "Pause"
+                self.videoNodo.play()
+                isPlaying = !isPlaying
+            }
+            
+        }
+    }
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
