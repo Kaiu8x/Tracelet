@@ -15,10 +15,12 @@ class SignupViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
+        scrollView.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height+200)
         // Do any additional setup after loading the view, typically from a nib.
     }
     
-  
+    @IBOutlet weak var scrollView: UIScrollView!
+    
     @IBOutlet weak var userNameTextField: UITextField!
     
     @IBOutlet weak var userEmailTextField: UITextField!

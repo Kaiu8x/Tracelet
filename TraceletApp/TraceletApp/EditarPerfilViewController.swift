@@ -10,6 +10,7 @@ import UIKit
 
 class EditarPerfilViewController: UIViewController {
     
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var userNameTextFielf: UITextField!
     @IBOutlet weak var userMailTextField: UITextField!
     @IBOutlet weak var userDeviceId: UITextField!
@@ -17,6 +18,7 @@ class EditarPerfilViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setLabelText()
+        scrollView.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height+200)
         // Do any additional setup after loading the view.
     }
     
