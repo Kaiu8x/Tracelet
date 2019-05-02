@@ -72,6 +72,7 @@ class PulserasARViewController: UIViewController, ARSCNViewDelegate {
         pulsera.scale = SCNVector3(recognizer.scale, recognizer.scale, recognizer.scale)
     }
     
+    //CODIGO PARA LECTURA DE IMAGENES Y APARICION DE MODELOS 3D
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -93,7 +94,7 @@ class PulserasARViewController: UIViewController, ARSCNViewDelegate {
             agregarModelo(to: node, refImage: imagenReferencia)
         }
     }
-    
+    // se agrega el modelo en basea la url de donde se quiere jalar el modelo
     private func agregarModelo(to node:SCNNode, refImage:ARReferenceImage ){
         DispatchQueue.global().async {
             let myURL = NSURL(string: "http://www.martinmolina.com.mx/201911/data/jsonTracelet/images/tracelet1.scn")
@@ -103,6 +104,8 @@ class PulserasARViewController: UIViewController, ARSCNViewDelegate {
             node.addChildNode(nodoPrincipal)
         }
     }
+    // FIN DEL CODIGO DE MODELOS 3D POR TRACKEO DE IMAGENES
+    
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
