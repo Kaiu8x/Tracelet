@@ -39,6 +39,7 @@ class GeofenceViewController: UIViewController {
         mapaG.showsTraffic = true
         mapaG.isZoomEnabled = true
         
+        self.title = CurrentUserDB.currentUser.name
         
         
         // Do any additional setup after loading the iew, typically from a nib.

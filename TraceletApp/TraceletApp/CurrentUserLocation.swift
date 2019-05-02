@@ -65,4 +65,5 @@ class CurrentUserLocation {
         } else {
             print("Error")
         }
+    }
 }

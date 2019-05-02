@@ -29,7 +29,14 @@ class EditarPerfilViewController: UIViewController {
     @IBAction func guardar(_ sender: UIButton) {
         //Codigo para gaurdar cambios del perfil del usuario
         CurrentUserDB.currentUser.name = userNameTextFielf.text!
-        CurrentUserDB.currentUser.email = userMailTextField.text!
+        
+        if CurrentUserDB.currentUser.email != userMailTextField.text! {
+            let s = userMailTextField.text!
+            CurrentUserDB.currentUser.updateAuthEmail(s: s)
+            CurrentUserDB.currentUser.email = s
+        }
+        
+        
         CurrentUserDB.currentUser.deviceId = userDeviceId.text!
         print("Guardar")
         print(CurrentUserDB.currentUser.name)

@@ -47,13 +47,13 @@ class CurrentUserDB {
                     if(document["canViewList"] != nil) {
                         self.canViewList = (document["canViewList"] as? [String])!
                     } else {
-                        self.canViewList = [""]
+                        self.canViewList = []
                     }
                     
                     if(document["canModifyList"] != nil) {
-                        self.canModifyList = (document["canViewList"] as? [String])!
+                        self.canModifyList = (document["canModifyList"] as? [String])!
                     } else {
-                        self.canModifyList = [""]
+                        self.canModifyList = []
                     }
                     
                     print("Cached document data: \(dataDescription)")
@@ -66,4 +66,56 @@ class CurrentUserDB {
             print("Error")
         }
     }
+    
+    
+    func update() {
+        print("Updating")
+        
+        if Auth.auth().currentUser != nil {
+            let userAuth = Auth.auth().currentUser
+            let userUid = userAuth?.uid
+            let db = Firestore.firestore()
+            let docRef = db.collection("users").document(userUid!)
+            
+            docRef.updateData([
+                "name":self.name,
+                "email": self.email,
+                "deviceId":self.deviceId,
+                "canViewList":self.canViewList!,
+                "canModifyList":self.canModifyList!
+            ]) { err in
+                if let err = err {
+                    print("Error updating document: \(err)")
+                } else {
+                    print("Document successfully updated")
+                }
+            }
+        } else {
+         print("Auth error when updating")
+        }
+        
+    }
+    
+    func updateAuthEmail(s: String) {
+        Auth.auth().currentUser?.updateEmail(to: s) { (err) in
+            if let err = err {
+                print("Error updating document: \(err)")
+            } else {
+                print("Auth email successfully updated")
+            }
+        }
+    }
+    
+    func logOut() {
+        print("Log out user")
+        
+        do {
+            try Auth.auth().signOut()
+            
+        } catch (let error) {
+            print("Auth sign out failed: \(error)")
+        }
+        
+    }
+    
 }

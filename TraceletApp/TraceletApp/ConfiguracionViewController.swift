@@ -24,6 +24,7 @@ class ConfiguracionViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         updateLabel()
     }
+    
     func updateLabel () {
         
         print("Current user data 1")
@@ -32,6 +33,14 @@ class ConfiguracionViewController: UIViewController {
         userNameLabel.text = CurrentUserDB.currentUser.name
         userMailLabel.text = CurrentUserDB.currentUser.email
         
+    }
+    
+    @IBAction func logOutButton(_ sender: UIButton) {
+        
+        CurrentUserDB.currentUser.update()
+        CurrentUserDB.currentUser.logOut()
+        
+        self.performSegue(withIdentifier: "logOutSegue", sender: nil)
     }
     /*
     // MARK: - Navigation
