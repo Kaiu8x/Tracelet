@@ -12,9 +12,11 @@ import ARKit
 
 class PulserasARViewController: UIViewController, ARSCNViewDelegate {
     
+    @IBOutlet var textoExplicativo: UILabel!
     
+    @IBOutlet var botonAgregarQuitar: UIButton!
     @IBOutlet var sceneView: ARSCNView!
-    
+    var isShowing = false
     var pulsera = SCNNode()
     var visible = true
     
@@ -29,21 +31,25 @@ class PulserasARViewController: UIViewController, ARSCNViewDelegate {
         sceneView.autoenablesDefaultLighting = false
         //necesario para que se muestre la luz especular
         
+        textoExplicativo.text = "Da click aqui para agregar la pulsera"
+        botonAgregarQuitar.setTitle("Agregar", for: .normal)
+        
         // Create a new scene
     
         let myURL = NSURL(string: "http://www.martinmolina.com.mx/201911/data/jsonTracelet/images/tracelet1.scn")
-        let scene = try! SCNScene(url: myURL! as URL, options:nil)
+        let scene = SCNScene()
+//        pulsera = scene.rootNode.childNode(withName: "Brazalete", recursively: true)!
+        //pulsera.isHidden = true
+ 
         self.sceneView.scene = scene
-        pulsera = scene.rootNode.childNode(withName: "Brazalete", recursively: true)!
-        pulsera.isHidden = true
-    
+ 
         let pinchGestureRecognizer = UIPinchGestureRecognizer (target: self, action: #selector(escalado))
         let rotationGestureRecognizer = UIRotationGestureRecognizer (target: self, action: #selector(rotacion))
-        let tapGestureRecognizer = UITapGestureRecognizer (target: self, action: #selector(ejecucionTap))
+//        let tapGestureRecognizer = UITapGestureRecognizer (target: self, action: #selector(ejecucionTap))
         
         sceneView.addGestureRecognizer(pinchGestureRecognizer)
         sceneView.addGestureRecognizer(rotationGestureRecognizer)
-        sceneView.addGestureRecognizer(tapGestureRecognizer)
+        //sceneView.addGestureRecognizer(tapGestureRecognizer)
             
         
     }
@@ -72,14 +78,61 @@ class PulserasARViewController: UIViewController, ARSCNViewDelegate {
         pulsera.scale = SCNVector3(recognizer.scale, recognizer.scale, recognizer.scale)
     }
     
+    //CODIGO PARA LECTURA DE IMAGENES Y APARICION DE MODELOS 3D
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        // Create a session configuration
-        let configuration = ARWorldTrackingConfiguration()
+        //Cambio 1 cambiar a trackin a través de imagen
+        let configuration = ARImageTrackingConfiguration()
         
+        //Cambio 2, asignar la imagen marcadora
+        guard let imagenesMarcador = ARReferenceImage.referenceImages(inGroupNamed: "AR Resources", bundle: nil) else {
+            fatalError("No se encontró la imagen marcadora")
+        }
+        configuration.trackingImages = imagenesMarcador
         // Run the view's session
         sceneView.session.run(configuration)
+    }
+    //cambio 3, definir el método que será invocado al identificar una imágen marcador
+    func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
+        if let anchor = anchor as? ARImageAnchor{
+            let imagenReferencia = anchor.referenceImage
+            agregarModelo(to: node, refImage: imagenReferencia)
+        }
+    }
+    // se agrega el modelo en basea la url de donde se quiere jalar el modelo
+    private func agregarModelo(to node:SCNNode, refImage:ARReferenceImage ){
+        DispatchQueue.global().async {
+            let myURL = NSURL(string: "http://www.martinmolina.com.mx/201911/data/jsonTracelet/images/tracelet1.scn")
+            let escenaModelo = try! SCNScene(url: myURL! as URL, options:nil)
+            //encontrar el nodo principal
+            let nodoPrincipal = escenaModelo.rootNode.childNode(withName: "Brazalete", recursively: true)!
+            node.addChildNode(nodoPrincipal)
+        }
+    }
+    // FIN DEL CODIGO DE MODELOS 3D POR TRACKEO DE IMAGENES
+    
+    //Funcion para agregar quitar pulseras
+    @IBAction func agregarQuitar(_ sender: UIButton) {
+        if(isShowing == false){
+            //Cambio a texto, boton y flag
+            textoExplicativo.text = "Da click aqui para quitar la pulsera"
+            botonAgregarQuitar.setTitle("Quitar", for: .normal)
+            //Crear pulsera
+            let myURL = NSURL(string: "http://www.martinmolina.com.mx/201911/data/jsonTracelet/images/tracelet1.scn")
+            let scene = try! SCNScene(url: myURL! as URL, options:nil)
+            pulsera = scene.rootNode.childNode(withName: "Brazalete", recursively: true)!
+            pulsera.name = "pulsera"
+            
+        } else{
+            //Cambio a texto, boton y flag
+            textoExplicativo.text = "Da click aqui para agregar la pulsera"
+            botonAgregarQuitar.setTitle("Agregar", for: .normal)
+            //Borrar pulsera
+           pulsera.removeFromParentNode()
+        }
+        isShowing = !isShowing
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {

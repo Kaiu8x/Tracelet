@@ -14,6 +14,7 @@ import AVFoundation
 class VideoExplicativoARViewController: UIViewController, ARSCNViewDelegate, ActivityIndicatorPresenter {
     
     var activityIndicator = UIActivityIndicatorView()
+    var node = SCNNode()
     
     @IBOutlet var sceneView: ARSCNView!
     var onces = true
@@ -35,8 +36,13 @@ class VideoExplicativoARViewController: UIViewController, ARSCNViewDelegate, Act
         sceneView.showsStatistics = false
         
         // Create a new scene
-        let scene = SCNScene()
-        
+        let scene =  SCNScene()
+        let texto = SCNText(string: "Toca en cualquier parte para mostrar el video", extrusionDepth: 0.2)
+        texto.firstMaterial?.diffuse.contents = UIColor.red
+        node.geometry = texto
+        node.position = SCNVector3(x:0,y:-1.0,z:-2.0)
+        node.scale = SCNVector3(0.02, 0.02, 0.02)
+        scene.rootNode.addChildNode(node)
         // Set the scene to the view
         sceneView.scene = scene
         registerGestureRecognizer()
@@ -77,7 +83,10 @@ class VideoExplicativoARViewController: UIViewController, ARSCNViewDelegate, Act
                     //let url = URL(fileURLWithPath: path!)
                     
                     //let moviePath = "https://vimeo.com/328093358"
-                    let player = AVPlayer(url: self.url!)
+                    self.node.removeFromParentNode()
+                    let moviePath = "http://martinmolina.com.mx/201911/data/jsonTracelet/images/Tracelet.mp4"
+                    let url = URL(string: moviePath)
+                    let player = AVPlayer(url: url!)
                     player.volume = 0.5
                     print(player.isMuted)
                     

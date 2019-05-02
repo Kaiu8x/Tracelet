@@ -76,7 +76,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pasos dados" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mJR-aE-cUr">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Distancia recorrida" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mJR-aE-cUr">
                                 <rect key="frame" x="138" y="368" width="179" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
@@ -90,13 +90,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="96" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Trq-DN-qPR">
-                                <rect key="frame" x="138" y="289" width="61" height="39"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Shoes" translatesAutoresizingMaskIntoConstraints="NO" id="IkC-qX-Xac">
                                 <rect key="frame" x="66" y="380" width="43" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -106,10 +99,10 @@
                                 <rect key="frame" x="55" y="257" width="65" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1293" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4f6-77-MbG">
-                                <rect key="frame" x="138" y="400" width="77" height="39"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Desconocida" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4f6-77-MbG">
+                                <rect key="frame" x="138" y="400" width="179" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -120,14 +113,35 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i08-7F-V51">
+                                <rect key="frame" x="47" y="711" width="280" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Regresar"/>
+                                <connections>
+                                    <action selector="desaparecer:" destination="4jU-hI-oas" eventType="touchUpInside" id="cSV-9p-MRW"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Desconocida" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Trq-DN-qPR">
+                                <rect key="frame" x="138" y="289" width="179" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="i08-7F-V51" firstAttribute="leading" secondItem="vnu-cd-fuz" secondAttribute="leading" constant="47" id="X1S-tW-B9E"/>
+                            <constraint firstItem="vnu-cd-fuz" firstAttribute="bottom" secondItem="i08-7F-V51" secondAttribute="bottom" constant="33" id="Zsx-lF-xz9"/>
+                            <constraint firstItem="vnu-cd-fuz" firstAttribute="trailing" secondItem="i08-7F-V51" secondAttribute="trailing" constant="48" id="aOS-jX-8IN"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="vnu-cd-fuz"/>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="STc-1u-VS9" appends="YES" id="tK3-la-oDj"/>
-                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="distanceLabel" destination="4f6-77-MbG" id="4aK-jU-f6z"/>
+                        <outlet property="heartRateLabel" destination="Trq-DN-qPR" id="b3H-kF-Bez"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H5D-Kv-G3m" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="STc-1u-VS9">
@@ -503,8 +517,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gxX-Gh-eeT">
+                                <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Video 360" id="YT2-HS-Cxr">
+                                        <barButtonItem key="leftBarButtonItem" title="&lt; Rutas" id="3JI-oU-y3U">
+                                            <connections>
+                                                <segue destination="pNr-e8-B8i" kind="unwind" unwindAction="unwindToRutasWithSender:" id="oH7-Mr-9vg"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fye-Ed-UxR">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <rect key="frame" x="0.0" y="88" width="375" height="690"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
                                 <connections>
@@ -520,15 +547,16 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oEm-nA-YW9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="pNr-e8-B8i" userLabel="Exit" sceneMemberID="exit"/>
                 <swipeGestureRecognizer direction="right" id="e4E-nd-yu1">
                     <connections>
                         <action selector="swipeExit:" destination="Sch-r4-o70" id="avq-MW-lZI"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="221.59999999999999" y="-651.72413793103453"/>
+            <point key="canvasLocation" x="3134" y="-617"/>
         </scene>
-        <!--Spots360 Img View Controller-->
+        <!--Title-->
         <scene sceneID="KsZ-f3-Qyt">
             <objects>
                 <viewController storyboardIdentifier="Spots360Img" id="qmC-dl-UMz" customClass="Spots360ImgViewController" customModule="TraceletApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -536,8 +564,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cpt-Fa-kGm">
+                                <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Foto 360" id="rRL-0E-XHA">
+                                        <barButtonItem key="leftBarButtonItem" title="&lt; Rutas" id="Ilx-5N-46c">
+                                            <connections>
+                                                <segue destination="elf-RV-qwH" kind="unwind" unwindAction="unwindToRutasWithSender:" id="ksJ-xM-xGp"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zFU-mN-Qog">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <rect key="frame" x="0.0" y="88" width="375" height="690"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
                                 <connections>
@@ -549,11 +590,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="171-Db-f7D"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="YhO-Er-vP9"/>
                     <connections>
                         <outlet property="sceneView" destination="zFU-mN-Qog" id="BGT-CE-H3u"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="38R-gV-qYf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="elf-RV-qwH" userLabel="Exit" sceneMemberID="exit"/>
                 <rotationGestureRecognizer id="Ymu-SX-D6A">
                     <connections>
                         <action selector="rotacion:" destination="qmC-dl-UMz" id="uiw-gg-8J0"/>
@@ -565,7 +608,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1069.5999999999999" y="-656.1576354679803"/>
+            <point key="canvasLocation" x="2348" y="-1201"/>
         </scene>
         <!--Editar perfil-->
         <scene sceneID="SAH-0E-vRY">
@@ -795,13 +838,14 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Vista en Realidad Aumentada"/>
                                 <connections>
-                                    <segue destination="u94-6P-bv5" kind="show" id="Tya-Jj-Ff6"/>
+                                    <segue destination="u94-6P-bv5" kind="show" id="WGb-pO-hi9"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="IOT-Eg-Myh"/>
                     </view>
+                    <navigationItem key="navigationItem" id="THz-hg-aXW"/>
                     <connections>
                         <outlet property="traceletDescriptionLabel" destination="dUe-8O-Y08" id="MEv-c1-EzA"/>
                         <outlet property="traceletImageView" destination="klo-Ec-Clb" id="vwI-16-Djt"/>
@@ -810,9 +854,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MV7-sQ-Pbd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2612" y="1447.536945812808"/>
+            <point key="canvasLocation" x="4172" y="1447.536945812808"/>
         </scene>
-        <!--PulserasAR View Controller-->
+        <!--Vista AR-->
         <scene sceneID="49n-RS-kbr">
             <objects>
                 <viewController storyboardIdentifier="PulserasAR" id="u94-6P-bv5" customClass="PulserasARViewController" customModule="TraceletApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -821,25 +865,43 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DQS-kI-fcD">
-                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
+                                <rect key="frame" x="0.0" y="126" width="375" height="652"/>
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="fD9-GX-1Xo" appends="YES" id="MCr-hm-FcC"/>
                                     <outletCollection property="gestureRecognizers" destination="tF9-Xy-80Q" appends="YES" id="sTV-K7-aOU"/>
                                 </connections>
                             </arscnView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BC2-JQ-KXz">
+                                <rect key="frame" x="295" y="88" width="55" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Agregar"/>
+                                <connections>
+                                    <action selector="agregarQuitar:" destination="u94-6P-bv5" eventType="touchUpInside" id="f6l-vY-JtH"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sQa-VR-B8K">
+                                <rect key="frame" x="9" y="97" width="278" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="bottomMargin" secondItem="DQS-kI-fcD" secondAttribute="bottom" id="7qX-Ca-R7C"/>
                             <constraint firstItem="DQS-kI-fcD" firstAttribute="leading" secondItem="cEv-dO-0wi" secondAttribute="leading" id="TFm-Uo-9bi"/>
-                            <constraint firstItem="DQS-kI-fcD" firstAttribute="top" secondItem="DT2-Yo-wHU" secondAttribute="topMargin" id="izP-cr-HJP"/>
+                            <constraint firstItem="DQS-kI-fcD" firstAttribute="top" secondItem="DT2-Yo-wHU" secondAttribute="topMargin" constant="38" id="izP-cr-HJP"/>
                             <constraint firstItem="DQS-kI-fcD" firstAttribute="trailing" secondItem="cEv-dO-0wi" secondAttribute="trailing" id="tIL-ux-izA"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cEv-dO-0wi"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Vista AR" id="hDO-ur-BTL"/>
                     <connections>
+                        <outlet property="botonAgregarQuitar" destination="BC2-JQ-KXz" id="rg1-XJ-kVw"/>
                         <outlet property="sceneView" destination="DQS-kI-fcD" id="Lsj-Al-whO"/>
+                        <outlet property="textoExplicativo" destination="sQa-VR-B8K" id="1OY-La-g7i"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NUC-77-5hT" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -854,7 +916,7 @@
                     </connections>
                 </rotationGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="3621.5999999999999" y="1447.536945812808"/>
+            <point key="canvasLocation" x="5181.6000000000004" y="1447.536945812808"/>
         </scene>
         <!--User Details View Controller-->
         <scene sceneID="RXf-Py-J7G">
@@ -1836,6 +1898,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XgD-rs-ue4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-697.10144927536237" y="-1347.3214285714284"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="N9z-gT-pzq">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lgV-SZ-cs6" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="g2W-Xg-WVr">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Xzf-w7-XK4" kind="relationship" relationship="rootViewController" id="w5K-u3-4JZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8B8-l3-YtU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3254" y="1448"/>
         </scene>
     </scenes>
     <resources>

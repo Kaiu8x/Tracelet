@@ -129,5 +129,7 @@ class Spots360ImgViewController: UIViewController, ARSCNViewDelegate, ActivityIn
         // Reset tracking and/or remove existing anchors if consistent tracking is required
         
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    }
 }
 

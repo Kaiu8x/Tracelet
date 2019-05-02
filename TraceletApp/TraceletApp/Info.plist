@@ -29,6 +29,12 @@
 	</dict>
 	<key>NSCameraUsageDescription</key>
 	<string>This application will use the camera for Augmented Reality.</string>
+	<key>NSHealthClinicalHealthRecordsShareUsageDescription</key>
+	<string>Tracelet requiere acceso a tu información de salud para desplegarla en la aplicación.</string>
+	<key>NSHealthShareUsageDescription</key>
+	<string>Tracelet lorem ipsum</string>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>Tracelet requiere guardar tu información para compartirla con tus contactos vinculados.</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>Tracelet requiere acceso constante a la ubicación de tu dispositivo para notificar la entrada o salida de las geovallas.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
