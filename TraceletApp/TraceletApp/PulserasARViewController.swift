@@ -36,16 +36,16 @@ class PulserasARViewController: UIViewController, ARSCNViewDelegate {
         
         // Create a new scene
     
-        /*let myURL = NSURL(string: "http://www.martinmolina.com.mx/201911/data/jsonTracelet/images/tracelet1.scn")
-        let scene = try! SCNScene(url: myURL! as URL, options:nil)
-        pulsera = scene.rootNode.childNode(withName: "Brazalete", recursively: true)!
+        let myURL = NSURL(string: "http://www.martinmolina.com.mx/201911/data/jsonTracelet/images/tracelet1.scn")
+        let scene = SCNScene()
+//        pulsera = scene.rootNode.childNode(withName: "Brazalete", recursively: true)!
         //pulsera.isHidden = true
  
         self.sceneView.scene = scene
-         */
+ 
         let pinchGestureRecognizer = UIPinchGestureRecognizer (target: self, action: #selector(escalado))
         let rotationGestureRecognizer = UIRotationGestureRecognizer (target: self, action: #selector(rotacion))
-        let tapGestureRecognizer = UITapGestureRecognizer (target: self, action: #selector(ejecucionTap))
+//        let tapGestureRecognizer = UITapGestureRecognizer (target: self, action: #selector(ejecucionTap))
         
         sceneView.addGestureRecognizer(pinchGestureRecognizer)
         sceneView.addGestureRecognizer(rotationGestureRecognizer)
@@ -116,7 +116,6 @@ class PulserasARViewController: UIViewController, ARSCNViewDelegate {
     @IBAction func agregarQuitar(_ sender: UIButton) {
         if(isShowing == false){
             //Cambio a texto, boton y flag
-            isShowing = true
             textoExplicativo.text = "Da click aqui para quitar la pulsera"
             botonAgregarQuitar.setTitle("Quitar", for: .normal)
             //Crear pulsera
@@ -127,7 +126,6 @@ class PulserasARViewController: UIViewController, ARSCNViewDelegate {
             
         } else{
             //Cambio a texto, boton y flag
-            isShowing = false
             textoExplicativo.text = "Da click aqui para agregar la pulsera"
             botonAgregarQuitar.setTitle("Agregar", for: .normal)
             //Borrar pulsera
