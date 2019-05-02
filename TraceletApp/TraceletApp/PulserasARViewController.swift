@@ -12,6 +12,7 @@ import ARKit
 
 class PulserasARViewController: UIViewController, ARSCNViewDelegate {
     
+    @IBOutlet var textoExplicativo: UILabel!
     
     @IBOutlet var sceneView: ARSCNView!
     
@@ -28,6 +29,7 @@ class PulserasARViewController: UIViewController, ARSCNViewDelegate {
         sceneView.showsStatistics = false
         sceneView.autoenablesDefaultLighting = false
         //necesario para que se muestre la luz especular
+        textoExplicativo.text = "Da click aqui para agregar la pulsera"
         
         // Create a new scene
     
@@ -106,6 +108,12 @@ class PulserasARViewController: UIViewController, ARSCNViewDelegate {
     }
     // FIN DEL CODIGO DE MODELOS 3D POR TRACKEO DE IMAGENES
     
+    //Funcion para agregar quitar pulseras
+    @IBAction func agregarQuitar(_ sender: Any) {
+        //IMPLEMENTAR MAÑANA EN LA MAÑANA, DEBE SER COMO EL TAP PARA CREAR Y CON UNA FLAG VER SI LO CREA O SOLO BORRA. DEBE CAMBIAR EL TEXTO DEL LABEL Y DEL BOTON TAMBIEN
+        textoExplicativo.text = "toca aqui para quitar la pulsera"
+        //button.setTitle("Quitar", forState: .normal) ASI SE DEBE HACER EL CAMBIO DE TEXTO
+    }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
