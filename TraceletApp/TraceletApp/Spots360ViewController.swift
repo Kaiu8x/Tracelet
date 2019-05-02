@@ -13,6 +13,8 @@ import AVFoundation
 
 class Spots360ViewController: UIViewController, ARSCNViewDelegate, ActivityIndicatorPresenter {
     
+    
+    @IBOutlet weak var playButton: UIButton!
     var activityIndicator = UIActivityIndicatorView()
     
     @IBOutlet var sceneView: ARSCNView!
@@ -22,6 +24,7 @@ class Spots360ViewController: UIViewController, ARSCNViewDelegate, ActivityIndic
     
     var videoNodo = SKVideoNode()
     var node = SCNNode()
+    var isPlaying = false
     override func viewDidLoad() {
         super.viewDidLoad()
         print(contentUrl)
@@ -45,6 +48,7 @@ class Spots360ViewController: UIViewController, ARSCNViewDelegate, ActivityIndic
         // Set the scene to the view
         sceneView.scene = scene
         registerGestureRecognizer()
+        playButton.isHidden = true
     }
     
     private func registerGestureRecognizer()
@@ -103,6 +107,8 @@ class Spots360ViewController: UIViewController, ARSCNViewDelegate, ActivityIndic
             
             pantallaEsfera.eulerAngles = SCNVector3(Double.pi, 0, 0)
             self.sceneView.scene.rootNode.addChildNode(pantallaEsfera)
+            self.playButton.isHidden = false
+            isPlaying = true
             once = false
         }
     }
@@ -114,6 +120,20 @@ class Spots360ViewController: UIViewController, ARSCNViewDelegate, ActivityIndic
         videoNodo.pause()
         self.present(nextView, animated: true, completion: nil)
     }
+    
+    @IBAction func playAndPause(_ sender: Any) {
+        if(!once){
+            if(isPlaying) {
+                self.playButton.setTitle("Play", for: .normal)
+                self.videoNodo.pause()
+            } else {
+                self.playButton.setTitle("Pause", for: .normal)
+                self.videoNodo.play()
+            }
+            isPlaying = !isPlaying
+        }
+    }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

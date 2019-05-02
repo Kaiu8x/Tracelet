@@ -18,7 +18,7 @@ class EditarPerfilViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setLabelText()
-        scrollView.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height+200)
+        scrollView.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height+500)
         // Do any additional setup after loading the view.
     }
     

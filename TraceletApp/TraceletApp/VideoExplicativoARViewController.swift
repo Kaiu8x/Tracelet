@@ -144,14 +144,13 @@ class VideoExplicativoARViewController: UIViewController, ARSCNViewDelegate, Act
     @IBAction func tapPlay(_ sender: Any) {
         if(!onces) {
             if(isPlaying) {
-                self.playButton.titleLabel?.text = "Play"
+                self.playButton.setTitle("Play", for: .normal)
                 self.videoNodo.pause()
-                isPlaying = !isPlaying
             } else {
-                self.playButton.titleLabel?.text = "Pause"
+                self.playButton.setTitle("Pause", for: .normal)
                 self.videoNodo.play()
-                isPlaying = !isPlaying
             }
+            isPlaying = !isPlaying
             
         }
     }

@@ -15,7 +15,7 @@ class SignupViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
-        scrollView.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height+200)
+        scrollView.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height+500)
         // Do any additional setup after loading the view, typically from a nib.
     }
     

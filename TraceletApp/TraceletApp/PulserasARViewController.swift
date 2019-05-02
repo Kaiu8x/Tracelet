@@ -114,22 +114,30 @@ class PulserasARViewController: UIViewController, ARSCNViewDelegate {
     
     //Funcion para agregar quitar pulseras
     @IBAction func agregarQuitar(_ sender: UIButton) {
+        let myURL = NSURL(string: "http://www.martinmolina.com.mx/201911/data/jsonTracelet/images/tracelet1.scn")
+        let scene = try! SCNScene(url: myURL! as URL, options:nil)
+        
         if(isShowing == false){
             //Cambio a texto, boton y flag
+            self.pulsera = scene.rootNode.childNode(withName: "Brazalete", recursively: true)!
+            self.pulsera.name = "pulsera"
+            
             textoExplicativo.text = "Da click aqui para quitar la pulsera"
             botonAgregarQuitar.setTitle("Quitar", for: .normal)
             //Crear pulsera
-            let myURL = NSURL(string: "http://www.martinmolina.com.mx/201911/data/jsonTracelet/images/tracelet1.scn")
-            let scene = try! SCNScene(url: myURL! as URL, options:nil)
-            pulsera = scene.rootNode.childNode(withName: "Brazalete", recursively: true)!
-            pulsera.name = "pulsera"
+            print("entre a crear pulsera")
+            
+            
             
         } else{
             //Cambio a texto, boton y flag
+            self.pulsera.removeFromParentNode()
+            
             textoExplicativo.text = "Da click aqui para agregar la pulsera"
             botonAgregarQuitar.setTitle("Agregar", for: .normal)
-            //Borrar pulsera
-           pulsera.removeFromParentNode()
+            //Borrar pulseraprin
+            print("entre a BORRAR pulsera")
+           
         }
         isShowing = !isShowing
         
