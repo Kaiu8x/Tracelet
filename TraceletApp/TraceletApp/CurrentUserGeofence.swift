@@ -24,7 +24,7 @@ class CurrentUserGeofence {
     
     
     private init() {
-        if Auth.auth().currentUser != nil {
+        /*if Auth.auth().currentUser != nil {
             let userAuth = Auth.auth().currentUser
             let userUid = userAuth?.uid
             let db = Firestore.firestore()
@@ -65,5 +65,6 @@ class CurrentUserGeofence {
         } else {
             print("Error")
         }
+        */
     }
 }

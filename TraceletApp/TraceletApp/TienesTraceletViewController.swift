@@ -35,10 +35,10 @@ class TienesTraceletViewController : UIViewController {
         if segue.destination is TabBarController {
             if Auth.auth().currentUser != nil {
                 let userAuth = Auth.auth().currentUser
-                let userUid = userAuth?.uid
+                //let userUid = userAuth?.uid
                 let db = Firestore.firestore()
                 
-                db.collection("users").document(userUid!).setData([
+                db.collection("users").document(email).setData([
                     "name": name,
                     "email": email,
                     "deviceId": "no_device",
@@ -60,6 +60,7 @@ class TienesTraceletViewController : UIViewController {
                 
                 alertController.addAction(defaultAction)
                 self.present(alertController, animated: true, completion: nil)
+                self.navigationController?.popViewController(animated: true)
             }
         }
         

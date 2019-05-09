@@ -26,11 +26,11 @@ class CodigoTraceletViewController : UIViewController {
     @IBAction func conectTraceletButton(_ sender: Any) {
         if Auth.auth().currentUser != nil {
             let userAuth = Auth.auth().currentUser
-            let userUid = userAuth?.uid
+            //let userUid = userAuth?.uid
             let db = Firestore.firestore()
             deviceId = traceletIdTextField.text!
             
-            db.collection("users").document(userUid!).setData([
+            db.collection("users").document(email).setData([
                 "name": name,
                 "email": email,
                 "deviceId": deviceId,
@@ -52,6 +52,7 @@ class CodigoTraceletViewController : UIViewController {
             
             alertController.addAction(defaultAction)
             self.present(alertController, animated: true, completion: nil)
+            self.navigationController?.popToRootViewController(animated: true)
         }
     }
     

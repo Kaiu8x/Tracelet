@@ -27,10 +27,12 @@ class CurrentUserDB {
         Auth.auth().addStateDidChangeListener { (auth, user) in
             if Auth.auth().currentUser != nil {
                 let userAuth = Auth.auth().currentUser
-                let userUid = userAuth?.uid
+                //let userUid = userAuth?.uid
+                let userAuthEmail = userAuth?.email
                 let db = Firestore.firestore()
                 
-                let docRef = db.collection("users").document(userUid!)
+                let docRef = db.collection("users").document(userAuthEmail!)
+                //let docHealthRef = db.collection("users").document(userUid!).collection("health")
                 
                 // Force the SDK to fetch the document from the cache. Could also specify
                 // FirestoreSource.server or FirestoreSource.default.
@@ -63,6 +65,8 @@ class CurrentUserDB {
                         print("Document does not exist in cache")
                     }
                 }
+
+                
                 
             } else {
                 print("Error")
@@ -76,9 +80,10 @@ class CurrentUserDB {
         
         if Auth.auth().currentUser != nil {
             let userAuth = Auth.auth().currentUser
-            let userUid = userAuth?.uid
+            //let userUid = userAuth?.uid
+            let userAuthEmail = userAuth?.email
             let db = Firestore.firestore()
-            let docRef = db.collection("users").document(userUid!)
+            let docRef = db.collection("users").document(userAuthEmail!)
             
             docRef.updateData([
                 "name":self.name,
@@ -114,6 +119,7 @@ class CurrentUserDB {
         
         do {
             try Auth.auth().signOut()
+            print("signOut1 success")
         } catch (let error) {
             print("Auth sign out failed: \(error)")
         }

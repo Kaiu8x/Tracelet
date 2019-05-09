@@ -41,6 +41,33 @@ class ConfiguracionViewController: UIViewController {
         CurrentUserDB.currentUser.update()
         CurrentUserDB.currentUser.logOut()
         
+        //let user = Auth.auth().currentUser!
+        //let onlineRef = Database.database().reference(withPath: "online/\(user.email)")
+        /*
+        onlineRef.removeValue { (error, _) in
+    
+            if let error = error {
+                print("Removing online failed: \(error)")
+                return
+            }
+            
+            do {
+                try Auth.auth().signOut()
+                
+            } catch (let error) {
+                print("Auth sign out failed: \(error)")
+            }
+        }
+        */
+        
+        let firebaseAuth = Auth.auth()
+        do {
+            print("signOut2 success")
+            try firebaseAuth.signOut()
+        } catch let signOutError as NSError {
+            print ("Error signing out: %@", signOutError)
+        }
+        
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.window?.rootViewController = storyboard!.instantiateViewController(withIdentifier: "startViewController")
         self.navigationController?.popToRootViewController(animated: true)

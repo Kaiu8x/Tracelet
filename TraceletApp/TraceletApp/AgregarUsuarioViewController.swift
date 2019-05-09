@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class AgregarUsuarioViewController: UIViewController,UITextFieldDelegate {
 
@@ -21,19 +22,39 @@ class AgregarUsuarioViewController: UIViewController,UITextFieldDelegate {
     
     @IBAction func guardar(_ sender: UIBarButtonItem) {
         //Codigo de asociar usuario posiblemente aqui
+        userExists(codigo.text!)
         
-        if userExists(codigo.text!) {
-            CurrentUserDB.currentUser.canModifyList?.append(codigo.text!)
-            CurrentUserDB.currentUser.canViewList?.append(codigo.text!)
-            print("nuevo codigo agregado a canModifyList: \(String(describing: CurrentUserDB.currentUser.canModifyList))")
-            //let nextView = self.storyboard?.instantiateViewController(withIdentifier: "ConexionNuevoUsuario") as! ConexionNuevoUsuarioViewController
+    }
+    
+    func userExists(_ userMail: String) {
+        if Auth.auth().currentUser != nil {
+            let userAuth = Auth.auth().currentUser
+            let db = Firestore.firestore()
             
-            //self.navigationController?.pushViewController(nextView, animated: true)
+            let docRef = db.collection("users").document(userMail)
             
-            self.performSegue(withIdentifier: "addUserSuccessSegue", sender: nil)
-            
+            docRef.getDocument { (document, error) in
+                if let document = document, document.exists {
+                    let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
+                    print("Document data: \(dataDescription)")
+
+                    CurrentUserDB.currentUser.canModifyList?.append(userMail)
+                    CurrentUserDB.currentUser.canViewList?.append(userMail)
+                    print("nuevo codigo agregado a canModifyList: \(String(describing: CurrentUserDB.currentUser.canModifyList))")
+                    
+                    self.performSegue(withIdentifier: "addUserSuccessSegue", sender: nil)
+                } else {
+                    print("Document does not exist")
+                    let alertController = UIAlertController(title: "Error", message: "User not found", preferredStyle: .alert)
+                    
+                    let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                    
+                    alertController.addAction(defaultAction)
+                    self.present(alertController, animated: true, completion: nil)
+                }
+            }
         } else {
-            let alertController = UIAlertController(title: "Error", message: "User not found", preferredStyle: .alert)
+            let alertController = UIAlertController(title: "Error", message: "Auth Error", preferredStyle: .alert)
             
             let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
             
@@ -41,12 +62,6 @@ class AgregarUsuarioViewController: UIViewController,UITextFieldDelegate {
             self.present(alertController, animated: true, completion: nil)
         }
         
-    }
-    
-    func userExists(_ userId: String) -> Bool {
-        
-        
-        return true
     }
     
     override func viewDidLoad() {
