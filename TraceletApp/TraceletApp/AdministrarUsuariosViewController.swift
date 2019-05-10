@@ -19,7 +19,7 @@ class AdministrarUsuariosViewController: UIViewController, UITableViewDelegate, 
     
     
     override func viewDidLoad() {
-        super.viewDidLoad()
+        
         
         newArray = CurrentUserDB.currentUser.canModifyList
         //newArray = CurrentUserDB.currentUser.toName(arr: CurrentUserDB.currentUser.canModifyList!)
@@ -36,6 +36,10 @@ class AdministrarUsuariosViewController: UIViewController, UITableViewDelegate, 
         definesPresentationContext = true
         
         tableView.tableHeaderView = searchController.searchBar
+        
+        self.tableView.reloadData()
+        
+        super.viewDidLoad()
         
     }
     

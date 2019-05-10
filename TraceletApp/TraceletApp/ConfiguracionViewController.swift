@@ -60,10 +60,12 @@ class ConfiguracionViewController: UIViewController {
         }
         */
         
-        let firebaseAuth = Auth.auth()
+        let firebAuth = Auth.auth()
+        
+        
         do {
             print("signOut2 success")
-            try firebaseAuth.signOut()
+            try firebAuth.signOut()
         } catch let signOutError as NSError {
             print ("Error signing out: %@", signOutError)
         }

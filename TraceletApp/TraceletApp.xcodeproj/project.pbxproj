@@ -32,6 +32,7 @@
 		DF1E8E242242DEE500DB8E0C /* AdministrarUsuariosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1E8E232242DEE500DB8E0C /* AdministrarUsuariosViewController.swift */; };
 		DF1E8E282243087D00DB8E0C /* UserDetailsEntregaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1E8E272243087D00DB8E0C /* UserDetailsEntregaViewController.swift */; };
 		DF1E8E2A22430C6F00DB8E0C /* UserDetailsEntrega2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1E8E2922430C6F00DB8E0C /* UserDetailsEntrega2ViewController.swift */; };
+		DF3EDA222285FB590094AE17 /* MailParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3EDA212285FB590094AE17 /* MailParser.swift */; };
 		DF435558225D387500859FF9 /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF435557225D387500859FF9 /* ShopViewController.swift */; };
 		DF43555C225D3B6300859FF9 /* ShopDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF43555B225D3B6300859FF9 /* ShopDetailsViewController.swift */; };
 		DF43555E225D8A0700859FF9 /* AddGeotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF43555D225D8A0700859FF9 /* AddGeotificationViewController.swift */; };
@@ -85,6 +86,7 @@
 		DF1E8E232242DEE500DB8E0C /* AdministrarUsuariosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdministrarUsuariosViewController.swift; sourceTree = "<group>"; };
 		DF1E8E272243087D00DB8E0C /* UserDetailsEntregaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsEntregaViewController.swift; sourceTree = "<group>"; };
 		DF1E8E2922430C6F00DB8E0C /* UserDetailsEntrega2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsEntrega2ViewController.swift; sourceTree = "<group>"; };
+		DF3EDA212285FB590094AE17 /* MailParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailParser.swift; sourceTree = "<group>"; };
 		DF435557225D387500859FF9 /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
 		DF43555B225D3B6300859FF9 /* ShopDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopDetailsViewController.swift; sourceTree = "<group>"; };
 		DF43555D225D8A0700859FF9 /* AddGeotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGeotificationViewController.swift; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 				DFEF76C922495AB700B3BE5C /* TienesTraceletViewController.swift */,
 				D5B114BA2243508F00C7AE2B /* ConfiguracionViewController.swift */,
 				8CE4706022428028000FA3B4 /* MapasViewController.swift */,
+				DF3EDA212285FB590094AE17 /* MailParser.swift */,
 				8C14233E2242A81A00B3E6CB /* RutasViewController.swift */,
 				D5654ED4224090C9001A4CE4 /* SignosVitalesViewController.swift */,
 				DFC46E3A2231A036008F6A6A /* SignupViewController.swift */,
@@ -334,7 +337,7 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-TraceletApp/Pods-TraceletApp-resources.sh",
-				"${PODS_CONFIGURATION_BUILD_DIR}/gRPC/gRPCCertificates.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/gRPC-C++/gRPCCertificates.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
@@ -389,6 +392,7 @@
 				DFE6DCB222273A6900F05680 /* AppDelegate.swift in Sources */,
 				DFC46E3722319EF6008F6A6A /* StartViewController.swift in Sources */,
 				DFEF76CA22495AB700B3BE5C /* TienesTraceletViewController.swift in Sources */,
+				DF3EDA222285FB590094AE17 /* MailParser.swift in Sources */,
 				DF1E8E282243087D00DB8E0C /* UserDetailsEntregaViewController.swift in Sources */,
 				8C14233F2242A81A00B3E6CB /* RutasViewController.swift in Sources */,
 				DF8E5CA7227B576700805372 /* ActivityIndicatorPresenter.swift in Sources */,
@@ -552,7 +556,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.kawa2010.TrceletApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kawa2010.TraceletApps;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_REFLECTION_METADATA_LEVEL = none;
 				SWIFT_VERSION = 4.2;
@@ -574,7 +578,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.kawa2010.TrceletApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kawa2010.TraceletApps;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_REFLECTION_METADATA_LEVEL = none;
 				SWIFT_VERSION = 4.2;

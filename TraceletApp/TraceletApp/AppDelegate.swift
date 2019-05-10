@@ -14,15 +14,20 @@ import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
     var window: UIWindow?
     let locationManager = CLLocationManager()
-
+    var ref: DatabaseReference!
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         UserDefaults.standard.set(false, forKey: "status")
         FirebaseApp.configure()
-        let db = Firestore.firestore()
+        
+        //let db = Firestore.firestore()
+        
+        
+        ref = Database.database().reference()
         
         //Switcher.updateRootViewController()
         
@@ -35,6 +40,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     print("Error: \(error)")
                 }
         }
+        
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+        }
+        
         return true
     }
 
@@ -100,6 +112,49 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 
 extension AppDelegate: CLLocationManagerDelegate {
+    
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
+        print("locations = \(locValue.latitude) \(locValue.longitude)")
+        
+        let now = Date()
+        
+        let formatter = DateFormatter()
+        
+        formatter.timeZone = TimeZone.current
+        
+        formatter.dateFormat = "yyyy-MM-dd HH:mm"
+        
+        let dateString = formatter.string(from: now)
+        
+        var userAuthEmail = Auth.auth().currentUser?.email
+        userAuthEmail = userAuthEmail?.replacingOccurrences(of: ".", with: ",");
+        userAuthEmail = userAuthEmail?.replacingOccurrences(of: "#", with: "_numSign");
+        userAuthEmail = userAuthEmail?.replacingOccurrences(of: "$", with: "_dolSign");
+        userAuthEmail = userAuthEmail?.replacingOccurrences(of: "[", with: "_leftBrack");
+        userAuthEmail = userAuthEmail?.replacingOccurrences(of: "]", with: "_rightBrack");
+        
+        if Auth.auth().currentUser != nil {
+            //print("WRONGGGGGGGGG")
+            ref = Database.database().reference()
+            
+            print("child ref: usrs/\(userAuthEmail!)/location/x")
+            
+            ref.child("usrs/\(userAuthEmail!)/location/x").setValue(locValue.latitude)
+            
+            print("child ref: usrs/\(userAuthEmail!)/location/y")
+            
+            ref.child("usrs/\(userAuthEmail!)/location/y").setValue(locValue.longitude)
+            if CurrentUserDB.currentUser.location != nil {
+                 CurrentUserDB.currentUser.location![dateString] = "(\(locValue.latitude),\(locValue.longitude))"
+            }
+           
+        }
+        
+        
+    }
+    
     
     func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
         if region is CLCircularRegion {

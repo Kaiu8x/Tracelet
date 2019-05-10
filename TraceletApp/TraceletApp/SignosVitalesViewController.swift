@@ -5,14 +5,46 @@
 //  Created by kenyiro tsuru on 3/18/19.
 //  Copyright © 2019 Kai Kawasaki Ueda. All rights reserved.
 //
-
+/*
+ let now = Date()
+ 
+ let formatter = DateFormatter()
+ 
+ formatter.timeZone = TimeZone.current
+ 
+ formatter.dateFormat = "yyyy-MM-dd HH:mm"
+ 
+ let dateString = formatter.string(from: now)
+ */
 import UIKit
-import HealthKit
+import Firebase
+
 
 class SignosVitalesViewController: UIViewController {
     
+    @IBOutlet weak var heartRateLabel: UILabel!
+    @IBOutlet weak var distanceLabel: UILabel!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        }
+    
+    @IBAction func desaparecer(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+}
+
+
+/*
+class SignosVitalesViewController: UIViewController {
+
     private let authorizeHealthKitSection = 2
     private let userHealthProfile = UserHealthProfile()
+    //locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
+    
+    
     
     private func authorizeHealthKit(_ sender: Any) {
         
@@ -162,3 +194,4 @@ class SignosVitalesViewController: UIViewController {
     */
 
 }
+*/

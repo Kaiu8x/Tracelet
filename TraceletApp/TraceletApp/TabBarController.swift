@@ -7,11 +7,12 @@
 //
 
 import Foundation
-import Firebase
+import CoreLocation
 import UIKit
 
-class TabBarController: UITabBarController{
+class TabBarController: UITabBarController, CLLocationManagerDelegate {
     //let cu = CurrentUserDB.currentUser
+    let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,5 +23,8 @@ class TabBarController: UITabBarController{
         //print(CurrentUserDB.currentUser.email)
         let newCurrentUser = CurrentUserDB.currentUser
         CurrentUserDB.currentUser
+        
+        
     }
+    
 }

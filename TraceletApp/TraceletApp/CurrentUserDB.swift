@@ -6,24 +6,71 @@
 //  Copyright © 2019 Kai Kawasaki Ueda. All rights reserved.
 //
 
+/*
+ 
+ let now = Date()
+ 
+ let formatter = DateFormatter()
+ 
+ formatter.timeZone = TimeZone.current
+ 
+ formatter.dateFormat = "yyyy-MM-dd HH:mm"
+ 
+ let dateString = formatter.string(from: now)
+ 
+ var userAuthEmail = Auth.auth().currentUser?.email
+ userAuthEmail = userAuthEmail?.replacingOccurrences(of: ".", with: ",");
+ userAuthEmail = userAuthEmail?.replacingOccurrences(of: "#", with: "_numSign");
+ userAuthEmail = userAuthEmail?.replacingOccurrences(of: "$", with: "_dolSign");
+ userAuthEmail = userAuthEmail?.replacingOccurrences(of: "[", with: "_leftBrack");
+ userAuthEmail = userAuthEmail?.replacingOccurrences(of: "]", with: "_rightBrack");
+ 
+ if Auth.auth().currentUser != nil {
+ //print("WRONGGGGGGGGG")
+ ref = Database.database().reference()
+ 
+ print("child ref: usrs/\(userAuthEmail!)/location/x")
+ 
+ ref.child("usrs/\(userAuthEmail!)/location/x").setValue(locValue.latitude)
+ 
+ print("child ref: usrs/\(userAuthEmail!)/location/y")
+ 
+ ref.child("usrs/\(userAuthEmail!)/location/y").setValue(locValue.longitude)
+ if CurrentUserDB.currentUser.location != nil {
+ CurrentUserDB.currentUser.location![dateString] = "(\(locValue.latitude),\(locValue.longitude))"
+ }
+ 
+ }
+ 
+ */
+
 import Foundation
 import Firebase
-
+import CoreLocation
+import HealthKit
 //let currentUser = CurrentUserDB()
 
 class CurrentUserDB {
     
     static let currentUser = CurrentUserDB()
     
-    
     var name: String!
     var email: String!
     var deviceId: String!
     var canViewList: [String]?
     var canModifyList: [String]?
+    var timeRepeat: Timer?
+    var timeRepeat2: Timer?
+    var ref: DatabaseReference!
+    //var locationLatitude: Double?
+    //var locationLongitude: Double?
     
+    var location: [String : String]?
+    var heartBeat: [String : Int]?
     
     private init() {
+        ref = Database.database().reference()
+        
         Auth.auth().addStateDidChangeListener { (auth, user) in
             if Auth.auth().currentUser != nil {
                 let userAuth = Auth.auth().currentUser
@@ -65,8 +112,24 @@ class CurrentUserDB {
                         print("Document does not exist in cache")
                     }
                 }
-
+                self.timeRepeat = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(self.update), userInfo: nil, repeats: true)
+                self.timeRepeat = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.getCurrentHealth), userInfo: nil, repeats: true)
+                self.location = [String : String]()
+                self.heartBeat = [String : Int]()
                 
+                if(HKHealthStore.isHealthDataAvailable()) {
+                    let healthStore = HKHealthStore()
+                    let allTypes = Set([HKObjectType.quantityType(forIdentifier: .heartRate)!,
+                                        HKObjectType.quantityType(forIdentifier: .distanceWalkingRunning)!])
+                    healthStore.requestAuthorization(toShare: allTypes, read: allTypes) { (success, error) in
+                        if !success {
+                            // Error
+                        }
+                        
+                    }
+                    self.setMostRecentDistance()
+                    self.setMostRecentHeartRate()
+                }
                 
             } else {
                 print("Error")
@@ -75,9 +138,9 @@ class CurrentUserDB {
     }
     
     
-    func update() {
+    @objc func update() {
         print("Updating")
-        
+        //print("Lat: \(String(describing: self.location?.latitude)), Long: \(String(describing: self.location?.longitude)) ")
         if Auth.auth().currentUser != nil {
             let userAuth = Auth.auth().currentUser
             //let userUid = userAuth?.uid
@@ -90,7 +153,9 @@ class CurrentUserDB {
                 "email": self.email,
                 "deviceId":self.deviceId,
                 "canViewList":self.canViewList!,
-                "canModifyList":self.canModifyList!
+                "canModifyList":self.canModifyList!,
+                "locations":self.location!,
+                "heatbeats":self.heartBeat!
             ]) { err in
                 if let err = err {
                     print("Error updating document: \(err)")
@@ -101,7 +166,75 @@ class CurrentUserDB {
         } else {
          print("Auth error when updating")
         }
+    }
+    
+    @objc func getCurrentHealth() {
+        HealthKitSetupAssistant.authorizeHealthKit { (authorized, error) in
+            
+            guard authorized else {
+                let baseMessage = "HealthKit Authorization Failed"
+                
+                if let error = error {
+                    print("\(baseMessage). Reason: \(error.localizedDescription)")
+                } else {
+                    print(baseMessage)
+                }
+                return
+            }
+            self.setMostRecentDistance()
+            self.setMostRecentHeartRate()
+            print("HealthKit Successfully Authorized.")
+            
+        }
+    }
+    
+    func setMostRecentHeartRate() {
+        guard let heartRateSampleType = HKSampleType.quantityType(forIdentifier: .heartRate) else {
+            print("Heart Rate Sample Type is no longer available in HealthKit")
+            return
+        }
         
+        ProfileDataStore.getMostRecentSample(for: heartRateSampleType) { (sample, error) in
+            guard let sample = sample else {
+                if let error = error {
+                    // self.displayAlert(for: error)
+                }
+                return
+            }
+            let heartRateInBPM = Int(sample.quantity.doubleValue(for: HKUnit(from: "count/min")))
+            if Auth.auth().currentUser != nil {
+                self.ref = Database.database().reference()
+                var userAuthEmail = Auth.auth().currentUser?.email
+                self.ref.child("usrs/\(userAuthEmail!)/bpm").setValue(heartRateInBPM)
+                print("realtime bpm added: \(heartRateInBPM)")
+            }
+        }
+    }
+    
+    func setMostRecentDistance() {
+        guard let distanceSampleType = HKSampleType.quantityType(forIdentifier: .distanceWalkingRunning) else {
+            print("Distance Walking Running Sample Type is no longer available in HealthKit")
+            return
+        }
+        
+        ProfileDataStore.getMostRecentSample(for: distanceSampleType) { (sample, error) in
+            guard let sample = sample else {
+                if let error = error {
+                    // self.displayAlert(for: error)
+                }
+                return
+            }
+            
+            let distanceInMeters = sample.quantity.doubleValue(for: HKUnit.meter())
+            
+            if Auth.auth().currentUser != nil {
+                self.ref = Database.database().reference()
+                    var userAuthEmail = Auth.auth().currentUser?.email
+                self.ref.child("usrs/\(userAuthEmail!)/distance").setValue(distanceInMeters)
+                print("realtime distance added: \(distanceInMeters)")
+            }
+            
+        }
     }
     
     func updateAuthEmail(s: String) {
@@ -123,7 +256,7 @@ class CurrentUserDB {
         } catch (let error) {
             print("Auth sign out failed: \(error)")
         }
-        
+        self.timeRepeat?.invalidate()
     }
     
     func toName(arr: [String]) -> [String] {

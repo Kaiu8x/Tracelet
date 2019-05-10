@@ -144,11 +144,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H5D-Kv-G3m" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="STc-1u-VS9">
-                    <connections>
-                        <action selector="desaparecerVista:" destination="4jU-hI-oas" id="94O-8f-1pf"/>
-                    </connections>
-                </tapGestureRecognizer>
+                <tapGestureRecognizer id="STc-1u-VS9"/>
             </objects>
             <point key="canvasLocation" x="160.80000000000001" y="-2043.1034482758621"/>
         </scene>
@@ -263,14 +259,6 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Y1T-Ks-H0w">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hZx-UQ-QvN">
-                                <rect key="frame" x="83" y="55" width="192" height="34"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="28"/>
-                                <size key="titleShadowOffset" width="11" height="11"/>
-                                <state key="normal" title=" Kenyiro" image="Down">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                </state>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="JE4-oi-Afc">
                                 <rect key="frame" x="25" y="55" width="50" height="50"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -284,27 +272,46 @@
                                     <segue destination="4jU-hI-oas" kind="show" id="Q5L-el-5RM"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RNg-3Z-rre">
+                                <rect key="frame" x="139" y="65" width="97" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="CjR-l2-JmX" id="FTt-C7-xlQ"/>
+                                </connections>
+                            </textField>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HP9-rS-KdB">
+                                <rect key="frame" x="0.0" y="513" width="375" height="216"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="CjR-l2-JmX" id="1TU-NP-uHy"/>
+                                    <outlet property="delegate" destination="CjR-l2-JmX" id="zUx-Do-g9R"/>
+                                </connections>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Y1T-Ks-H0w" firstAttribute="top" secondItem="7Qn-tg-xSK" secondAttribute="top" id="1lk-9N-ZjO"/>
-                            <constraint firstItem="hZx-UQ-QvN" firstAttribute="leading" secondItem="fC4-e6-uiR" secondAttribute="leading" constant="83" id="6eU-TB-jW4"/>
+                            <constraint firstItem="HP9-rS-KdB" firstAttribute="trailing" secondItem="fC4-e6-uiR" secondAttribute="trailing" id="5jh-lz-ihK"/>
                             <constraint firstItem="fC4-e6-uiR" firstAttribute="trailing" secondItem="Y1T-Ks-H0w" secondAttribute="trailing" id="9mC-fa-dc5"/>
+                            <constraint firstItem="RNg-3Z-rre" firstAttribute="top" secondItem="fC4-e6-uiR" secondAttribute="top" constant="21" id="CkP-f3-ymc"/>
+                            <constraint firstItem="HP9-rS-KdB" firstAttribute="bottom" secondItem="fC4-e6-uiR" secondAttribute="bottom" id="CzA-3o-lBL"/>
                             <constraint firstItem="JE4-oi-Afc" firstAttribute="top" secondItem="fC4-e6-uiR" secondAttribute="top" constant="11" id="GPJ-so-myD"/>
+                            <constraint firstItem="fC4-e6-uiR" firstAttribute="trailing" secondItem="RNg-3Z-rre" secondAttribute="trailing" constant="139" id="Gdm-KL-hH4"/>
+                            <constraint firstItem="RNg-3Z-rre" firstAttribute="leading" secondItem="JE4-oi-Afc" secondAttribute="trailing" constant="64" id="SYh-bD-6MV"/>
                             <constraint firstItem="JE4-oi-Afc" firstAttribute="top" secondItem="fC4-e6-uiR" secondAttribute="top" constant="11" id="VMY-gl-bgo"/>
                             <constraint firstItem="Y1T-Ks-H0w" firstAttribute="leading" secondItem="fC4-e6-uiR" secondAttribute="leading" id="X6O-4M-MlU"/>
                             <constraint firstItem="Y1T-Ks-H0w" firstAttribute="bottom" secondItem="fC4-e6-uiR" secondAttribute="bottom" id="Zxy-td-fcZ"/>
-                            <constraint firstItem="hZx-UQ-QvN" firstAttribute="top" secondItem="JE4-oi-Afc" secondAttribute="top" id="bIz-pZ-oKT"/>
                             <constraint firstItem="fC4-e6-uiR" firstAttribute="trailing" secondItem="JE4-oi-Afc" secondAttribute="trailing" constant="300" id="f0U-r5-a16"/>
-                            <constraint firstItem="JE4-oi-Afc" firstAttribute="leading" secondItem="hZx-UQ-QvN" secondAttribute="trailing" constant="-250" id="lMB-4N-mTf"/>
-                            <constraint firstItem="hZx-UQ-QvN" firstAttribute="top" secondItem="fC4-e6-uiR" secondAttribute="top" constant="11" id="yam-Zo-Kmo"/>
+                            <constraint firstItem="HP9-rS-KdB" firstAttribute="leading" secondItem="fC4-e6-uiR" secondAttribute="leading" id="idh-lg-t2t"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fC4-e6-uiR"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Mapa" image="Mapa" landscapeImage="Mapa" id="Nb7-EX-GDE"/>
                     <connections>
+                        <outlet property="dropDown" destination="HP9-rS-KdB" id="bQF-aQ-6em"/>
                         <outlet property="myMap" destination="Y1T-Ks-H0w" id="n2M-E4-sIG"/>
-                        <outlet property="userName" destination="hZx-UQ-QvN" id="ZgH-h6-RvL"/>
+                        <outlet property="userName" destination="RNg-3Z-rre" id="sDJ-8u-mFh"/>
                         <outlet property="vitals" destination="JE4-oi-Afc" id="7Uv-kT-tkC"/>
                     </connections>
                 </viewController>
@@ -1943,7 +1950,6 @@
         <image name="Check" width="533.33331298828125" height="333.33334350585938"/>
         <image name="Configuración" width="16" height="16"/>
         <image name="Connections" width="326.66665649414062" height="222"/>
-        <image name="Down" width="16.666666030883789" height="16.666666030883789"/>
         <image name="Edit" width="264.66665649414062" height="210"/>
         <image name="Geovalla" width="16.666666030883789" height="16.666666030883789"/>
         <image name="Heart" width="400" height="400"/>
