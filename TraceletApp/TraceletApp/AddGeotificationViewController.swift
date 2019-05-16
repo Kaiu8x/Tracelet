@@ -17,7 +17,7 @@ protocol AddGeotificationViewControllerDelegate {
 
 
 
-class AddGeotificationViewController: UIViewController, CLLocationManagerDelegate {
+class AddGeotificationViewController: UIViewController, CLLocationManagerDelegate, UITextFieldDelegate {
     
     
     @IBAction func cancelarButton(_ sender: Any) {
@@ -96,4 +96,8 @@ class AddGeotificationViewController: UIViewController, CLLocationManagerDelegat
         performSegue(withIdentifier: "unwindToGeofence", sender: self)
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
 }

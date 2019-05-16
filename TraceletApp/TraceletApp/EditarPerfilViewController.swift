@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EditarPerfilViewController: UIViewController {
+class EditarPerfilViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var userNameTextFielf: UITextField!
@@ -52,5 +52,10 @@ class EditarPerfilViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
 }

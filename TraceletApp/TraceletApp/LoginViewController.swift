@@ -10,7 +10,7 @@ import Foundation
 import Firebase
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,5 +49,9 @@ class LoginViewController: UIViewController {
         self.performSegue(withIdentifier: "cancelLoginSegue", sender: nil)
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
 }
 

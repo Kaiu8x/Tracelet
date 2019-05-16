@@ -9,7 +9,7 @@
 
 import UIKit
 
-class AdministrarUsuariosViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating {
+class AdministrarUsuariosViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating, UITextFieldDelegate {
     
     var dataFiltered = [Any]()
     let searchController = UISearchController(searchResultsController: nil)
@@ -102,6 +102,11 @@ class AdministrarUsuariosViewController: UIViewController, UITableViewDelegate, 
         }
         
         self.tableView.reloadData()
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
     
 }

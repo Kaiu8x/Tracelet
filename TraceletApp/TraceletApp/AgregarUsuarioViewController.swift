@@ -94,5 +94,10 @@ class AgregarUsuarioViewController: UIViewController,UITextFieldDelegate {
         }
         guardarButton.isEnabled = encendido
     }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
 
 }
