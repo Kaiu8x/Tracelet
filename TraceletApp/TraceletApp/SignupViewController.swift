@@ -15,7 +15,7 @@ class SignupViewController: UIViewController, UITextFieldDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
-        scrollView.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height+500)
+        //scrollView.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height+500)
         NotificationCenter.default.addObserver(self, selector: #selector(Keyboard), name: UIResponder.keyboardWillHideNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(Keyboard), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
 
