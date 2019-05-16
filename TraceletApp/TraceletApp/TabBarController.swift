@@ -23,7 +23,7 @@ class TabBarController: UITabBarController, CLLocationManagerDelegate {
         //print(CurrentUserDB.currentUser.email)
         let newCurrentUser = CurrentUserDB.currentUser
         CurrentUserDB.currentUser
-        
+        //CurrentUserDB.currentUser.reload()
         
     }
     

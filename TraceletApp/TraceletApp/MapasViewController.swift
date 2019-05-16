@@ -26,18 +26,37 @@ class MapasViewController: UIViewController, CLLocationManagerDelegate, UIPicker
     
     var mailParser = MailParser()
     
-    var list = CurrentUserDB.currentUser.canModifyList
+    var list : [String] = []
     let rest = MKPointAnnotation()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //DispatchQueue.global().async {
+        DispatchQueue.main.async {
+            self.list = CurrentUserDB.currentUser.canModifyList ?? ["_"]
+            self.dropDown.reloadAllComponents()
+            self.userName.text = CurrentUserDB.currentUser.name
+            self.dropDown.reloadInputViews()
+            print("self list after RELOAD: \(self.list), new userName: \(self.userName)")
+        }
+        
+        /*CurrentUserDB.currentUser.reload{
+            self.list = CurrentUserDB.currentUser.canModifyList ?? ["_"]
+            print("self list after RELOAD: \(self.list)")
+            self.dropDown.reloadAllComponents()
+            self.userName.text = CurrentUserDB.currentUser.name
+        }*/
+        
         ref = Database.database().reference().child("usrs")
         
         var userAuthEmail = Auth.auth().currentUser?.email
         
         userAuthEmail = mailParser.encode(userAuthEmail!)
         
-        userName.text = CurrentUserDB.currentUser.name
+        
+        
+        self.userName.text = CurrentUserDB.currentUser.name
         print("encoded test: \(userAuthEmail)")
         
         ref.observe(Firebase.DataEventType.childChanged , with: { (snapshot) in
@@ -96,6 +115,52 @@ class MapasViewController: UIViewController, CLLocationManagerDelegate, UIPicker
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        
+        DispatchQueue.main.async {
+            self.list = CurrentUserDB.currentUser.canModifyList ?? ["_"]
+            self.dropDown.reloadAllComponents()
+            self.userName.text = CurrentUserDB.currentUser.name
+            self.dropDown.reloadInputViews()
+            print("self list after RELOAD of View: \(self.list), new userName: \(self.userName)")
+        }
+        
+        /*CurrentUserDB.currentUser.reload{
+            self.list = CurrentUserDB.currentUser.canModifyList ?? ["_"]
+            print("self list after RELOAD will app: \(self.list)")
+            self.dropDown.reloadAllComponents()
+            self.userName.text = CurrentUserDB.currentUser.name
+        }*/
+        
+        /*
+        ref = Database.database().reference().child("usrs")
+        
+        var userAuthEmail = Auth.auth().currentUser?.email
+        
+        userAuthEmail = mailParser.encode(userAuthEmail!)
+        
+        userName.text = CurrentUserDB.currentUser.name
+        print("encoded test: \(userAuthEmail)")
+        
+        ref.observe(Firebase.DataEventType.childChanged , with: { (snapshot) in
+            if snapshot.hasChild(userAuthEmail!) {
+                self.cl.latitude = snapshot.childSnapshot(forPath: "/\(userAuthEmail!)/location/x").value as! CLLocationDegrees
+                
+                self.cl.longitude = snapshot.childSnapshot(forPath: "/\(userAuthEmail!)/location/y").value as! CLLocationDegrees
+                
+                print("data changed from realtime: ( \(self.cl.latitude), \(self.cl.longitude) )")
+            } else {
+                let alertController = UIAlertController(title: "Error", message: "User location not found", preferredStyle: .alert)
+                
+                let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                
+                alertController.addAction(defaultAction)
+                self.present(alertController, animated: true, completion: nil)
+            }
+        })*/
+        
+    }
+    
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         if status == .authorizedWhenInUse {
             locationManager.startUpdatingLocation()
@@ -120,20 +185,26 @@ class MapasViewController: UIViewController, CLLocationManagerDelegate, UIPicker
     
     public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int{
         
-        return list!.count
+        if list != nil{
+            return list.count
+        } else {
+            return 0
+            
+        }
+        
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         
         self.view.endEditing(true)
-        return list![row]
+        return list[row]
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
-        self.userName.text = self.list![row]
+        self.userName.text = self.list[row]
         self.dropDown.isHidden = true
-        print("Row selected \(self.list![row])")
+        print("Row selected \(self.list[row])")
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {

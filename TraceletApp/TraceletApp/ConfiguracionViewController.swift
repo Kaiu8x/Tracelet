@@ -40,7 +40,7 @@ class ConfiguracionViewController: UIViewController {
         
         CurrentUserDB.currentUser.update()
         CurrentUserDB.currentUser.logOut()
-        
+        //CurrentUserDB.currentUser.clean()
         //let user = Auth.auth().currentUser!
         //let onlineRef = Database.database().reference(withPath: "online/\(user.email)")
         /*
@@ -60,15 +60,15 @@ class ConfiguracionViewController: UIViewController {
         }
         */
         
-        let firebAuth = Auth.auth()
+       // let firebAuth = Auth.auth()
         
         
-        do {
+        /*do {
             print("signOut2 success")
             try firebAuth.signOut()
         } catch let signOutError as NSError {
             print ("Error signing out: %@", signOutError)
-        }
+        }*/
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.window?.rootViewController = storyboard!.instantiateViewController(withIdentifier: "startViewController")

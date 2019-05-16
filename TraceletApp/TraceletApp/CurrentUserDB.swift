@@ -72,6 +72,7 @@ class CurrentUserDB {
         ref = Database.database().reference()
         
         Auth.auth().addStateDidChangeListener { (auth, user) in
+            print("Current user creation auth.currentUser state: \(Auth.auth().currentUser) ")
             if Auth.auth().currentUser != nil {
                 let userAuth = Auth.auth().currentUser
                 //let userUid = userAuth?.uid
@@ -87,11 +88,11 @@ class CurrentUserDB {
                 docRef.getDocument (source: .server) { (document, error) in
                     if let document = document {
                         let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
-                        print(self.name)
                         self.name = (document["name"] as? String)!
                         self.email = (document["email"] as? String)!
                         self.deviceId = (document["deviceId"] as? String)!
                         print("Current user name and email")
+                        print(self.name)
                         print(self.name)
                         print(self.email)
                         
@@ -132,16 +133,84 @@ class CurrentUserDB {
                 }
                 
             } else {
-                print("Error")
+                print("Error initiallizing currentUserDB")
             }
         }
     }
     
+    @objc func reload(_ completion:  @escaping() -> ()) {
+        Auth.auth().addStateDidChangeListener { (auth, user) in
+            print("Current user creation RELOAD")
+            if Auth.auth().currentUser != nil {
+                let userAuth = Auth.auth().currentUser
+                //let userUid = userAuth?.uid
+                let userAuthEmail = userAuth?.email
+                let db = Firestore.firestore()
+                
+                let docRef = db.collection("users").document(userAuthEmail!)
+                //let docHealthRef = db.collection("users").document(userUid!).collection("health")
+                
+                // Force the SDK to fetch the document from the cache. Could also specify
+                // FirestoreSource.server or FirestoreSource.default.
+                //docRef.getDocument (source: .default)
+                docRef.getDocument (source: .server) { (document, error) in
+                    if let document = document {
+                        let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
+                        self.name = (document["name"] as? String)!
+                        self.email = (document["email"] as? String)!
+                        self.deviceId = (document["deviceId"] as? String)!
+                        print("Current user name and email")
+                        print(self.name)
+                        print(self.name)
+                        print(self.email)
+                        
+                        if(document["canViewList"] != nil) {
+                            self.canViewList = (document["canViewList"] as? [String])!
+                        } else {
+                            self.canViewList = []
+                        }
+                        
+                        if(document["canModifyList"] != nil) {
+                            self.canModifyList = (document["canModifyList"] as? [String])!
+                        } else {
+                            self.canModifyList = []
+                        }
+                        
+                        print("Cached document data: \(dataDescription)")
+                    } else {
+                        print("Document does not exist in cache")
+                    }
+                }
+                self.timeRepeat = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(self.update), userInfo: nil, repeats: true)
+                self.timeRepeat = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.getCurrentHealth), userInfo: nil, repeats: true)
+                self.location = [String : String]()
+                self.heartBeat = [String : Int]()
+                
+                if(HKHealthStore.isHealthDataAvailable()) {
+                    let healthStore = HKHealthStore()
+                    let allTypes = Set([HKObjectType.quantityType(forIdentifier: .heartRate)!,
+                                        HKObjectType.quantityType(forIdentifier: .distanceWalkingRunning)!])
+                    healthStore.requestAuthorization(toShare: allTypes, read: allTypes) { (success, error) in
+                        if !success {
+                            // Error
+                        }
+                        
+                    }
+                    self.setMostRecentDistance()
+                    self.setMostRecentHeartRate()
+                }
+                
+            } else {
+                print("RELOAD Failure")
+            }
+        }
+        completion()
+    }
     
     @objc func update() {
-        print("Updating")
         //print("Lat: \(String(describing: self.location?.latitude)), Long: \(String(describing: self.location?.longitude)) ")
         if Auth.auth().currentUser != nil {
+            //print("Updating")
             let userAuth = Auth.auth().currentUser
             //let userUid = userAuth?.uid
             let userAuthEmail = userAuth?.email
@@ -164,7 +233,7 @@ class CurrentUserDB {
                 }
             }
         } else {
-         print("Auth error when updating")
+         //print("Auth error when updating")
         }
     }
     
@@ -183,7 +252,7 @@ class CurrentUserDB {
             }
             self.setMostRecentDistance()
             self.setMostRecentHeartRate()
-            print("HealthKit Successfully Authorized.")
+            //print("HealthKit Successfully Authorized and updating to current health")
             
         }
     }
@@ -247,12 +316,27 @@ class CurrentUserDB {
         }
     }
     
+    func clean() {
+        print("Cleaning state of current user")
+        name = "_"
+        email = "_"
+        deviceId = "_"
+        canViewList = ["_"]
+        canModifyList = ["_"]
+        timeRepeat = nil
+        timeRepeat2 = nil
+        ref = nil
+        location = nil
+        heartBeat = nil
+    }
+    
     func logOut() {
         print("Log out user")
         
         do {
             try Auth.auth().signOut()
             print("signOut1 success")
+            print("Sgn out suposed to succes auth.currentuserstate: \(Auth.auth().currentUser)")
         } catch (let error) {
             print("Auth sign out failed: \(error)")
         }
