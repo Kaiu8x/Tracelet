@@ -19,7 +19,7 @@ class PulserasARViewController: UIViewController, ARSCNViewDelegate {
     var isShowing = false
     var pulsera = SCNNode()
     var visible = true
-    let myURL = NSURL(string: "http://www.martinmolina.com.mx/201911/data/jsonTracelet/images/tracelet1.scn")
+    let myURL = NSURL(string: "http://www.martinmolina.com.mx/201911/data/jsonTracelet/images/Brazalete2.scn")
 
     
     override func viewDidLoad() {
@@ -121,7 +121,7 @@ class PulserasARViewController: UIViewController, ARSCNViewDelegate {
             //Cambio a texto, boton y flag
             self.pulsera = scene.rootNode.childNode(withName: "Brazalete", recursively: true)!
             self.pulsera.name = "pulsera"
-            pulsera.position = SCNVector3(x: 0, y: 0, z: -0.3)
+            pulsera.position = SCNVector3(x: 0, y: 0, z: -1)
             //pulsera.scale = SCNVector3(x:2, y:2, z:2)
             // Agregar el nodo a la escena  ?????? TAL VEZ CAMBIAR LINEA 123 POR UN LET VARIABLE = SCENE.....
             scene.rootNode.addChildNode(self.pulsera)
