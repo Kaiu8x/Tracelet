@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="u94-6P-bv5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PXo-Se-zzb">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -484,7 +484,7 @@
             </objects>
             <point key="canvasLocation" x="100" y="22.167487684729064"/>
         </scene>
-        <!--Rutas-->
+        <!--Lugares-->
         <scene sceneID="GmM-DI-tYS">
             <objects>
                 <viewController storyboardIdentifier="Rutas" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Bzj-rU-Dwv" customClass="RutasViewController" customModule="TraceletApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -512,7 +512,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1EC-tY-zIh"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Rutas" image="Ruta" landscapeImage="Ruta" id="0tI-FB-Kby"/>
+                    <tabBarItem key="tabBarItem" title="Lugares" image="Ruta" landscapeImage="Ruta" id="0tI-FB-Kby"/>
                     <connections>
                         <outlet property="mapaR" destination="x0Y-gT-9kM" id="Z3e-jo-3PO"/>
                     </connections>
@@ -787,7 +787,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lnS-8j-thg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="895.20000000000005" y="2029.0640394088671"/>
+            <point key="canvasLocation" x="231" y="2147"/>
         </scene>
         <!--Administrar Usuarios-->
         <scene sceneID="sDT-u9-EoR">
@@ -1032,6 +1032,44 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="46Z-Gq-Syt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1877.5999999999999" y="758.86699507389164"/>
+        </scene>
+        <!--Machine Learning View Controller-->
+        <scene sceneID="JL7-Yl-Npc">
+            <objects>
+                <viewController id="VWG-6R-Xz8" customClass="MachineLearningViewController" customModule="TraceletApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="r9u-Zt-iLd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="voB-jr-qm7">
+                                <rect key="frame" x="0.0" y="88" width="375" height="641"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="xyE-Pe-Z4j" appends="YES" id="sce-Fl-quN"/>
+                                </connections>
+                            </arscnView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="voB-jr-qm7" firstAttribute="leading" secondItem="3cB-rd-EAF" secondAttribute="leading" id="G6y-6i-mcH"/>
+                            <constraint firstItem="voB-jr-qm7" firstAttribute="bottom" secondItem="3cB-rd-EAF" secondAttribute="bottom" id="LFN-Ri-z1I"/>
+                            <constraint firstItem="voB-jr-qm7" firstAttribute="top" secondItem="3cB-rd-EAF" secondAttribute="top" id="V17-xk-gwi"/>
+                            <constraint firstItem="voB-jr-qm7" firstAttribute="trailing" secondItem="3cB-rd-EAF" secondAttribute="trailing" id="kmE-uY-rM7"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="3cB-rd-EAF"/>
+                    </view>
+                    <connections>
+                        <outlet property="sceneView" destination="voB-jr-qm7" id="NNW-ye-iHc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EQr-hh-WaI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="xyE-Pe-Z4j">
+                    <connections>
+                        <action selector="tapEjecutado:" destination="VWG-6R-Xz8" id="Msp-P1-Kvl"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1877.5999999999999" y="1414.2857142857144"/>
         </scene>
         <!--Eliminar Usuario View Controller-->
         <scene sceneID="5a1-Y9-PdP">
@@ -1293,14 +1331,26 @@
                                     <outlet property="prefetchDataSource" destination="Cuq-ya-VKc" id="865-3C-SXR"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qfc-De-nxo">
+                                <rect key="frame" x="114" y="547" width="129" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="tFU-Xb-nR6"/>
+                                </constraints>
+                                <state key="normal" title="Verifica tu Tracelet"/>
+                                <connections>
+                                    <segue destination="VWG-6R-Xz8" kind="show" id="8Ti-Ry-QcK"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="Qnb-65-3Wg" firstAttribute="top" secondItem="Qfc-De-nxo" secondAttribute="bottom" constant="53" id="0pr-cs-kjS"/>
                             <constraint firstItem="WOO-ac-fhG" firstAttribute="leading" secondItem="V6X-o8-HIK" secondAttribute="leading" id="2t8-vm-Ift"/>
                             <constraint firstItem="8fn-qk-6C4" firstAttribute="trailing" secondItem="Qnb-65-3Wg" secondAttribute="trailing" constant="156" id="56O-oS-Fgs"/>
                             <constraint firstItem="Qnb-65-3Wg" firstAttribute="leading" secondItem="dm0-34-4Tb" secondAttribute="trailing" constant="32" id="75W-tk-4aI"/>
                             <constraint firstAttribute="trailing" secondItem="WOO-ac-fhG" secondAttribute="trailing" id="7qr-tY-JYW"/>
                             <constraint firstItem="zNV-qD-Gqm" firstAttribute="leading" secondItem="8fn-qk-6C4" secondAttribute="leading" constant="76" id="B3u-1K-5aW"/>
+                            <constraint firstItem="Qfc-De-nxo" firstAttribute="leading" secondItem="Qnb-65-3Wg" secondAttribute="leading" id="Ek4-P5-SZe"/>
                             <constraint firstItem="8fn-qk-6C4" firstAttribute="bottom" secondItem="Qnb-65-3Wg" secondAttribute="bottom" constant="33" id="NQa-F0-uxR"/>
                             <constraint firstItem="WOO-ac-fhG" firstAttribute="top" secondItem="zNV-qD-Gqm" secondAttribute="bottom" constant="8" symbolic="YES" id="Rvp-Bu-0z6"/>
                             <constraint firstItem="dm0-34-4Tb" firstAttribute="bottom" secondItem="Qnb-65-3Wg" secondAttribute="bottom" id="gEQ-Pa-2ZY"/>
@@ -1318,7 +1368,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hvY-0F-ycl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="895.20000000000005" y="1354.4334975369459"/>
+            <point key="canvasLocation" x="894" y="1356"/>
         </scene>
         <!--Video ExplicativoAR View Controller-->
         <scene sceneID="rXw-3u-5du">
@@ -1359,7 +1409,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Adw-hm-1cd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1877.5999999999999" y="1826.600985221675"/>
+            <point key="canvasLocation" x="1070" y="2147"/>
         </scene>
         <!--Start View Controller-->
         <scene sceneID="yBr-z7-APo">
@@ -1671,6 +1721,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Po5-EC-82q">
+                                <rect key="frame" x="16" y="44" width="343" height="734"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gve-p7-ZlN">
                                 <rect key="frame" x="119" y="482" width="137" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1710,7 +1764,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IBl-sk-fjp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2297" y="-1548"/>
+            <point key="canvasLocation" x="-2298.4000000000001" y="-1548.0295566502464"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="xnd-Sw-xNl">
@@ -1998,7 +2052,7 @@
         <image name="Vitales" width="66.666664123535156" height="66.666664123535156"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="fFo-g3-caa"/>
+        <segue reference="crS-Rl-vfG"/>
         <segue reference="Ian-mJ-yo0"/>
     </inferredMetricsTieBreakers>
 </document>

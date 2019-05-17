@@ -23,6 +23,8 @@
 		D5654ED1223C528B001A4CE4 /* EliminarUsuarioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5654ED0223C528B001A4CE4 /* EliminarUsuarioViewController.swift */; };
 		D5654ED3224090BF001A4CE4 /* VistaListaUsuariosActivosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5654ED2224090BF001A4CE4 /* VistaListaUsuariosActivosViewController.swift */; };
 		D5654ED5224090C9001A4CE4 /* SignosVitalesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5654ED4224090C9001A4CE4 /* SignosVitalesViewController.swift */; };
+		D57D9A84228F6A130023268A /* MachineLearningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57D9A83228F6A130023268A /* MachineLearningViewController.swift */; };
+		D57D9A86228F6E300023268A /* MachineLearningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57D9A85228F6E300023268A /* MachineLearningViewController.swift */; };
 		D5868895228F483E00701AAB /* Xiaomi01K_Specular.png in Resources */ = {isa = PBXBuildFile; fileRef = D5868894228F483D00701AAB /* Xiaomi01K_Specular.png */; };
 		D586889A228F484700701AAB /* Xiaomi01K_Bump.png in Resources */ = {isa = PBXBuildFile; fileRef = D5868896228F484700701AAB /* Xiaomi01K_Bump.png */; };
 		D586889B228F484700701AAB /* Xiaomi01K_Diffuse.png in Resources */ = {isa = PBXBuildFile; fileRef = D5868897228F484700701AAB /* Xiaomi01K_Diffuse.png */; };
@@ -81,6 +83,8 @@
 		D5654ED0223C528B001A4CE4 /* EliminarUsuarioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EliminarUsuarioViewController.swift; sourceTree = "<group>"; };
 		D5654ED2224090BF001A4CE4 /* VistaListaUsuariosActivosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VistaListaUsuariosActivosViewController.swift; sourceTree = "<group>"; };
 		D5654ED4224090C9001A4CE4 /* SignosVitalesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignosVitalesViewController.swift; sourceTree = "<group>"; };
+		D57D9A83228F6A130023268A /* MachineLearningViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MachineLearningViewController.swift; sourceTree = "<group>"; };
+		D57D9A85228F6E300023268A /* MachineLearningViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MachineLearningViewController.swift; path = Brazalete/MachineLearningViewController.swift; sourceTree = "<group>"; };
 		D5868894228F483D00701AAB /* Xiaomi01K_Specular.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Xiaomi01K_Specular.png; sourceTree = "<group>"; };
 		D5868896228F484700701AAB /* Xiaomi01K_Bump.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Xiaomi01K_Bump.png; sourceTree = "<group>"; };
 		D5868897228F484700701AAB /* Xiaomi01K_Diffuse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Xiaomi01K_Diffuse.png; sourceTree = "<group>"; };
@@ -197,56 +201,58 @@
 		DFE6DCB022273A6900F05680 /* TraceletApp */ = {
 			isa = PBXGroup;
 			children = (
-				D5868893228F47E600701AAB /* Brazalete */,
-				8CCF7E022270B2A9005B41AB /* TraceletApp.entitlements */,
-				DF00C784225F1DF0009C98DE /* PulserasARViewController.swift */,
+				DF8E5CA6227B576700805372 /* ActivityIndicatorPresenter.swift */,
 				DF43555D225D8A0700859FF9 /* AddGeotificationViewController.swift */,
 				DF1E8E232242DEE500DB8E0C /* AdministrarUsuariosViewController.swift */,
 				D5AB56072241C0CD00B8FA08 /* AgregarUsuarioViewController.swift */,
 				DFE6DCB122273A6900F05680 /* AppDelegate.swift */,
 				DFE6DCB822273A6B00F05680 /* Assets.xcassets */,
+				D5868893228F47E600701AAB /* Brazalete */,
+				DFEF76CB22495B1100B3BE5C /* CodigoTraceletViewController.swift */,
+				D57D9A83228F6A130023268A /* MachineLearningViewController.swift */,
 				D5AB56052241ADB300B8FA08 /* ConexionNuevoUsuarioViewController.swift */,
+				D5B114BA2243508F00C7AE2B /* ConfiguracionViewController.swift */,
+				DF00C78D22611866009C98DE /* CurrentUserDB.swift */,
+				DF8E5C9E227A1E5C00805372 /* CurrentUserGeofence.swift */,
+				DF8E5CA2227A1E7800805372 /* CurrentUserHealth.swift */,
+				DF8E5CA0227A1E6900805372 /* CurrentUserLocation.swift */,
 				D5403B5C2240C492005B42AC /* EditarPerfilViewController.swift */,
 				D5654ED0223C528B001A4CE4 /* EliminarUsuarioViewController.swift */,
 				8CE4706222428B52000FA3B4 /* GeofenceViewController.swift */,
 				8CE9169E2257A60C00D96265 /* Geotification.swift */,
 				DFEB842A2235B025007FC364 /* GoogleService-Info.plist */,
+				8CCF7E0B2270D515005B41AB /* HealthKitManager.swift */,
+				8CCF7E072270CC25005B41AB /* HealthKitSetupAssistant.swift */,
 				DFE6DCBD22273A6B00F05680 /* Info.plist */,
 				DFE6DCBA22273A6B00F05680 /* LaunchScreen.storyboard */,
 				DFC46E382231A016008F6A6A /* LoginViewController.swift */,
 				DFE6DCB522273A6900F05680 /* Main.storyboard */,
-				DF00C78D22611866009C98DE /* CurrentUserDB.swift */,
-				DF8E5C9E227A1E5C00805372 /* CurrentUserGeofence.swift */,
-				DF8E5CA0227A1E6900805372 /* CurrentUserLocation.swift */,
-				DF8E5CA2227A1E7800805372 /* CurrentUserHealth.swift */,
-				DF00C78B225FAE5D009C98DE /* SpinnerViewController.swift */,
-				DF4B56AC225EEBA40095B602 /* Spots360ImgViewController.swift */,
-				DF4B56AA225EA4530095B602 /* Spots.swift */,
-				DF4B56A8225E9DDB0095B602 /* Spots360ViewController.swift */,
-				D51D8EB1225D718D006CE2DA /* VideoExplicativoARViewController.swift */,
+				D57D9A85228F6E300023268A /* MachineLearningViewController.swift */,
+				8CE4706022428028000FA3B4 /* MapasViewController.swift */,
+				8CCF7E092270D0E8005B41AB /* ProfileDataStore.swift */,
+				DF00C784225F1DF0009C98DE /* PulserasARViewController.swift */,
+				8C14233E2242A81A00B3E6CB /* RutasViewController.swift */,
 				DF43555B225D3B6300859FF9 /* ShopDetailsViewController.swift */,
 				DF435557225D387500859FF9 /* ShopViewController.swift */,
-				DFEF76CB22495B1100B3BE5C /* CodigoTraceletViewController.swift */,
-				DFEF76C922495AB700B3BE5C /* TienesTraceletViewController.swift */,
-				D5B114BA2243508F00C7AE2B /* ConfiguracionViewController.swift */,
-				8CE4706022428028000FA3B4 /* MapasViewController.swift */,
-				8C14233E2242A81A00B3E6CB /* RutasViewController.swift */,
 				D5654ED4224090C9001A4CE4 /* SignosVitalesViewController.swift */,
 				DFC46E3A2231A036008F6A6A /* SignupViewController.swift */,
+				DF00C78B225FAE5D009C98DE /* SpinnerViewController.swift */,
 				DFE6DCB322273A6900F05680 /* SplashViewController.swift */,
+				DF4B56AA225EA4530095B602 /* Spots.swift */,
+				DF4B56AC225EEBA40095B602 /* Spots360ImgViewController.swift */,
+				DF4B56A8225E9DDB0095B602 /* Spots360ViewController.swift */,
 				DFC46E3622319EF6008F6A6A /* StartViewController.swift */,
 				DFC46E462231B5D7008F6A6A /* Switcher.swift */,
 				DFC46E482231D5D3008F6A6A /* TabBarController.swift */,
+				DFEF76C922495AB700B3BE5C /* TienesTraceletViewController.swift */,
+				8CCF7E022270B2A9005B41AB /* TraceletApp.entitlements */,
 				DF1E8E2922430C6F00DB8E0C /* UserDetailsEntrega2ViewController.swift */,
 				DF1E8E272243087D00DB8E0C /* UserDetailsEntregaViewController.swift */,
 				DF76F4F22243428D0093E943 /* UserDetailsViewController.swift */,
-				8CE916A02257A64E00D96265 /* Utilities.swift */,
-				D5654ED2224090BF001A4CE4 /* VistaListaUsuariosActivosViewController.swift */,
-				8CCF7E072270CC25005B41AB /* HealthKitSetupAssistant.swift */,
-				8CCF7E092270D0E8005B41AB /* ProfileDataStore.swift */,
-				8CCF7E0B2270D515005B41AB /* HealthKitManager.swift */,
 				8C2E31B52273764400DB2C57 /* UserHealthProfile.swift */,
-				DF8E5CA6227B576700805372 /* ActivityIndicatorPresenter.swift */,
+				8CE916A02257A64E00D96265 /* Utilities.swift */,
+				D51D8EB1225D718D006CE2DA /* VideoExplicativoARViewController.swift */,
+				D5654ED2224090BF001A4CE4 /* VistaListaUsuariosActivosViewController.swift */,
 			);
 			path = TraceletApp;
 			sourceTree = "<group>";
@@ -400,6 +406,7 @@
 				D5B114BB2243508F00C7AE2B /* ConfiguracionViewController.swift in Sources */,
 				DF43555E225D8A0700859FF9 /* AddGeotificationViewController.swift in Sources */,
 				D5654ED1223C528B001A4CE4 /* EliminarUsuarioViewController.swift in Sources */,
+				D57D9A84228F6A130023268A /* MachineLearningViewController.swift in Sources */,
 				DFC46E3B2231A036008F6A6A /* SignupViewController.swift in Sources */,
 				D5403B5D2240C492005B42AC /* EditarPerfilViewController.swift in Sources */,
 				DF4B56AB225EA4530095B602 /* Spots.swift in Sources */,
@@ -407,6 +414,7 @@
 				DF8E5CA1227A1E6900805372 /* CurrentUserLocation.swift in Sources */,
 				DF1E8E2A22430C6F00DB8E0C /* UserDetailsEntrega2ViewController.swift in Sources */,
 				8CCF7E0C2270D515005B41AB /* HealthKitManager.swift in Sources */,
+				D57D9A86228F6E300023268A /* MachineLearningViewController.swift in Sources */,
 				D5AB56062241ADB300B8FA08 /* ConexionNuevoUsuarioViewController.swift in Sources */,
 				DF8E5CA3227A1E7800805372 /* CurrentUserHealth.swift in Sources */,
 				DF76F4F32243428D0093E943 /* UserDetailsViewController.swift in Sources */,
