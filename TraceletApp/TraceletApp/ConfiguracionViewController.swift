@@ -40,7 +40,6 @@ class ConfiguracionViewController: UIViewController {
         
         CurrentUserDB.currentUser.update()
         CurrentUserDB.currentUser.logOut()
-        //CurrentUserDB.currentUser.clean()
         //let user = Auth.auth().currentUser!
         //let onlineRef = Database.database().reference(withPath: "online/\(user.email)")
         /*

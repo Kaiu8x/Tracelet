@@ -5,45 +5,6 @@
 //  Created by Kai Kawasaki Ueda on 4/12/19.
 //  Copyright © 2019 Kai Kawasaki Ueda. All rights reserved.
 //
-
-/*
- 
- let now = Date()
- 
- let formatter = DateFormatter()
- 
- formatter.timeZone = TimeZone.current
- 
- formatter.dateFormat = "yyyy-MM-dd HH:mm"
- 
- let dateString = formatter.string(from: now)
- 
- var userAuthEmail = Auth.auth().currentUser?.email
- userAuthEmail = userAuthEmail?.replacingOccurrences(of: ".", with: ",");
- userAuthEmail = userAuthEmail?.replacingOccurrences(of: "#", with: "_numSign");
- userAuthEmail = userAuthEmail?.replacingOccurrences(of: "$", with: "_dolSign");
- userAuthEmail = userAuthEmail?.replacingOccurrences(of: "[", with: "_leftBrack");
- userAuthEmail = userAuthEmail?.replacingOccurrences(of: "]", with: "_rightBrack");
- 
- if Auth.auth().currentUser != nil {
- //print("WRONGGGGGGGGG")
- ref = Database.database().reference()
- 
- print("child ref: usrs/\(userAuthEmail!)/location/x")
- 
- ref.child("usrs/\(userAuthEmail!)/location/x").setValue(locValue.latitude)
- 
- print("child ref: usrs/\(userAuthEmail!)/location/y")
- 
- ref.child("usrs/\(userAuthEmail!)/location/y").setValue(locValue.longitude)
- if CurrentUserDB.currentUser.location != nil {
- CurrentUserDB.currentUser.location![dateString] = "(\(locValue.latitude),\(locValue.longitude))"
- }
- 
- }
- 
- */
-
 import Foundation
 import Firebase
 import CoreLocation
@@ -68,6 +29,8 @@ class CurrentUserDB {
     var location: [String : String]?
     var heartBeat: [String : Int]?
     
+    let mailParser = MailParser()
+    
     private init() {
         ref = Database.database().reference()
         
@@ -77,6 +40,8 @@ class CurrentUserDB {
                 let userAuth = Auth.auth().currentUser
                 //let userUid = userAuth?.uid
                 let userAuthEmail = userAuth?.email
+                print("-----------------------------------------")
+                print(userAuthEmail)
                 let db = Firestore.firestore()
                 
                 let docRef = db.collection("users").document(userAuthEmail!)
@@ -84,10 +49,12 @@ class CurrentUserDB {
                 
                 // Force the SDK to fetch the document from the cache. Could also specify
                 // FirestoreSource.server or FirestoreSource.default.
-                //docRef.getDocument (source: .default)
-                docRef.getDocument (source: .server) { (document, error) in
-                    if let document = document {
+                //docRef.getDocument (source: .server) {
+                docRef.getDocument { (document, error) in
+                   if let document = document, document.exists {
                         let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
+                        print("Current document")
+                        print(dataDescription)
                         self.name = (document["name"] as? String)!
                         self.email = (document["email"] as? String)!
                         self.deviceId = (document["deviceId"] as? String)!
@@ -153,8 +120,8 @@ class CurrentUserDB {
                 // Force the SDK to fetch the document from the cache. Could also specify
                 // FirestoreSource.server or FirestoreSource.default.
                 //docRef.getDocument (source: .default)
-                docRef.getDocument (source: .server) { (document, error) in
-                    if let document = document {
+                docRef.getDocument { (document, error) in
+                    if let document = document, document.exists {
                         let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
                         self.name = (document["name"] as? String)!
                         self.email = (document["email"] as? String)!
@@ -217,19 +184,23 @@ class CurrentUserDB {
             let db = Firestore.firestore()
             let docRef = db.collection("users").document(userAuthEmail!)
             
-            docRef.updateData([
-                "name":self.name,
-                "email": self.email,
-                "deviceId":self.deviceId,
-                "canViewList":self.canViewList!,
-                "canModifyList":self.canModifyList!,
-                "locations":self.location!,
-                "heatbeats":self.heartBeat!
-            ]) { err in
-                if let err = err {
-                    print("Error updating document: \(err)")
-                } else {
-                    print("Document successfully updated")
+            docRef.getDocument { (document, error) in
+                if let document = document, document.exists {
+                    docRef.updateData([
+                        "name":self.name,
+                        "email": self.email,
+                        "deviceId":self.deviceId,
+                        "canViewList":self.canViewList!,
+                        "canModifyList":self.canModifyList!,
+                        "locations":self.location!,
+                        "heatbeats":self.heartBeat!
+                    ]) { err in
+                        if let err = err {
+                            print("Error updating document: \(err)")
+                        } else {
+                            print("Document successfully updated")
+                        }
+                    }
                 }
             }
         } else {
@@ -271,12 +242,22 @@ class CurrentUserDB {
                 return
             }
             let heartRateInBPM = Int(sample.quantity.doubleValue(for: HKUnit(from: "count/min")))
-            if Auth.auth().currentUser != nil {
-                self.ref = Database.database().reference()
-                var userAuthEmail = Auth.auth().currentUser?.email
-                self.ref.child("usrs/\(userAuthEmail!)/bpm").setValue(heartRateInBPM)
-                print("realtime bpm added: \(heartRateInBPM)")
+            
+            let handle = Auth.auth().addStateDidChangeListener { (auth, user) in
+                if Auth.auth().currentUser != nil {
+                    self.ref = Database.database().reference()
+                    var userAuthEmail = Auth.auth().currentUser?.email
+                    if userAuthEmail != nil{
+                        print("--------------------------------")
+                        print(userAuthEmail!)
+                        userAuthEmail = self.mailParser.encode(userAuthEmail!)
+                        self.ref.child("usrs/\(userAuthEmail!)/bpm").setValue(heartRateInBPM)
+                        userAuthEmail = self.mailParser.decode(userAuthEmail!)
+                        print("realtime bpm added: \(heartRateInBPM)")
+                    }
+                }
             }
+            
         }
     }
     
@@ -299,7 +280,13 @@ class CurrentUserDB {
             if Auth.auth().currentUser != nil {
                 self.ref = Database.database().reference()
                     var userAuthEmail = Auth.auth().currentUser?.email
+                    if userAuthEmail != nil{
+                        print("--------------------------------")
+                        print(userAuthEmail!)
+                        userAuthEmail = self.mailParser.encode(userAuthEmail!)
                 self.ref.child("usrs/\(userAuthEmail!)/distance").setValue(distanceInMeters)
+                    userAuthEmail = self.mailParser.decode(userAuthEmail!)
+                    }
                 print("realtime distance added: \(distanceInMeters)")
             }
             

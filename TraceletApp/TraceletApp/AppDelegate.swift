@@ -128,15 +128,13 @@ extension AppDelegate: CLLocationManagerDelegate {
         
         let dateString = formatter.string(from: now)
         
-        var userAuthEmail = Auth.auth().currentUser?.email
-        userAuthEmail = userAuthEmail?.replacingOccurrences(of: ".", with: ",");
-        userAuthEmail = userAuthEmail?.replacingOccurrences(of: "#", with: "_numSign");
-        userAuthEmail = userAuthEmail?.replacingOccurrences(of: "$", with: "_dolSign");
-        userAuthEmail = userAuthEmail?.replacingOccurrences(of: "[", with: "_leftBrack");
-        userAuthEmail = userAuthEmail?.replacingOccurrences(of: "]", with: "_rightBrack");
         
         if Auth.auth().currentUser != nil {
-            //print("WRONGGGGGGGGG")
+            var userAuthEmail = Auth.auth().currentUser?.email
+            var mp = MailParser()
+            userAuthEmail = mp.encode(userAuthEmail!)
+            
+            print("WRONGGGGGGGGG")
             ref = Database.database().reference()
             
             print("child ref: usrs/\(userAuthEmail!)/location/x")

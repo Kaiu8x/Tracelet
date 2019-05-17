@@ -41,40 +41,66 @@ class MapasViewController: UIViewController, CLLocationManagerDelegate, UIPicker
             print("self list after RELOAD: \(self.list), new userName: \(self.userName)")
         }
         
-        /*CurrentUserDB.currentUser.reload{
+        CurrentUserDB.currentUser.reload{
             self.list = CurrentUserDB.currentUser.canModifyList ?? ["_"]
-            print("self list after RELOAD: \(self.list)")
             self.dropDown.reloadAllComponents()
             self.userName.text = CurrentUserDB.currentUser.name
-        }*/
+            self.dropDown.reloadInputViews()
+            print("self list after RELOAD: \(self.list), new userName: \(self.userName)")
+        }
         
-        ref = Database.database().reference().child("usrs")
+        
+        // func to get data from real persons.
+        
+        /*
+        ref = Database.database().reference()
         
         var userAuthEmail = Auth.auth().currentUser?.email
         
         userAuthEmail = mailParser.encode(userAuthEmail!)
         
-        
-        
         self.userName.text = CurrentUserDB.currentUser.name
-        print("encoded test: \(userAuthEmail)")
         
-        ref.observe(Firebase.DataEventType.childChanged , with: { (snapshot) in
-            if snapshot.hasChild(userAuthEmail!) {
-                 self.cl.latitude = snapshot.childSnapshot(forPath: "/\(userAuthEmail!)/location/x").value as! CLLocationDegrees
+        
+        /*ref = Database.database().reference()
+        
+        print("child ref: usrs/\(userAuthEmail!)/location/x")
+        
+        ref.child("usrs/\(userAuthEmail!)/location/x").setValue(locValue.latitude)
+        
+        print("child ref: usrs/\(userAuthEmail!)/location/y")
+        
+        ref.child("usrs/\(userAuthEmail!)/location/y").setValue(locValue.longitude)
+        if CurrentUserDB.currentUser.location != nil {
+            CurrentUserDB.currentUser.location![dateString] = "(\(locValue.latitude),\(locValue.longitude))"
+        }*/
+        
+            let refLocation = ref.child("usrs//\(userAuthEmail!)/")
+        
+            refLocation.observe(Firebase.DataEventType.childChanged , with: { (snapshot) in
+            
+            let data = snapshot.value
+            print("RES OF SNAP \(snapshot.exists())")
+            
+            //snapshot.didChangeValue(forKey: "location")
+            print("SNAPSHOT VALUE: \(snapshot.value)")
                 
-                self.cl.longitude = snapshot.childSnapshot(forPath: "/\(userAuthEmail!)/location/y").value as! CLLocationDegrees
+            if snapshot.value != nil {
+                 self.cl.latitude = snapshot.childSnapshot(forPath: "usrs/\(userAuthEmail!)/location/x").value as! CLLocationDegrees
+                
+                self.cl.longitude = snapshot.childSnapshot(forPath: "usrs/\(userAuthEmail!)/location/y").value as! CLLocationDegrees
                 
                 print("data changed from realtime: ( \(self.cl.latitude), \(self.cl.longitude) )")
             } else {
-                let alertController = UIAlertController(title: "Error", message: "User location not found", preferredStyle: .alert)
+                /*let alertController = UIAlertController(title: "Error", message: "User location not found", preferredStyle: .alert)
                 
                 let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
                 
                 alertController.addAction(defaultAction)
                 self.present(alertController, animated: true, completion: nil)
+                 */
             }
-        })
+        })*/
         
         
         if (CLLocationManager.locationServicesEnabled()) {
@@ -117,47 +143,21 @@ class MapasViewController: UIViewController, CLLocationManagerDelegate, UIPicker
     
     override func viewWillAppear(_ animated: Bool) {
         
-        DispatchQueue.main.async {
+        DispatchQueue.global().async {
+            self.list = CurrentUserDB.currentUser.canModifyList ?? ["_"]
+            print("self list after RELOAD of View: \(self.list), new userName: \(self.userName)")
+        }
+        self.userName.text = CurrentUserDB.currentUser.name
+        self.dropDown.reloadAllComponents()
+        self.dropDown.reloadInputViews()
+        
+        CurrentUserDB.currentUser.reload{
             self.list = CurrentUserDB.currentUser.canModifyList ?? ["_"]
             self.dropDown.reloadAllComponents()
             self.userName.text = CurrentUserDB.currentUser.name
             self.dropDown.reloadInputViews()
             print("self list after RELOAD of View: \(self.list), new userName: \(self.userName)")
         }
-        
-        /*CurrentUserDB.currentUser.reload{
-            self.list = CurrentUserDB.currentUser.canModifyList ?? ["_"]
-            print("self list after RELOAD will app: \(self.list)")
-            self.dropDown.reloadAllComponents()
-            self.userName.text = CurrentUserDB.currentUser.name
-        }*/
-        
-        /*
-        ref = Database.database().reference().child("usrs")
-        
-        var userAuthEmail = Auth.auth().currentUser?.email
-        
-        userAuthEmail = mailParser.encode(userAuthEmail!)
-        
-        userName.text = CurrentUserDB.currentUser.name
-        print("encoded test: \(userAuthEmail)")
-        
-        ref.observe(Firebase.DataEventType.childChanged , with: { (snapshot) in
-            if snapshot.hasChild(userAuthEmail!) {
-                self.cl.latitude = snapshot.childSnapshot(forPath: "/\(userAuthEmail!)/location/x").value as! CLLocationDegrees
-                
-                self.cl.longitude = snapshot.childSnapshot(forPath: "/\(userAuthEmail!)/location/y").value as! CLLocationDegrees
-                
-                print("data changed from realtime: ( \(self.cl.latitude), \(self.cl.longitude) )")
-            } else {
-                let alertController = UIAlertController(title: "Error", message: "User location not found", preferredStyle: .alert)
-                
-                let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-                
-                alertController.addAction(defaultAction)
-                self.present(alertController, animated: true, completion: nil)
-            }
-        })*/
         
     }
     

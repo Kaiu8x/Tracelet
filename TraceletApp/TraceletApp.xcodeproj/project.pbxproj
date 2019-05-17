@@ -40,9 +40,6 @@
 		DF4B56AB225EA4530095B602 /* Spots.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4B56AA225EA4530095B602 /* Spots.swift */; };
 		DF4B56AD225EEBA40095B602 /* Spots360ImgViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4B56AC225EEBA40095B602 /* Spots360ImgViewController.swift */; };
 		DF76F4F32243428D0093E943 /* UserDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF76F4F22243428D0093E943 /* UserDetailsViewController.swift */; };
-		DF8E5C9F227A1E5C00805372 /* CurrentUserGeofence.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8E5C9E227A1E5C00805372 /* CurrentUserGeofence.swift */; };
-		DF8E5CA1227A1E6900805372 /* CurrentUserLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8E5CA0227A1E6900805372 /* CurrentUserLocation.swift */; };
-		DF8E5CA3227A1E7800805372 /* CurrentUserHealth.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8E5CA2227A1E7800805372 /* CurrentUserHealth.swift */; };
 		DF8E5CA7227B576700805372 /* ActivityIndicatorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8E5CA6227B576700805372 /* ActivityIndicatorPresenter.swift */; };
 		DFC46E3722319EF6008F6A6A /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC46E3622319EF6008F6A6A /* StartViewController.swift */; };
 		DFC46E392231A016008F6A6A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC46E382231A016008F6A6A /* LoginViewController.swift */; };
@@ -94,9 +91,6 @@
 		DF4B56AA225EA4530095B602 /* Spots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spots.swift; sourceTree = "<group>"; };
 		DF4B56AC225EEBA40095B602 /* Spots360ImgViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spots360ImgViewController.swift; sourceTree = "<group>"; };
 		DF76F4F22243428D0093E943 /* UserDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsViewController.swift; sourceTree = "<group>"; };
-		DF8E5C9E227A1E5C00805372 /* CurrentUserGeofence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUserGeofence.swift; sourceTree = "<group>"; };
-		DF8E5CA0227A1E6900805372 /* CurrentUserLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUserLocation.swift; sourceTree = "<group>"; };
-		DF8E5CA2227A1E7800805372 /* CurrentUserHealth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUserHealth.swift; sourceTree = "<group>"; };
 		DF8E5CA6227B576700805372 /* ActivityIndicatorPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorPresenter.swift; sourceTree = "<group>"; };
 		DFC46E3622319EF6008F6A6A /* StartViewController.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		DFC46E382231A016008F6A6A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -195,9 +189,6 @@
 				DFC46E382231A016008F6A6A /* LoginViewController.swift */,
 				DFE6DCB522273A6900F05680 /* Main.storyboard */,
 				DF00C78D22611866009C98DE /* CurrentUserDB.swift */,
-				DF8E5C9E227A1E5C00805372 /* CurrentUserGeofence.swift */,
-				DF8E5CA0227A1E6900805372 /* CurrentUserLocation.swift */,
-				DF8E5CA2227A1E7800805372 /* CurrentUserHealth.swift */,
 				DF00C78B225FAE5D009C98DE /* SpinnerViewController.swift */,
 				DF4B56AC225EEBA40095B602 /* Spots360ImgViewController.swift */,
 				DF4B56AA225EA4530095B602 /* Spots.swift */,
@@ -371,7 +362,6 @@
 				DFC46E472231B5D7008F6A6A /* Switcher.swift in Sources */,
 				DF435558225D387500859FF9 /* ShopViewController.swift in Sources */,
 				8CE916A12257A64E00D96265 /* Utilities.swift in Sources */,
-				DF8E5C9F227A1E5C00805372 /* CurrentUserGeofence.swift in Sources */,
 				D5B114BB2243508F00C7AE2B /* ConfiguracionViewController.swift in Sources */,
 				DF43555E225D8A0700859FF9 /* AddGeotificationViewController.swift in Sources */,
 				D5654ED1223C528B001A4CE4 /* EliminarUsuarioViewController.swift in Sources */,
@@ -379,11 +369,9 @@
 				D5403B5D2240C492005B42AC /* EditarPerfilViewController.swift in Sources */,
 				DF4B56AB225EA4530095B602 /* Spots.swift in Sources */,
 				DF00C78C225FAE5D009C98DE /* SpinnerViewController.swift in Sources */,
-				DF8E5CA1227A1E6900805372 /* CurrentUserLocation.swift in Sources */,
 				DF1E8E2A22430C6F00DB8E0C /* UserDetailsEntrega2ViewController.swift in Sources */,
 				8CCF7E0C2270D515005B41AB /* HealthKitManager.swift in Sources */,
 				D5AB56062241ADB300B8FA08 /* ConexionNuevoUsuarioViewController.swift in Sources */,
-				DF8E5CA3227A1E7800805372 /* CurrentUserHealth.swift in Sources */,
 				DF76F4F32243428D0093E943 /* UserDetailsViewController.swift in Sources */,
 				8CE9169F2257A60C00D96265 /* Geotification.swift in Sources */,
 				DF1E8E242242DEE500DB8E0C /* AdministrarUsuariosViewController.swift in Sources */,
@@ -551,7 +539,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 66QS9X9F77;
 				INFOPLIST_FILE = TraceletApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -573,7 +561,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 66QS9X9F77;
 				INFOPLIST_FILE = TraceletApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
