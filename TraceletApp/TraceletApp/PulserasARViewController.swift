@@ -65,12 +65,12 @@ class PulserasARViewController: UIViewController, ARSCNViewDelegate {
         if !hitResults.isEmpty{
             let nodoTocado = hitResults[0].node
             nodoTocado.eulerAngles = SCNVector3(0,1,0)
-        }*/
+        }
         if (pulsera.isHidden){
             pulsera.isHidden = false
         }else{
             pulsera.isHidden = true
-        }
+        }*/
     }
     
     @objc func escalado(recognizer:UIPinchGestureRecognizer)
