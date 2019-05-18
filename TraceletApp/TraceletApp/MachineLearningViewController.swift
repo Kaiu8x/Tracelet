@@ -12,7 +12,8 @@ import ARKit
 import Vision
 
 class MachineLearningViewController: UIViewController {
-
+    
+    /*
     private var hitTestResult: ARHitTestResult!
     private var traceletModel = Tracelet50()
     private var visionRequests = [VNRequest]()
@@ -97,21 +98,22 @@ class MachineLearningViewController: UIViewController {
         
         
     }
+ */
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Set the view's delegate
-        sceneView.delegate = self as! ARSCNViewDelegate
+        //sceneView.delegate = self as! ARSCNViewDelegate
         
         // Show statistics such as fps and timing information
-        sceneView.showsStatistics = true
+        //sceneView.showsStatistics = true
         
         // Create a new scene
         let scene = SCNScene()
         
         // Set the scene to the view
-        sceneView.scene = scene
+        //sceneView.scene = scene
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -121,14 +123,14 @@ class MachineLearningViewController: UIViewController {
         let configuration = ARWorldTrackingConfiguration()
         
         // Run the view's session
-        sceneView.session.run(configuration)
+        //sceneView.session.run(configuration)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
         // Pause the view's session
-        sceneView.session.pause()
+        //sceneView.session.pause()
     }
     
     override func didReceiveMemoryWarning() {
