@@ -116,7 +116,7 @@ extension AppDelegate: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
-        print("locations = \(locValue.latitude) \(locValue.longitude)")
+        //print("locations = \(locValue.latitude) \(locValue.longitude)")
         
         let now = Date()
         
@@ -134,14 +134,14 @@ extension AppDelegate: CLLocationManagerDelegate {
             var mp = MailParser()
             userAuthEmail = mp.encode(userAuthEmail!)
             
-            print("WRONGGGGGGGGG")
+            //print("WRONGGGGGGGGG")
             ref = Database.database().reference()
             
-            print("child ref: usrs/\(userAuthEmail!)/location/x")
+            //print("child ref: usrs/\(userAuthEmail!)/location/x")
             
             ref.child("usrs/\(userAuthEmail!)/location/x").setValue(locValue.latitude)
             
-            print("child ref: usrs/\(userAuthEmail!)/location/y")
+            //print("child ref: usrs/\(userAuthEmail!)/location/y")
             
             ref.child("usrs/\(userAuthEmail!)/location/y").setValue(locValue.longitude)
             if CurrentUserDB.currentUser.location != nil {

@@ -18,72 +18,35 @@
  */
 import UIKit
 import Firebase
-import HealthKit
+
 
 class SignosVitalesViewController: UIViewController {
     
     @IBOutlet weak var heartRateLabel: UILabel!
     @IBOutlet weak var distanceLabel: UILabel!
-    @IBOutlet weak var userNameLabel: UILabel!
-    var mailParser = MailParser()
+    
     var userToListenTo = ""
-    private let authorizeHealthKitSection = 2
-    private let userHealthProfile = UserHealthProfile()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if (CurrentUserDB.currentUser.email == userToListenTo) {
-            userNameLabel.text = CurrentUserDB.currentUser.name
-            authorizeHealthKit((Any).self)
-            if(HKHealthStore.isHealthDataAvailable()) {
-                let healthStore = HKHealthStore()
-                let allTypes = Set([HKObjectType.quantityType(forIdentifier: .heartRate)!,
-                                    HKObjectType.quantityType(forIdentifier: .distanceWalkingRunning)!])
-                healthStore.requestAuthorization(toShare: allTypes, read: allTypes) { (success, error) in
-                    if !success {
-                        // Error
-                    }
-                    
-                }
-                loadAndDisplayMostRecentDistance()
-                loadAndDisplayMostRecentHeartRate()
-            }
-        } else {
-            userNameLabel.text = mailParser.decode(userToListenTo)
-            changeUserStatusNow()
-            changeUserStatus()
+        
         }
-    }
     
     @IBAction func desaparecer(_ sender: Any) {
-        self.userToListenTo = "_"
         dismiss(animated: true, completion: nil)
     }
     
-    func changeUserStatusNow() {
-        //Get user data now
-        
-    }
+}
+
+
+/*
+class SignosVitalesViewController: UIViewController {
+
+    private let authorizeHealthKitSection = 2
+    private let userHealthProfile = UserHealthProfile()
+    //locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
     
-    func changeUserStatus() {
-        userToListenTo = mailParser.encode(userToListenTo)
-        let refDis = Database.database().reference(withPath: "usrs/\(userToListenTo)")
-        
-        refDis.observe(DataEventType.childChanged, with: { (snap) in
-            if (snap.exists()) {
-                
-                    print("SSSSNAAAAAPKEYYY\(snap.key)-----\(snap.value)")
-                    if (snap.key == "bpm") {
-                        self.heartRateLabel.text = "\(snap.value ?? "desconocida")"
-                    } else if (snap.key == "distance") {
-                        self.distanceLabel.text = "\(snap.value ?? "desconocida")"
-                    }
-                
-            } else {
-                print("SNAPSHOT NOT FOUND ERROR")
-            }
-        })
-    }
+    
     
     private func authorizeHealthKit(_ sender: Any) {
         
@@ -107,7 +70,39 @@ class SignosVitalesViewController: UIViewController {
             self.loadAndDisplayMostRecentDistance()
             self.loadAndDisplayMostRecentHeartRate()
         }
-        
+ 
+    }
+    
+    @IBOutlet weak var heartRateLabel: UILabel!
+    @IBOutlet weak var distanceLabel: UILabel!
+    
+    /*
+    @IBAction func desaparecerVista(_ sender: UITapGestureRecognizer) {
+        dismiss(animated: true, completion: nil)
+    }
+ */
+    @IBAction func desaparecer(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        authorizeHealthKit((Any).self)
+        if(HKHealthStore.isHealthDataAvailable()) {
+            let healthStore = HKHealthStore()
+            let allTypes = Set([HKObjectType.quantityType(forIdentifier: .heartRate)!,
+                                HKObjectType.quantityType(forIdentifier: .distanceWalkingRunning)!])
+            healthStore.requestAuthorization(toShare: allTypes, read: allTypes) { (success, error) in
+                if !success {
+                        // Error
+                }
+                
+            }
+            loadAndDisplayMostRecentDistance()
+            loadAndDisplayMostRecentHeartRate()
+            
+        }
+        // Do any additional setup after loading the view.
     }
     
     private func loadAndDisplayMostRecentHeartRate() {
@@ -117,13 +112,18 @@ class SignosVitalesViewController: UIViewController {
             print("Heart Rate Sample Type is no longer available in HealthKit")
             return
         }
+        
         ProfileDataStore.getMostRecentSample(for: heartRateSampleType) { (sample, error) in
+            
             guard let sample = sample else {
+                
                 if let error = error {
-                    self.displayAlert(for: error)
+                    // self.displayAlert(for: error)
                 }
+                
                 return
             }
+            
             //2. Convert the height sample to meters, save to the profile model,
             //   and update the user interface.
             let heartRateInBPM = Int(sample.quantity.doubleValue(for: HKUnit(from: "count/min")))
@@ -141,12 +141,16 @@ class SignosVitalesViewController: UIViewController {
         }
         
         ProfileDataStore.getMostRecentSample(for: distanceSampleType) { (sample, error) in
+            
             guard let sample = sample else {
+                
                 if let error = error {
-                    self.displayAlert(for: error)
+                   // self.displayAlert(for: error)
                 }
+                
                 return
             }
+            
             //2. Convert the height sample to meters, save to the profile model,
             //   and update the user interface.
             let distanceInMeters = sample.quantity.doubleValue(for: HKUnit.meter())
@@ -177,7 +181,19 @@ class SignosVitalesViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "O.K.",
                                       style: .default,
                                       handler: nil))
+        
         present(alert, animated: true, completion: nil)
     }
 
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
 }
+*/

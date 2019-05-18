@@ -83,7 +83,7 @@ class AdministrarUsuariosViewController: UIViewController, UITableViewDelegate, 
         }
         
         print("this ID selected: \(objectUser)")
-        print("pushed to cel")
+        //print("pushed to cel")
 
         nextView.userName = "XXXX"
         nextView.traceletID = objectUser

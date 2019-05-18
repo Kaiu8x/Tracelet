@@ -35,13 +35,11 @@ class CurrentUserDB {
         ref = Database.database().reference()
         
         Auth.auth().addStateDidChangeListener { (auth, user) in
-            print("Current user creation auth.currentUser state: \(Auth.auth().currentUser) ")
+            //print("Current user creation auth.currentUser state: \(Auth.auth().currentUser) ")
             if Auth.auth().currentUser != nil {
                 let userAuth = Auth.auth().currentUser
                 //let userUid = userAuth?.uid
                 let userAuthEmail = userAuth?.email
-                print("-----------------------------------------")
-                print(userAuthEmail)
                 let db = Firestore.firestore()
                 
                 let docRef = db.collection("users").document(userAuthEmail!)
@@ -53,15 +51,11 @@ class CurrentUserDB {
                 docRef.getDocument { (document, error) in
                    if let document = document, document.exists {
                         let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
-                        print("Current document")
-                        print(dataDescription)
+                    
                         self.name = (document["name"] as? String)!
                         self.email = (document["email"] as? String)!
                         self.deviceId = (document["deviceId"] as? String)!
-                        print("Current user name and email")
-                        print(self.name)
-                        print(self.name)
-                        print(self.email)
+                    
                         
                         if(document["canViewList"] != nil) {
                             self.canViewList = (document["canViewList"] as? [String])!
@@ -75,7 +69,7 @@ class CurrentUserDB {
                             self.canModifyList = []
                         }
                         
-                        print("Cached document data: \(dataDescription)")
+                        //print("Cached document data: \(dataDescription)")
                     } else {
                         print("Document does not exist in cache")
                     }
@@ -105,9 +99,9 @@ class CurrentUserDB {
         }
     }
     
-    @objc func reload(_ completion:  @escaping() -> ()) {
+    @objc func reload(_ completion: () -> ()) {
         Auth.auth().addStateDidChangeListener { (auth, user) in
-            print("Current user creation RELOAD")
+            print("Current user creation RELOAD  ------- COMPLETION -> 1")
             if Auth.auth().currentUser != nil {
                 let userAuth = Auth.auth().currentUser
                 //let userUid = userAuth?.uid
@@ -126,10 +120,10 @@ class CurrentUserDB {
                         self.name = (document["name"] as? String)!
                         self.email = (document["email"] as? String)!
                         self.deviceId = (document["deviceId"] as? String)!
-                        print("Current user name and email")
+                        /*print("Current user name and email")
                         print(self.name)
                         print(self.name)
-                        print(self.email)
+                        print(self.email)*/
                         
                         if(document["canViewList"] != nil) {
                             self.canViewList = (document["canViewList"] as? [String])!
@@ -143,7 +137,7 @@ class CurrentUserDB {
                             self.canModifyList = []
                         }
                         
-                        print("Cached document data: \(dataDescription)")
+                        //print("Cached document data: \(dataDescription)")
                     } else {
                         print("Document does not exist in cache")
                     }
@@ -198,7 +192,7 @@ class CurrentUserDB {
                         if let err = err {
                             print("Error updating document: \(err)")
                         } else {
-                            print("Document successfully updated")
+                            //print("Document successfully updated")
                         }
                     }
                 }
@@ -248,8 +242,6 @@ class CurrentUserDB {
                     self.ref = Database.database().reference()
                     var userAuthEmail = Auth.auth().currentUser?.email
                     if userAuthEmail != nil{
-                        print("--------------------------------")
-                        print(userAuthEmail!)
                         userAuthEmail = self.mailParser.encode(userAuthEmail!)
                         self.ref.child("usrs/\(userAuthEmail!)/bpm").setValue(heartRateInBPM)
                         userAuthEmail = self.mailParser.decode(userAuthEmail!)
@@ -281,13 +273,11 @@ class CurrentUserDB {
                 self.ref = Database.database().reference()
                     var userAuthEmail = Auth.auth().currentUser?.email
                     if userAuthEmail != nil{
-                        print("--------------------------------")
-                        print(userAuthEmail!)
                         userAuthEmail = self.mailParser.encode(userAuthEmail!)
                 self.ref.child("usrs/\(userAuthEmail!)/distance").setValue(distanceInMeters)
                     userAuthEmail = self.mailParser.decode(userAuthEmail!)
                     }
-                print("realtime distance added: \(distanceInMeters)")
+                //print("realtime distance added: \(distanceInMeters)")
             }
             
         }

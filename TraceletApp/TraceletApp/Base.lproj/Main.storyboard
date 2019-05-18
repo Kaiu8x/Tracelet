@@ -118,7 +118,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Regresar"/>
                                 <connections>
-                                    <action selector="desaparecer:" destination="4jU-hI-oas" eventType="touchUpInside" id="cSV-9p-MRW"/>
+                                    <action selector="desaparecer:" destination="4jU-hI-oas" eventType="touchUpInside" id="29R-lc-imf"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Desconocida" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Trq-DN-qPR">
@@ -141,6 +141,7 @@
                     <connections>
                         <outlet property="distanceLabel" destination="4f6-77-MbG" id="4aK-jU-f6z"/>
                         <outlet property="heartRateLabel" destination="Trq-DN-qPR" id="b3H-kF-Bez"/>
+                        <outlet property="userNameLabel" destination="i5j-vl-MWm" id="mW1-xP-aTe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H5D-Kv-G3m" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -197,6 +198,7 @@
                                 <state key="normal" title="Aceptar"/>
                                 <connections>
                                     <action selector="onAdd:" destination="Dag-z4-C1b" eventType="touchUpInside" id="Tao-7O-5xY"/>
+                                    <segue destination="kPK-xg-Jzy" kind="unwind" unwindAction="unwindToGeofenceViewWithSender:" id="yaq-NY-NUr"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Juan Pérez" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8mM-Nc-PqI">
@@ -216,6 +218,7 @@
                                 <state key="normal" title="Cancelar"/>
                                 <connections>
                                     <action selector="cancelarButton:" destination="Dag-z4-C1b" eventType="touchUpInside" id="38t-GS-54b"/>
+                                    <segue destination="kPK-xg-Jzy" kind="unwind" unwindAction="unwindToGeofenceViewWithSender:" id="6Qc-TX-cx3"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1146,7 +1149,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Juan López" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ury-No-PSO">
                                 <rect key="frame" x="48" y="361" width="279" height="30"/>
@@ -1205,7 +1208,7 @@
                                     <navigationItem id="p0L-CQ-dCF">
                                         <barButtonItem key="rightBarButtonItem" title="Done" id="HWj-zE-25r">
                                             <connections>
-                                                <segue destination="bwo-fb-Zy8" kind="unwind" unwindAction="unwindToConfiguracionWithSender:" id="JXR-1S-QSV"/>
+                                                <segue destination="bwo-fb-Zy8" kind="unwind" unwindAction="unwindToConfiguracionWithSender:" id="GfH-xm-2f1"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -1966,6 +1969,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="mZV-If-Dem"/>
-        <segue reference="Ian-mJ-yo0"/>
+        <segue reference="s3Z-ep-VqE"/>
     </inferredMetricsTieBreakers>
 </document>

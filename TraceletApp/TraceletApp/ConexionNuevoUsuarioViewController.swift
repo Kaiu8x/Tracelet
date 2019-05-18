@@ -14,7 +14,7 @@ class ConexionNuevoUsuarioViewController: UIViewController {
     @IBOutlet weak var doneButton: UIBarButtonItem!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        doneButton.isEnabled = true
         // Do any additional setup after loading the view.
     }
     

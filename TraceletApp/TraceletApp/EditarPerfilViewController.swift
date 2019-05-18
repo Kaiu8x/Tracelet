@@ -40,10 +40,7 @@ class EditarPerfilViewController: UIViewController {
         
         
         CurrentUserDB.currentUser.deviceId = userDeviceId.text!
-        print("Guardar")
-        print(CurrentUserDB.currentUser.name)
-        print(CurrentUserDB.currentUser.email)
-        print(CurrentUserDB.currentUser.deviceId)
+        print("Guardar current user")
     }
     
     // MARK: - Navigation

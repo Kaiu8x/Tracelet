@@ -25,6 +25,7 @@ class TabBarController: UITabBarController, CLLocationManagerDelegate {
         CurrentUserDB.currentUser
         CurrentUserDB.currentUser.reload{}
         
+        
     }
     
 }

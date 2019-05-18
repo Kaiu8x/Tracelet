@@ -171,19 +171,19 @@ extension RutasViewController: MKMapViewDelegate {
             let nextView = self.storyboard?.instantiateViewController(withIdentifier: "Spots360") as! Spots360ViewController
             nextView.contentUrl = contentUrl
             nextView.isVideo = isvideo
-            print("1")
+            
             //self.navigationController?.pushViewController(nextView, animated: true)
             self.hideActivityIndicator()
             self.present(nextView, animated: true, completion: nil)
-            print("2")
+            
         } else {
             let nextView = self.storyboard?.instantiateViewController(withIdentifier: "Spots360Img") as! Spots360ImgViewController
             nextView.contentUrl = contentUrl
             nextView.isVideo = isvideo
-            print("3")
+            
             //self.navigationController?.pushViewController(nextView, animated: true)
             self.present(nextView, animated: true, completion: nil)
-            print("4")
+            
             self.hideActivityIndicator()
         }
         print(isvideo)
