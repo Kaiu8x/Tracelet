@@ -17,12 +17,15 @@ protocol AddGeotificationViewControllerDelegate {
 
 
 
-class AddGeotificationViewController: UIViewController, CLLocationManagerDelegate, UITextFieldDelegate {
+class AddGeotificationViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
     
     @IBOutlet weak var scrollView: UIScrollView!
     
     @IBAction func cancelarButton(_ sender: Any) {
-        performSegue(withIdentifier: "unwindToGeofence", sender: self)
+        _ = navigationController?.popViewController(animated: true)
+        //self.dismiss(animated: true, completion: nil)
+        //performSegue(withIdentifier: "unwindToGeofence", sender: self)
+        
     }
     
     
@@ -36,13 +39,19 @@ class AddGeotificationViewController: UIViewController, CLLocationManagerDelegat
     
     private let locationManager = CLLocationManager()
     
+    let picker = UIPickerView()
+    var listFriends : [String] = ["_"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Was changed
         navigationItem.rightBarButtonItems = [addGeofence, nearMe] as? [UIBarButtonItem]
         addGeofence.isEnabled = false
         
+        userTF.inputView = picker
+        listFriends = CurrentUserDB.currentUser.canModifyList ?? ["_"]
+        picker.delegate = self
         
         self.hideKeyboardWhenTappedAround()
         locationManager.delegate = self
@@ -97,7 +106,9 @@ class AddGeotificationViewController: UIViewController, CLLocationManagerDelegat
         let identifier = NSUUID().uuidString
         let note = userTF.text
         delegate?.addGeotificationViewController(self, didAddCoordinate: coordinate, radius: radius, identifier: identifier, note: note!, eventType: Geotification.EventType.onEntry)
-        performSegue(withIdentifier: "unwindToGeofence", sender: self)
+        //_ = navigationController?.popViewController(animated: true)
+        //self.dismiss(animated: true, completion: nil)
+        //performSegue(withIdentifier: "unwindToGeofence", sender: self)
     }
     
     @objc func Keyboard(notification: Notification){
@@ -115,7 +126,27 @@ class AddGeotificationViewController: UIViewController, CLLocationManagerDelegat
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        self.view.endEditing(true)
-        return false
+    self.view.endEditing(true)
+        return true
     }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return listFriends.count
+    }
+    
+    func pickerView( _ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        print("userTF 2 \(userTF.text), listFriends[row] \(listFriends[row])")
+        return listFriends[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        userTF.text = listFriends[row]
+        print("userTF test \(userTF.text), listFriends[row] \(listFriends[row])")
+        //self.view.endEditing(true)
+    }
+    
 }

@@ -50,7 +50,8 @@ class SignosVitalesViewController: UIViewController {
             }
         } else {
             userNameLabel.text = mailParser.decode(userToListenTo)
-            changeUserStatusNow()
+            changeUserStatusNowBPM()
+            changeUserStatusNowDistance()
             changeUserStatus()
         }
     }
@@ -60,9 +61,36 @@ class SignosVitalesViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
-    func changeUserStatusNow() {
-        //Get user data now
+    func changeUserStatusNowBPM() {
+        userToListenTo = mailParser.encode(userToListenTo)
+        let refDis = Database.database().reference(withPath: "usrs/\(userToListenTo)/bpm")
         
+        refDis.observeSingleEvent(of: DataEventType.value, with: { (snap) in
+            if (snap.exists()) {
+                //print("SSSSNAAAAAPKEYYY\(snap.key)-----\(snap.value)")
+                self.heartRateLabel.text = "\(snap.value ?? "desconocida") bpm"
+                
+            } else {
+                print("SNAPSHOT NOT FOUND ERROR")
+            }
+        })
+    }
+    
+    func changeUserStatusNowDistance() {
+        userToListenTo = mailParser.encode(userToListenTo)
+        let refDis = Database.database().reference(withPath: "usrs/\(userToListenTo)/distance")
+        
+        refDis.observeSingleEvent(of: DataEventType.value, with: { (snap) in
+            if (snap.exists()) {
+                //print("SSSSNAAAAAPKEYYY\(snap.key)-----\(snap.value)")
+                let dob = snap.value as! Double
+                let str:String = String(format:"%.1f", dob)
+                self.distanceLabel.text = "\(str) m"
+                
+            } else {
+                print("SNAPSHOT NOT FOUND ERROR")
+            }
+        })
     }
     
     func changeUserStatus() {
@@ -71,8 +99,7 @@ class SignosVitalesViewController: UIViewController {
         
         refDis.observe(DataEventType.childChanged, with: { (snap) in
             if (snap.exists()) {
-                
-                    print("SSSSNAAAAAPKEYYY\(snap.key)-----\(snap.value)")
+                    //print("SSSSNAAAAAPKEYYY\(snap.key)-----\(snap.value)")
                     if (snap.key == "bpm") {
                         self.heartRateLabel.text = "\(snap.value ?? "desconocida")"
                     } else if (snap.key == "distance") {

@@ -45,8 +45,15 @@ class MapasViewController: UIViewController, CLLocationManagerDelegate, UIPicker
         myMap.region = MKCoordinateRegion(center: cl, latitudinalMeters: 2000, longitudinalMeters: 2000)
         
         rest.coordinate = cl
-        rest.title = "Current Location"
         myMap.addAnnotation(rest)
+        
+        guard let locValue: CLLocationCoordinate2D = locationManager.location?.coordinate else { return }
+        
+        let newCLL = locValue
+        self.myMap.setCenter(newCLL, animated: true)
+        self.rest.coordinate = newCLL
+        rest.title = "Current Location of \(self.userToListen)"
+        self.myMap.addAnnotation(self.rest)
         
         myMap.showsCompass = true
         myMap.showsScale = true
@@ -70,61 +77,10 @@ class MapasViewController: UIViewController, CLLocationManagerDelegate, UIPicker
         
         getCurrentUserInfo() {
             () in
-            print("COMPLETION 1")
+            //print("COMPLETION 1")
         }
         
         super.viewDidLoad()
-        // func to get data from real persons.
-        
-        /*
-        ref = Database.database().reference()
-        
-        var userAuthEmail = Auth.auth().currentUser?.email
-        
-        userAuthEmail = mailParser.encode(userAuthEmail!)
-        
-        self.userName.text = CurrentUserDB.currentUser.name
-        
-        
-        /*ref = Database.database().reference()
-        
-        print("child ref: usrs/\(userAuthEmail!)/location/x")
-        
-        ref.child("usrs/\(userAuthEmail!)/location/x").setValue(locValue.latitude)
-        
-        print("child ref: usrs/\(userAuthEmail!)/location/y")
-        
-        ref.child("usrs/\(userAuthEmail!)/location/y").setValue(locValue.longitude)
-        if CurrentUserDB.currentUser.location != nil {
-            CurrentUserDB.currentUser.location![dateString] = "(\(locValue.latitude),\(locValue.longitude))"
-        }*/
-        
-            let refLocation = ref.child("usrs//\(userAuthEmail!)/")
-        
-            refLocation.observe(Firebase.DataEventType.childChanged , with: { (snapshot) in
-            
-            let data = snapshot.value
-            print("RES OF SNAP \(snapshot.exists())")
-            
-            //snapshot.didChangeValue(forKey: "location")
-            print("SNAPSHOT VALUE: \(snapshot.value)")
-                
-            if snapshot.value != nil {
-                 self.cl.latitude = snapshot.childSnapshot(forPath: "usrs/\(userAuthEmail!)/location/x").value as! CLLocationDegrees
-                
-                self.cl.longitude = snapshot.childSnapshot(forPath: "usrs/\(userAuthEmail!)/location/y").value as! CLLocationDegrees
-                
-                print("data changed from realtime: ( \(self.cl.latitude), \(self.cl.longitude) )")
-            } else {
-                /*let alertController = UIAlertController(title: "Error", message: "User location not found", preferredStyle: .alert)
-                
-                let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-                
-                alertController.addAction(defaultAction)
-                self.present(alertController, animated: true, completion: nil)
-                 */
-            }
-        })*/
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -144,10 +100,10 @@ class MapasViewController: UIViewController, CLLocationManagerDelegate, UIPicker
         self.userName.text = CurrentUserDB.currentUser.name
         self.dropDown.reloadInputViews()
         self.userToListen = CurrentUserDB.currentUser.email ?? "_"
-        print("COMPLETION ------- COMPLETION -> 2")
-        print("---------------VIEW COMPLETION----------------")
-        print("self list after RELOAD: \(self.list), new userName: \(self.userName)")
-        print("----------------------------------------------")
+        //print("COMPLETION ------- COMPLETION -> 2")
+        //print("---------------VIEW COMPLETION----------------")
+        //print("self list after RELOAD: \(self.list), new userName: //\(self.userName)")
+        //print("----------------------------------------------")
         completed()
     }
 
@@ -168,6 +124,15 @@ class MapasViewController: UIViewController, CLLocationManagerDelegate, UIPicker
             let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
             self.myMap.setRegion(region, animated: true)
         }
+        
+        guard let locValue: CLLocationCoordinate2D = locationManager.location?.coordinate else { return }
+        
+        let newCLL = locValue
+        self.myMap.setCenter(newCLL, animated: true)
+        self.rest.coordinate = newCLL
+        let userName = mailParser.decode(self.userToListen)
+        self.rest.title = "Current Location of \(userName)"
+        self.myMap.addAnnotation(self.rest)
     }
     
     public func numberOfComponents(in pickerView: UIPickerView) -> Int{
@@ -180,7 +145,6 @@ class MapasViewController: UIViewController, CLLocationManagerDelegate, UIPicker
             return list.count
         } else {
             return 0
-            
         }
         
     }
@@ -203,14 +167,30 @@ class MapasViewController: UIViewController, CLLocationManagerDelegate, UIPicker
     }
     
     func changeLocationToUserNow() {
-        //Get current location and move the data
-        /*
-         let newCLL = CLLocationCoordinate2D(latitude: snapDict["x"]!, longitude: snapDict["y"]!)
-         self.myMap.setCenter(newCLL, animated: true)
-         self.rest.coordinate = newCLL
-         self.rest.title = self.userToListen
-         self.myMap.addAnnotation(self.rest)
-         */
+        
+        userToListen = mailParser.encode(userToListen)
+        let ref = Database.database().reference(withPath: "usrs/\(userToListen)/location")
+        ref.observeSingleEvent(of: DataEventType.value, with: { (snapshot) in
+            if (snapshot.exists()) {
+                //print("SNAPSHOT CHILD COUNT A: \(snapshot.childrenCount)")
+                let snapDict = snapshot.value as? [String: Double] ?? [:]
+                
+                if snapDict != [:] && snapshot.childrenCount == 2 {
+                    //print("SNAPSHOT A: \(snapshot) SNAPDICT A: \(snapDict)")
+                    let newCLL = CLLocationCoordinate2D(latitude: snapDict["x"]!, longitude: snapDict["y"]!)
+                    self.myMap.setCenter(newCLL, animated: true)
+                    self.rest.coordinate = newCLL
+                    let userName = self.mailParser.decode(self.userToListen)
+                    self.rest.title = "Current Location of \(userName)"
+                    self.myMap.addAnnotation(self.rest)
+                    //`print("SNAPSHOT A: \(snapshot) SNAPDICT A: \(snapDict)")
+                }
+                
+                //self.myMap.center = CGPoint(x: snapDict["x"]!, y: snapDict["y"]!)
+            } else {
+                print("SNAPSHOT NOT FOUND ERROR")
+            }
+        })
     }
     
     func changeLocationToUser() {
@@ -227,7 +207,8 @@ class MapasViewController: UIViewController, CLLocationManagerDelegate, UIPicker
                     let newCLL = CLLocationCoordinate2D(latitude: snapDict["x"]!, longitude: snapDict["y"]!)
                     self.myMap.setCenter(newCLL, animated: true)
                     self.rest.coordinate = newCLL
-                    self.rest.title = self.userToListen
+                    let userName = self.mailParser.decode(self.userToListen)
+                    self.rest.title = "Current Location of \(userName)"
                     self.myMap.addAnnotation(self.rest)
                     //`print("SNAPSHOT A: \(snapshot) SNAPDICT A: \(snapDict)")
                 }
