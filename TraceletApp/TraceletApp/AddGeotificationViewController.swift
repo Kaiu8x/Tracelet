@@ -17,8 +17,9 @@ protocol AddGeotificationViewControllerDelegate {
 
 
 
-class AddGeotificationViewController: UIViewController, CLLocationManagerDelegate {
+class AddGeotificationViewController: UIViewController, CLLocationManagerDelegate, UITextFieldDelegate {
     
+    @IBOutlet weak var scrollView: UIScrollView!
     
     @IBAction func cancelarButton(_ sender: Any) {
         performSegue(withIdentifier: "unwindToGeofence", sender: self)
@@ -60,6 +61,9 @@ class AddGeotificationViewController: UIViewController, CLLocationManagerDelegat
         mapaEG.showsScale = true
         mapaEG.showsTraffic = true
         mapaEG.isZoomEnabled  = true
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(Keyboard), name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(Keyboard), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
         // Do any additional setup after loading the view.
     }
     
@@ -96,4 +100,22 @@ class AddGeotificationViewController: UIViewController, CLLocationManagerDelegat
         performSegue(withIdentifier: "unwindToGeofence", sender: self)
     }
     
+    @objc func Keyboard(notification: Notification){
+        let userInfo = notification.userInfo!
+        let keyboardScreenEndFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+        let keyboardViewEndFrame = view.convert(keyboardScreenEndFrame, from: view.window)
+        
+        if notification.name == UIResponder.keyboardWillHideNotification{
+            scrollView.contentInset = UIEdgeInsets.zero
+        } else {
+            scrollView.scrollIndicatorInsets = UIEdgeInsets(top: 0, left: 0, bottom: keyboardViewEndFrame.height, right: 0)
+        }
+        
+        scrollView.scrollIndicatorInsets = scrollView.contentInset
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
 }

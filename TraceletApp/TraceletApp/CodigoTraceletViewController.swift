@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import Firebase
 
-class CodigoTraceletViewController : UIViewController {
+class CodigoTraceletViewController : UIViewController, UITextFieldDelegate{
     
     var name:String = ""
     var email:String = ""
@@ -54,6 +54,11 @@ class CodigoTraceletViewController : UIViewController {
             self.present(alertController, animated: true, completion: nil)
             self.navigationController?.popToRootViewController(animated: true)
         }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
     
 }

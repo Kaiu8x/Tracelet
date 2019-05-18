@@ -23,6 +23,13 @@
 		D5654ED1223C528B001A4CE4 /* EliminarUsuarioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5654ED0223C528B001A4CE4 /* EliminarUsuarioViewController.swift */; };
 		D5654ED3224090BF001A4CE4 /* VistaListaUsuariosActivosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5654ED2224090BF001A4CE4 /* VistaListaUsuariosActivosViewController.swift */; };
 		D5654ED5224090C9001A4CE4 /* SignosVitalesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5654ED4224090C9001A4CE4 /* SignosVitalesViewController.swift */; };
+		D57D9A84228F6A130023268A /* MachineLearningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57D9A83228F6A130023268A /* MachineLearningViewController.swift */; };
+		D57D9A86228F6E300023268A /* MachineLearningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57D9A85228F6E300023268A /* MachineLearningViewController.swift */; };
+		D5868895228F483E00701AAB /* Xiaomi01K_Specular.png in Resources */ = {isa = PBXBuildFile; fileRef = D5868894228F483D00701AAB /* Xiaomi01K_Specular.png */; };
+		D586889A228F484700701AAB /* Xiaomi01K_Bump.png in Resources */ = {isa = PBXBuildFile; fileRef = D5868896228F484700701AAB /* Xiaomi01K_Bump.png */; };
+		D586889B228F484700701AAB /* Xiaomi01K_Diffuse.png in Resources */ = {isa = PBXBuildFile; fileRef = D5868897228F484700701AAB /* Xiaomi01K_Diffuse.png */; };
+		D586889C228F484700701AAB /* Xiaomi01K_Glossiness.png in Resources */ = {isa = PBXBuildFile; fileRef = D5868898228F484700701AAB /* Xiaomi01K_Glossiness.png */; };
+		D586889D228F484700701AAB /* Xiaomi01K_Emission.png in Resources */ = {isa = PBXBuildFile; fileRef = D5868899228F484700701AAB /* Xiaomi01K_Emission.png */; };
 		D5AB56062241ADB300B8FA08 /* ConexionNuevoUsuarioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AB56052241ADB300B8FA08 /* ConexionNuevoUsuarioViewController.swift */; };
 		D5AB56082241C0CD00B8FA08 /* AgregarUsuarioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AB56072241C0CD00B8FA08 /* AgregarUsuarioViewController.swift */; };
 		D5B114BB2243508F00C7AE2B /* ConfiguracionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B114BA2243508F00C7AE2B /* ConfiguracionViewController.swift */; };
@@ -74,6 +81,13 @@
 		D5654ED0223C528B001A4CE4 /* EliminarUsuarioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EliminarUsuarioViewController.swift; sourceTree = "<group>"; };
 		D5654ED2224090BF001A4CE4 /* VistaListaUsuariosActivosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VistaListaUsuariosActivosViewController.swift; sourceTree = "<group>"; };
 		D5654ED4224090C9001A4CE4 /* SignosVitalesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignosVitalesViewController.swift; sourceTree = "<group>"; };
+		D57D9A83228F6A130023268A /* MachineLearningViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MachineLearningViewController.swift; sourceTree = "<group>"; };
+		D57D9A85228F6E300023268A /* MachineLearningViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MachineLearningViewController.swift; path = Brazalete/MachineLearningViewController.swift; sourceTree = "<group>"; };
+		D5868894228F483D00701AAB /* Xiaomi01K_Specular.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Xiaomi01K_Specular.png; sourceTree = "<group>"; };
+		D5868896228F484700701AAB /* Xiaomi01K_Bump.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Xiaomi01K_Bump.png; sourceTree = "<group>"; };
+		D5868897228F484700701AAB /* Xiaomi01K_Diffuse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Xiaomi01K_Diffuse.png; sourceTree = "<group>"; };
+		D5868898228F484700701AAB /* Xiaomi01K_Glossiness.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Xiaomi01K_Glossiness.png; sourceTree = "<group>"; };
+		D5868899228F484700701AAB /* Xiaomi01K_Emission.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Xiaomi01K_Emission.png; sourceTree = "<group>"; };
 		D5AB56052241ADB300B8FA08 /* ConexionNuevoUsuarioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConexionNuevoUsuarioViewController.swift; sourceTree = "<group>"; };
 		D5AB56072241C0CD00B8FA08 /* AgregarUsuarioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgregarUsuarioViewController.swift; sourceTree = "<group>"; };
 		D5B114BA2243508F00C7AE2B /* ConfiguracionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfiguracionViewController.swift; sourceTree = "<group>"; };
@@ -142,6 +156,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D5868893228F47E600701AAB /* Brazalete */ = {
+			isa = PBXGroup;
+			children = (
+				D5868896228F484700701AAB /* Xiaomi01K_Bump.png */,
+				D5868897228F484700701AAB /* Xiaomi01K_Diffuse.png */,
+				D5868899228F484700701AAB /* Xiaomi01K_Emission.png */,
+				D5868898228F484700701AAB /* Xiaomi01K_Glossiness.png */,
+				D5868894228F483D00701AAB /* Xiaomi01K_Specular.png */,
+			);
+			path = Brazalete;
+			sourceTree = "<group>";
+		};
 		DF00C783225F1C8A009C98DE /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
@@ -193,6 +219,7 @@
 				DFC46E382231A016008F6A6A /* LoginViewController.swift */,
 				DF3EDA212285FB590094AE17 /* MailParser.swift */,
 				DFE6DCB522273A6900F05680 /* Main.storyboard */,
+				D57D9A85228F6E300023268A /* MachineLearningViewController.swift */,
 				8CE4706022428028000FA3B4 /* MapasViewController.swift */,
 				8CCF7E092270D0E8005B41AB /* ProfileDataStore.swift */,
 				DF00C784225F1DF0009C98DE /* PulserasARViewController.swift */,
@@ -287,10 +314,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D586889B228F484700701AAB /* Xiaomi01K_Diffuse.png in Resources */,
 				DFE6DCBC22273A6B00F05680 /* LaunchScreen.storyboard in Resources */,
 				DFEB842B2235B025007FC364 /* GoogleService-Info.plist in Resources */,
+				D5868895228F483E00701AAB /* Xiaomi01K_Specular.png in Resources */,
 				DFE6DCB922273A6B00F05680 /* Assets.xcassets in Resources */,
+				D586889D228F484700701AAB /* Xiaomi01K_Emission.png in Resources */,
 				DFE6DCB722273A6900F05680 /* Main.storyboard in Resources */,
+				D586889A228F484700701AAB /* Xiaomi01K_Bump.png in Resources */,
+				D586889C228F484700701AAB /* Xiaomi01K_Glossiness.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,12 +397,14 @@
 				D5B114BB2243508F00C7AE2B /* ConfiguracionViewController.swift in Sources */,
 				DF43555E225D8A0700859FF9 /* AddGeotificationViewController.swift in Sources */,
 				D5654ED1223C528B001A4CE4 /* EliminarUsuarioViewController.swift in Sources */,
+				D57D9A84228F6A130023268A /* MachineLearningViewController.swift in Sources */,
 				DFC46E3B2231A036008F6A6A /* SignupViewController.swift in Sources */,
 				D5403B5D2240C492005B42AC /* EditarPerfilViewController.swift in Sources */,
 				DF4B56AB225EA4530095B602 /* Spots.swift in Sources */,
 				DF00C78C225FAE5D009C98DE /* SpinnerViewController.swift in Sources */,
 				DF1E8E2A22430C6F00DB8E0C /* UserDetailsEntrega2ViewController.swift in Sources */,
 				8CCF7E0C2270D515005B41AB /* HealthKitManager.swift in Sources */,
+				D57D9A86228F6E300023268A /* MachineLearningViewController.swift in Sources */,
 				D5AB56062241ADB300B8FA08 /* ConexionNuevoUsuarioViewController.swift in Sources */,
 				DF76F4F32243428D0093E943 /* UserDetailsViewController.swift in Sources */,
 				8CE9169F2257A60C00D96265 /* Geotification.swift in Sources */,
@@ -537,7 +571,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = TraceletApp/TraceletApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 66QS9X9F77;
+				DEVELOPMENT_TEAM = MFCSJB93GL;
 				INFOPLIST_FILE = TraceletApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -559,7 +593,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = TraceletApp/TraceletApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 66QS9X9F77;
+				DEVELOPMENT_TEAM = MFCSJB93GL;
 				INFOPLIST_FILE = TraceletApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (

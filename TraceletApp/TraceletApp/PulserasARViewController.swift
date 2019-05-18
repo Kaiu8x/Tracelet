@@ -19,6 +19,8 @@ class PulserasARViewController: UIViewController, ARSCNViewDelegate {
     var isShowing = false
     var pulsera = SCNNode()
     var visible = true
+    let myURL = NSURL(string: "http://www.martinmolina.com.mx/201911/data/jsonTracelet/images/Brazalete2.scn")
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,8 +37,6 @@ class PulserasARViewController: UIViewController, ARSCNViewDelegate {
         botonAgregarQuitar.setTitle("Agregar", for: .normal)
         
         // Create a new scene
-    
-        let myURL = NSURL(string: "http://www.martinmolina.com.mx/201911/data/jsonTracelet/images/tracelet1.scn")
         let scene = SCNScene()
 //        pulsera = scene.rootNode.childNode(withName: "Brazalete", recursively: true)!
         //pulsera.isHidden = true
@@ -65,12 +65,12 @@ class PulserasARViewController: UIViewController, ARSCNViewDelegate {
         if !hitResults.isEmpty{
             let nodoTocado = hitResults[0].node
             nodoTocado.eulerAngles = SCNVector3(0,1,0)
-        }*/
+        }
         if (pulsera.isHidden){
             pulsera.isHidden = false
         }else{
             pulsera.isHidden = true
-        }
+        }*/
     }
     
     @objc func escalado(recognizer:UIPinchGestureRecognizer)
@@ -103,8 +103,7 @@ class PulserasARViewController: UIViewController, ARSCNViewDelegate {
     // se agrega el modelo en basea la url de donde se quiere jalar el modelo
     private func agregarModelo(to node:SCNNode, refImage:ARReferenceImage ){
         DispatchQueue.global().async {
-            let myURL = NSURL(string: "http://www.martinmolina.com.mx/201911/data/jsonTracelet/images/tracelet1.scn")
-            let escenaModelo = try! SCNScene(url: myURL! as URL, options:nil)
+            let escenaModelo = try! SCNScene(url: self.myURL! as URL, options:nil)
             //encontrar el nodo principal
             let nodoPrincipal = escenaModelo.rootNode.childNode(withName: "Brazalete", recursively: true)!
             node.addChildNode(nodoPrincipal)
@@ -114,28 +113,33 @@ class PulserasARViewController: UIViewController, ARSCNViewDelegate {
     
     //Funcion para agregar quitar pulseras
     @IBAction func agregarQuitar(_ sender: UIButton) {
-        let myURL = NSURL(string: "http://www.martinmolina.com.mx/201911/data/jsonTracelet/images/tracelet1.scn")
-        let scene = try! SCNScene(url: myURL! as URL, options:nil)
+        let scene = try! SCNScene(url: self.myURL! as URL, options:nil)
         
         if(isShowing == false){
+            //Crear pulsera
+            
             //Cambio a texto, boton y flag
             self.pulsera = scene.rootNode.childNode(withName: "Brazalete", recursively: true)!
             self.pulsera.name = "pulsera"
+            pulsera.position = SCNVector3(x: 0, y: 0, z: -1)
+            //pulsera.scale = SCNVector3(x:2, y:2, z:2)
+            // Agregar el nodo a la escena  ?????? TAL VEZ CAMBIAR LINEA 123 POR UN LET VARIABLE = SCENE.....
+            scene.rootNode.addChildNode(self.pulsera)
+            sceneView.scene = scene
             
             textoExplicativo.text = "Da click aqui para quitar la pulsera"
             botonAgregarQuitar.setTitle("Quitar", for: .normal)
-            //Crear pulsera
+            
             print("entre a crear pulsera")
             
-            
-            
         } else{
+            //Borrar pulsera
             //Cambio a texto, boton y flag
             self.pulsera.removeFromParentNode()
             
             textoExplicativo.text = "Da click aqui para agregar la pulsera"
             botonAgregarQuitar.setTitle("Agregar", for: .normal)
-            //Borrar pulseraprin
+            
             print("entre a BORRAR pulsera")
            
         }
