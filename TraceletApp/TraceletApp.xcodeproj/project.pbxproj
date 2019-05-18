@@ -35,7 +35,6 @@
 		DF00C78E22611866009C98DE /* CurrentUserDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF00C78D22611866009C98DE /* CurrentUserDB.swift */; };
 		DF19142E228FD5D10050B304 /* MachineLearningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF19142D228FD5D10050B304 /* MachineLearningViewController.swift */; };
 		DF191432228FD61F0050B304 /* SignosVitalesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF191431228FD61F0050B304 /* SignosVitalesViewController.swift */; };
-		DF19143C228FDD530050B304 /* MachineLearningViewController.swift in Resources */ = {isa = PBXBuildFile; fileRef = DF19143B228FDD520050B304 /* MachineLearningViewController.swift */; };
 		DF1E8E242242DEE500DB8E0C /* AdministrarUsuariosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1E8E232242DEE500DB8E0C /* AdministrarUsuariosViewController.swift */; };
 		DF1E8E282243087D00DB8E0C /* UserDetailsEntregaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1E8E272243087D00DB8E0C /* UserDetailsEntregaViewController.swift */; };
 		DF1E8E2A22430C6F00DB8E0C /* UserDetailsEntrega2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1E8E2922430C6F00DB8E0C /* UserDetailsEntrega2ViewController.swift */; };
@@ -107,7 +106,6 @@
 		DF00C78D22611866009C98DE /* CurrentUserDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUserDB.swift; sourceTree = "<group>"; };
 		DF19142D228FD5D10050B304 /* MachineLearningViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MachineLearningViewController.swift; sourceTree = "<group>"; };
 		DF191431228FD61F0050B304 /* SignosVitalesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignosVitalesViewController.swift; sourceTree = "<group>"; };
-		DF19143B228FDD520050B304 /* MachineLearningViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MachineLearningViewController.swift; path = TraceletApp/Brazalete/MachineLearningViewController.swift; sourceTree = "<group>"; };
 		DF1E8E232242DEE500DB8E0C /* AdministrarUsuariosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdministrarUsuariosViewController.swift; sourceTree = "<group>"; };
 		DF1E8E272243087D00DB8E0C /* UserDetailsEntregaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsEntregaViewController.swift; sourceTree = "<group>"; };
 		DF1E8E2922430C6F00DB8E0C /* UserDetailsEntrega2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsEntrega2ViewController.swift; sourceTree = "<group>"; };
@@ -186,7 +184,6 @@
 		DFE6DCA522273A6900F05680 = {
 			isa = PBXGroup;
 			children = (
-				DF19143B228FDD520050B304 /* MachineLearningViewController.swift */,
 				DFE6DCB022273A6900F05680 /* TraceletApp */,
 				DFE6DCAF22273A6900F05680 /* Products */,
 				8836C20CF59D8B8633685F27 /* Pods */,
@@ -206,8 +203,6 @@
 		DFE6DCB022273A6900F05680 /* TraceletApp */ = {
 			isa = PBXGroup;
 			children = (
-				DF191431228FD61F0050B304 /* SignosVitalesViewController.swift */,
-				DF19142D228FD5D10050B304 /* MachineLearningViewController.swift */,
 				DF8E5CA6227B576700805372 /* ActivityIndicatorPresenter.swift */,
 				DF43555D225D8A0700859FF9 /* AddGeotificationViewController.swift */,
 				DF1E8E232242DEE500DB8E0C /* AdministrarUsuariosViewController.swift */,
@@ -228,6 +223,7 @@
 				DFE6DCBD22273A6B00F05680 /* Info.plist */,
 				DFE6DCBA22273A6B00F05680 /* LaunchScreen.storyboard */,
 				DFC46E382231A016008F6A6A /* LoginViewController.swift */,
+				DF19142D228FD5D10050B304 /* MachineLearningViewController.swift */,
 				DF3EDA212285FB590094AE17 /* MailParser.swift */,
 				DFE6DCB522273A6900F05680 /* Main.storyboard */,
 				8CE4706022428028000FA3B4 /* MapasViewController.swift */,
@@ -236,6 +232,7 @@
 				8C14233E2242A81A00B3E6CB /* RutasViewController.swift */,
 				DF43555B225D3B6300859FF9 /* ShopDetailsViewController.swift */,
 				DF435557225D387500859FF9 /* ShopViewController.swift */,
+				DF191431228FD61F0050B304 /* SignosVitalesViewController.swift */,
 				D5654ED4224090C9001A4CE4 /* SignosVitalesViewController.swift */,
 				DFC46E3A2231A036008F6A6A /* SignupViewController.swift */,
 				DF00C78B225FAE5D009C98DE /* SpinnerViewController.swift */,
@@ -325,7 +322,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF19143C228FDD530050B304 /* MachineLearningViewController.swift in Resources */,
 				D586889B228F484700701AAB /* Xiaomi01K_Diffuse.png in Resources */,
 				DFE6DCBC22273A6B00F05680 /* LaunchScreen.storyboard in Resources */,
 				DFEB842B2235B025007FC364 /* GoogleService-Info.plist in Resources */,
@@ -582,14 +578,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = TraceletApp/TraceletApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 66QS9X9F77;
+				DEVELOPMENT_TEAM = MFCSJB93GL;
 				INFOPLIST_FILE = TraceletApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.kawa2010.TraceletApps;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kenyirotsuru.TraceletApps;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_REFLECTION_METADATA_LEVEL = none;
 				SWIFT_VERSION = 4.2;
@@ -604,14 +600,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = TraceletApp/TraceletApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 66QS9X9F77;
+				DEVELOPMENT_TEAM = MFCSJB93GL;
 				INFOPLIST_FILE = TraceletApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.kawa2010.TraceletApps;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kenyirotsuru.TraceletApps;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_REFLECTION_METADATA_LEVEL = none;
 				SWIFT_VERSION = 4.2;

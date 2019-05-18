@@ -118,4 +118,15 @@ class AddGeotificationViewController: UIViewController, CLLocationManagerDelegat
         self.view.endEditing(true)
         return false
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let coordinate = mapaEG.centerCoordinate
+        let radius = Double(radiusTF.text!) ?? 0
+        let identifier = NSUUID().uuidString
+        let note = userTF.text
+        delegate?.addGeotificationViewController(self, didAddCoordinate: coordinate, radius: radius, identifier: identifier, note: note!, eventType: Geotification.EventType.onEntry)
+        performSegue(withIdentifier: "unwindToGeofence", sender: self)
+        return
+    }
+    
 }

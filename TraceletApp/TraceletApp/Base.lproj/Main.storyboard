@@ -219,7 +219,7 @@
                                 <state key="normal" title="Aceptar"/>
                                 <connections>
                                     <action selector="onAdd:" destination="Dag-z4-C1b" eventType="touchUpInside" id="Tao-7O-5xY"/>
-                                    <segue destination="kPK-xg-Jzy" kind="unwind" unwindAction="unwindToGeofenceViewWithSender:" id="yaq-NY-NUr"/>
+                                    <segue destination="kPK-xg-Jzy" kind="unwind" unwindAction="unwindToGeofenceViewWithSender:" id="ZTu-uN-Eos"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="psM-Iw-xSV">
@@ -1002,10 +1002,6 @@
                                 <rect key="frame" x="62" y="437" width="49" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </switch>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1AV-XJ-bFE">
-                                <rect key="frame" x="62" y="483" width="49" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Editar geovallas" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g5H-pu-BpG">
                                 <rect key="frame" x="135" y="397" width="178" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1015,13 +1011,6 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Notificaciones" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kms-pl-Z8m">
                                 <rect key="frame" x="135" y="442" width="178" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Revisar rutas" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="thd-1K-q5B">
-                                <rect key="frame" x="135" y="488" width="178" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -1283,13 +1272,15 @@
                         <viewLayoutGuide key="safeArea" id="gLn-eQ-91U"/>
                     </view>
                     <navigationItem key="navigationItem" title=" " id="A8x-Fw-6WP">
-                        <barButtonItem key="rightBarButtonItem" title="Done" id="MLF-jE-n1t"/>
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="MLF-jE-n1t">
+                            <connections>
+                                <segue destination="30c-MX-su7" kind="unwind" unwindAction="unwindToConfiguracionWithSender:" id="HZE-SW-5na"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="doneButton" destination="MLF-jE-n1t" id="rgw-Nq-jpe"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Lg-4m-hzZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="30c-MX-su7" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3663.7681159420295" y="83.705357142857139"/>
         </scene>
@@ -1308,7 +1299,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qnb-65-3Wg">
-                                <rect key="frame" x="114" y="648" width="105" height="48"/>
+                                <rect key="frame" x="74" y="648" width="145" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="hM4-X5-bmD"/>
                                 </constraints>
@@ -1318,7 +1309,7 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" image="Aboutus" translatesAutoresizingMaskIntoConstraints="NO" id="dm0-34-4Tb">
-                                <rect key="frame" x="26" y="648" width="56" height="48"/>
+                                <rect key="frame" x="26" y="648" width="16" height="48"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WOO-ac-fhG">
                                 <rect key="frame" x="0.0" y="145" width="375" height="348"/>
@@ -1343,13 +1334,13 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qfc-De-nxo">
-                                <rect key="frame" x="114" y="547" width="129" height="48"/>
+                                <rect key="frame" x="74" y="547" width="129" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="tFU-Xb-nR6"/>
                                 </constraints>
                                 <state key="normal" title="Verifica tu Tracelet"/>
                                 <connections>
-                                    <segue destination="VWG-6R-Xz8" kind="show" id="8Ti-Ry-QcK"/>
+                                    <segue destination="VWG-6R-Xz8" kind="show" id="VBR-lI-MRt"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1735,41 +1726,44 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Po5-EC-82q">
                                 <rect key="frame" x="16" y="44" width="343" height="734"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gve-p7-ZlN">
+                                        <rect key="frame" x="103" y="417" width="137" height="38"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                        <color key="tintColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Conectar"/>
+                                        <connections>
+                                            <action selector="conectTraceletButton:" destination="PXo-Se-zzb" eventType="touchUpInside" id="yqj-za-Cjl"/>
+                                            <segue destination="E2C-3L-Y1N" kind="show" id="crS-Rl-vfG"/>
+                                        </connections>
+                                    </button>
+                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="xxxxxx" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XKL-0P-lLI">
+                                        <rect key="frame" x="79" y="319" width="185" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="PXo-Se-zzb" id="sN2-Rr-12f"/>
+                                        </connections>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Introduce el código de tu tracelet" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="69T-lq-R4u">
+                                        <rect key="frame" x="10" y="262" width="322" height="49"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                             </scrollView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gve-p7-ZlN">
-                                <rect key="frame" x="119" y="482" width="137" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                                <color key="tintColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Conectar"/>
-                                <connections>
-                                    <action selector="conectTraceletButton:" destination="PXo-Se-zzb" eventType="touchUpInside" id="yqj-za-Cjl"/>
-                                    <segue destination="E2C-3L-Y1N" kind="show" id="crS-Rl-vfG"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="xxxxxx" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XKL-0P-lLI">
-                                <rect key="frame" x="95" y="360" width="185" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="PXo-Se-zzb" id="sN2-Rr-12f"/>
-                                </connections>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Introduce el código de tu tracelet" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="69T-lq-R4u">
-                                <rect key="frame" x="26" y="293" width="322" height="49"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="XmQ-Hi-3W6"/>
                     </view>
                     <connections>
+                        <outlet property="scrollView" destination="Po5-EC-82q" id="7DA-TT-L8R"/>
                         <outlet property="traceletIdTextField" destination="XKL-0P-lLI" id="2v0-w0-OU7"/>
                     </connections>
                 </viewController>
@@ -2062,7 +2056,7 @@
         <image name="Vitales" width="66.666664123535156" height="66.666664123535156"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="mZV-If-Dem"/>
-        <segue reference="s3Z-ep-VqE"/>
+        <segue reference="fFo-g3-caa"/>
+        <segue reference="sVl-VN-pLV"/>
     </inferredMetricsTieBreakers>
 </document>
