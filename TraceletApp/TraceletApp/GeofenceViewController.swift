@@ -16,11 +16,13 @@ struct PreferencesKeys {
 
 class GeofenceViewController: UIViewController {
     
+    @IBOutlet weak var AgregarGeovalla: UIBarButtonItem!
     @IBOutlet weak var mapaG: MKMapView!
     var geotifications: [Geotification] = []
     var locationManager = CLLocationManager()
     
     override func viewDidLoad() {
+        AgregarGeovalla.isEnabled = true
         super.viewDidLoad()
         locationManager.delegate = self
         locationManager.requestAlwaysAuthorization()

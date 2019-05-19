@@ -126,7 +126,7 @@ class AddGeotificationViewController: UIViewController, CLLocationManagerDelegat
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-    self.view.endEditing(true)
+        self.view.endEditing(false)
         return true
     }
     
@@ -150,14 +150,18 @@ class AddGeotificationViewController: UIViewController, CLLocationManagerDelegat
     }
     
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    /*override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let coordinate = mapaEG.centerCoordinate
         let radius = Double(radiusTF.text!) ?? 0
         let identifier = NSUUID().uuidString
         let note = userTF.text
         delegate?.addGeotificationViewController(self, didAddCoordinate: coordinate, radius: radius, identifier: identifier, note: note!, eventType: Geotification.EventType.onEntry)
-        performSegue(withIdentifier: "unwindToGeofence", sender: self)
+        
+        if segue.destination is GeofenceViewController {
+            print("Should go to GeofenceViewController not login")
+        }
+        
         return
-    }
+    }*/
     
 }

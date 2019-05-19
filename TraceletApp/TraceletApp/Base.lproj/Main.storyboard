@@ -13,7 +13,7 @@
         <!--Kenyiro-->
         <scene sceneID="c4W-uT-8d7">
             <objects>
-                <viewController id="puz-UZ-eMS" customClass="GeofenceViewController" customModule="TraceletApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GeofenceVC" id="puz-UZ-eMS" customClass="GeofenceViewController" customModule="TraceletApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cR0-cT-tyf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -49,11 +49,12 @@
                         <barButtonItem key="rightBarButtonItem" title="Agregar" id="pC3-yS-7xY">
                             <color key="tintColor" red="0.93045660620000004" green="0.93045660620000004" blue="0.93045660620000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
-                                <segue destination="Dag-z4-C1b" kind="show" identifier="addGeotification" id="8ii-Ad-za4"/>
+                                <segue destination="Dag-z4-C1b" kind="show" id="Ncw-0H-jLN"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="AgregarGeovalla" destination="pC3-yS-7xY" id="BQS-pv-LJO"/>
                         <outlet property="mapaG" destination="BPn-5t-maX" id="yol-WL-rfu"/>
                     </connections>
                 </viewController>
@@ -241,29 +242,25 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t7H-2F-qrR">
-                                <rect key="frame" x="80" y="504" width="85" height="28"/>
+                                <rect key="frame" x="80" y="502" width="85" height="30"/>
                                 <color key="backgroundColor" red="0.21566441655158997" green="0.47779196500778198" blue="0.96475595235824585" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="28" id="7tN-0p-poC"/>
-                                </constraints>
                                 <color key="tintColor" red="0.93045660620000004" green="0.93045660620000004" blue="0.93045660620000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Aceptar"/>
                                 <connections>
                                     <action selector="onAdd:" destination="Dag-z4-C1b" eventType="touchUpInside" id="Tao-7O-5xY"/>
-                                    <segue destination="kPK-xg-Jzy" kind="unwind" unwindAction="unwindToGeofenceViewWithSender:" id="ZTu-uN-Eos"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="OTA-9y-mHg" secondAttribute="bottom" constant="20" symbolic="YES" id="1hs-2O-UH3"/>
+                            <constraint firstItem="F35-E1-LuJ" firstAttribute="trailing" secondItem="t7H-2F-qrR" secondAttribute="trailing" constant="210" id="1vK-Cd-M5E"/>
                             <constraint firstItem="dKt-dJ-oKP" firstAttribute="trailing" secondItem="F35-E1-LuJ" secondAttribute="trailing" id="2fj-mS-rbe"/>
                             <constraint firstItem="OTA-9y-mHg" firstAttribute="trailing" secondItem="dKt-dJ-oKP" secondAttribute="trailing" id="6nH-Sv-car"/>
-                            <constraint firstItem="F35-E1-LuJ" firstAttribute="bottom" secondItem="t7H-2F-qrR" secondAttribute="bottom" constant="197" id="9vx-hh-0Jn"/>
-                            <constraint firstItem="F35-E1-LuJ" firstAttribute="trailing" secondItem="t7H-2F-qrR" secondAttribute="trailing" constant="210" id="KkK-HI-VGh"/>
+                            <constraint firstItem="t7H-2F-qrR" firstAttribute="leading" secondItem="F35-E1-LuJ" secondAttribute="leading" constant="80" id="I1c-ce-Zw5"/>
                             <constraint firstItem="dKt-dJ-oKP" firstAttribute="leading" secondItem="F35-E1-LuJ" secondAttribute="leading" id="N1D-da-cOW"/>
                             <constraint firstItem="OTA-9y-mHg" firstAttribute="top" secondItem="dKt-dJ-oKP" secondAttribute="bottom" constant="8" symbolic="YES" id="Zbm-0F-ZyT"/>
-                            <constraint firstItem="t7H-2F-qrR" firstAttribute="leading" secondItem="F35-E1-LuJ" secondAttribute="leading" constant="80" id="iQo-RL-8m5"/>
+                            <constraint firstItem="F35-E1-LuJ" firstAttribute="bottom" secondItem="t7H-2F-qrR" secondAttribute="bottom" constant="197" id="cws-9k-zeM"/>
                             <constraint firstItem="qeV-Ft-bXQ" firstAttribute="centerY" secondItem="dKt-dJ-oKP" secondAttribute="centerY" id="jqH-Fq-NFx"/>
                             <constraint firstItem="qeV-Ft-bXQ" firstAttribute="top" secondItem="F35-E1-LuJ" secondAttribute="top" constant="106" id="lky-T4-yqH"/>
                             <constraint firstItem="OTA-9y-mHg" firstAttribute="leading" secondItem="dKt-dJ-oKP" secondAttribute="leading" id="tQG-dy-mdO"/>
@@ -1302,6 +1299,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="doneButton" destination="MLF-jE-n1t" id="Ndw-oU-G4f"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Lg-4m-hzZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="30c-MX-su7" userLabel="Exit" sceneMemberID="exit"/>
@@ -1323,7 +1323,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qnb-65-3Wg">
-                                <rect key="frame" x="74" y="648" width="145" height="48"/>
+                                <rect key="frame" x="114" y="648" width="105" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="hM4-X5-bmD"/>
                                 </constraints>
@@ -1333,7 +1333,7 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" image="Aboutus" translatesAutoresizingMaskIntoConstraints="NO" id="dm0-34-4Tb">
-                                <rect key="frame" x="26" y="648" width="16" height="48"/>
+                                <rect key="frame" x="26" y="648" width="56" height="48"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WOO-ac-fhG">
                                 <rect key="frame" x="0.0" y="145" width="375" height="348"/>
@@ -1358,7 +1358,7 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qfc-De-nxo">
-                                <rect key="frame" x="74" y="547" width="129" height="48"/>
+                                <rect key="frame" x="114" y="547" width="129" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="tFU-Xb-nR6"/>
                                 </constraints>
