@@ -236,7 +236,7 @@ class MapasViewController: UIViewController, CLLocationManagerDelegate, UIPicker
                     key = self.mailParser.decode(key)
                     let enumerator = snapshot.children
                     while let rest = enumerator.nextObject() as? DataSnapshot {
-                        print(" SNAP CHILD VAL \(rest.value) , SNAP CHILD KEY \(rest.key)")
+                        //print(" SNAP CHILD VAL \(rest.value) , SNAP CHILD KEY \(rest.key)")
                         if (CurrentUserDB.currentUser.canModifyList?.contains(key) ?? false) {
                             let state = rest.value as? String ?? "str"
                             if(state == "danger") {
