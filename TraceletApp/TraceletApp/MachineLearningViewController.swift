@@ -10,9 +10,8 @@ import SceneKit
 import ARKit
 import Vision
 
-class MachineLearningViewController: UIViewController {
+class MachineLearningViewController: UIViewController, ARSCNViewDelegate {
     
-    /*
      private var hitTestResult: ARHitTestResult!
      private var traceletModel = Tracelet50()
      private var visionRequests = [VNRequest]()
@@ -20,9 +19,9 @@ class MachineLearningViewController: UIViewController {
      //2. registrar el gesto de tap
      //3. instanciar el modelo y enviar la imagen
      //4. Presentar los datos resultados del modelo
-     
+    
      @IBOutlet weak var sceneView: ARSCNView!
-     
+    
      @IBAction func tapEjecutado(_ sender: UITapGestureRecognizer) {
      //obtener la vista donde se va a trabajar
      let vista = sender.view as! ARSCNView
@@ -33,12 +32,11 @@ class MachineLearningViewController: UIViewController {
      //obtener los nodos que fueron tocados por el rayo
      let hitTestResults = vista.hitTest(ubicacionToque, types: .featurePoint)
      
-     if (hitTestResults .isEmpty){
+     if (hitTestResults.isEmpty){
      //no se toco nada
      return}
      guard var hitTestResult = hitTestResults.first else{
      return
-     
      }
      //obtener la imagen capturada en formato de buffer de pixeles
      let imagenPixeles = currentFrame.capturedImage
@@ -93,17 +91,14 @@ class MachineLearningViewController: UIViewController {
      nodo.scale = SCNVector3Make(0.2, 0.2, 0.2)
      self.sceneView.scene.rootNode.addChildNode(nodo)
      
-     
-     
-     
      }
-     */
+     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Set the view's delegate
-        //sceneView.delegate = self as! ARSCNViewDelegate
+        sceneView.delegate = self as! ARSCNViewDelegate
         
         // Show statistics such as fps and timing information
         //sceneView.showsStatistics = true
@@ -112,7 +107,7 @@ class MachineLearningViewController: UIViewController {
         let scene = SCNScene()
         
         // Set the scene to the view
-        //sceneView.scene = scene
+        sceneView.scene = scene
     }
     
     override func viewWillAppear(_ animated: Bool) {

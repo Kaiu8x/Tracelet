@@ -1299,7 +1299,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qnb-65-3Wg">
-                                <rect key="frame" x="74" y="648" width="145" height="48"/>
+                                <rect key="frame" x="114" y="648" width="105" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="hM4-X5-bmD"/>
                                 </constraints>
@@ -1309,7 +1309,7 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" image="Aboutus" translatesAutoresizingMaskIntoConstraints="NO" id="dm0-34-4Tb">
-                                <rect key="frame" x="26" y="648" width="16" height="48"/>
+                                <rect key="frame" x="26" y="648" width="56" height="48"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WOO-ac-fhG">
                                 <rect key="frame" x="0.0" y="145" width="375" height="348"/>
@@ -1334,7 +1334,7 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qfc-De-nxo">
-                                <rect key="frame" x="74" y="547" width="129" height="48"/>
+                                <rect key="frame" x="114" y="547" width="129" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="tFU-Xb-nR6"/>
                                 </constraints>
