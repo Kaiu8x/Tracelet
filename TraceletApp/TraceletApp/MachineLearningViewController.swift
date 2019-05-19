@@ -59,6 +59,8 @@ class MachineLearningViewController: UIViewController, ARSCNViewDelegate {
          //obtener el mejor resultado
         let observation = observations.first as! VNClassificationObservation
          
+        self.checkforJSON(observation.identifier)
+            
         print("Nombre \(observation.identifier) confianza \(observation.confidence)")
         self.desplegarTexto(entrada: observation.identifier)
      
@@ -72,6 +74,41 @@ class MachineLearningViewController: UIViewController, ARSCNViewDelegate {
             try! imageRequestHandler.perform(self.visionRequests)
          }
      }
+    
+    var newArray = [Any]()
+    let dataUrl = "http://martinmolina.com.mx/201911/data/jsonTracelet/shop.json"
+    
+    func checkforJSON(_ str:String) {
+        let url = URL(string: self.dataUrl)
+        let data = try? Data(contentsOf: url!)
+        self.newArray = try! (JSONSerialization.jsonObject(with: data!) as? [Any])!
+        print(self.newArray)
+        
+        for data in self.newArray {
+            let objectUser = data as! [String: Any]
+            let s:String = objectUser["name"] as! String
+            let precio:String = objectUser["precio"] as! String
+            
+            if (s == str) {
+                print("------------------INFO QUE QUIERES KENYI-------------")
+                print("nombre de pulcera que machea \(s) y su precio harcodeado con signo \(precio)")
+            }
+        }
+    }
+    
+    func JSONParseArray(_ string: String) -> [AnyObject]{
+        if let data = string.data(using: String.Encoding.utf8) {
+            do {
+                if let array = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableContainers)  as? [AnyObject] {
+                    return array
+                }
+            } catch {
+                print("error")
+                //handle errors here
+            }
+        }
+        return [AnyObject]()
+    }
     
      private func desplegarTexto(entrada: String){
          let letrero = SCNText(string: entrada
