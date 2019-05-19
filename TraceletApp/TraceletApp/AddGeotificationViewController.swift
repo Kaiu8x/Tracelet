@@ -105,6 +105,7 @@ class AddGeotificationViewController: UIViewController, CLLocationManagerDelegat
         let radius = Double(radiusTF.text!) ?? 0
         let identifier = NSUUID().uuidString
         let note = userTF.text
+        _ = navigationController?.popViewController(animated: true)
         delegate?.addGeotificationViewController(self, didAddCoordinate: coordinate, radius: radius, identifier: identifier, note: note!, eventType: Geotification.EventType.onEntry)
         //_ = navigationController?.popViewController(animated: true)
         //self.dismiss(animated: true, completion: nil)
@@ -148,20 +149,5 @@ class AddGeotificationViewController: UIViewController, CLLocationManagerDelegat
         print("userTF test \(userTF.text), listFriends[row] \(listFriends[row])")
         //self.view.endEditing(true)
     }
-    
-    
-    /*override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let coordinate = mapaEG.centerCoordinate
-        let radius = Double(radiusTF.text!) ?? 0
-        let identifier = NSUUID().uuidString
-        let note = userTF.text
-        delegate?.addGeotificationViewController(self, didAddCoordinate: coordinate, radius: radius, identifier: identifier, note: note!, eventType: Geotification.EventType.onEntry)
-        
-        if segue.destination is GeofenceViewController {
-            print("Should go to GeofenceViewController not login")
-        }
-        
-        return
-    }*/
     
 }
