@@ -20,6 +20,7 @@
 		8CE916A12257A64E00D96265 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE916A02257A64E00D96265 /* Utilities.swift */; };
 		D51D8EB2225D718D006CE2DA /* VideoExplicativoARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51D8EB1225D718D006CE2DA /* VideoExplicativoARViewController.swift */; };
 		D5403B5D2240C492005B42AC /* EditarPerfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5403B5C2240C492005B42AC /* EditarPerfilViewController.swift */; };
+		D544FCC522912953008DB073 /* Tracelet50.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = D544FCC422912953008DB073 /* Tracelet50.mlmodel */; };
 		D5654ED1223C528B001A4CE4 /* EliminarUsuarioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5654ED0223C528B001A4CE4 /* EliminarUsuarioViewController.swift */; };
 		D5654ED3224090BF001A4CE4 /* VistaListaUsuariosActivosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5654ED2224090BF001A4CE4 /* VistaListaUsuariosActivosViewController.swift */; };
 		D5868895228F483E00701AAB /* Xiaomi01K_Specular.png in Resources */ = {isa = PBXBuildFile; fileRef = D5868894228F483D00701AAB /* Xiaomi01K_Specular.png */; };
@@ -89,6 +90,7 @@
 		8CE916A02257A64E00D96265 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		D51D8EB1225D718D006CE2DA /* VideoExplicativoARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoExplicativoARViewController.swift; sourceTree = "<group>"; };
 		D5403B5C2240C492005B42AC /* EditarPerfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditarPerfilViewController.swift; sourceTree = "<group>"; };
+		D544FCC422912953008DB073 /* Tracelet50.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Tracelet50.mlmodel; sourceTree = "<group>"; };
 		D5654ED0223C528B001A4CE4 /* EliminarUsuarioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EliminarUsuarioViewController.swift; sourceTree = "<group>"; };
 		D5654ED2224090BF001A4CE4 /* VistaListaUsuariosActivosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VistaListaUsuariosActivosViewController.swift; sourceTree = "<group>"; };
 		D5654ED4224090C9001A4CE4 /* SignosVitalesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignosVitalesViewController.swift; sourceTree = "<group>"; };
@@ -233,7 +235,6 @@
 				DF43555B225D3B6300859FF9 /* ShopDetailsViewController.swift */,
 				DF435557225D387500859FF9 /* ShopViewController.swift */,
 				DF191431228FD61F0050B304 /* SignosVitalesViewController.swift */,
-				D5654ED4224090C9001A4CE4 /* SignosVitalesViewController.swift */,
 				DFC46E3A2231A036008F6A6A /* SignupViewController.swift */,
 				DF00C78B225FAE5D009C98DE /* SpinnerViewController.swift */,
 				DFE6DCB322273A6900F05680 /* SplashViewController.swift */,
@@ -244,6 +245,7 @@
 				DFC46E462231B5D7008F6A6A /* Switcher.swift */,
 				DFC46E482231D5D3008F6A6A /* TabBarController.swift */,
 				DFEF76C922495AB700B3BE5C /* TienesTraceletViewController.swift */,
+				D544FCC422912953008DB073 /* Tracelet50.mlmodel */,
 				8CCF7E022270B2A9005B41AB /* TraceletApp.entitlements */,
 				DF1E8E2922430C6F00DB8E0C /* UserDetailsEntrega2ViewController.swift */,
 				DF1E8E272243087D00DB8E0C /* UserDetailsEntregaViewController.swift */,
@@ -252,6 +254,7 @@
 				8CE916A02257A64E00D96265 /* Utilities.swift */,
 				D51D8EB1225D718D006CE2DA /* VideoExplicativoARViewController.swift */,
 				D5654ED2224090BF001A4CE4 /* VistaListaUsuariosActivosViewController.swift */,
+				D5654ED4224090C9001A4CE4 /* SignosVitalesViewController.swift */,
 			);
 			path = TraceletApp;
 			sourceTree = "<group>";
@@ -423,6 +426,7 @@
 				DFC46E3722319EF6008F6A6A /* StartViewController.swift in Sources */,
 				DFEF76CA22495AB700B3BE5C /* TienesTraceletViewController.swift in Sources */,
 				DF3EDA222285FB590094AE17 /* MailParser.swift in Sources */,
+				D544FCC522912953008DB073 /* Tracelet50.mlmodel in Sources */,
 				DF1E8E282243087D00DB8E0C /* UserDetailsEntregaViewController.swift in Sources */,
 				8C14233F2242A81A00B3E6CB /* RutasViewController.swift in Sources */,
 				DF8E5CA7227B576700805372 /* ActivityIndicatorPresenter.swift in Sources */,
