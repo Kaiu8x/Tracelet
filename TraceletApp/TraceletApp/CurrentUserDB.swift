@@ -170,6 +170,9 @@ class CurrentUserDB {
     
     @objc func update() {
         //print("Lat: \(String(describing: self.location?.latitude)), Long: \(String(describing: self.location?.longitude)) ")
+        
+        updateheartbeat()
+        
         if Auth.auth().currentUser != nil {
             //print("Updating")
             let userAuth = Auth.auth().currentUser
@@ -199,6 +202,37 @@ class CurrentUserDB {
             }
         } else {
          //print("Auth error when updating")
+        }
+    }
+    
+    func updateheartbeat() {
+        guard let heartRateSampleType = HKSampleType.quantityType(forIdentifier: .heartRate) else {
+            print("Heart Rate Sample Type is no longer available in HealthKit")
+            return
+        }
+        
+        ProfileDataStore.getMostRecentSample(for: heartRateSampleType) { (sample, error) in
+            let now = Date()
+            
+            let formatter = DateFormatter()
+            
+            formatter.timeZone = TimeZone.current
+            
+            formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+            
+            let dateString = formatter.string(from: now)
+            
+            guard let sample = sample else {
+                if let error = error {
+                    // self.displayAlert(for: error)
+                }
+                return
+            }
+            let heartRateInBPM = Int(sample.quantity.doubleValue(for: HKUnit(from: "count/min")))
+            if self.heartBeat != nil {
+                self.heartBeat![dateString] = heartRateInBPM
+            }
+            
         }
     }
     
@@ -243,6 +277,12 @@ class CurrentUserDB {
                     var userAuthEmail = Auth.auth().currentUser?.email
                     if userAuthEmail != nil{
                         userAuthEmail = self.mailParser.encode(userAuthEmail!)
+                        if (heartRateInBPM > 100 || heartRateInBPM < 40) {
+                            self.ref.child("usrs/\(userAuthEmail!)/state").setValue("danger")
+                        } else {
+                            self.ref.child("usrs/\(userAuthEmail!)/state").setValue("normal")
+                        }
+                        
                         self.ref.child("usrs/\(userAuthEmail!)/bpm").setValue(heartRateInBPM)
                         userAuthEmail = self.mailParser.decode(userAuthEmail!)
                         print("realtime bpm added: \(heartRateInBPM)")

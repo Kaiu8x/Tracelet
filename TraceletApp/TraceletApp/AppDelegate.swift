@@ -124,7 +124,7 @@ extension AppDelegate: CLLocationManagerDelegate {
         
         formatter.timeZone = TimeZone.current
         
-        formatter.dateFormat = "yyyy-MM-dd HH:mm"
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         
         let dateString = formatter.string(from: now)
         

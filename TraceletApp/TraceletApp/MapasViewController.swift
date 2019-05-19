@@ -79,11 +79,13 @@ class MapasViewController: UIViewController, CLLocationManagerDelegate, UIPicker
             () in
             //print("COMPLETION 1")
         }
-        
+        searchDanger()
         super.viewDidLoad()
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        self.userToListen = self.list[0]
+        changeLocationToUserNow()
         getCurrentUserInfo() {
             () in
             print("WILLAPPEAR ------- COMPLETION -> 3")
@@ -218,7 +220,42 @@ class MapasViewController: UIViewController, CLLocationManagerDelegate, UIPicker
                 print("SNAPSHOT NOT FOUND ERROR")
             }
         })
+    }
+    
+    func searchDanger() {
         
+        let ref = Database.database().reference(withPath: "usrs/")
+        ref.observe(DataEventType.childChanged, with: { (snapshot) in
+            if (snapshot.exists()) {
+                //print("SNAPSHOT CHILD COUNT A: \(snapshot.childrenCount)")
+                //let snapDict = snapshot.value as? [String: Double] ?? [:]
+                
+                if true {
+                    //print("SNAPSHOT A: \(snapshot) SNAPDICT A: \(snapDict) SNAPKEY \(snapshot.key) ")
+                    var key = snapshot.key as String
+                    key = self.mailParser.decode(key)
+                    let enumerator = snapshot.children
+                    while let rest = enumerator.nextObject() as? DataSnapshot {
+                        print(" SNAP CHILD VAL \(rest.value) , SNAP CHILD KEY \(rest.key)")
+                        if (CurrentUserDB.currentUser.canModifyList?.contains(key) ?? false) {
+                            let state = rest.value as? String ?? "str"
+                            if(state == "danger") {
+                                let alertController = UIAlertController(title: "Danger to friend", message: "\(key) is in danger", preferredStyle: .alert)
+                                
+                                let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                                
+                                alertController.addAction(defaultAction)
+                                self.present(alertController, animated: true, completion: nil)
+                            }
+                        }
+                    }
+                    
+                }
+                
+            } else {
+                print("SNAPSHOT NOT FOUND ERROR")
+            }
+        })
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
