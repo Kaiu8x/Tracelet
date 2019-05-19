@@ -44,53 +44,47 @@ class MachineLearningViewController: UIViewController, ARSCNViewDelegate {
      performVisionRequest(pixelBuffer: imagenPixeles)
      }
      
-     private func performVisionRequest(pixelBuffer: CVPixelBuffer)
-     {
-     //inicializar el modelo de ML al modelo usado, en este caso tracelet
-     let visionModel = try! VNCoreMLModel(for: traceletModel.model)
-     let request = VNCoreMLRequest(model: visionModel) { request, error in
+     private func performVisionRequest(pixelBuffer: CVPixelBuffer){
+        //inicializar el modelo de ML al modelo usado, en este caso tracelet
+        let visionModel = try! VNCoreMLModel(for: traceletModel.model)
+        let request = VNCoreMLRequest(model: visionModel) { request, error in
+            
+        if error != nil {
+            //hubo un error
+            return }
+        guard let observations = request.results else {
+            //no hubo resultados por parte del modelo
+            return
+        }
+         //obtener el mejor resultado
+        let observation = observations.first as! VNClassificationObservation
+         
+        print("Nombre \(observation.identifier) confianza \(observation.confidence)")
+        self.desplegarTexto(entrada: observation.identifier)
      
-     if error != nil {
-     //hubo un error
-     return}
-     guard let observations = request.results else {
-     //no hubo resultados por parte del modelo
-     return
-     
+        }
+        //la imagen que se pasará al modelo sera recortada para quedarse con el centro
+        request.imageCropAndScaleOption = .centerCrop
+        self.visionRequests = [request]
+        
+        let imageRequestHandler = VNImageRequestHandler(cvPixelBuffer: pixelBuffer, orientation: .upMirrored, options: [:])
+        DispatchQueue.global().async {
+            try! imageRequestHandler.perform(self.visionRequests)
+         }
      }
-     //obtener el mejor resultado
-     let observation = observations.first as! VNClassificationObservation
-     
-     print("Nombre \(observation.identifier) confianza \(observation.confidence)")
-     self.desplegarTexto(entrada: observation.identifier)
-     
-     }
-     //la imagen que se pasará al modelo sera recortada para quedarse con el centro
-     request.imageCropAndScaleOption = .centerCrop
-     self.visionRequests = [request]
-     
-     let imageRequestHandler = VNImageRequestHandler(cvPixelBuffer: pixelBuffer, orientation: .upMirrored, options: [:])
-     DispatchQueue.global().async {
-     try! imageRequestHandler.perform(self.visionRequests)
-     
-     }
-     
-     }
-     private func desplegarTexto(entrada: String)
-     {
-     
-     let letrero = SCNText(string: entrada
-     , extrusionDepth: 0)
-     letrero.alignmentMode = CATextLayerAlignmentMode.center.rawValue
-     letrero.firstMaterial?.diffuse.contents = UIColor.blue
-     letrero.firstMaterial?.specular.contents = UIColor.white
-     letrero.firstMaterial?.isDoubleSided = true
-     letrero.font = UIFont(name: "Futura", size: 0.20)
-     let nodo = SCNNode(geometry: letrero)
-     nodo.position = SCNVector3(self.hitTestResult.worldTransform.columns.3.x,self.hitTestResult.worldTransform.columns.3.y-0.2,self.hitTestResult.worldTransform.columns.3.z )
-     nodo.scale = SCNVector3Make(0.2, 0.2, 0.2)
-     self.sceneView.scene.rootNode.addChildNode(nodo)
-     
+    
+     private func desplegarTexto(entrada: String){
+         let letrero = SCNText(string: entrada
+         , extrusionDepth: 0)
+         letrero.alignmentMode = CATextLayerAlignmentMode.center.rawValue
+         letrero.firstMaterial?.diffuse.contents = UIColor.blue
+         letrero.firstMaterial?.specular.contents = UIColor.white
+         letrero.firstMaterial?.isDoubleSided = true
+         letrero.font = UIFont(name: "Futura", size: 0.20)
+         let nodo = SCNNode(geometry: letrero)
+         nodo.position = SCNVector3(self.hitTestResult.worldTransform.columns.3.x,self.hitTestResult.worldTransform.columns.3.y-0.2,self.hitTestResult.worldTransform.columns.3.z )
+         nodo.scale = SCNVector3Make(0.2, 0.2, 0.2)
+         self.sceneView.scene.rootNode.addChildNode(nodo)
      }
      
     
@@ -98,7 +92,7 @@ class MachineLearningViewController: UIViewController, ARSCNViewDelegate {
         super.viewDidLoad()
         
         // Set the view's delegate
-        sceneView.delegate = self as! ARSCNViewDelegate
+        sceneView.delegate = self
         
         // Show statistics such as fps and timing information
         //sceneView.showsStatistics = true
@@ -117,14 +111,14 @@ class MachineLearningViewController: UIViewController, ARSCNViewDelegate {
         let configuration = ARWorldTrackingConfiguration()
         
         // Run the view's session
-        //sceneView.session.run(configuration)
+        sceneView.session.run(configuration)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
         // Pause the view's session
-        //sceneView.session.pause()
+        sceneView.session.pause()
     }
     
     override func didReceiveMemoryWarning() {
@@ -157,4 +151,9 @@ class MachineLearningViewController: UIViewController, ARSCNViewDelegate {
         // Reset tracking and/or remove existing anchors if consistent tracking is required
         
     }
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromCATextLayerAlignmentMode(_ input: CATextLayerAlignmentMode) -> String {
+    return input.rawValue
 }
