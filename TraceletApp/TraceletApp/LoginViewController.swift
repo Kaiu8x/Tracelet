@@ -41,6 +41,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 
                 alertController.addAction(defaultAction)
                 self.present(alertController, animated: true, completion: nil)
+                CurrentUserDB.currentUser.reload {
+                    print("RELOADED IN Iniciar seci'on")
+                }
             }
         }
     }

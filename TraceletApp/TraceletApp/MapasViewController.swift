@@ -77,7 +77,7 @@ class MapasViewController: UIViewController, CLLocationManagerDelegate, UIPicker
         
         getCurrentUserInfo() {
             () in
-            //print("COMPLETION 1")
+            print("VIEW DID LOAD ------- COMPLETION -> 3")
         }
         searchDanger()
         super.viewDidLoad()
@@ -102,9 +102,9 @@ class MapasViewController: UIViewController, CLLocationManagerDelegate, UIPicker
         self.userName.text = CurrentUserDB.currentUser.name
         self.dropDown.reloadInputViews()
         self.userToListen = CurrentUserDB.currentUser.email ?? "_"
-        //print("COMPLETION ------- COMPLETION -> 2")
+        print("COMPLETION ------- COMPLETION -> 2")
         //print("---------------VIEW COMPLETION----------------")
-        //print("self list after RELOAD: \(self.list), new userName: //\(self.userName)")
+        print("self list after RELOAD: \(self.list), new userName: \(self.userName)")
         //print("----------------------------------------------")
         completed()
     }

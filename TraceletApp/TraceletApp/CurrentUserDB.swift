@@ -120,10 +120,7 @@ class CurrentUserDB {
                         self.name = (document["name"] as? String)!
                         self.email = (document["email"] as? String)!
                         self.deviceId = (document["deviceId"] as? String)!
-                        /*print("Current user name and email")
-                        print(self.name)
-                        print(self.name)
-                        print(self.email)*/
+                        print("SETTING CURRENT USER NAME WITH \(self.name)  AND EMAIL \(self.email)")
                         
                         if(document["canViewList"] != nil) {
                             self.canViewList = (document["canViewList"] as? [String])!

@@ -110,10 +110,8 @@ class MachineLearningViewController: UIViewController, ARSCNViewDelegate {
         return [AnyObject]()
     }
     
-    private func desplegarTexto(entrada: String)
-    {
-        var letrero = SCNText(string: entrada
-            , extrusionDepth: 0)
+    private func desplegarTexto(entrada: String) {
+        var letrero = SCNText(string: entrada, extrusionDepth: 0)
         
         switch entrada {
         case "Crystal":
