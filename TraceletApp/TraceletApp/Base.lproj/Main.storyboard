@@ -1749,13 +1749,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Po5-EC-82q">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Po5-EC-82q">
                                 <rect key="frame" x="16" y="44" width="343" height="734"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gve-p7-ZlN">
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gve-p7-ZlN">
                                         <rect key="frame" x="103" y="417" width="137" height="38"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                         <color key="tintColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -1765,9 +1763,8 @@
                                             <segue destination="E2C-3L-Y1N" kind="show" id="crS-Rl-vfG"/>
                                         </connections>
                                     </button>
-                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="xxxxxx" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XKL-0P-lLI">
+                                    <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="xxxxxx" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XKL-0P-lLI">
                                         <rect key="frame" x="79" y="319" width="185" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -1775,17 +1772,19 @@
                                             <outlet property="delegate" destination="PXo-Se-zzb" id="sN2-Rr-12f"/>
                                         </connections>
                                     </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Introduce el código de tu tracelet" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="69T-lq-R4u">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Introduce el código de tu tracelet" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="69T-lq-R4u">
                                         <rect key="frame" x="10" y="262" width="322" height="49"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cUz-p2-y3W">
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cUz-p2-y3W">
                                         <rect key="frame" x="106" y="512" width="131" height="31"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="131" id="MeH-QK-koR"/>
+                                            <constraint firstAttribute="height" constant="31" id="yoI-pV-oU4"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                         <state key="normal" title="Cancelar"/>
                                         <connections>
@@ -1794,6 +1793,16 @@
                                         </connections>
                                     </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="cUz-p2-y3W" firstAttribute="top" secondItem="Gve-p7-ZlN" secondAttribute="bottom" constant="57" id="0eT-ax-Qcj"/>
+                                    <constraint firstItem="cUz-p2-y3W" firstAttribute="centerX" secondItem="69T-lq-R4u" secondAttribute="centerX" id="U7E-00-jSf"/>
+                                    <constraint firstItem="cUz-p2-y3W" firstAttribute="centerX" secondItem="Po5-EC-82q" secondAttribute="centerX" id="k12-Wr-3MJ"/>
+                                    <constraint firstAttribute="bottom" secondItem="cUz-p2-y3W" secondAttribute="bottom" constant="191" id="khB-kW-csf"/>
+                                    <constraint firstItem="cUz-p2-y3W" firstAttribute="centerX" secondItem="XKL-0P-lLI" secondAttribute="centerX" id="md5-C5-6d5"/>
+                                    <constraint firstItem="cUz-p2-y3W" firstAttribute="centerX" secondItem="Gve-p7-ZlN" secondAttribute="centerX" id="nbz-I0-cDP"/>
+                                    <constraint firstAttribute="trailing" secondItem="cUz-p2-y3W" secondAttribute="trailing" constant="106" id="rCv-lh-9TY"/>
+                                    <constraint firstItem="cUz-p2-y3W" firstAttribute="top" secondItem="Po5-EC-82q" secondAttribute="top" constant="512" id="t1M-IP-b4S"/>
+                                </constraints>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mQz-c4-DyI">
                                 <rect key="frame" x="26" y="54" width="104" height="39"/>
