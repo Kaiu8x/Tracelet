@@ -1782,8 +1782,29 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cUz-p2-y3W">
+                                        <rect key="frame" x="106" y="512" width="131" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                        <state key="normal" title="Cancelar"/>
+                                        <connections>
+                                            <action selector="cancelSignupButton:" destination="oZF-cw-kbQ" eventType="touchUpInside" id="D8C-Ix-Qky"/>
+                                            <segue destination="E2C-3L-Y1N" kind="show" id="e4A-QA-IGi"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mQz-c4-DyI">
+                                <rect key="frame" x="26" y="54" width="104" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                <state key="normal" title="Cancelar"/>
+                                <connections>
+                                    <action selector="cancelLoginButton:" destination="HIS-oW-Z4B" eventType="touchUpInside" id="Rez-5e-ocp"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="XmQ-Hi-3W6"/>
@@ -2082,7 +2103,7 @@
         <image name="Vitales" width="66.666664123535156" height="66.666664123535156"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="fFo-g3-caa"/>
-        <segue reference="sVl-VN-pLV"/>
+        <segue reference="e4A-QA-IGi"/>
+        <segue reference="Ian-mJ-yo0"/>
     </inferredMetricsTieBreakers>
 </document>

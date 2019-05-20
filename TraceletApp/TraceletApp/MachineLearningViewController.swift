@@ -59,7 +59,7 @@ class MachineLearningViewController: UIViewController, ARSCNViewDelegate {
          //obtener el mejor resultado
         let observation = observations.first as! VNClassificationObservation
          
-        self.checkforJSON(observation.identifier)
+       // self.checkforJSON(observation.identifier)
             
         print("Nombre \(observation.identifier) confianza \(observation.confidence)")
         self.desplegarTexto(entrada: observation.identifier)
@@ -78,7 +78,7 @@ class MachineLearningViewController: UIViewController, ARSCNViewDelegate {
     var newArray = [Any]()
     let dataUrl = "http://martinmolina.com.mx/201911/data/jsonTracelet/shop.json"
     
-    func checkforJSON(_ str:String) {
+    /*func checkforJSON(_ str:String) {
         let url = URL(string: self.dataUrl)
         let data = try? Data(contentsOf: url!)
         self.newArray = try! (JSONSerialization.jsonObject(with: data!) as? [Any])!
@@ -91,10 +91,10 @@ class MachineLearningViewController: UIViewController, ARSCNViewDelegate {
             
             if (s == str) {
                 print("------------------INFO QUE QUIERES KENYI-------------")
-                print("nombre de pulcera que machea \(s) y su precio harcodeado con signo \(precio)")
+                print("nombre de pulcera que machea \(s) y su precio \(precio)")
             }
         }
-    }
+    }*/
     
     func JSONParseArray(_ string: String) -> [AnyObject]{
         if let data = string.data(using: String.Encoding.utf8) {
@@ -110,19 +110,75 @@ class MachineLearningViewController: UIViewController, ARSCNViewDelegate {
         return [AnyObject]()
     }
     
-     private func desplegarTexto(entrada: String){
-         let letrero = SCNText(string: entrada
-         , extrusionDepth: 0)
-         letrero.alignmentMode = CATextLayerAlignmentMode.center.rawValue
-         letrero.firstMaterial?.diffuse.contents = UIColor.blue
-         letrero.firstMaterial?.specular.contents = UIColor.white
-         letrero.firstMaterial?.isDoubleSided = true
-         letrero.font = UIFont(name: "Futura", size: 0.20)
-         let nodo = SCNNode(geometry: letrero)
-         nodo.position = SCNVector3(self.hitTestResult.worldTransform.columns.3.x,self.hitTestResult.worldTransform.columns.3.y-0.2,self.hitTestResult.worldTransform.columns.3.z )
-         nodo.scale = SCNVector3Make(0.2, 0.2, 0.2)
-         self.sceneView.scene.rootNode.addChildNode(nodo)
-     }
+    private func desplegarTexto(entrada: String)
+    {
+        var letrero = SCNText(string: entrada
+            , extrusionDepth: 0)
+        
+        switch entrada {
+        case "Crystal":
+            letrero = SCNText(string: entrada + ". Uno de los modelos mas vendidos. Precio: $500"
+                , extrusionDepth: 0)
+        case "Distance":
+            letrero = SCNText(string: entrada + ". Uno de los modelos mas vendidos. Precio: $500"
+                , extrusionDepth: 0)
+        case "Jade":
+            letrero = SCNText(string: entrada + ". Uno de los modelos mas vendidos. Precio: $600"
+                , extrusionDepth: 0)
+        case "Knightly":
+            letrero = SCNText(string: entrada + ". Uno de los modelos mas vendidos. Precio: $650"
+                , extrusionDepth: 0)
+        case "Lapislazuli":
+            letrero = SCNText(string: entrada + ". Uno de los modelos mas vendidos. Precio: $700"
+                , extrusionDepth: 0)
+        case "Royal":
+            letrero = SCNText(string: entrada + ". Uno de los modelos mas vendidos. Precio: $650"
+                , extrusionDepth: 0)
+        case "Sand":
+            letrero = SCNText(string: entrada + ". Uno de los modelos mas vendidos. Precio: $550"
+                , extrusionDepth: 0)
+        case "Skull":
+            letrero = SCNText(string: entrada + ". Uno de los modelos mas vendidos. Precio: $750"
+                , extrusionDepth: 0)
+        case "Templar":
+            letrero = SCNText(string: entrada + ". Uno de los modelos mas vendidos. Precio: $750"
+                , extrusionDepth: 0)
+        case "Turquoise":
+            letrero = SCNText(string: entrada + ". Uno de los modelos mas vendidos. Precio: $600"
+                , extrusionDepth: 0)
+        default:
+            letrero = SCNText(string: "Esto no es un Tracelet"
+                , extrusionDepth: 0)
+        }
+        
+        letrero.alignmentMode = convertFromCATextLayerAlignmentMode(CATextLayerAlignmentMode.center)
+        letrero.firstMaterial?.diffuse.contents = UIColor.blue
+        letrero.firstMaterial?.specular.contents = UIColor.white
+        letrero.firstMaterial?.isDoubleSided = true
+        letrero.font = UIFont(name: "Futura", size: 0.20)
+        
+        /*//PARTE DE KAI PARA EL JSON
+         let url = URL(string: self.dataUrl)
+         let data = try? Data(contentsOf: url!)
+         self.newArray = try! (JSONSerialization.jsonObject(with: data!) as? [Any])!
+         print(self.newArray)
+         for data in self.newArray {
+             let objectUser = data as! [String: Any]
+             let s:String = objectUser["name"] as! String
+             let precio:String = objectUser["precio"] as! String
+         
+         if (s == entrada) {
+             print("------------------INFO QUE QUIERES KENYI-------------")
+             print("nombre de pulcera que machea \(s) y su precio \(precio)")
+             letrero = SCNText(string: "\(s) y su precio es \(precio)", extrusionDepth: 0)
+         }
+         }*/
+        
+        let nodo = SCNNode(geometry: letrero)
+        nodo.position = SCNVector3(self.hitTestResult.worldTransform.columns.3.x,self.hitTestResult.worldTransform.columns.3.y-0.2,self.hitTestResult.worldTransform.columns.3.z )
+        nodo.scale = SCNVector3Make(0.2, 0.2, 0.2)
+        self.sceneView.scene.rootNode.addChildNode(nodo)
+    }
      
     
     override func viewDidLoad() {
